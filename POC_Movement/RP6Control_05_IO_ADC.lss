@@ -1,0 +1,3005 @@
+
+RP6Control_05_IO_ADC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000e22  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000034  00800060  00000e22  00000eb6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000054  00800094  00800094  00000eea  2**0
+                  ALLOC
+  3 .stab         0000093c  00000000  00000000  00000eec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000000b4  00000000  00000000  00001828  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000060  00000000  00000000  000018dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_pubnames 000005c3  00000000  00000000  0000193c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000016df  00000000  00000000  00001eff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000005e4  00000000  00000000  000035de  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00001117  00000000  00000000  00003bc2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000420  00000000  00000000  00004cdc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000006e9  00000000  00000000  000050fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    0000076b  00000000  00000000  000057e5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000048  00000000  00000000  00005f50  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 a2 00 	jmp	0x144	; 0x144 <__ctors_end>
+   4:	0c 94 4d 01 	jmp	0x29a	; 0x29a <__vector_1>
+   8:	0c 94 7a 01 	jmp	0x2f4	; 0x2f4 <__vector_2>
+   c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__vector_3>
+  10:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  14:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  18:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  1c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  20:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  24:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  28:	0c 94 4c 04 	jmp	0x898	; 0x898 <__vector_10>
+  2c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  30:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  34:	0c 94 d9 05 	jmp	0xbb2	; 0xbb2 <__vector_13>
+  38:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  3c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  40:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  44:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  48:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  4c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  50:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+
+00000054 <__c.1777>:
+  54:	0a 41 44 43 34 20 5b 52 65 63 68 74 73 76 6f 6f     .ADC4 [Rechtsvoo
+  64:	72 5d 3a 20 00                                      r]: .
+
+00000069 <__c.1773>:
+  69:	0a 41 44 43 33 20 5b 52 65 63 68 74 73 61 63 68     .ADC3 [Rechtsach
+  79:	74 65 72 5d 3a 20 00                                ter]: .
+
+00000080 <__c.1771>:
+  80:	0a 0a 50 43 36 20 69 73 20 4c 4f 57 21 0a 0a 00     ..PC6 is LOW!...
+
+00000090 <__c.1769>:
+  90:	0a 0a 50 43 36 20 69 73 20 48 49 47 48 21 0a 0a     ..PC6 is HIGH!..
+	...
+
+000000a1 <__c.1767>:
+  a1:	0a 43 68 65 63 6b 20 50 43 36 3a 00                 .Check PC6:.
+
+000000ad <__c.1765>:
+  ad:	0a 50 43 37 20 69 73 20 73 65 74 20 74 6f 20 4c     .PC7 is set to L
+  bd:	4f 57 21 0a 0a 00                                   OW!...
+
+000000c3 <__c.1763>:
+  c3:	0a 50 43 37 20 69 73 20 73 65 74 20 74 6f 20 48     .PC7 is set to H
+  d3:	49 47 48 21 0a 0a 00                                IGH!...
+
+000000da <__c.1761>:
+  da:	45 78 61 6d 70 6c 65 20 50 72 6f 67 72 61 6d 00     Example Program.
+
+000000ea <__c.1759>:
+  ea:	49 2f 4f 20 61 6e 64 20 41 44 43 00                 I/O and ADC.
+
+000000f6 <__c.1757>:
+  f6:	23 23 23 23 23 23 23 23 23 23 23 23 23 23 23 23     ################
+	...
+
+00000107 <__c.1755>:
+ 107:	23 23 23 23 23 23 23 23 23 23 23 23 23 23 23 23     ################
+	...
+
+00000118 <__c.1753>:
+ 118:	0a 0a 52 50 36 43 6f 6e 74 72 6f 6c 20 49 2f 4f     ..RP6Control I/O
+ 128:	20 61 6e 64 20 41 44 43 20 45 78 61 6d 70 6c 65      and ADC Example
+ 138:	20 50 72 6f 67 72 61 6d 21 0a 00 00                  Program!...
+
+00000144 <__ctors_end>:
+ 144:	11 24       	eor	r1, r1
+ 146:	1f be       	out	0x3f, r1	; 63
+ 148:	cf e5       	ldi	r28, 0x5F	; 95
+ 14a:	d8 e0       	ldi	r29, 0x08	; 8
+ 14c:	de bf       	out	0x3e, r29	; 62
+ 14e:	cd bf       	out	0x3d, r28	; 61
+
+00000150 <__do_copy_data>:
+ 150:	10 e0       	ldi	r17, 0x00	; 0
+ 152:	a0 e6       	ldi	r26, 0x60	; 96
+ 154:	b0 e0       	ldi	r27, 0x00	; 0
+ 156:	e2 e2       	ldi	r30, 0x22	; 34
+ 158:	fe e0       	ldi	r31, 0x0E	; 14
+ 15a:	02 c0       	rjmp	.+4      	; 0x160 <.do_copy_data_start>
+
+0000015c <.do_copy_data_loop>:
+ 15c:	05 90       	lpm	r0, Z+
+ 15e:	0d 92       	st	X+, r0
+
+00000160 <.do_copy_data_start>:
+ 160:	a4 39       	cpi	r26, 0x94	; 148
+ 162:	b1 07       	cpc	r27, r17
+ 164:	d9 f7       	brne	.-10     	; 0x15c <.do_copy_data_loop>
+
+00000166 <__do_clear_bss>:
+ 166:	10 e0       	ldi	r17, 0x00	; 0
+ 168:	a4 e9       	ldi	r26, 0x94	; 148
+ 16a:	b0 e0       	ldi	r27, 0x00	; 0
+ 16c:	01 c0       	rjmp	.+2      	; 0x170 <.do_clear_bss_start>
+
+0000016e <.do_clear_bss_loop>:
+ 16e:	1d 92       	st	X+, r1
+
+00000170 <.do_clear_bss_start>:
+ 170:	a8 3e       	cpi	r26, 0xE8	; 232
+ 172:	b1 07       	cpc	r27, r17
+ 174:	e1 f7       	brne	.-8      	; 0x16e <.do_clear_bss_loop>
+ 176:	0e 94 c1 00 	call	0x182	; 0x182 <main>
+ 17a:	0c 94 0f 07 	jmp	0xe1e	; 0xe1e <_exit>
+
+0000017e <__bad_interrupt>:
+ 17e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000182 <main>:
+// Main function - The program starts here:
+
+
+int main(void)
+{
+	initRP6Control(); // Always call this first! The Processor will not work
+ 182:	0e 94 34 05 	call	0xa68	; 0xa68 <initRP6Control>
+					  // correctly otherwise. 
+
+	initLCD(); 
+ 186:	0e 94 ec 02 	call	0x5d8	; 0x5d8 <initLCD>
+	
+	writeString_P("\n\nRP6Control I/O and ADC Example Program!\n"); 
+ 18a:	88 e1       	ldi	r24, 0x18	; 24
+ 18c:	91 e0       	ldi	r25, 0x01	; 1
+ 18e:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+	setLEDs(0b1111);
+ 192:	8f e0       	ldi	r24, 0x0F	; 15
+ 194:	0e 94 ab 02 	call	0x556	; 0x556 <setLEDs>
+
+	showScreenLCD("################", "################");
+ 198:	87 e0       	ldi	r24, 0x07	; 7
+ 19a:	91 e0       	ldi	r25, 0x01	; 1
+ 19c:	66 ef       	ldi	r22, 0xF6	; 246
+ 19e:	70 e0       	ldi	r23, 0x00	; 0
+ 1a0:	0e 94 ab 03 	call	0x756	; 0x756 <_showScreenLCD_P>
+
+	// Play a sound to indicate that our program starts:
+	sound(100,40,64);
+ 1a4:	84 e6       	ldi	r24, 0x64	; 100
+ 1a6:	68 e2       	ldi	r22, 0x28	; 40
+ 1a8:	70 e0       	ldi	r23, 0x00	; 0
+ 1aa:	0e 94 f5 04 	call	0x9ea	; 0x9ea <beep>
+ 1ae:	88 e6       	ldi	r24, 0x68	; 104
+ 1b0:	90 e0       	ldi	r25, 0x00	; 0
+ 1b2:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+	sound(170,40,0);
+ 1b6:	8a ea       	ldi	r24, 0xAA	; 170
+ 1b8:	68 e2       	ldi	r22, 0x28	; 40
+ 1ba:	70 e0       	ldi	r23, 0x00	; 0
+ 1bc:	0e 94 f5 04 	call	0x9ea	; 0x9ea <beep>
+ 1c0:	88 e2       	ldi	r24, 0x28	; 40
+ 1c2:	90 e0       	ldi	r25, 0x00	; 0
+ 1c4:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+	mSleep(400);
+ 1c8:	80 e9       	ldi	r24, 0x90	; 144
+ 1ca:	91 e0       	ldi	r25, 0x01	; 1
+ 1cc:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+	setLEDs(0b0000);
+ 1d0:	80 e0       	ldi	r24, 0x00	; 0
+ 1d2:	0e 94 ab 02 	call	0x556	; 0x556 <setLEDs>
+
+	showScreenLCD("I/O and ADC", "Example Program");
+ 1d6:	8a ee       	ldi	r24, 0xEA	; 234
+ 1d8:	90 e0       	ldi	r25, 0x00	; 0
+ 1da:	6a ed       	ldi	r22, 0xDA	; 218
+ 1dc:	70 e0       	ldi	r23, 0x00	; 0
+ 1de:	0e 94 ab 03 	call	0x756	; 0x756 <_showScreenLCD_P>
+	mSleep(1000);
+ 1e2:	88 ee       	ldi	r24, 0xE8	; 232
+ 1e4:	93 e0       	ldi	r25, 0x03	; 3
+ 1e6:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+	// When you want to use a port pin as output, you have to set the 
+	// DDRx register bit belonging to this port to 1. 
+	//
+	// For example - if you want to use PORTC 7 as output, you can write:
+	
+	DDRC |= IO_PC7;  // PC7 is output
+ 1ea:	a7 9a       	sbi	0x14, 7	; 20
+	
+	// And then you can set the Port to high or low:
+	
+	
+	PORTC |= IO_PC7;  // High
+ 1ec:	af 9a       	sbi	0x15, 7	; 21
+	writeString_P("\nPC7 is set to HIGH!\n\n");
+ 1ee:	83 ec       	ldi	r24, 0xC3	; 195
+ 1f0:	90 e0       	ldi	r25, 0x00	; 0
+ 1f2:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+	mSleep(1000);	  // wait 1s for example... 
+ 1f6:	88 ee       	ldi	r24, 0xE8	; 232
+ 1f8:	93 e0       	ldi	r25, 0x03	; 3
+ 1fa:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+	PORTC &= ~IO_PC7; // Low
+ 1fe:	af 98       	cbi	0x15, 7	; 21
+	writeString_P("\nPC7 is set to LOW!\n\n");
+ 200:	8d ea       	ldi	r24, 0xAD	; 173
+ 202:	90 e0       	ldi	r25, 0x00	; 0
+ 204:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+	
+	// When you want to use the Port as input to read its value,
+	// you need to clear the DDRx register bit. 
+	
+	DDRC &= ~IO_PC6;  // PC6 is input
+ 208:	a6 98       	cbi	0x14, 6	; 20
+	
+	PORTC |= IO_PC6;     // enable internal pullup resistor of PC6  OR ALTERNATIVELY:
+ 20a:	ae 9a       	sbi	0x15, 6	; 21
+	// You need this when external sensors only pull the signal low
+	// for example or if you disconnect the sensors or ... 
+	
+	// Now we want to output something depending on if this port pin is 
+	// high or low:
+	writeString_P("\nCheck PC6:");
+ 20c:	81 ea       	ldi	r24, 0xA1	; 161
+ 20e:	90 e0       	ldi	r25, 0x00	; 0
+ 210:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+	if(PINC & IO_PC6) // Check if PC6 is high
+ 214:	9e 9b       	sbis	0x13, 6	; 19
+ 216:	03 c0       	rjmp	.+6      	; 0x21e <main+0x9c>
+		writeString_P("\n\nPC6 is HIGH!\n\n");
+ 218:	80 e9       	ldi	r24, 0x90	; 144
+ 21a:	90 e0       	ldi	r25, 0x00	; 0
+ 21c:	02 c0       	rjmp	.+4      	; 0x222 <main+0xa0>
+	else
+		writeString_P("\n\nPC6 is LOW!\n\n");
+ 21e:	80 e8       	ldi	r24, 0x80	; 128
+ 220:	90 e0       	ldi	r25, 0x00	; 0
+ 222:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+	// "=1" indicates that the appropriate bit is set.
+
+
+	// To read the ADC channels, you can use the readADC() function. 
+	// First you have to make the pins INPUTs, of course:
+	DDRA &= ~ADC5; //Linksvoor
+ 226:	d5 98       	cbi	0x1a, 5	; 26
+	DDRA &= ~ADC4; //Rechtsvoor
+ 228:	d4 98       	cbi	0x1a, 4	; 26
+
+	DDRA &= ~ADC3; //Rechtsachter
+ 22a:	d3 98       	cbi	0x1a, 3	; 26
+	DDRA &= ~ADC2; //Linksachter
+ 22c:	d2 98       	cbi	0x1a, 2	; 26
+	// anything else randomly. 
+	
+	// -------------------------------------------
+
+	while(true) {
+		writeString_P("\nADC3 [Rechtsachter]: ");
+ 22e:	89 e6       	ldi	r24, 0x69	; 105
+ 230:	90 e0       	ldi	r25, 0x00	; 0
+ 232:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+		uint16_t adc3 = readADC(ADC_3); // Read ADC Channel 3
+ 236:	83 e0       	ldi	r24, 0x03	; 3
+ 238:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+		writeInteger(adc3, DEC);
+ 23c:	6a e0       	ldi	r22, 0x0A	; 10
+ 23e:	0e 94 69 06 	call	0xcd2	; 0xcd2 <writeInteger>
+		writeString(" | ADC2 [Linksachter]: ");
+ 242:	80 e6       	ldi	r24, 0x60	; 96
+ 244:	90 e0       	ldi	r25, 0x00	; 0
+ 246:	0e 94 b6 05 	call	0xb6c	; 0xb6c <writeString>
+		uint16_t adc2 = readADC(ADC_2); // Read ADC Channel 2
+ 24a:	82 e0       	ldi	r24, 0x02	; 2
+ 24c:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+		writeInteger(adc2, DEC);
+ 250:	6a e0       	ldi	r22, 0x0A	; 10
+ 252:	0e 94 69 06 	call	0xcd2	; 0xcd2 <writeInteger>
+
+		writeString_P("\nADC4 [Rechtsvoor]: ");
+ 256:	84 e5       	ldi	r24, 0x54	; 84
+ 258:	90 e0       	ldi	r25, 0x00	; 0
+ 25a:	0e 94 c0 05 	call	0xb80	; 0xb80 <writeNStringP>
+		uint16_t adc4 = readADC(ADC_4); // Read ADC Channel 4
+ 25e:	84 e0       	ldi	r24, 0x04	; 4
+ 260:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+		writeInteger(adc4, DEC);
+ 264:	6a e0       	ldi	r22, 0x0A	; 10
+ 266:	0e 94 69 06 	call	0xcd2	; 0xcd2 <writeInteger>
+		writeString(" | ADC5 [Linksvoor]: ");
+ 26a:	88 e7       	ldi	r24, 0x78	; 120
+ 26c:	90 e0       	ldi	r25, 0x00	; 0
+ 26e:	0e 94 b6 05 	call	0xb6c	; 0xb6c <writeString>
+		uint16_t adc5 = readADC(ADC_5); // Read ADC Channel 5
+ 272:	85 e0       	ldi	r24, 0x05	; 5
+ 274:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+		writeInteger(adc5, DEC);
+ 278:	6a e0       	ldi	r22, 0x0A	; 10
+ 27a:	0e 94 69 06 	call	0xcd2	; 0xcd2 <writeInteger>
+		writeChar('\n');
+ 27e:	8a e0       	ldi	r24, 0x0A	; 10
+ 280:	0e 94 b2 05 	call	0xb64	; 0xb64 <writeChar>
+
+		mSleep(500);
+ 284:	84 ef       	ldi	r24, 0xF4	; 244
+ 286:	91 e0       	ldi	r25, 0x01	; 1
+ 288:	0e 94 1f 05 	call	0xa3e	; 0xa3e <mSleep>
+ 28c:	d0 cf       	rjmp	.-96     	; 0x22e <main+0xac>
+
+0000028e <INT0_event_DUMMY>:
+// Event Handlers. 
+// Please make sure that you keep the Event Handler Functions as
+// short as possible! 
+// --> You usually don't need this stuff. 
+
+void INT0_event_DUMMY(void){}
+ 28e:	08 95       	ret
+
+00000290 <INT0_setEventHandler>:
+static void (*INT0_eventHandler)(void) = INT0_event_DUMMY;
+void INT0_setEventHandler(void (*i0eventHandler)(void))
+{
+	INT0_eventHandler = i0eventHandler;
+ 290:	90 93 93 00 	sts	0x0093, r25
+ 294:	80 93 92 00 	sts	0x0092, r24
+}
+ 298:	08 95       	ret
+
+0000029a <__vector_1>:
+
+/**
+ * External Interrupt 0 ISR
+ */
+ISR (INT0_vect)
+{
+ 29a:	1f 92       	push	r1
+ 29c:	0f 92       	push	r0
+ 29e:	0f b6       	in	r0, 0x3f	; 63
+ 2a0:	0f 92       	push	r0
+ 2a2:	11 24       	eor	r1, r1
+ 2a4:	2f 93       	push	r18
+ 2a6:	3f 93       	push	r19
+ 2a8:	4f 93       	push	r20
+ 2aa:	5f 93       	push	r21
+ 2ac:	6f 93       	push	r22
+ 2ae:	7f 93       	push	r23
+ 2b0:	8f 93       	push	r24
+ 2b2:	9f 93       	push	r25
+ 2b4:	af 93       	push	r26
+ 2b6:	bf 93       	push	r27
+ 2b8:	ef 93       	push	r30
+ 2ba:	ff 93       	push	r31
+	INT0_eventHandler();
+ 2bc:	e0 91 92 00 	lds	r30, 0x0092
+ 2c0:	f0 91 93 00 	lds	r31, 0x0093
+ 2c4:	09 95       	icall
+}
+ 2c6:	ff 91       	pop	r31
+ 2c8:	ef 91       	pop	r30
+ 2ca:	bf 91       	pop	r27
+ 2cc:	af 91       	pop	r26
+ 2ce:	9f 91       	pop	r25
+ 2d0:	8f 91       	pop	r24
+ 2d2:	7f 91       	pop	r23
+ 2d4:	6f 91       	pop	r22
+ 2d6:	5f 91       	pop	r21
+ 2d8:	4f 91       	pop	r20
+ 2da:	3f 91       	pop	r19
+ 2dc:	2f 91       	pop	r18
+ 2de:	0f 90       	pop	r0
+ 2e0:	0f be       	out	0x3f, r0	; 63
+ 2e2:	0f 90       	pop	r0
+ 2e4:	1f 90       	pop	r1
+ 2e6:	18 95       	reti
+
+000002e8 <INT1_event_DUMMY>:
+
+void INT1_event_DUMMY(void){}
+ 2e8:	08 95       	ret
+
+000002ea <INT1_setEventHandler>:
+static void (*INT1_eventHandler)(void) = INT1_event_DUMMY;
+void INT1_setEventHandler(void (*i1eventHandler)(void))
+{
+	INT1_eventHandler = i1eventHandler;
+ 2ea:	90 93 91 00 	sts	0x0091, r25
+ 2ee:	80 93 90 00 	sts	0x0090, r24
+}
+ 2f2:	08 95       	ret
+
+000002f4 <__vector_2>:
+
+/**
+ * External Interrupt 1 ISR
+ */
+ISR (INT1_vect)
+{
+ 2f4:	1f 92       	push	r1
+ 2f6:	0f 92       	push	r0
+ 2f8:	0f b6       	in	r0, 0x3f	; 63
+ 2fa:	0f 92       	push	r0
+ 2fc:	11 24       	eor	r1, r1
+ 2fe:	2f 93       	push	r18
+ 300:	3f 93       	push	r19
+ 302:	4f 93       	push	r20
+ 304:	5f 93       	push	r21
+ 306:	6f 93       	push	r22
+ 308:	7f 93       	push	r23
+ 30a:	8f 93       	push	r24
+ 30c:	9f 93       	push	r25
+ 30e:	af 93       	push	r26
+ 310:	bf 93       	push	r27
+ 312:	ef 93       	push	r30
+ 314:	ff 93       	push	r31
+	INT1_eventHandler();
+ 316:	e0 91 90 00 	lds	r30, 0x0090
+ 31a:	f0 91 91 00 	lds	r31, 0x0091
+ 31e:	09 95       	icall
+}
+ 320:	ff 91       	pop	r31
+ 322:	ef 91       	pop	r30
+ 324:	bf 91       	pop	r27
+ 326:	af 91       	pop	r26
+ 328:	9f 91       	pop	r25
+ 32a:	8f 91       	pop	r24
+ 32c:	7f 91       	pop	r23
+ 32e:	6f 91       	pop	r22
+ 330:	5f 91       	pop	r21
+ 332:	4f 91       	pop	r20
+ 334:	3f 91       	pop	r19
+ 336:	2f 91       	pop	r18
+ 338:	0f 90       	pop	r0
+ 33a:	0f be       	out	0x3f, r0	; 63
+ 33c:	0f 90       	pop	r0
+ 33e:	1f 90       	pop	r1
+ 340:	18 95       	reti
+
+00000342 <INT2_event_DUMMY>:
+
+void INT2_event_DUMMY(void){}
+ 342:	08 95       	ret
+
+00000344 <INT2_setEventHandler>:
+static void (*INT2_eventHandler)(void) = INT2_event_DUMMY;
+void INT2_setEventHandler(void (*i2eventHandler)(void))
+{
+	INT2_eventHandler = i2eventHandler;
+ 344:	90 93 8f 00 	sts	0x008F, r25
+ 348:	80 93 8e 00 	sts	0x008E, r24
+}
+ 34c:	08 95       	ret
+
+0000034e <__vector_3>:
+
+/**
+ * External Interrupt 2 ISR
+ */
+ISR (INT2_vect)
+{
+ 34e:	1f 92       	push	r1
+ 350:	0f 92       	push	r0
+ 352:	0f b6       	in	r0, 0x3f	; 63
+ 354:	0f 92       	push	r0
+ 356:	11 24       	eor	r1, r1
+ 358:	2f 93       	push	r18
+ 35a:	3f 93       	push	r19
+ 35c:	4f 93       	push	r20
+ 35e:	5f 93       	push	r21
+ 360:	6f 93       	push	r22
+ 362:	7f 93       	push	r23
+ 364:	8f 93       	push	r24
+ 366:	9f 93       	push	r25
+ 368:	af 93       	push	r26
+ 36a:	bf 93       	push	r27
+ 36c:	ef 93       	push	r30
+ 36e:	ff 93       	push	r31
+	INT2_eventHandler();
+ 370:	e0 91 8e 00 	lds	r30, 0x008E
+ 374:	f0 91 8f 00 	lds	r31, 0x008F
+ 378:	09 95       	icall
+}
+ 37a:	ff 91       	pop	r31
+ 37c:	ef 91       	pop	r30
+ 37e:	bf 91       	pop	r27
+ 380:	af 91       	pop	r26
+ 382:	9f 91       	pop	r25
+ 384:	8f 91       	pop	r24
+ 386:	7f 91       	pop	r23
+ 388:	6f 91       	pop	r22
+ 38a:	5f 91       	pop	r21
+ 38c:	4f 91       	pop	r20
+ 38e:	3f 91       	pop	r19
+ 390:	2f 91       	pop	r18
+ 392:	0f 90       	pop	r0
+ 394:	0f be       	out	0x3f, r0	; 63
+ 396:	0f 90       	pop	r0
+ 398:	1f 90       	pop	r1
+ 39a:	18 95       	reti
+
+0000039c <readADC>:
+ * is complete. 
+ *
+ */
+uint16_t readADC(uint8_t channel)
+{
+	if((ADCSRA & (1<<ADSC))) return 0; // check if ADC is buisy...
+ 39c:	36 9b       	sbis	0x06, 6	; 6
+ 39e:	03 c0       	rjmp	.+6      	; 0x3a6 <readADC+0xa>
+ 3a0:	20 e0       	ldi	r18, 0x00	; 0
+ 3a2:	30 e0       	ldi	r19, 0x00	; 0
+ 3a4:	09 c0       	rjmp	.+18     	; 0x3b8 <readADC+0x1c>
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+ 3a6:	80 64       	ori	r24, 0x40	; 64
+ 3a8:	87 b9       	out	0x07, r24	; 7
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+ 3aa:	86 ed       	ldi	r24, 0xD6	; 214
+ 3ac:	86 b9       	out	0x06, r24	; 6
+	while ((ADCSRA & (1<<ADSC))); 
+ 3ae:	36 99       	sbic	0x06, 6	; 6
+ 3b0:	fe cf       	rjmp	.-4      	; 0x3ae <readADC+0x12>
+	ADCSRA |= (1<<ADIF);
+ 3b2:	34 9a       	sbi	0x06, 4	; 6
+	return ADC;
+ 3b4:	24 b1       	in	r18, 0x04	; 4
+ 3b6:	35 b1       	in	r19, 0x05	; 5
+}
+ 3b8:	c9 01       	movw	r24, r18
+ 3ba:	08 95       	ret
+
+000003bc <writeSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3bc:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3be:	77 9b       	sbis	0x0e, 7	; 14
+ 3c0:	fe cf       	rjmp	.-4      	; 0x3be <writeSPI+0x2>
+}
+ 3c2:	08 95       	ret
+
+000003c4 <readSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3c4:	8f ef       	ldi	r24, 0xFF	; 255
+ 3c6:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3c8:	77 9b       	sbis	0x0e, 7	; 14
+ 3ca:	fe cf       	rjmp	.-4      	; 0x3c8 <readSPI+0x4>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+ 3cc:	8f b1       	in	r24, 0x0f	; 15
+}
+ 3ce:	08 95       	ret
+
+000003d0 <readWordSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3d0:	8f ef       	ldi	r24, 0xFF	; 255
+ 3d2:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3d4:	77 9b       	sbis	0x0e, 7	; 14
+ 3d6:	fe cf       	rjmp	.-4      	; 0x3d4 <readWordSPI+0x4>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+ 3d8:	3f b1       	in	r19, 0x0f	; 15
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3da:	8f ef       	ldi	r24, 0xFF	; 255
+ 3dc:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3de:	77 9b       	sbis	0x0e, 7	; 14
+ 3e0:	fe cf       	rjmp	.-4      	; 0x3de <readWordSPI+0xe>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+ 3e2:	2f b1       	in	r18, 0x0f	; 15
+ * a 16 Bit value with first byte read in the upper 8 bits.
+ */
+uint16_t readWordSPI(void)
+{
+	uint16_t data = 0;
+	data = readSPI() << 8;
+ 3e4:	93 2f       	mov	r25, r19
+ 3e6:	80 e0       	ldi	r24, 0x00	; 0
+ 3e8:	30 e0       	ldi	r19, 0x00	; 0
+ 3ea:	28 2b       	or	r18, r24
+ 3ec:	39 2b       	or	r19, r25
+	data |= readSPI();
+	return data;
+}
+ 3ee:	c9 01       	movw	r24, r18
+ 3f0:	08 95       	ret
+
+000003f2 <writeWordSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3f2:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3f4:	77 9b       	sbis	0x0e, 7	; 14
+ 3f6:	fe cf       	rjmp	.-4      	; 0x3f4 <writeWordSPI+0x2>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 3f8:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 3fa:	77 9b       	sbis	0x0e, 7	; 14
+ 3fc:	fe cf       	rjmp	.-4      	; 0x3fa <writeWordSPI+0x8>
+ */
+void writeWordSPI(uint16_t data)
+{
+	writeSPI((uint8_t)(data >> 8));
+	writeSPI((uint8_t)data);
+}
+ 3fe:	08 95       	ret
+
+00000400 <writeBufferSPI>:
+ * This function writes up to 255 Bytes to the SPI Interface.
+ * The numer of bytes in the Buffer that shall be written is given 
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+ 400:	fc 01       	movw	r30, r24
+ 402:	90 e0       	ldi	r25, 0x00	; 0
+ 404:	06 c0       	rjmp	.+12     	; 0x412 <writeBufferSPI+0x12>
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = buffer[i];    
+ 406:	80 81       	ld	r24, Z
+ 408:	8f b9       	out	0x0f, r24	; 15
+		while(!(SPSR & (1<<SPIF)));
+ 40a:	77 9b       	sbis	0x0e, 7	; 14
+ 40c:	fe cf       	rjmp	.-4      	; 0x40a <writeBufferSPI+0xa>
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+ 40e:	9f 5f       	subi	r25, 0xFF	; 255
+ 410:	31 96       	adiw	r30, 0x01	; 1
+ 412:	96 17       	cp	r25, r22
+ 414:	c0 f3       	brcs	.-16     	; 0x406 <writeBufferSPI+0x6>
+		SPDR = buffer[i];    
+		while(!(SPSR & (1<<SPIF)));
+	}
+}
+ 416:	08 95       	ret
+
+00000418 <readBufferSPI>:
+
+/** 
+ * Reads "length" Bytes from SPI Interface into the buffer.
+ */
+void readBufferSPI(uint8_t *buffer, uint8_t length)
+{
+ 418:	fc 01       	movw	r30, r24
+ 41a:	90 e0       	ldi	r25, 0x00	; 0
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = 0xFF;    
+ 41c:	2f ef       	ldi	r18, 0xFF	; 255
+ 41e:	06 c0       	rjmp	.+12     	; 0x42c <readBufferSPI+0x14>
+ 420:	2f b9       	out	0x0f, r18	; 15
+		while(!(SPSR & (1<<SPIF)));
+ 422:	77 9b       	sbis	0x0e, 7	; 14
+ 424:	fe cf       	rjmp	.-4      	; 0x422 <readBufferSPI+0xa>
+		buffer[i] = SPDR;
+ 426:	8f b1       	in	r24, 0x0f	; 15
+ 428:	81 93       	st	Z+, r24
+ * Reads "length" Bytes from SPI Interface into the buffer.
+ */
+void readBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+ 42a:	9f 5f       	subi	r25, 0xFF	; 255
+ 42c:	96 17       	cp	r25, r22
+ 42e:	c0 f3       	brcs	.-16     	; 0x420 <readBufferSPI+0x8>
+		SPDR = 0xFF;    
+		while(!(SPSR & (1<<SPIF)));
+		buffer[i] = SPDR;
+	}
+}
+ 430:	08 95       	ret
+
+00000432 <SPI_EEPROM_readByte>:
+
+/**
+ * Reads a single Byte from the external EEPROM.
+ */
+uint8_t SPI_EEPROM_readByte(uint16_t memAddr)
+{
+ 432:	9c 01       	movw	r18, r24
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+ 434:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 436:	83 e0       	ldi	r24, 0x03	; 3
+ 438:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 43a:	77 9b       	sbis	0x0e, 7	; 14
+ 43c:	fe cf       	rjmp	.-4      	; 0x43a <SPI_EEPROM_readByte+0x8>
+uint8_t SPI_EEPROM_readByte(uint16_t memAddr)
+{
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(memAddr);
+ 43e:	c9 01       	movw	r24, r18
+ 440:	0e 94 f9 01 	call	0x3f2	; 0x3f2 <writeWordSPI>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 444:	8f ef       	ldi	r24, 0xFF	; 255
+ 446:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 448:	77 9b       	sbis	0x0e, 7	; 14
+ 44a:	fe cf       	rjmp	.-4      	; 0x448 <SPI_EEPROM_readByte+0x16>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+ 44c:	8f b1       	in	r24, 0x0f	; 15
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(memAddr);
+	data = readSPI();
+	PORTB |= MEM_CS;
+ 44e:	c0 9a       	sbi	0x18, 0	; 24
+	return data;
+}
+ 450:	08 95       	ret
+
+00000452 <SPI_EEPROM_readBytes>:
+ * Reads "length" Bytes into the Buffer "buffer" from startAdr on. 
+ * You can read the complete EEPROM into a buffer at once - if it is large enough. 
+ * (But you only have 2KB SRAM on a MEGA32 ;) )
+ */
+void SPI_EEPROM_readBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+ 452:	1f 93       	push	r17
+ 454:	cf 93       	push	r28
+ 456:	df 93       	push	r29
+ 458:	9c 01       	movw	r18, r24
+ 45a:	eb 01       	movw	r28, r22
+ 45c:	14 2f       	mov	r17, r20
+	PORTB &= ~MEM_CS;
+ 45e:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 460:	83 e0       	ldi	r24, 0x03	; 3
+ 462:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 464:	77 9b       	sbis	0x0e, 7	; 14
+ 466:	fe cf       	rjmp	.-4      	; 0x464 <SPI_EEPROM_readBytes+0x12>
+ */
+void SPI_EEPROM_readBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(startAddr);
+ 468:	c9 01       	movw	r24, r18
+ 46a:	0e 94 f9 01 	call	0x3f2	; 0x3f2 <writeWordSPI>
+	readBufferSPI(&buffer[0], length);
+ 46e:	ce 01       	movw	r24, r28
+ 470:	61 2f       	mov	r22, r17
+ 472:	0e 94 0c 02 	call	0x418	; 0x418 <readBufferSPI>
+	PORTB |= MEM_CS;
+ 476:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 478:	df 91       	pop	r29
+ 47a:	cf 91       	pop	r28
+ 47c:	1f 91       	pop	r17
+ 47e:	08 95       	ret
+
+00000480 <SPI_EEPROM_enableWrite>:
+/**
+ * Enable Write Mode
+ */
+void SPI_EEPROM_enableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+ 480:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 482:	86 e0       	ldi	r24, 0x06	; 6
+ 484:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 486:	77 9b       	sbis	0x0e, 7	; 14
+ 488:	fe cf       	rjmp	.-4      	; 0x486 <SPI_EEPROM_enableWrite+0x6>
+ */
+void SPI_EEPROM_enableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WREN);
+	PORTB |= MEM_CS;
+ 48a:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 48c:	08 95       	ret
+
+0000048e <SPI_EEPROM_disableWrite>:
+/**
+ * Disable Write Mode
+ */
+void SPI_EEPROM_disableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+ 48e:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 490:	84 e0       	ldi	r24, 0x04	; 4
+ 492:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 494:	77 9b       	sbis	0x0e, 7	; 14
+ 496:	fe cf       	rjmp	.-4      	; 0x494 <SPI_EEPROM_disableWrite+0x6>
+ */
+void SPI_EEPROM_disableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRDI);
+	PORTB |= MEM_CS;
+ 498:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 49a:	08 95       	ret
+
+0000049c <SPI_EEPROM_getStatus>:
+ * Writing takes about 5ms. 
+ */
+uint8_t SPI_EEPROM_getStatus(void)
+{
+	uint8_t status;
+	PORTB &= ~MEM_CS;
+ 49c:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 49e:	85 e0       	ldi	r24, 0x05	; 5
+ 4a0:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 4a2:	77 9b       	sbis	0x0e, 7	; 14
+ 4a4:	fe cf       	rjmp	.-4      	; 0x4a2 <SPI_EEPROM_getStatus+0x6>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 4a6:	8f ef       	ldi	r24, 0xFF	; 255
+ 4a8:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 4aa:	77 9b       	sbis	0x0e, 7	; 14
+ 4ac:	fe cf       	rjmp	.-4      	; 0x4aa <SPI_EEPROM_getStatus+0xe>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+ 4ae:	8f b1       	in	r24, 0x0f	; 15
+{
+	uint8_t status;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_RDSR);
+	status = readSPI();
+	PORTB |= MEM_CS;
+ 4b0:	c0 9a       	sbi	0x18, 0	; 24
+	return status;
+}
+ 4b2:	08 95       	ret
+
+000004b4 <SPI_EEPROM_writeBytes>:
+ * instead only up to 63 and then it continues at Byte 0 and writes 
+ * the rest up to Byte 10!
+ *
+ */
+void SPI_EEPROM_writeBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+ 4b4:	ff 92       	push	r15
+ 4b6:	0f 93       	push	r16
+ 4b8:	1f 93       	push	r17
+ 4ba:	cf 93       	push	r28
+ 4bc:	df 93       	push	r29
+ 4be:	ec 01       	movw	r28, r24
+ 4c0:	16 2f       	mov	r17, r22
+ 4c2:	07 2f       	mov	r16, r23
+ 4c4:	f4 2e       	mov	r15, r20
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+ 4c6:	0e 94 4e 02 	call	0x49c	; 0x49c <SPI_EEPROM_getStatus>
+ 4ca:	80 fd       	sbrc	r24, 0
+ 4cc:	fc cf       	rjmp	.-8      	; 0x4c6 <SPI_EEPROM_writeBytes+0x12>
+	SPI_EEPROM_enableWrite();
+ 4ce:	0e 94 40 02 	call	0x480	; 0x480 <SPI_EEPROM_enableWrite>
+	PORTB &= ~MEM_CS;
+ 4d2:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 4d4:	82 e0       	ldi	r24, 0x02	; 2
+ 4d6:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 4d8:	77 9b       	sbis	0x0e, 7	; 14
+ 4da:	fe cf       	rjmp	.-4      	; 0x4d8 <SPI_EEPROM_writeBytes+0x24>
+{
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(startAddr);
+ 4dc:	ce 01       	movw	r24, r28
+ 4de:	0e 94 f9 01 	call	0x3f2	; 0x3f2 <writeWordSPI>
+ 4e2:	81 2f       	mov	r24, r17
+ 4e4:	90 2f       	mov	r25, r16
+ 4e6:	9c 01       	movw	r18, r24
+ 4e8:	f9 01       	movw	r30, r18
+ 4ea:	90 e0       	ldi	r25, 0x00	; 0
+ 4ec:	06 c0       	rjmp	.+12     	; 0x4fa <SPI_EEPROM_writeBytes+0x46>
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = buffer[i];    
+ 4ee:	80 81       	ld	r24, Z
+ 4f0:	8f b9       	out	0x0f, r24	; 15
+		while(!(SPSR & (1<<SPIF)));
+ 4f2:	77 9b       	sbis	0x0e, 7	; 14
+ 4f4:	fe cf       	rjmp	.-4      	; 0x4f2 <SPI_EEPROM_writeBytes+0x3e>
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+ 4f6:	9f 5f       	subi	r25, 0xFF	; 255
+ 4f8:	31 96       	adiw	r30, 0x01	; 1
+ 4fa:	9f 15       	cp	r25, r15
+ 4fc:	c0 f3       	brcs	.-16     	; 0x4ee <SPI_EEPROM_writeBytes+0x3a>
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(startAddr);
+	writeBufferSPI(&buffer[0], length);
+	PORTB |= MEM_CS;
+ 4fe:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 500:	df 91       	pop	r29
+ 502:	cf 91       	pop	r28
+ 504:	1f 91       	pop	r17
+ 506:	0f 91       	pop	r16
+ 508:	ff 90       	pop	r15
+ 50a:	08 95       	ret
+
+0000050c <SPI_EEPROM_writeByte>:
+
+/**
+ * Write a single data byte to the specified EEPROM address.
+ */
+void SPI_EEPROM_writeByte(uint16_t memAddr, uint8_t data)
+{
+ 50c:	1f 93       	push	r17
+ 50e:	cf 93       	push	r28
+ 510:	df 93       	push	r29
+ 512:	ec 01       	movw	r28, r24
+ 514:	16 2f       	mov	r17, r22
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+ 516:	0e 94 4e 02 	call	0x49c	; 0x49c <SPI_EEPROM_getStatus>
+ 51a:	80 fd       	sbrc	r24, 0
+ 51c:	fc cf       	rjmp	.-8      	; 0x516 <SPI_EEPROM_writeByte+0xa>
+	SPI_EEPROM_enableWrite();
+ 51e:	0e 94 40 02 	call	0x480	; 0x480 <SPI_EEPROM_enableWrite>
+	PORTB &= ~MEM_CS;
+ 522:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 524:	82 e0       	ldi	r24, 0x02	; 2
+ 526:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 528:	77 9b       	sbis	0x0e, 7	; 14
+ 52a:	fe cf       	rjmp	.-4      	; 0x528 <SPI_EEPROM_writeByte+0x1c>
+{
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(memAddr);
+ 52c:	ce 01       	movw	r24, r28
+ 52e:	0e 94 f9 01 	call	0x3f2	; 0x3f2 <writeWordSPI>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 532:	1f b9       	out	0x0f, r17	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 534:	77 9b       	sbis	0x0e, 7	; 14
+ 536:	fe cf       	rjmp	.-4      	; 0x534 <SPI_EEPROM_writeByte+0x28>
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(memAddr);
+	writeSPI(data);
+	PORTB |= MEM_CS;
+ 538:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 53a:	df 91       	pop	r29
+ 53c:	cf 91       	pop	r28
+ 53e:	1f 91       	pop	r17
+ 540:	08 95       	ret
+
+00000542 <outputExt>:
+ * in 4 or 8bit mode - we use 4bit mode to save portpins) 
+ *
+ */
+void outputExt(void)
+{      
+  writeSPI(externalPort.byte);   
+ 542:	80 91 c1 00 	lds	r24, 0x00C1
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+ 546:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 548:	77 9b       	sbis	0x0e, 7	; 14
+ 54a:	fe cf       	rjmp	.-4      	; 0x548 <outputExt+0x6>
+ *
+ */
+void outputExt(void)
+{      
+  writeSPI(externalPort.byte);   
+  PORTD |= STR;
+ 54c:	94 9a       	sbi	0x12, 4	; 18
+  nop();
+ 54e:	00 00       	nop
+  nop();
+ 550:	00 00       	nop
+  PORTD &= ~STR;        
+ 552:	94 98       	cbi	0x12, 4	; 18
+}
+ 554:	08 95       	ret
+
+00000556 <setLEDs>:
+ * are connected to the LCD! 
+ *
+ */
+void setLEDs(uint8_t leds)
+{
+	externalPort.LEDS = leds;
+ 556:	8f 70       	andi	r24, 0x0F	; 15
+ 558:	90 91 c1 00 	lds	r25, 0x00C1
+ 55c:	90 7f       	andi	r25, 0xF0	; 240
+ 55e:	98 2b       	or	r25, r24
+ 560:	90 93 c1 00 	sts	0x00C1, r25
+	outputExt();
+ 564:	0e 94 a1 02 	call	0x542	; 0x542 <outputExt>
+}
+ 568:	08 95       	ret
+
+0000056a <setLCDD>:
+ * enable line of the LCD to 'inform' the LCD about the new data.
+ *
+ */
+void setLCDD(uint8_t lcdd)
+{
+	externalPort.LCDD = lcdd;
+ 56a:	82 95       	swap	r24
+ 56c:	80 7f       	andi	r24, 0xF0	; 240
+ 56e:	90 91 c1 00 	lds	r25, 0x00C1
+ 572:	9f 70       	andi	r25, 0x0F	; 15
+ 574:	98 2b       	or	r25, r24
+ 576:	90 93 c1 00 	sts	0x00C1, r25
+	outputExt();
+ 57a:	0e 94 a1 02 	call	0x542	; 0x542 <outputExt>
+	PORTB |= LCD_EN;
+ 57e:	c4 9a       	sbi	0x18, 4	; 24
+ 580:	82 e3       	ldi	r24, 0x32	; 50
+ 582:	90 e0       	ldi	r25, 0x00	; 0
+ 584:	01 c0       	rjmp	.+2      	; 0x588 <setLCDD+0x1e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 586:	00 00       	nop
+ 588:	01 97       	sbiw	r24, 0x01	; 1
+ 58a:	2f ef       	ldi	r18, 0xFF	; 255
+ 58c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 58e:	92 07       	cpc	r25, r18
+ 590:	d1 f7       	brne	.-12     	; 0x586 <setLCDD+0x1c>
+{
+	externalPort.LCDD = lcdd;
+	outputExt();
+	PORTB |= LCD_EN;
+	delayCycles(50);
+	PORTB &= ~LCD_EN;
+ 592:	c4 98       	cbi	0x18, 4	; 24
+}
+ 594:	08 95       	ret
+
+00000596 <write4BitLCDData>:
+
+/**
+ * Write a 8bit-byte in two nibbles of 4bit to the LCD.
+ */
+void write4BitLCDData(uint8_t data)
+{
+ 596:	1f 93       	push	r17
+ 598:	18 2f       	mov	r17, r24
+	setLCDD(data >> 4);
+ 59a:	82 95       	swap	r24
+ 59c:	8f 70       	andi	r24, 0x0F	; 15
+ 59e:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+	setLCDD(data);
+ 5a2:	81 2f       	mov	r24, r17
+ 5a4:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+ 5a8:	86 e9       	ldi	r24, 0x96	; 150
+ 5aa:	90 e0       	ldi	r25, 0x00	; 0
+ 5ac:	01 c0       	rjmp	.+2      	; 0x5b0 <write4BitLCDData+0x1a>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 5ae:	00 00       	nop
+ 5b0:	01 97       	sbiw	r24, 0x01	; 1
+ 5b2:	2f ef       	ldi	r18, 0xFF	; 255
+ 5b4:	8f 3f       	cpi	r24, 0xFF	; 255
+ 5b6:	92 07       	cpc	r25, r18
+ 5b8:	d1 f7       	brne	.-12     	; 0x5ae <write4BitLCDData+0x18>
+void write4BitLCDData(uint8_t data)
+{
+	setLCDD(data >> 4);
+	setLCDD(data);
+	delayCycles(150);
+}
+ 5ba:	1f 91       	pop	r17
+ 5bc:	08 95       	ret
+
+000005be <writeLCDCommand>:
+/**
+ * Write a command to the LCD.
+ */
+void writeLCDCommand(uint8_t cmd)
+{
+	PORTB &= ~LCD_RS;
+ 5be:	c3 98       	cbi	0x18, 3	; 24
+	write4BitLCDData(cmd);
+ 5c0:	0e 94 cb 02 	call	0x596	; 0x596 <write4BitLCDData>
+ 5c4:	86 e9       	ldi	r24, 0x96	; 150
+ 5c6:	90 e0       	ldi	r25, 0x00	; 0
+ 5c8:	01 c0       	rjmp	.+2      	; 0x5cc <writeLCDCommand+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 5ca:	00 00       	nop
+ 5cc:	01 97       	sbiw	r24, 0x01	; 1
+ 5ce:	2f ef       	ldi	r18, 0xFF	; 255
+ 5d0:	8f 3f       	cpi	r24, 0xFF	; 255
+ 5d2:	92 07       	cpc	r25, r18
+ 5d4:	d1 f7       	brne	.-12     	; 0x5ca <writeLCDCommand+0xc>
+void writeLCDCommand(uint8_t cmd)
+{
+	PORTB &= ~LCD_RS;
+	write4BitLCDData(cmd);
+	delayCycles(150);
+}
+ 5d6:	08 95       	ret
+
+000005d8 <initLCD>:
+ */
+void initLCD(void)
+{
+	//delayCycles(34000); No need for Power ON delay as usually the
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+ 5d8:	83 e0       	ldi	r24, 0x03	; 3
+ 5da:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+ 5de:	80 e5       	ldi	r24, 0x50	; 80
+ 5e0:	96 e4       	ldi	r25, 0x46	; 70
+ 5e2:	01 c0       	rjmp	.+2      	; 0x5e6 <initLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 5e4:	00 00       	nop
+ 5e6:	01 97       	sbiw	r24, 0x01	; 1
+ 5e8:	2f ef       	ldi	r18, 0xFF	; 255
+ 5ea:	8f 3f       	cpi	r24, 0xFF	; 255
+ 5ec:	92 07       	cpc	r25, r18
+ 5ee:	d1 f7       	brne	.-12     	; 0x5e4 <initLCD+0xc>
+{
+	//delayCycles(34000); No need for Power ON delay as usually the
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+	delayCycles(18000);
+	setLCDD(0b0011);
+ 5f0:	83 e0       	ldi	r24, 0x03	; 3
+ 5f2:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+ 5f6:	8c e7       	ldi	r24, 0x7C	; 124
+ 5f8:	95 e1       	ldi	r25, 0x15	; 21
+ 5fa:	01 c0       	rjmp	.+2      	; 0x5fe <initLCD+0x26>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 5fc:	00 00       	nop
+ 5fe:	01 97       	sbiw	r24, 0x01	; 1
+ 600:	2f ef       	ldi	r18, 0xFF	; 255
+ 602:	8f 3f       	cpi	r24, 0xFF	; 255
+ 604:	92 07       	cpc	r25, r18
+ 606:	d1 f7       	brne	.-12     	; 0x5fc <initLCD+0x24>
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+	delayCycles(18000);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0011);
+ 608:	83 e0       	ldi	r24, 0x03	; 3
+ 60a:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+ 60e:	8c e7       	ldi	r24, 0x7C	; 124
+ 610:	95 e1       	ldi	r25, 0x15	; 21
+ 612:	01 c0       	rjmp	.+2      	; 0x616 <initLCD+0x3e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 614:	00 00       	nop
+ 616:	01 97       	sbiw	r24, 0x01	; 1
+ 618:	2f ef       	ldi	r18, 0xFF	; 255
+ 61a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 61c:	92 07       	cpc	r25, r18
+ 61e:	d1 f7       	brne	.-12     	; 0x614 <initLCD+0x3c>
+	delayCycles(18000);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0010);
+ 620:	82 e0       	ldi	r24, 0x02	; 2
+ 622:	0e 94 b5 02 	call	0x56a	; 0x56a <setLCDD>
+ 626:	8c e7       	ldi	r24, 0x7C	; 124
+ 628:	95 e1       	ldi	r25, 0x15	; 21
+ 62a:	01 c0       	rjmp	.+2      	; 0x62e <initLCD+0x56>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 62c:	00 00       	nop
+ 62e:	01 97       	sbiw	r24, 0x01	; 1
+ 630:	2f ef       	ldi	r18, 0xFF	; 255
+ 632:	8f 3f       	cpi	r24, 0xFF	; 255
+ 634:	92 07       	cpc	r25, r18
+ 636:	d1 f7       	brne	.-12     	; 0x62c <initLCD+0x54>
+	delayCycles(5500);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0010);
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+ 638:	88 e2       	ldi	r24, 0x28	; 40
+ 63a:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 63e:	8c e7       	ldi	r24, 0x7C	; 124
+ 640:	95 e1       	ldi	r25, 0x15	; 21
+ 642:	01 c0       	rjmp	.+2      	; 0x646 <initLCD+0x6e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 644:	00 00       	nop
+ 646:	01 97       	sbiw	r24, 0x01	; 1
+ 648:	2f ef       	ldi	r18, 0xFF	; 255
+ 64a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 64c:	92 07       	cpc	r25, r18
+ 64e:	d1 f7       	brne	.-12     	; 0x644 <initLCD+0x6c>
+	delayCycles(5500);
+	setLCDD(0b0010);
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+ 650:	88 e0       	ldi	r24, 0x08	; 8
+ 652:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 656:	8c e7       	ldi	r24, 0x7C	; 124
+ 658:	95 e1       	ldi	r25, 0x15	; 21
+ 65a:	01 c0       	rjmp	.+2      	; 0x65e <initLCD+0x86>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 65c:	00 00       	nop
+ 65e:	01 97       	sbiw	r24, 0x01	; 1
+ 660:	2f ef       	ldi	r18, 0xFF	; 255
+ 662:	8f 3f       	cpi	r24, 0xFF	; 255
+ 664:	92 07       	cpc	r25, r18
+ 666:	d1 f7       	brne	.-12     	; 0x65c <initLCD+0x84>
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+ 668:	81 e0       	ldi	r24, 0x01	; 1
+ 66a:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 66e:	8c e7       	ldi	r24, 0x7C	; 124
+ 670:	95 e1       	ldi	r25, 0x15	; 21
+ 672:	01 c0       	rjmp	.+2      	; 0x676 <initLCD+0x9e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 674:	00 00       	nop
+ 676:	01 97       	sbiw	r24, 0x01	; 1
+ 678:	2f ef       	ldi	r18, 0xFF	; 255
+ 67a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 67c:	92 07       	cpc	r25, r18
+ 67e:	d1 f7       	brne	.-12     	; 0x674 <initLCD+0x9c>
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+ 680:	82 e0       	ldi	r24, 0x02	; 2
+ 682:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 686:	8c e7       	ldi	r24, 0x7C	; 124
+ 688:	95 e1       	ldi	r25, 0x15	; 21
+ 68a:	01 c0       	rjmp	.+2      	; 0x68e <initLCD+0xb6>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 68c:	00 00       	nop
+ 68e:	01 97       	sbiw	r24, 0x01	; 1
+ 690:	2f ef       	ldi	r18, 0xFF	; 255
+ 692:	8f 3f       	cpi	r24, 0xFF	; 255
+ 694:	92 07       	cpc	r25, r18
+ 696:	d1 f7       	brne	.-12     	; 0x68c <initLCD+0xb4>
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+	delayCycles(5500);
+	writeLCDCommand(0b00001100);
+ 698:	8c e0       	ldi	r24, 0x0C	; 12
+ 69a:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 69e:	8c e7       	ldi	r24, 0x7C	; 124
+ 6a0:	95 e1       	ldi	r25, 0x15	; 21
+ 6a2:	01 c0       	rjmp	.+2      	; 0x6a6 <initLCD+0xce>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 6a4:	00 00       	nop
+ 6a6:	01 97       	sbiw	r24, 0x01	; 1
+ 6a8:	2f ef       	ldi	r18, 0xFF	; 255
+ 6aa:	8f 3f       	cpi	r24, 0xFF	; 255
+ 6ac:	92 07       	cpc	r25, r18
+ 6ae:	d1 f7       	brne	.-12     	; 0x6a4 <initLCD+0xcc>
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+	delayCycles(5500);
+	writeLCDCommand(0b00001100);
+	delayCycles(5500);
+}
+ 6b0:	08 95       	ret
+
+000006b2 <clearLCD>:
+/**
+ * Clears the whole LCD!
+ */
+void clearLCD(void)
+{
+	writeLCDCommand(0b00000001);
+ 6b2:	81 e0       	ldi	r24, 0x01	; 1
+ 6b4:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+ 6b8:	8c e7       	ldi	r24, 0x7C	; 124
+ 6ba:	95 e1       	ldi	r25, 0x15	; 21
+ 6bc:	01 c0       	rjmp	.+2      	; 0x6c0 <clearLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 6be:	00 00       	nop
+ 6c0:	01 97       	sbiw	r24, 0x01	; 1
+ 6c2:	2f ef       	ldi	r18, 0xFF	; 255
+ 6c4:	8f 3f       	cpi	r24, 0xFF	; 255
+ 6c6:	92 07       	cpc	r25, r18
+ 6c8:	d1 f7       	brne	.-12     	; 0x6be <clearLCD+0xc>
+ */
+void clearLCD(void)
+{
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+}
+ 6ca:	08 95       	ret
+
+000006cc <writeCharLCD>:
+ *			use setCursorPos function to move the cursor to a 
+ *			different location!
+ */
+void writeCharLCD(uint8_t ch)
+{
+	PORTB |= LCD_RS;
+ 6cc:	c3 9a       	sbi	0x18, 3	; 24
+	write4BitLCDData(ch);
+ 6ce:	0e 94 cb 02 	call	0x596	; 0x596 <write4BitLCDData>
+ 6d2:	82 e3       	ldi	r24, 0x32	; 50
+ 6d4:	90 e0       	ldi	r25, 0x00	; 0
+ 6d6:	01 c0       	rjmp	.+2      	; 0x6da <writeCharLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+ 6d8:	00 00       	nop
+ 6da:	01 97       	sbiw	r24, 0x01	; 1
+ 6dc:	2f ef       	ldi	r18, 0xFF	; 255
+ 6de:	8f 3f       	cpi	r24, 0xFF	; 255
+ 6e0:	92 07       	cpc	r25, r18
+ 6e2:	d1 f7       	brne	.-12     	; 0x6d8 <writeCharLCD+0xc>
+void writeCharLCD(uint8_t ch)
+{
+	PORTB |= LCD_RS;
+	write4BitLCDData(ch);
+	delayCycles(50);
+}
+ 6e4:	08 95       	ret
+
+000006e6 <writeNStringLCD_P>:
+ *			// you can simply write:
+ *			writeStringLCD_P("RP6 Control");
+ *
+ */
+void writeNStringLCD_P(const char *pstring)
+{
+ 6e6:	cf 93       	push	r28
+ 6e8:	df 93       	push	r29
+ 6ea:	ec 01       	movw	r28, r24
+ 6ec:	02 c0       	rjmp	.+4      	; 0x6f2 <writeNStringLCD_P+0xc>
+    uint8_t c;
+    for (;(c = pgm_read_byte_near(pstring++));writeCharLCD(c));
+ 6ee:	0e 94 66 03 	call	0x6cc	; 0x6cc <writeCharLCD>
+ 6f2:	fe 01       	movw	r30, r28
+ 6f4:	21 96       	adiw	r28, 0x01	; 1
+ 6f6:	84 91       	lpm	r24, Z+
+ 6f8:	88 23       	and	r24, r24
+ 6fa:	c9 f7       	brne	.-14     	; 0x6ee <writeNStringLCD_P+0x8>
+}
+ 6fc:	df 91       	pop	r29
+ 6fe:	cf 91       	pop	r28
+ 700:	08 95       	ret
+
+00000702 <writeStringLCD>:
+
+/**
+ * Writes a String from SRAM to the LCD.
+ */
+void writeStringLCD(char *string)
+{
+ 702:	cf 93       	push	r28
+ 704:	df 93       	push	r29
+ 706:	ec 01       	movw	r28, r24
+ 708:	03 c0       	rjmp	.+6      	; 0x710 <writeStringLCD+0xe>
+	while(*string)
+		writeCharLCD(*string++);
+ 70a:	21 96       	adiw	r28, 0x01	; 1
+ 70c:	0e 94 66 03 	call	0x6cc	; 0x6cc <writeCharLCD>
+/**
+ * Writes a String from SRAM to the LCD.
+ */
+void writeStringLCD(char *string)
+{
+	while(*string)
+ 710:	88 81       	ld	r24, Y
+ 712:	88 23       	and	r24, r24
+ 714:	d1 f7       	brne	.-12     	; 0x70a <writeStringLCD+0x8>
+		writeCharLCD(*string++);
+}
+ 716:	df 91       	pop	r29
+ 718:	cf 91       	pop	r28
+ 71a:	08 95       	ret
+
+0000071c <writeStringLengthLCD>:
+ *			// would output: "Robot System"
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLengthLCD(char *string, uint8_t length, uint8_t offset)
+{
+ 71c:	1f 93       	push	r17
+ 71e:	cf 93       	push	r28
+ 720:	df 93       	push	r29
+ 722:	16 2f       	mov	r17, r22
+	for(string = &string[offset]; *string && length; length--)
+ 724:	ec 01       	movw	r28, r24
+ 726:	c4 0f       	add	r28, r20
+ 728:	d1 1d       	adc	r29, r1
+ 72a:	04 c0       	rjmp	.+8      	; 0x734 <writeStringLengthLCD+0x18>
+		writeCharLCD(*string++);
+ 72c:	21 96       	adiw	r28, 0x01	; 1
+ 72e:	0e 94 66 03 	call	0x6cc	; 0x6cc <writeCharLCD>
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLengthLCD(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+ 732:	11 50       	subi	r17, 0x01	; 1
+ 734:	88 81       	ld	r24, Y
+ 736:	88 23       	and	r24, r24
+ 738:	11 f0       	breq	.+4      	; 0x73e <writeStringLengthLCD+0x22>
+ 73a:	11 23       	and	r17, r17
+ 73c:	b9 f7       	brne	.-18     	; 0x72c <writeStringLengthLCD+0x10>
+		writeCharLCD(*string++);
+}
+ 73e:	df 91       	pop	r29
+ 740:	cf 91       	pop	r28
+ 742:	1f 91       	pop	r17
+ 744:	08 95       	ret
+
+00000746 <setCursorPosLCD>:
+/**
+ * Sets the cursor position on LCD.
+ */
+void setCursorPosLCD(uint8_t line, uint8_t pos)
+{
+	pos |= 128;
+ 746:	60 68       	ori	r22, 0x80	; 128
+	if(line==1) pos += 0x40;
+ 748:	81 30       	cpi	r24, 0x01	; 1
+ 74a:	09 f4       	brne	.+2      	; 0x74e <setCursorPosLCD+0x8>
+ 74c:	60 5c       	subi	r22, 0xC0	; 192
+	writeLCDCommand(pos);
+ 74e:	86 2f       	mov	r24, r22
+ 750:	0e 94 df 02 	call	0x5be	; 0x5be <writeLCDCommand>
+}
+ 754:	08 95       	ret
+
+00000756 <_showScreenLCD_P>:
+ * This function is useful for displaying text screens on the LCD.
+ * It clears the whole LCD and writes the two Strings to line 1 and
+ * line 2.
+ */
+void _showScreenLCD_P(const char *line1, const char *line2)
+{
+ 756:	ef 92       	push	r14
+ 758:	ff 92       	push	r15
+ 75a:	0f 93       	push	r16
+ 75c:	1f 93       	push	r17
+ 75e:	8c 01       	movw	r16, r24
+ 760:	7b 01       	movw	r14, r22
+	clearLCD();
+ 762:	0e 94 59 03 	call	0x6b2	; 0x6b2 <clearLCD>
+	writeNStringLCD_P(line1);
+ 766:	c8 01       	movw	r24, r16
+ 768:	0e 94 73 03 	call	0x6e6	; 0x6e6 <writeNStringLCD_P>
+	setCursorPosLCD(1, 0);
+ 76c:	81 e0       	ldi	r24, 0x01	; 1
+ 76e:	60 e0       	ldi	r22, 0x00	; 0
+ 770:	0e 94 a3 03 	call	0x746	; 0x746 <setCursorPosLCD>
+	writeNStringLCD_P(line2);
+ 774:	c7 01       	movw	r24, r14
+ 776:	0e 94 73 03 	call	0x6e6	; 0x6e6 <writeNStringLCD_P>
+}
+ 77a:	1f 91       	pop	r17
+ 77c:	0f 91       	pop	r16
+ 77e:	ff 90       	pop	r15
+ 780:	ef 90       	pop	r14
+ 782:	08 95       	ret
+
+00000784 <clearPosLCD>:
+
+/**
+ * Clears some characters after the given position.
+ */
+void clearPosLCD(uint8_t line, uint8_t pos, uint8_t length)
+{
+ 784:	1f 93       	push	r17
+ 786:	14 2f       	mov	r17, r20
+	setCursorPosLCD(line,pos);
+ 788:	0e 94 a3 03 	call	0x746	; 0x746 <setCursorPosLCD>
+ 78c:	04 c0       	rjmp	.+8      	; 0x796 <clearPosLCD+0x12>
+	while(length--)
+		writeCharLCD(' ');
+ 78e:	80 e2       	ldi	r24, 0x20	; 32
+ 790:	0e 94 66 03 	call	0x6cc	; 0x6cc <writeCharLCD>
+ 794:	11 50       	subi	r17, 0x01	; 1
+ * Clears some characters after the given position.
+ */
+void clearPosLCD(uint8_t line, uint8_t pos, uint8_t length)
+{
+	setCursorPosLCD(line,pos);
+	while(length--)
+ 796:	11 23       	and	r17, r17
+ 798:	d1 f7       	brne	.-12     	; 0x78e <clearPosLCD+0xa>
+		writeCharLCD(' ');
+}
+ 79a:	1f 91       	pop	r17
+ 79c:	08 95       	ret
+
+0000079e <getPressedKeyNumber>:
+ * Maybe you need to adjust these values because of variations
+ * in the resitors of the keypad!
+ *
+ */
+uint8_t getPressedKeyNumber(void)
+{
+ 79e:	cf 93       	push	r28
+ 7a0:	df 93       	push	r29
+	uint16_t keys;
+	keys = readADC(ADC_KEYPAD);
+ 7a2:	81 e0       	ldi	r24, 0x01	; 1
+ 7a4:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+ 7a8:	ec 01       	movw	r28, r24
+	if(keys < 1020) {
+ 7aa:	83 e0       	ldi	r24, 0x03	; 3
+ 7ac:	cc 3f       	cpi	r28, 0xFC	; 252
+ 7ae:	d8 07       	cpc	r29, r24
+ 7b0:	78 f4       	brcc	.+30     	; 0x7d0 <getPressedKeyNumber+0x32>
+		nop();
+ 7b2:	00 00       	nop
+		nop();
+ 7b4:	00 00       	nop
+		nop();
+ 7b6:	00 00       	nop
+		keys += readADC(ADC_KEYPAD);
+ 7b8:	81 e0       	ldi	r24, 0x01	; 1
+ 7ba:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+ 7be:	c8 0f       	add	r28, r24
+ 7c0:	d9 1f       	adc	r29, r25
+		keys >>= 1;
+ 7c2:	d6 95       	lsr	r29
+ 7c4:	c7 95       	ror	r28
+	}
+	if(keys < 50)
+ 7c6:	c2 33       	cpi	r28, 0x32	; 50
+ 7c8:	d1 05       	cpc	r29, r1
+ 7ca:	10 f4       	brcc	.+4      	; 0x7d0 <getPressedKeyNumber+0x32>
+ 7cc:	81 e0       	ldi	r24, 0x01	; 1
+ 7ce:	18 c0       	rjmp	.+48     	; 0x800 <getPressedKeyNumber+0x62>
+		return 1;
+	if(keys < 580)
+ 7d0:	82 e0       	ldi	r24, 0x02	; 2
+ 7d2:	c4 34       	cpi	r28, 0x44	; 68
+ 7d4:	d8 07       	cpc	r29, r24
+ 7d6:	10 f4       	brcc	.+4      	; 0x7dc <getPressedKeyNumber+0x3e>
+ 7d8:	82 e0       	ldi	r24, 0x02	; 2
+ 7da:	12 c0       	rjmp	.+36     	; 0x800 <getPressedKeyNumber+0x62>
+		return 2;
+	if(keys < 700)
+ 7dc:	82 e0       	ldi	r24, 0x02	; 2
+ 7de:	cc 3b       	cpi	r28, 0xBC	; 188
+ 7e0:	d8 07       	cpc	r29, r24
+ 7e2:	10 f4       	brcc	.+4      	; 0x7e8 <getPressedKeyNumber+0x4a>
+ 7e4:	83 e0       	ldi	r24, 0x03	; 3
+ 7e6:	0c c0       	rjmp	.+24     	; 0x800 <getPressedKeyNumber+0x62>
+		return 3;
+	if(keys < 790)
+ 7e8:	83 e0       	ldi	r24, 0x03	; 3
+ 7ea:	c6 31       	cpi	r28, 0x16	; 22
+ 7ec:	d8 07       	cpc	r29, r24
+ 7ee:	10 f4       	brcc	.+4      	; 0x7f4 <getPressedKeyNumber+0x56>
+ 7f0:	84 e0       	ldi	r24, 0x04	; 4
+ 7f2:	06 c0       	rjmp	.+12     	; 0x800 <getPressedKeyNumber+0x62>
+		return 4;
+	if(keys < 830)
+ 7f4:	ce 53       	subi	r28, 0x3E	; 62
+ 7f6:	d3 40       	sbci	r29, 0x03	; 3
+ 7f8:	10 f0       	brcs	.+4      	; 0x7fe <getPressedKeyNumber+0x60>
+ 7fa:	80 e0       	ldi	r24, 0x00	; 0
+ 7fc:	01 c0       	rjmp	.+2      	; 0x800 <getPressedKeyNumber+0x62>
+ 7fe:	85 e0       	ldi	r24, 0x05	; 5
+		return 5;
+	return 0;
+}
+ 800:	df 91       	pop	r29
+ 802:	cf 91       	pop	r28
+ 804:	08 95       	ret
+
+00000806 <checkPressedKeyEvent>:
+ * to be released again!
+ */
+uint8_t checkPressedKeyEvent(void)
+{
+	static uint8_t pressed_key = 0;
+	if(pressed_key) {
+ 806:	80 91 95 00 	lds	r24, 0x0095
+ 80a:	88 23       	and	r24, r24
+ 80c:	41 f0       	breq	.+16     	; 0x81e <checkPressedKeyEvent+0x18>
+		if(!getPressedKeyNumber()) 
+ 80e:	0e 94 cf 03 	call	0x79e	; 0x79e <getPressedKeyNumber>
+ 812:	88 23       	and	r24, r24
+ 814:	11 f4       	brne	.+4      	; 0x81a <checkPressedKeyEvent+0x14>
+			pressed_key = 0;
+ 816:	10 92 95 00 	sts	0x0095, r1
+ 81a:	80 e0       	ldi	r24, 0x00	; 0
+ 81c:	08 95       	ret
+	}
+	else {
+		pressed_key = getPressedKeyNumber();
+ 81e:	0e 94 cf 03 	call	0x79e	; 0x79e <getPressedKeyNumber>
+ 822:	80 93 95 00 	sts	0x0095, r24
+		if(pressed_key)
+			return pressed_key;
+	}
+	return 0;
+}
+ 826:	08 95       	ret
+
+00000828 <checkReleasedKeyEvent>:
+ * main loop. You don't need something like 
+ * "while(getPressedKeyNumber());" to wait for the button
+ * to be released again!
+ */
+uint8_t checkReleasedKeyEvent(void)
+{
+ 828:	1f 93       	push	r17
+	static uint8_t released_key = 0;
+	if(released_key) {
+ 82a:	10 91 94 00 	lds	r17, 0x0094
+ 82e:	11 23       	and	r17, r17
+ 830:	49 f0       	breq	.+18     	; 0x844 <checkReleasedKeyEvent+0x1c>
+		if(!getPressedKeyNumber()) {
+ 832:	0e 94 cf 03 	call	0x79e	; 0x79e <getPressedKeyNumber>
+ 836:	88 23       	and	r24, r24
+ 838:	11 f0       	breq	.+4      	; 0x83e <checkReleasedKeyEvent+0x16>
+ 83a:	10 e0       	ldi	r17, 0x00	; 0
+ 83c:	07 c0       	rjmp	.+14     	; 0x84c <checkReleasedKeyEvent+0x24>
+			uint8_t tmp = released_key;
+			released_key = 0;
+ 83e:	10 92 94 00 	sts	0x0094, r1
+ 842:	04 c0       	rjmp	.+8      	; 0x84c <checkReleasedKeyEvent+0x24>
+			return tmp;
+		}
+	}
+	else
+		released_key = getPressedKeyNumber();
+ 844:	0e 94 cf 03 	call	0x79e	; 0x79e <getPressedKeyNumber>
+ 848:	80 93 94 00 	sts	0x0094, r24
+	return 0;
+}
+ 84c:	81 2f       	mov	r24, r17
+ 84e:	1f 91       	pop	r17
+ 850:	08 95       	ret
+
+00000852 <dischargePeakDetector>:
+ * used for the Microphone. This is required to remove any previous
+ * charge from the capacitor. 
+ */
+void dischargePeakDetector(void)
+{
+	DDRA |= MIC;
+ 852:	d0 9a       	sbi	0x1a, 0	; 26
+	PORTA &= ~MIC;
+ 854:	d8 98       	cbi	0x1b, 0	; 27
+ 856:	21 e0       	ldi	r18, 0x01	; 1
+ 858:	30 e0       	ldi	r19, 0x00	; 0
+ 85a:	07 c0       	rjmp	.+14     	; 0x86a <__stack+0xb>
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+ 85c:	10 92 c2 00 	sts	0x00C2, r1
+	while (delay_timer <= time+1);
+ 860:	80 91 c2 00 	lds	r24, 0x00C2
+ 864:	90 e0       	ldi	r25, 0x00	; 0
+ 866:	0c 97       	sbiw	r24, 0x0c	; 12
+ 868:	dc f3       	brlt	.-10     	; 0x860 <__stack+0x1>
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+	while (time--) sleep(10);
+ 86a:	21 50       	subi	r18, 0x01	; 1
+ 86c:	30 40       	sbci	r19, 0x00	; 0
+ 86e:	8f ef       	ldi	r24, 0xFF	; 255
+ 870:	2f 3f       	cpi	r18, 0xFF	; 255
+ 872:	38 07       	cpc	r19, r24
+ 874:	99 f7       	brne	.-26     	; 0x85c <dischargePeakDetector+0xa>
+void dischargePeakDetector(void)
+{
+	DDRA |= MIC;
+	PORTA &= ~MIC;
+	mSleep(1);
+	DDRA &= ~MIC;
+ 876:	d0 98       	cbi	0x1a, 0	; 26
+}
+ 878:	08 95       	ret
+
+0000087a <getMicrophonePeak>:
+/**
+ * Reads the Microphone peak detector and discharges it afterwards.
+ * 
+ */
+uint16_t getMicrophonePeak(void)
+{
+ 87a:	cf 93       	push	r28
+ 87c:	df 93       	push	r29
+	uint16_t tmp;
+	tmp = readADC(ADC_MIC);
+ 87e:	80 e0       	ldi	r24, 0x00	; 0
+ 880:	0e 94 ce 01 	call	0x39c	; 0x39c <readADC>
+ 884:	ec 01       	movw	r28, r24
+	if(tmp > 4) 
+ 886:	85 30       	cpi	r24, 0x05	; 5
+ 888:	91 05       	cpc	r25, r1
+ 88a:	10 f0       	brcs	.+4      	; 0x890 <getMicrophonePeak+0x16>
+		dischargePeakDetector();
+ 88c:	0e 94 29 04 	call	0x852	; 0x852 <dischargePeakDetector>
+	return tmp;
+}
+ 890:	ce 01       	movw	r24, r28
+ 892:	df 91       	pop	r29
+ 894:	cf 91       	pop	r28
+ 896:	08 95       	ret
+
+00000898 <__vector_10>:
+ *
+ * By default, it runs at 10kHz which means this ISR is called
+ * every ~100탎! This is nice for timing stuff!
+ */
+ISR (TIMER0_COMP_vect)
+{
+ 898:	1f 92       	push	r1
+ 89a:	0f 92       	push	r0
+ 89c:	0f b6       	in	r0, 0x3f	; 63
+ 89e:	0f 92       	push	r0
+ 8a0:	11 24       	eor	r1, r1
+ 8a2:	8f 93       	push	r24
+ 8a4:	9f 93       	push	r25
+	// 16bit timer (100탎 resolution)
+	timer++;
+ 8a6:	80 91 9c 00 	lds	r24, 0x009C
+ 8aa:	90 91 9d 00 	lds	r25, 0x009D
+ 8ae:	01 96       	adiw	r24, 0x01	; 1
+ 8b0:	90 93 9d 00 	sts	0x009D, r25
+ 8b4:	80 93 9c 00 	sts	0x009C, r24
+	
+	// Blocking delay (100탎):
+	delay_timer++;
+ 8b8:	80 91 c2 00 	lds	r24, 0x00C2
+ 8bc:	8f 5f       	subi	r24, 0xFF	; 255
+ 8be:	80 93 c2 00 	sts	0x00C2, r24
+	
+	// All 1ms based timing stuff
+	if(ms_timer++ >= 10) { // 10 * 100탎 = 1ms
+ 8c2:	80 91 c3 00 	lds	r24, 0x00C3
+ 8c6:	8f 5f       	subi	r24, 0xFF	; 255
+ 8c8:	80 93 c3 00 	sts	0x00C3, r24
+ 8cc:	81 50       	subi	r24, 0x01	; 1
+ 8ce:	8a 30       	cpi	r24, 0x0A	; 10
+ 8d0:	08 f4       	brcc	.+2      	; 0x8d4 <__vector_10+0x3c>
+ 8d2:	84 c0       	rjmp	.+264    	; 0x9dc <__vector_10+0x144>
+		// 16bit Stopwatches:
+		if(stopwatches.watches & STOPWATCH1)
+ 8d4:	80 91 b0 00 	lds	r24, 0x00B0
+ 8d8:	80 ff       	sbrs	r24, 0
+ 8da:	09 c0       	rjmp	.+18     	; 0x8ee <__vector_10+0x56>
+			stopwatches.watch1++;
+ 8dc:	80 91 b1 00 	lds	r24, 0x00B1
+ 8e0:	90 91 b2 00 	lds	r25, 0x00B2
+ 8e4:	01 96       	adiw	r24, 0x01	; 1
+ 8e6:	90 93 b2 00 	sts	0x00B2, r25
+ 8ea:	80 93 b1 00 	sts	0x00B1, r24
+		if(stopwatches.watches & STOPWATCH2)
+ 8ee:	80 91 b0 00 	lds	r24, 0x00B0
+ 8f2:	81 ff       	sbrs	r24, 1
+ 8f4:	09 c0       	rjmp	.+18     	; 0x908 <__vector_10+0x70>
+			stopwatches.watch2++;
+ 8f6:	80 91 b3 00 	lds	r24, 0x00B3
+ 8fa:	90 91 b4 00 	lds	r25, 0x00B4
+ 8fe:	01 96       	adiw	r24, 0x01	; 1
+ 900:	90 93 b4 00 	sts	0x00B4, r25
+ 904:	80 93 b3 00 	sts	0x00B3, r24
+		if(stopwatches.watches & STOPWATCH3)
+ 908:	80 91 b0 00 	lds	r24, 0x00B0
+ 90c:	82 ff       	sbrs	r24, 2
+ 90e:	09 c0       	rjmp	.+18     	; 0x922 <__vector_10+0x8a>
+			stopwatches.watch3++;
+ 910:	80 91 b5 00 	lds	r24, 0x00B5
+ 914:	90 91 b6 00 	lds	r25, 0x00B6
+ 918:	01 96       	adiw	r24, 0x01	; 1
+ 91a:	90 93 b6 00 	sts	0x00B6, r25
+ 91e:	80 93 b5 00 	sts	0x00B5, r24
+		if(stopwatches.watches & STOPWATCH4)
+ 922:	80 91 b0 00 	lds	r24, 0x00B0
+ 926:	83 ff       	sbrs	r24, 3
+ 928:	09 c0       	rjmp	.+18     	; 0x93c <__vector_10+0xa4>
+			stopwatches.watch4++;
+ 92a:	80 91 b7 00 	lds	r24, 0x00B7
+ 92e:	90 91 b8 00 	lds	r25, 0x00B8
+ 932:	01 96       	adiw	r24, 0x01	; 1
+ 934:	90 93 b8 00 	sts	0x00B8, r25
+ 938:	80 93 b7 00 	sts	0x00B7, r24
+		if(stopwatches.watches & STOPWATCH5)
+ 93c:	80 91 b0 00 	lds	r24, 0x00B0
+ 940:	84 ff       	sbrs	r24, 4
+ 942:	09 c0       	rjmp	.+18     	; 0x956 <__vector_10+0xbe>
+			stopwatches.watch5++;
+ 944:	80 91 b9 00 	lds	r24, 0x00B9
+ 948:	90 91 ba 00 	lds	r25, 0x00BA
+ 94c:	01 96       	adiw	r24, 0x01	; 1
+ 94e:	90 93 ba 00 	sts	0x00BA, r25
+ 952:	80 93 b9 00 	sts	0x00B9, r24
+		if(stopwatches.watches & STOPWATCH6)
+ 956:	80 91 b0 00 	lds	r24, 0x00B0
+ 95a:	85 ff       	sbrs	r24, 5
+ 95c:	09 c0       	rjmp	.+18     	; 0x970 <__vector_10+0xd8>
+			stopwatches.watch6++;
+ 95e:	80 91 bb 00 	lds	r24, 0x00BB
+ 962:	90 91 bc 00 	lds	r25, 0x00BC
+ 966:	01 96       	adiw	r24, 0x01	; 1
+ 968:	90 93 bc 00 	sts	0x00BC, r25
+ 96c:	80 93 bb 00 	sts	0x00BB, r24
+		if(stopwatches.watches & STOPWATCH7)
+ 970:	80 91 b0 00 	lds	r24, 0x00B0
+ 974:	86 ff       	sbrs	r24, 6
+ 976:	09 c0       	rjmp	.+18     	; 0x98a <__vector_10+0xf2>
+			stopwatches.watch7++;
+ 978:	80 91 bd 00 	lds	r24, 0x00BD
+ 97c:	90 91 be 00 	lds	r25, 0x00BE
+ 980:	01 96       	adiw	r24, 0x01	; 1
+ 982:	90 93 be 00 	sts	0x00BE, r25
+ 986:	80 93 bd 00 	sts	0x00BD, r24
+		if(stopwatches.watches & STOPWATCH8)
+ 98a:	80 91 b0 00 	lds	r24, 0x00B0
+ 98e:	87 ff       	sbrs	r24, 7
+ 990:	09 c0       	rjmp	.+18     	; 0x9a4 <__vector_10+0x10c>
+			stopwatches.watch8++;
+ 992:	80 91 bf 00 	lds	r24, 0x00BF
+ 996:	90 91 c0 00 	lds	r25, 0x00C0
+ 99a:	01 96       	adiw	r24, 0x01	; 1
+ 99c:	90 93 c0 00 	sts	0x00C0, r25
+ 9a0:	80 93 bf 00 	sts	0x00BF, r24
+
+		// Sound generation timing:
+		if(controlStatus.beep) {
+ 9a4:	80 91 9e 00 	lds	r24, 0x009E
+ 9a8:	80 ff       	sbrs	r24, 0
+ 9aa:	16 c0       	rjmp	.+44     	; 0x9d8 <__vector_10+0x140>
+			if(sound_timer < 1) { // sound_timer * 1ms
+ 9ac:	80 91 c4 00 	lds	r24, 0x00C4
+ 9b0:	90 91 c5 00 	lds	r25, 0x00C5
+ 9b4:	89 2b       	or	r24, r25
+ 9b6:	39 f4       	brne	.+14     	; 0x9c6 <__vector_10+0x12e>
+				TCCR2 = 0;
+ 9b8:	15 bc       	out	0x25, r1	; 37
+				controlStatus.beep = false;
+ 9ba:	80 91 9e 00 	lds	r24, 0x009E
+ 9be:	8e 7f       	andi	r24, 0xFE	; 254
+ 9c0:	80 93 9e 00 	sts	0x009E, r24
+ 9c4:	09 c0       	rjmp	.+18     	; 0x9d8 <__vector_10+0x140>
+			}
+			else
+				sound_timer--;
+ 9c6:	80 91 c4 00 	lds	r24, 0x00C4
+ 9ca:	90 91 c5 00 	lds	r25, 0x00C5
+ 9ce:	01 97       	sbiw	r24, 0x01	; 1
+ 9d0:	90 93 c5 00 	sts	0x00C5, r25
+ 9d4:	80 93 c4 00 	sts	0x00C4, r24
+		}
+		
+		ms_timer = 0;
+ 9d8:	10 92 c3 00 	sts	0x00C3, r1
+	}
+}
+ 9dc:	9f 91       	pop	r25
+ 9de:	8f 91       	pop	r24
+ 9e0:	0f 90       	pop	r0
+ 9e2:	0f be       	out	0x3f, r0	; 63
+ 9e4:	0f 90       	pop	r0
+ 9e6:	1f 90       	pop	r1
+ 9e8:	18 95       	reti
+
+000009ea <beep>:
+ * sounds when you need to do other things at the same
+ * time... 
+ */
+void beep(uint8_t pitch, uint16_t time)
+{
+	controlStatus.beep = true;
+ 9ea:	90 91 9e 00 	lds	r25, 0x009E
+ 9ee:	91 60       	ori	r25, 0x01	; 1
+ 9f0:	90 93 9e 00 	sts	0x009E, r25
+	sound_timer = time;
+ 9f4:	70 93 c5 00 	sts	0x00C5, r23
+ 9f8:	60 93 c4 00 	sts	0x00C4, r22
+	OCR2 = 255-pitch;
+ 9fc:	80 95       	com	r24
+ 9fe:	83 bd       	out	0x23, r24	; 35
+	TCCR2 =  (1 << WGM21) | (1 << COM20) | (1 << CS22) | (1 << CS21);
+ a00:	8e e1       	ldi	r24, 0x1E	; 30
+ a02:	85 bd       	out	0x25, r24	; 37
+}
+ a04:	08 95       	ret
+
+00000a06 <setBeeperPitch>:
+ * would sound bad if the beeper turns of for a very short time
+ * in between - such as alarm tones or special melodies etc. 
+ */
+void setBeeperPitch(uint8_t pitch)
+{
+	controlStatus.beep = false;
+ a06:	90 91 9e 00 	lds	r25, 0x009E
+ a0a:	9e 7f       	andi	r25, 0xFE	; 254
+ a0c:	90 93 9e 00 	sts	0x009E, r25
+	OCR2 = 255-pitch;
+ a10:	98 2f       	mov	r25, r24
+ a12:	90 95       	com	r25
+ a14:	93 bd       	out	0x23, r25	; 35
+	if(pitch) 
+ a16:	88 23       	and	r24, r24
+ a18:	19 f0       	breq	.+6      	; 0xa20 <setBeeperPitch+0x1a>
+		TCCR2 =  (1 << WGM21) | (1 << COM20) | (1 << CS22) | (1 << CS21);	
+ a1a:	8e e1       	ldi	r24, 0x1E	; 30
+ a1c:	85 bd       	out	0x25, r24	; 37
+ a1e:	08 95       	ret
+	else 
+		TCCR2 = 0;
+ a20:	15 bc       	out	0x25, r1	; 37
+ a22:	08 95       	ret
+
+00000a24 <sleep>:
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+ a24:	10 92 c2 00 	sts	0x00C2, r1
+	while (delay_timer <= time+1);
+ a28:	28 2f       	mov	r18, r24
+ a2a:	30 e0       	ldi	r19, 0x00	; 0
+ a2c:	2f 5f       	subi	r18, 0xFF	; 255
+ a2e:	3f 4f       	sbci	r19, 0xFF	; 255
+ a30:	80 91 c2 00 	lds	r24, 0x00C2
+ a34:	90 e0       	ldi	r25, 0x00	; 0
+ a36:	28 17       	cp	r18, r24
+ a38:	39 07       	cpc	r19, r25
+ a3a:	d4 f7       	brge	.-12     	; 0xa30 <sleep+0xc>
+}
+ a3c:	08 95       	ret
+
+00000a3e <mSleep>:
+ *      mSleep(100); // delay 100 * 1ms = 100ms = 0.1s
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+ a3e:	9c 01       	movw	r18, r24
+ a40:	09 c0       	rjmp	.+18     	; 0xa54 <mSleep+0x16>
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+ a42:	10 92 c2 00 	sts	0x00C2, r1
+	while (delay_timer <= time+1);
+ a46:	80 91 c2 00 	lds	r24, 0x00C2
+ a4a:	90 e0       	ldi	r25, 0x00	; 0
+ a4c:	0c 97       	sbiw	r24, 0x0c	; 12
+ a4e:	dc f3       	brlt	.-10     	; 0xa46 <mSleep+0x8>
+ a50:	21 50       	subi	r18, 0x01	; 1
+ a52:	30 40       	sbci	r19, 0x00	; 0
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+	while (time--) sleep(10);
+ a54:	21 15       	cp	r18, r1
+ a56:	31 05       	cpc	r19, r1
+ a58:	a1 f7       	brne	.-24     	; 0xa42 <mSleep+0x4>
+}
+ a5a:	08 95       	ret
+
+00000a5c <delayCycles>:
+ *
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+ a5c:	02 c0       	rjmp	.+4      	; 0xa62 <delayCycles+0x6>
+	while(dly--) nop();
+ a5e:	00 00       	nop
+ a60:	01 97       	sbiw	r24, 0x01	; 1
+ a62:	00 97       	sbiw	r24, 0x00	; 0
+ a64:	e1 f7       	brne	.-8      	; 0xa5e <delayCycles+0x2>
+}
+ a66:	08 95       	ret
+
+00000a68 <initRP6Control>:
+ *			}
+ *
+ */
+void initRP6Control(void)
+{
+	portInit();		// Setup port directions and initial values.
+ a68:	1b ba       	out	0x1b, r1	; 27
+ a6a:	87 e0       	ldi	r24, 0x07	; 7
+ a6c:	88 bb       	out	0x18, r24	; 24
+ a6e:	8c ef       	ldi	r24, 0xFC	; 252
+ a70:	85 bb       	out	0x15, r24	; 21
+ a72:	81 e6       	ldi	r24, 0x61	; 97
+ a74:	82 bb       	out	0x12, r24	; 18
+ a76:	1a ba       	out	0x1a, r1	; 26
+ a78:	8b eb       	ldi	r24, 0xBB	; 187
+ a7a:	87 bb       	out	0x17, r24	; 23
+ a7c:	14 ba       	out	0x14, r1	; 20
+ a7e:	82 e9       	ldi	r24, 0x92	; 146
+ a80:	81 bb       	out	0x11, r24	; 17
+					// This is the most important step!
+
+	cli();			// Disable global interrupts.
+ a82:	f8 94       	cli
+
+	// UART:
+	UBRRH = UBRR_BAUD_LOW >> 8;	// Setup UART: Baud is Low Speed
+ a84:	10 bc       	out	0x20, r1	; 32
+	UBRRL = (uint8_t) UBRR_BAUD_LOW;
+ a86:	89 e1       	ldi	r24, 0x19	; 25
+ a88:	89 b9       	out	0x09, r24	; 9
+	UCSRA = 0x00;
+ a8a:	1b b8       	out	0x0b, r1	; 11
+    UCSRC = (1<<URSEL)|(1<<UCSZ1)|(1<<UCSZ0);
+ a8c:	86 e8       	ldi	r24, 0x86	; 134
+ a8e:	80 bd       	out	0x20, r24	; 32
+    UCSRB = (1 << TXEN) | (1 << RXEN) | (1 << RXCIE);
+ a90:	88 e9       	ldi	r24, 0x98	; 152
+ a92:	8a b9       	out	0x0a, r24	; 10
+	
+	// Initialize ADC:
+	ADMUX = 0; //external reference 
+ a94:	17 b8       	out	0x07, r1	; 7
+	ADCSRA = (0<<ADIE) | (0<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+ a96:	86 e1       	ldi	r24, 0x16	; 22
+ a98:	86 b9       	out	0x06, r24	; 6
+	SFIOR = 0;
+ a9a:	10 be       	out	0x30, r1	; 48
+
+	// Initialize External interrupts - all disabled:
+	MCUCR = (1 << ISC11) | (1 << ISC10) | (1 << ISC01) | (1 << ISC00);
+ a9c:	8f e0       	ldi	r24, 0x0F	; 15
+ a9e:	85 bf       	out	0x35, r24	; 53
+	GICR = (0 << INT2) | (0 << INT1) | (0 << INT0);
+ aa0:	1b be       	out	0x3b, r1	; 59
+	MCUCSR = (0 << ISC2);
+ aa2:	14 be       	out	0x34, r1	; 52
+	
+	
+	// 10kHz Timer 0:
+	TCCR0 =   (0 << WGM00) 
+ aa4:	8a e0       	ldi	r24, 0x0A	; 10
+ aa6:	83 bf       	out	0x33, r24	; 51
+			| (0 << COM00) 
+			| (0 << COM01) 
+			| (0 << CS02)  
+			| (1 << CS01) 
+			| (0 << CS00);
+	OCR0  = 199;
+ aa8:	87 ec       	ldi	r24, 0xC7	; 199
+ aaa:	8c bf       	out	0x3c, r24	; 60
+/*
+	Timer 1 is free for your application!
+*/
+
+	// Timer 2 - used for beeper:
+	TCCR2 =  0; 
+ aac:	15 bc       	out	0x25, r1	; 37
+	OCR2  = 0xFF; 
+ aae:	8f ef       	ldi	r24, 0xFF	; 255
+ ab0:	83 bd       	out	0x23, r24	; 35
+
+	// Enable timer interrupts:
+	TIMSK =   (1 << OCIE0); 
+ ab2:	82 e0       	ldi	r24, 0x02	; 2
+ ab4:	89 bf       	out	0x39, r24	; 57
+
+	// SPI Master (SPI Mode 0, SCK Frequency is F_CPU/2, which means it is 8MHz 
+	// on the RP6 CONTROL M32...):
+	SPCR =    (0<<SPIE) 
+ ab6:	80 e5       	ldi	r24, 0x50	; 80
+ ab8:	8d b9       	out	0x0d, r24	; 13
+			| (1<<MSTR) 
+			| (0<<SPR0) 
+			| (0<<SPR1) 
+			| (0<<CPOL) 
+			| (0<<CPHA);  
+	SPSR = (1<<SPI2X);
+ aba:	81 e0       	ldi	r24, 0x01	; 1
+ abc:	8e b9       	out	0x0e, r24	; 14
+	
+	sei(); // Enable Global Interrupts
+ abe:	78 94       	sei
+}
+ ac0:	08 95       	ret
+
+00000ac2 <writeIntegerLCD>:
+ *			writeInteger(1024,DEC);  	// Decimal
+ *			writeInteger(511,OCT);		// Ocal
+ *			writeInteger(0b11010111,BIN); // Binary
+ */
+void writeIntegerLCD(int16_t number, uint8_t base)
+{
+ ac2:	0f 93       	push	r16
+ ac4:	1f 93       	push	r17
+ ac6:	46 2f       	mov	r20, r22
+	itoa(number, &lcd_tmp_buffer[0], base);
+ ac8:	0f e9       	ldi	r16, 0x9F	; 159
+ aca:	10 e0       	ldi	r17, 0x00	; 0
+ acc:	b8 01       	movw	r22, r16
+ ace:	50 e0       	ldi	r21, 0x00	; 0
+ ad0:	0e 94 ca 06 	call	0xd94	; 0xd94 <itoa>
+	writeStringLCD(&lcd_tmp_buffer[0]);
+ ad4:	c8 01       	movw	r24, r16
+ ad6:	0e 94 81 03 	call	0x702	; 0x702 <writeStringLCD>
+}
+ ada:	1f 91       	pop	r17
+ adc:	0f 91       	pop	r16
+ ade:	08 95       	ret
+
+00000ae0 <writeIntegerLengthLCD>:
+ *			writeIntegerLength(511,OCT,4);		// Ocal
+ *			writeIntegerLength(0b11010111,BIN,8); // Binary
+ */
+ 
+void writeIntegerLengthLCD(int16_t number, uint8_t base, uint8_t length)
+{
+ ae0:	ef 92       	push	r14
+ ae2:	ff 92       	push	r15
+ ae4:	0f 93       	push	r16
+ ae6:	1f 93       	push	r17
+ ae8:	df 93       	push	r29
+ aea:	cf 93       	push	r28
+ aec:	cd b7       	in	r28, 0x3d	; 61
+ aee:	de b7       	in	r29, 0x3e	; 62
+ af0:	61 97       	sbiw	r28, 0x11	; 17
+ af2:	0f b6       	in	r0, 0x3f	; 63
+ af4:	f8 94       	cli
+ af6:	de bf       	out	0x3e, r29	; 62
+ af8:	0f be       	out	0x3f, r0	; 63
+ afa:	cd bf       	out	0x3d, r28	; 61
+ afc:	26 2f       	mov	r18, r22
+ afe:	04 2f       	mov	r16, r20
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+ b00:	7e 01       	movw	r14, r28
+ b02:	08 94       	sec
+ b04:	e1 1c       	adc	r14, r1
+ b06:	f1 1c       	adc	r15, r1
+ b08:	b7 01       	movw	r22, r14
+ b0a:	42 2f       	mov	r20, r18
+ b0c:	50 e0       	ldi	r21, 0x00	; 0
+ b0e:	0e 94 ca 06 	call	0xd94	; 0xd94 <itoa>
+	int8_t cnt = length - strlen(buffer);
+ b12:	f7 01       	movw	r30, r14
+ b14:	01 90       	ld	r0, Z+
+ b16:	00 20       	and	r0, r0
+ b18:	e9 f7       	brne	.-6      	; 0xb14 <writeIntegerLengthLCD+0x34>
+ b1a:	31 97       	sbiw	r30, 0x01	; 1
+ b1c:	ee 19       	sub	r30, r14
+ b1e:	ff 09       	sbc	r31, r15
+ b20:	10 2f       	mov	r17, r16
+ b22:	1e 1b       	sub	r17, r30
+	if(cnt > 0) {
+ b24:	11 16       	cp	r1, r17
+ b26:	5c f4       	brge	.+22     	; 0xb3e <writeIntegerLengthLCD+0x5e>
+		for(; cnt > 0; cnt--, writeCharLCD('0'));
+ b28:	11 50       	subi	r17, 0x01	; 1
+ b2a:	80 e3       	ldi	r24, 0x30	; 48
+ b2c:	0e 94 66 03 	call	0x6cc	; 0x6cc <writeCharLCD>
+ b30:	11 23       	and	r17, r17
+ b32:	d1 f7       	brne	.-12     	; 0xb28 <writeIntegerLengthLCD+0x48>
+		writeStringLCD(&buffer[0]);
+ b34:	ce 01       	movw	r24, r28
+ b36:	01 96       	adiw	r24, 0x01	; 1
+ b38:	0e 94 81 03 	call	0x702	; 0x702 <writeStringLCD>
+ b3c:	06 c0       	rjmp	.+12     	; 0xb4a <writeIntegerLengthLCD+0x6a>
+	}
+	else 
+		writeStringLengthLCD(&buffer[0],length,-cnt);
+ b3e:	11 95       	neg	r17
+ b40:	c7 01       	movw	r24, r14
+ b42:	60 2f       	mov	r22, r16
+ b44:	41 2f       	mov	r20, r17
+ b46:	0e 94 8e 03 	call	0x71c	; 0x71c <writeStringLengthLCD>
+}
+ b4a:	61 96       	adiw	r28, 0x11	; 17
+ b4c:	0f b6       	in	r0, 0x3f	; 63
+ b4e:	f8 94       	cli
+ b50:	de bf       	out	0x3e, r29	; 62
+ b52:	0f be       	out	0x3f, r0	; 63
+ b54:	cd bf       	out	0x3d, r28	; 61
+ b56:	cf 91       	pop	r28
+ b58:	df 91       	pop	r29
+ b5a:	1f 91       	pop	r17
+ b5c:	0f 91       	pop	r16
+ b5e:	ff 90       	pop	r15
+ b60:	ef 90       	pop	r14
+ b62:	08 95       	ret
+
+00000b64 <writeChar>:
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+ b64:	5d 9b       	sbis	0x0b, 5	; 11
+ b66:	fe cf       	rjmp	.-4      	; 0xb64 <writeChar>
+    UDR = (uint8_t)ch;
+ b68:	8c b9       	out	0x0c, r24	; 12
+}
+ b6a:	08 95       	ret
+
+00000b6c <writeString>:
+ *
+ *			writeString("RP6 Robot System\n");
+ *
+ */
+void writeString(char *string)
+{
+ b6c:	fc 01       	movw	r30, r24
+ b6e:	04 c0       	rjmp	.+8      	; 0xb78 <writeString+0xc>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+ b70:	5d 9b       	sbis	0x0b, 5	; 11
+ b72:	fe cf       	rjmp	.-4      	; 0xb70 <writeString+0x4>
+ *
+ */
+void writeString(char *string)
+{
+	while(*string)
+		writeChar(*string++);
+ b74:	31 96       	adiw	r30, 0x01	; 1
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+ b76:	8c b9       	out	0x0c, r24	; 12
+ *			writeString("RP6 Robot System\n");
+ *
+ */
+void writeString(char *string)
+{
+	while(*string)
+ b78:	80 81       	ld	r24, Z
+ b7a:	88 23       	and	r24, r24
+ b7c:	c9 f7       	brne	.-14     	; 0xb70 <writeString+0x4>
+		writeChar(*string++);
+}
+ b7e:	08 95       	ret
+
+00000b80 <writeNStringP>:
+ *			// you can simply write:
+ *			writeString_P("RP6 Robot System\n");
+ *
+ */
+void writeNStringP(const char *pstring)
+{
+ b80:	03 c0       	rjmp	.+6      	; 0xb88 <writeNStringP+0x8>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+ b82:	5d 9b       	sbis	0x0b, 5	; 11
+ b84:	fe cf       	rjmp	.-4      	; 0xb82 <writeNStringP+0x2>
+    UDR = (uint8_t)ch;
+ b86:	2c b9       	out	0x0c, r18	; 12
+ b88:	fc 01       	movw	r30, r24
+ *
+ */
+void writeNStringP(const char *pstring)
+{
+    uint8_t c;
+    for (;(c = pgm_read_byte_near(pstring++));writeChar(c));
+ b8a:	01 96       	adiw	r24, 0x01	; 1
+ b8c:	24 91       	lpm	r18, Z+
+ b8e:	22 23       	and	r18, r18
+ b90:	c1 f7       	brne	.-16     	; 0xb82 <writeNStringP+0x2>
+}
+ b92:	08 95       	ret
+
+00000b94 <writeStringLength>:
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+ b94:	fc 01       	movw	r30, r24
+ b96:	e4 0f       	add	r30, r20
+ b98:	f1 1d       	adc	r31, r1
+ b9a:	05 c0       	rjmp	.+10     	; 0xba6 <writeStringLength+0x12>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+ b9c:	5d 9b       	sbis	0x0b, 5	; 11
+ b9e:	fe cf       	rjmp	.-4      	; 0xb9c <writeStringLength+0x8>
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+		writeChar(*string++);
+ ba0:	31 96       	adiw	r30, 0x01	; 1
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+ ba2:	8c b9       	out	0x0c, r24	; 12
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+ ba4:	61 50       	subi	r22, 0x01	; 1
+ ba6:	80 81       	ld	r24, Z
+ ba8:	88 23       	and	r24, r24
+ baa:	11 f0       	breq	.+4      	; 0xbb0 <writeStringLength+0x1c>
+ bac:	66 23       	and	r22, r22
+ bae:	b1 f7       	brne	.-20     	; 0xb9c <writeStringLength+0x8>
+ bb0:	08 95       	ret
+
+00000bb2 <__vector_13>:
+/**
+ * UART receive ISR.
+ * Handles reception to circular buffer.
+ */
+ISR(USART_RXC_vect)
+{	
+ bb2:	1f 92       	push	r1
+ bb4:	0f 92       	push	r0
+ bb6:	0f b6       	in	r0, 0x3f	; 63
+ bb8:	0f 92       	push	r0
+ bba:	11 24       	eor	r1, r1
+ bbc:	2f 93       	push	r18
+ bbe:	8f 93       	push	r24
+ bc0:	9f 93       	push	r25
+ bc2:	ef 93       	push	r30
+ bc4:	ff 93       	push	r31
+	static volatile uint8_t dummy;
+	if(((uint8_t)(write_size - read_size)) < UART_RECEIVE_BUFFER_SIZE) {
+ bc6:	20 91 99 00 	lds	r18, 0x0099
+ bca:	80 91 98 00 	lds	r24, 0x0098
+ bce:	92 2f       	mov	r25, r18
+ bd0:	98 1b       	sub	r25, r24
+ bd2:	90 32       	cpi	r25, 0x20	; 32
+ bd4:	a8 f4       	brcc	.+42     	; 0xc00 <__vector_13+0x4e>
+		uart_receive_buffer[write_pos++] = UDR;
+ bd6:	80 91 97 00 	lds	r24, 0x0097
+ bda:	e8 2f       	mov	r30, r24
+ bdc:	f0 e0       	ldi	r31, 0x00	; 0
+ bde:	9c b1       	in	r25, 0x0c	; 12
+ be0:	e9 53       	subi	r30, 0x39	; 57
+ be2:	ff 4f       	sbci	r31, 0xFF	; 255
+ be4:	90 83       	st	Z, r25
+ be6:	8f 5f       	subi	r24, 0xFF	; 255
+ be8:	80 93 97 00 	sts	0x0097, r24
+		write_size++;
+ bec:	2f 5f       	subi	r18, 0xFF	; 255
+ bee:	20 93 99 00 	sts	0x0099, r18
+		if(write_pos > UART_RECEIVE_BUFFER_SIZE) 
+ bf2:	81 32       	cpi	r24, 0x21	; 33
+ bf4:	10 f0       	brcs	.+4      	; 0xbfa <__vector_13+0x48>
+			write_pos = 0;
+ bf6:	10 92 97 00 	sts	0x0097, r1
+		uart_status = UART_BUFFER_OK;
+ bfa:	10 92 c6 00 	sts	0x00C6, r1
+ bfe:	06 c0       	rjmp	.+12     	; 0xc0c <__vector_13+0x5a>
+	}
+	else {	
+		dummy = UDR;
+ c00:	8c b1       	in	r24, 0x0c	; 12
+ c02:	80 93 9b 00 	sts	0x009B, r24
+		uart_status = UART_BUFFER_OVERFLOW;
+ c06:	81 e0       	ldi	r24, 0x01	; 1
+ c08:	80 93 c6 00 	sts	0x00C6, r24
+	}
+}
+ c0c:	ff 91       	pop	r31
+ c0e:	ef 91       	pop	r30
+ c10:	9f 91       	pop	r25
+ c12:	8f 91       	pop	r24
+ c14:	2f 91       	pop	r18
+ c16:	0f 90       	pop	r0
+ c18:	0f be       	out	0x3f, r0	; 63
+ c1a:	0f 90       	pop	r0
+ c1c:	1f 90       	pop	r1
+ c1e:	18 95       	reti
+
+00000c20 <readChar>:
+ * // [...]
+ *
+ */
+char readChar(void)
+{
+	uart_status = UART_BUFFER_OK;
+ c20:	10 92 c6 00 	sts	0x00C6, r1
+	if(((uint8_t)(write_size - read_size)) > 0) {
+ c24:	90 91 98 00 	lds	r25, 0x0098
+ c28:	80 91 99 00 	lds	r24, 0x0099
+ c2c:	89 17       	cp	r24, r25
+ c2e:	11 f4       	brne	.+4      	; 0xc34 <readChar+0x14>
+ c30:	e0 e0       	ldi	r30, 0x00	; 0
+ c32:	13 c0       	rjmp	.+38     	; 0xc5a <readChar+0x3a>
+		read_size++;
+ c34:	9f 5f       	subi	r25, 0xFF	; 255
+ c36:	90 93 98 00 	sts	0x0098, r25
+		if(read_pos > UART_RECEIVE_BUFFER_SIZE) 
+ c3a:	80 91 96 00 	lds	r24, 0x0096
+ c3e:	81 32       	cpi	r24, 0x21	; 33
+ c40:	10 f0       	brcs	.+4      	; 0xc46 <readChar+0x26>
+			read_pos = 0;
+ c42:	10 92 96 00 	sts	0x0096, r1
+		return uart_receive_buffer[read_pos++];
+ c46:	80 91 96 00 	lds	r24, 0x0096
+ c4a:	e8 2f       	mov	r30, r24
+ c4c:	f0 e0       	ldi	r31, 0x00	; 0
+ c4e:	e9 53       	subi	r30, 0x39	; 57
+ c50:	ff 4f       	sbci	r31, 0xFF	; 255
+ c52:	e0 81       	ld	r30, Z
+ c54:	8f 5f       	subi	r24, 0xFF	; 255
+ c56:	80 93 96 00 	sts	0x0096, r24
+	}
+	return 0;
+}
+ c5a:	8e 2f       	mov	r24, r30
+ c5c:	08 95       	ret
+
+00000c5e <readChars>:
+ * circular buffer to buf. 
+ * It also returns the number of characters really copied to the buffer! 
+ * Just in case that there were fewer chars in the buffer...
+ */
+uint8_t readChars(char *buf, uint8_t numberOfChars)
+{
+ c5e:	ac 01       	movw	r20, r24
+	uint8_t i = 0;
+	uart_status = UART_BUFFER_OK;
+ c60:	10 92 c6 00 	sts	0x00C6, r1
+ c64:	20 e0       	ldi	r18, 0x00	; 0
+ c66:	16 c0       	rjmp	.+44     	; 0xc94 <readChars+0x36>
+	while(((uint8_t)(write_size - read_size)) >= numberOfChars) {
+		read_size++;
+ c68:	9f 5f       	subi	r25, 0xFF	; 255
+ c6a:	90 93 98 00 	sts	0x0098, r25
+		buf[i++] = uart_receive_buffer[read_pos++];
+ c6e:	80 91 96 00 	lds	r24, 0x0096
+ c72:	e8 2f       	mov	r30, r24
+ c74:	f0 e0       	ldi	r31, 0x00	; 0
+ c76:	e9 53       	subi	r30, 0x39	; 57
+ c78:	ff 4f       	sbci	r31, 0xFF	; 255
+ c7a:	90 81       	ld	r25, Z
+ c7c:	fa 01       	movw	r30, r20
+ c7e:	e2 0f       	add	r30, r18
+ c80:	f1 1d       	adc	r31, r1
+ c82:	90 83       	st	Z, r25
+ c84:	8f 5f       	subi	r24, 0xFF	; 255
+ c86:	80 93 96 00 	sts	0x0096, r24
+		if(read_pos > UART_RECEIVE_BUFFER_SIZE) 
+ c8a:	81 32       	cpi	r24, 0x21	; 33
+ c8c:	10 f0       	brcs	.+4      	; 0xc92 <readChars+0x34>
+			read_pos = 0;
+ c8e:	10 92 96 00 	sts	0x0096, r1
+{
+	uint8_t i = 0;
+	uart_status = UART_BUFFER_OK;
+	while(((uint8_t)(write_size - read_size)) >= numberOfChars) {
+		read_size++;
+		buf[i++] = uart_receive_buffer[read_pos++];
+ c92:	2f 5f       	subi	r18, 0xFF	; 255
+ */
+uint8_t readChars(char *buf, uint8_t numberOfChars)
+{
+	uint8_t i = 0;
+	uart_status = UART_BUFFER_OK;
+	while(((uint8_t)(write_size - read_size)) >= numberOfChars) {
+ c94:	90 91 98 00 	lds	r25, 0x0098
+ c98:	80 91 99 00 	lds	r24, 0x0099
+ c9c:	89 1b       	sub	r24, r25
+ c9e:	86 17       	cp	r24, r22
+ ca0:	18 f7       	brcc	.-58     	; 0xc68 <readChars+0xa>
+		buf[i++] = uart_receive_buffer[read_pos++];
+		if(read_pos > UART_RECEIVE_BUFFER_SIZE) 
+			read_pos = 0;
+	}
+	return i;
+}
+ ca2:	82 2f       	mov	r24, r18
+ ca4:	08 95       	ret
+
+00000ca6 <getBufferLength>:
+ *
+ * Example:
+ * s. readChar function above!
+ */
+uint8_t getBufferLength(void)
+{
+ ca6:	80 91 99 00 	lds	r24, 0x0099
+ caa:	90 91 98 00 	lds	r25, 0x0098
+	return (((uint8_t)(write_size - read_size)));
+}
+ cae:	89 1b       	sub	r24, r25
+ cb0:	08 95       	ret
+
+00000cb2 <clearReceptionBuffer>:
+ * interrupt for a short period of time. 
+ */
+void clearReceptionBuffer(void)
+{
+	static uint8_t dummy;
+	UCSRB &= ~(1 << RXCIE); // disable UART RX Interrupt
+ cb2:	57 98       	cbi	0x0a, 7	; 10
+	dummy = UDR;
+ cb4:	8c b1       	in	r24, 0x0c	; 12
+ cb6:	80 93 9a 00 	sts	0x009A, r24
+	read_pos = 0;
+ cba:	10 92 96 00 	sts	0x0096, r1
+	write_pos = 0; 
+ cbe:	10 92 97 00 	sts	0x0097, r1
+	read_size = 0;
+ cc2:	10 92 98 00 	sts	0x0098, r1
+	write_size = 0;
+ cc6:	10 92 99 00 	sts	0x0099, r1
+	uart_status = UART_BUFFER_OK;
+ cca:	10 92 c6 00 	sts	0x00C6, r1
+	UCSRB |= (1 << RXCIE); // enable Interrupt again
+ cce:	57 9a       	sbi	0x0a, 7	; 10
+}
+ cd0:	08 95       	ret
+
+00000cd2 <writeInteger>:
+ *			writeInteger(1024,DEC);  	// Decimal
+ *			writeInteger(044,OCT);		// Ocal
+ *			writeInteger(0b11010111,BIN); // Binary
+ */
+void writeInteger(int16_t number, uint8_t base)
+{
+ cd2:	0f 93       	push	r16
+ cd4:	1f 93       	push	r17
+ cd6:	df 93       	push	r29
+ cd8:	cf 93       	push	r28
+ cda:	cd b7       	in	r28, 0x3d	; 61
+ cdc:	de b7       	in	r29, 0x3e	; 62
+ cde:	61 97       	sbiw	r28, 0x11	; 17
+ ce0:	0f b6       	in	r0, 0x3f	; 63
+ ce2:	f8 94       	cli
+ ce4:	de bf       	out	0x3e, r29	; 62
+ ce6:	0f be       	out	0x3f, r0	; 63
+ ce8:	cd bf       	out	0x3d, r28	; 61
+ cea:	46 2f       	mov	r20, r22
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+ cec:	8e 01       	movw	r16, r28
+ cee:	0f 5f       	subi	r16, 0xFF	; 255
+ cf0:	1f 4f       	sbci	r17, 0xFF	; 255
+ cf2:	b8 01       	movw	r22, r16
+ cf4:	50 e0       	ldi	r21, 0x00	; 0
+ cf6:	0e 94 ca 06 	call	0xd94	; 0xd94 <itoa>
+	writeString(&buffer[0]);
+ cfa:	c8 01       	movw	r24, r16
+ cfc:	0e 94 b6 05 	call	0xb6c	; 0xb6c <writeString>
+}
+ d00:	61 96       	adiw	r28, 0x11	; 17
+ d02:	0f b6       	in	r0, 0x3f	; 63
+ d04:	f8 94       	cli
+ d06:	de bf       	out	0x3e, r29	; 62
+ d08:	0f be       	out	0x3f, r0	; 63
+ d0a:	cd bf       	out	0x3d, r28	; 61
+ d0c:	cf 91       	pop	r28
+ d0e:	df 91       	pop	r29
+ d10:	1f 91       	pop	r17
+ d12:	0f 91       	pop	r16
+ d14:	08 95       	ret
+
+00000d16 <writeIntegerLength>:
+ *			writeIntegerLength(1024,DEC,6);  	// Decimal
+ *			writeIntegerLength(044,OCT,4);		// Ocal
+ *			writeIntegerLength(0b11010111,BIN,8); // Binary
+ */
+void writeIntegerLength(int16_t number, uint8_t base, uint8_t length)
+{
+ d16:	ff 92       	push	r15
+ d18:	0f 93       	push	r16
+ d1a:	1f 93       	push	r17
+ d1c:	df 93       	push	r29
+ d1e:	cf 93       	push	r28
+ d20:	cd b7       	in	r28, 0x3d	; 61
+ d22:	de b7       	in	r29, 0x3e	; 62
+ d24:	61 97       	sbiw	r28, 0x11	; 17
+ d26:	0f b6       	in	r0, 0x3f	; 63
+ d28:	f8 94       	cli
+ d2a:	de bf       	out	0x3e, r29	; 62
+ d2c:	0f be       	out	0x3f, r0	; 63
+ d2e:	cd bf       	out	0x3d, r28	; 61
+ d30:	26 2f       	mov	r18, r22
+ d32:	f4 2e       	mov	r15, r20
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+ d34:	8e 01       	movw	r16, r28
+ d36:	0f 5f       	subi	r16, 0xFF	; 255
+ d38:	1f 4f       	sbci	r17, 0xFF	; 255
+ d3a:	b8 01       	movw	r22, r16
+ d3c:	42 2f       	mov	r20, r18
+ d3e:	50 e0       	ldi	r21, 0x00	; 0
+ d40:	0e 94 ca 06 	call	0xd94	; 0xd94 <itoa>
+	int8_t cnt = length - strlen(buffer);
+ d44:	f8 01       	movw	r30, r16
+ d46:	01 90       	ld	r0, Z+
+ d48:	00 20       	and	r0, r0
+ d4a:	e9 f7       	brne	.-6      	; 0xd46 <writeIntegerLength+0x30>
+ d4c:	31 97       	sbiw	r30, 0x01	; 1
+ d4e:	e0 1b       	sub	r30, r16
+ d50:	f1 0b       	sbc	r31, r17
+ d52:	4f 2d       	mov	r20, r15
+ d54:	4e 1b       	sub	r20, r30
+	if(cnt > 0) {
+ d56:	14 16       	cp	r1, r20
+ d58:	64 f4       	brge	.+24     	; 0xd72 <writeIntegerLength+0x5c>
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+ d5a:	80 e3       	ldi	r24, 0x30	; 48
+{
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+	int8_t cnt = length - strlen(buffer);
+	if(cnt > 0) {
+		for(; cnt > 0; cnt--, writeChar('0'));
+ d5c:	41 50       	subi	r20, 0x01	; 1
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+ d5e:	5d 9b       	sbis	0x0b, 5	; 11
+ d60:	fe cf       	rjmp	.-4      	; 0xd5e <writeIntegerLength+0x48>
+    UDR = (uint8_t)ch;
+ d62:	8c b9       	out	0x0c, r24	; 12
+{
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+	int8_t cnt = length - strlen(buffer);
+	if(cnt > 0) {
+		for(; cnt > 0; cnt--, writeChar('0'));
+ d64:	44 23       	and	r20, r20
+ d66:	d1 f7       	brne	.-12     	; 0xd5c <writeIntegerLength+0x46>
+		writeString(&buffer[0]);
+ d68:	ce 01       	movw	r24, r28
+ d6a:	01 96       	adiw	r24, 0x01	; 1
+ d6c:	0e 94 b6 05 	call	0xb6c	; 0xb6c <writeString>
+ d70:	05 c0       	rjmp	.+10     	; 0xd7c <writeIntegerLength+0x66>
+	}
+	else 
+		writeStringLength(&buffer[0],length,-cnt);
+ d72:	41 95       	neg	r20
+ d74:	c8 01       	movw	r24, r16
+ d76:	6f 2d       	mov	r22, r15
+ d78:	0e 94 ca 05 	call	0xb94	; 0xb94 <writeStringLength>
+}
+ d7c:	61 96       	adiw	r28, 0x11	; 17
+ d7e:	0f b6       	in	r0, 0x3f	; 63
+ d80:	f8 94       	cli
+ d82:	de bf       	out	0x3e, r29	; 62
+ d84:	0f be       	out	0x3f, r0	; 63
+ d86:	cd bf       	out	0x3d, r28	; 61
+ d88:	cf 91       	pop	r28
+ d8a:	df 91       	pop	r29
+ d8c:	1f 91       	pop	r17
+ d8e:	0f 91       	pop	r16
+ d90:	ff 90       	pop	r15
+ d92:	08 95       	ret
+
+00000d94 <itoa>:
+ d94:	fb 01       	movw	r30, r22
+ d96:	9f 01       	movw	r18, r30
+ d98:	e8 94       	clt
+ d9a:	42 30       	cpi	r20, 0x02	; 2
+ d9c:	c4 f0       	brlt	.+48     	; 0xdce <itoa+0x3a>
+ d9e:	45 32       	cpi	r20, 0x25	; 37
+ da0:	b4 f4       	brge	.+44     	; 0xdce <itoa+0x3a>
+ da2:	4a 30       	cpi	r20, 0x0A	; 10
+ da4:	29 f4       	brne	.+10     	; 0xdb0 <itoa+0x1c>
+ da6:	97 fb       	bst	r25, 7
+ da8:	1e f4       	brtc	.+6      	; 0xdb0 <itoa+0x1c>
+ daa:	90 95       	com	r25
+ dac:	81 95       	neg	r24
+ dae:	9f 4f       	sbci	r25, 0xFF	; 255
+ db0:	64 2f       	mov	r22, r20
+ db2:	77 27       	eor	r23, r23
+ db4:	0e 94 fb 06 	call	0xdf6	; 0xdf6 <__udivmodhi4>
+ db8:	80 5d       	subi	r24, 0xD0	; 208
+ dba:	8a 33       	cpi	r24, 0x3A	; 58
+ dbc:	0c f0       	brlt	.+2      	; 0xdc0 <itoa+0x2c>
+ dbe:	89 5d       	subi	r24, 0xD9	; 217
+ dc0:	81 93       	st	Z+, r24
+ dc2:	cb 01       	movw	r24, r22
+ dc4:	00 97       	sbiw	r24, 0x00	; 0
+ dc6:	a1 f7       	brne	.-24     	; 0xdb0 <itoa+0x1c>
+ dc8:	16 f4       	brtc	.+4      	; 0xdce <itoa+0x3a>
+ dca:	5d e2       	ldi	r21, 0x2D	; 45
+ dcc:	51 93       	st	Z+, r21
+ dce:	10 82       	st	Z, r1
+ dd0:	c9 01       	movw	r24, r18
+ dd2:	0c 94 eb 06 	jmp	0xdd6	; 0xdd6 <strrev>
+
+00000dd6 <strrev>:
+ dd6:	dc 01       	movw	r26, r24
+ dd8:	fc 01       	movw	r30, r24
+ dda:	67 2f       	mov	r22, r23
+ ddc:	71 91       	ld	r23, Z+
+ dde:	77 23       	and	r23, r23
+ de0:	e1 f7       	brne	.-8      	; 0xdda <strrev+0x4>
+ de2:	32 97       	sbiw	r30, 0x02	; 2
+ de4:	04 c0       	rjmp	.+8      	; 0xdee <strrev+0x18>
+ de6:	7c 91       	ld	r23, X
+ de8:	6d 93       	st	X+, r22
+ dea:	70 83       	st	Z, r23
+ dec:	62 91       	ld	r22, -Z
+ dee:	ae 17       	cp	r26, r30
+ df0:	bf 07       	cpc	r27, r31
+ df2:	c8 f3       	brcs	.-14     	; 0xde6 <strrev+0x10>
+ df4:	08 95       	ret
+
+00000df6 <__udivmodhi4>:
+ df6:	aa 1b       	sub	r26, r26
+ df8:	bb 1b       	sub	r27, r27
+ dfa:	51 e1       	ldi	r21, 0x11	; 17
+ dfc:	07 c0       	rjmp	.+14     	; 0xe0c <__udivmodhi4_ep>
+
+00000dfe <__udivmodhi4_loop>:
+ dfe:	aa 1f       	adc	r26, r26
+ e00:	bb 1f       	adc	r27, r27
+ e02:	a6 17       	cp	r26, r22
+ e04:	b7 07       	cpc	r27, r23
+ e06:	10 f0       	brcs	.+4      	; 0xe0c <__udivmodhi4_ep>
+ e08:	a6 1b       	sub	r26, r22
+ e0a:	b7 0b       	sbc	r27, r23
+
+00000e0c <__udivmodhi4_ep>:
+ e0c:	88 1f       	adc	r24, r24
+ e0e:	99 1f       	adc	r25, r25
+ e10:	5a 95       	dec	r21
+ e12:	a9 f7       	brne	.-22     	; 0xdfe <__udivmodhi4_loop>
+ e14:	80 95       	com	r24
+ e16:	90 95       	com	r25
+ e18:	bc 01       	movw	r22, r24
+ e1a:	cd 01       	movw	r24, r26
+ e1c:	08 95       	ret
+
+00000e1e <_exit>:
+ e1e:	f8 94       	cli
+
+00000e20 <__stop_program>:
+ e20:	ff cf       	rjmp	.-2      	; 0xe20 <__stop_program>

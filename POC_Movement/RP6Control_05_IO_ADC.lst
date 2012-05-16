@@ -1,0 +1,283 @@
+   1               		.file	"RP6Control_05_IO_ADC.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.data
+  17               	.LC0:
+  18 0000 207C 2041 		.string	" | ADC2 [Linksachter]: "
+  18      4443 3220 
+  18      5B4C 696E 
+  18      6B73 6163 
+  18      6874 6572 
+  19               	.LC1:
+  20 0018 207C 2041 		.string	" | ADC5 [Linksvoor]: "
+  20      4443 3520 
+  20      5B4C 696E 
+  20      6B73 766F 
+  20      6F72 5D3A 
+  21               		.text
+  22               	.global	main
+  24               	main:
+  25               	.LFB6:
+  26               	.LM1:
+  27               	/* prologue: function */
+  28               	/* frame size = 0 */
+  29               	.LM2:
+  30 0000 0E94 0000 		call initRP6Control
+  31               	.LM3:
+  32 0004 0E94 0000 		call initLCD
+  33               	.LM4:
+  34 0008 80E0      		ldi r24,lo8(__c.1753)
+  35 000a 90E0      		ldi r25,hi8(__c.1753)
+  36 000c 0E94 0000 		call writeNStringP
+  37               	.LM5:
+  38 0010 8FE0      		ldi r24,lo8(15)
+  39 0012 0E94 0000 		call setLEDs
+  40               	.LM6:
+  41 0016 80E0      		ldi r24,lo8(__c.1755)
+  42 0018 90E0      		ldi r25,hi8(__c.1755)
+  43 001a 60E0      		ldi r22,lo8(__c.1757)
+  44 001c 70E0      		ldi r23,hi8(__c.1757)
+  45 001e 0E94 0000 		call _showScreenLCD_P
+  46               	.LM7:
+  47 0022 84E6      		ldi r24,lo8(100)
+  48 0024 68E2      		ldi r22,lo8(40)
+  49 0026 70E0      		ldi r23,hi8(40)
+  50 0028 0E94 0000 		call beep
+  51 002c 88E6      		ldi r24,lo8(104)
+  52 002e 90E0      		ldi r25,hi8(104)
+  53 0030 0E94 0000 		call mSleep
+  54               	.LM8:
+  55 0034 8AEA      		ldi r24,lo8(-86)
+  56 0036 68E2      		ldi r22,lo8(40)
+  57 0038 70E0      		ldi r23,hi8(40)
+  58 003a 0E94 0000 		call beep
+  59 003e 88E2      		ldi r24,lo8(40)
+  60 0040 90E0      		ldi r25,hi8(40)
+  61 0042 0E94 0000 		call mSleep
+  62               	.LM9:
+  63 0046 80E9      		ldi r24,lo8(400)
+  64 0048 91E0      		ldi r25,hi8(400)
+  65 004a 0E94 0000 		call mSleep
+  66               	.LM10:
+  67 004e 80E0      		ldi r24,lo8(0)
+  68 0050 0E94 0000 		call setLEDs
+  69               	.LM11:
+  70 0054 80E0      		ldi r24,lo8(__c.1759)
+  71 0056 90E0      		ldi r25,hi8(__c.1759)
+  72 0058 60E0      		ldi r22,lo8(__c.1761)
+  73 005a 70E0      		ldi r23,hi8(__c.1761)
+  74 005c 0E94 0000 		call _showScreenLCD_P
+  75               	.LM12:
+  76 0060 88EE      		ldi r24,lo8(1000)
+  77 0062 93E0      		ldi r25,hi8(1000)
+  78 0064 0E94 0000 		call mSleep
+  79               	.LM13:
+  80 0068 A79A      		sbi 52-32,7
+  81               	.LM14:
+  82 006a AF9A      		sbi 53-32,7
+  83               	.LM15:
+  84 006c 80E0      		ldi r24,lo8(__c.1763)
+  85 006e 90E0      		ldi r25,hi8(__c.1763)
+  86 0070 0E94 0000 		call writeNStringP
+  87               	.LM16:
+  88 0074 88EE      		ldi r24,lo8(1000)
+  89 0076 93E0      		ldi r25,hi8(1000)
+  90 0078 0E94 0000 		call mSleep
+  91               	.LM17:
+  92 007c AF98      		cbi 53-32,7
+  93               	.LM18:
+  94 007e 80E0      		ldi r24,lo8(__c.1765)
+  95 0080 90E0      		ldi r25,hi8(__c.1765)
+  96 0082 0E94 0000 		call writeNStringP
+  97               	.LM19:
+  98 0086 A698      		cbi 52-32,6
+  99               	.LM20:
+ 100 0088 AE9A      		sbi 53-32,6
+ 101               	.LM21:
+ 102 008a 80E0      		ldi r24,lo8(__c.1767)
+ 103 008c 90E0      		ldi r25,hi8(__c.1767)
+ 104 008e 0E94 0000 		call writeNStringP
+ 105               	.LM22:
+ 106 0092 9E9B      		sbis 51-32,6
+ 107 0094 00C0      		rjmp .L2
+ 108               	.LM23:
+ 109 0096 80E0      		ldi r24,lo8(__c.1769)
+ 110 0098 90E0      		ldi r25,hi8(__c.1769)
+ 111 009a 00C0      		rjmp .L6
+ 112               	.L2:
+ 113               	.LM24:
+ 114 009c 80E0      		ldi r24,lo8(__c.1771)
+ 115 009e 90E0      		ldi r25,hi8(__c.1771)
+ 116               	.L6:
+ 117 00a0 0E94 0000 		call writeNStringP
+ 118               	.LM25:
+ 119 00a4 D598      		cbi 58-32,5
+ 120               	.LM26:
+ 121 00a6 D498      		cbi 58-32,4
+ 122               	.LM27:
+ 123 00a8 D398      		cbi 58-32,3
+ 124               	.LM28:
+ 125 00aa D298      		cbi 58-32,2
+ 126               	.L4:
+ 127               	.LBB2:
+ 128               	.LM29:
+ 129 00ac 80E0      		ldi r24,lo8(__c.1773)
+ 130 00ae 90E0      		ldi r25,hi8(__c.1773)
+ 131 00b0 0E94 0000 		call writeNStringP
+ 132               	.LM30:
+ 133 00b4 83E0      		ldi r24,lo8(3)
+ 134 00b6 0E94 0000 		call readADC
+ 135               	.LM31:
+ 136 00ba 6AE0      		ldi r22,lo8(10)
+ 137 00bc 0E94 0000 		call writeInteger
+ 138               	.LM32:
+ 139 00c0 80E0      		ldi r24,lo8(.LC0)
+ 140 00c2 90E0      		ldi r25,hi8(.LC0)
+ 141 00c4 0E94 0000 		call writeString
+ 142               	.LM33:
+ 143 00c8 82E0      		ldi r24,lo8(2)
+ 144 00ca 0E94 0000 		call readADC
+ 145               	.LM34:
+ 146 00ce 6AE0      		ldi r22,lo8(10)
+ 147 00d0 0E94 0000 		call writeInteger
+ 148               	.LM35:
+ 149 00d4 80E0      		ldi r24,lo8(__c.1777)
+ 150 00d6 90E0      		ldi r25,hi8(__c.1777)
+ 151 00d8 0E94 0000 		call writeNStringP
+ 152               	.LM36:
+ 153 00dc 84E0      		ldi r24,lo8(4)
+ 154 00de 0E94 0000 		call readADC
+ 155               	.LM37:
+ 156 00e2 6AE0      		ldi r22,lo8(10)
+ 157 00e4 0E94 0000 		call writeInteger
+ 158               	.LM38:
+ 159 00e8 80E0      		ldi r24,lo8(.LC1)
+ 160 00ea 90E0      		ldi r25,hi8(.LC1)
+ 161 00ec 0E94 0000 		call writeString
+ 162               	.LM39:
+ 163 00f0 85E0      		ldi r24,lo8(5)
+ 164 00f2 0E94 0000 		call readADC
+ 165               	.LM40:
+ 166 00f6 6AE0      		ldi r22,lo8(10)
+ 167 00f8 0E94 0000 		call writeInteger
+ 168               	.LM41:
+ 169 00fc 8AE0      		ldi r24,lo8(10)
+ 170 00fe 0E94 0000 		call writeChar
+ 171               	.LM42:
+ 172 0102 84EF      		ldi r24,lo8(500)
+ 173 0104 91E0      		ldi r25,hi8(500)
+ 174 0106 0E94 0000 		call mSleep
+ 175 010a 00C0      		rjmp .L4
+ 176               	.LBE2:
+ 177               	.LFE6:
+ 179               		.section	.progmem.data,"a",@progbits
+ 182               	__c.1777:
+ 183 0000 0A41 4443 		.string	"\nADC4 [Rechtsvoor]: "
+ 183      3420 5B52 
+ 183      6563 6874 
+ 183      7376 6F6F 
+ 183      725D 3A20 
+ 186               	__c.1773:
+ 187 0015 0A41 4443 		.string	"\nADC3 [Rechtsachter]: "
+ 187      3320 5B52 
+ 187      6563 6874 
+ 187      7361 6368 
+ 187      7465 725D 
+ 190               	__c.1771:
+ 191 002c 0A0A 5043 		.string	"\n\nPC6 is LOW!\n\n"
+ 191      3620 6973 
+ 191      204C 4F57 
+ 191      210A 0A00 
+ 194               	__c.1769:
+ 195 003c 0A0A 5043 		.string	"\n\nPC6 is HIGH!\n\n"
+ 195      3620 6973 
+ 195      2048 4947 
+ 195      4821 0A0A 
+ 195      00
+ 198               	__c.1767:
+ 199 004d 0A43 6865 		.string	"\nCheck PC6:"
+ 199      636B 2050 
+ 199      4336 3A00 
+ 202               	__c.1765:
+ 203 0059 0A50 4337 		.string	"\nPC7 is set to LOW!\n\n"
+ 203      2069 7320 
+ 203      7365 7420 
+ 203      746F 204C 
+ 203      4F57 210A 
+ 206               	__c.1763:
+ 207 006f 0A50 4337 		.string	"\nPC7 is set to HIGH!\n\n"
+ 207      2069 7320 
+ 207      7365 7420 
+ 207      746F 2048 
+ 207      4947 4821 
+ 210               	__c.1761:
+ 211 0086 4578 616D 		.string	"Example Program"
+ 211      706C 6520 
+ 211      5072 6F67 
+ 211      7261 6D00 
+ 214               	__c.1759:
+ 215 0096 492F 4F20 		.string	"I/O and ADC"
+ 215      616E 6420 
+ 215      4144 4300 
+ 218               	__c.1757:
+ 219 00a2 2323 2323 		.string	"################"
+ 219      2323 2323 
+ 219      2323 2323 
+ 219      2323 2323 
+ 219      00
+ 222               	__c.1755:
+ 223 00b3 2323 2323 		.string	"################"
+ 223      2323 2323 
+ 223      2323 2323 
+ 223      2323 2323 
+ 223      00
+ 226               	__c.1753:
+ 227 00c4 0A0A 5250 		.string	"\n\nRP6Control I/O and ADC Example Program!\n"
+ 227      3643 6F6E 
+ 227      7472 6F6C 
+ 227      2049 2F4F 
+ 227      2061 6E64 
+ 228               		.comm timer,2,1
+ 253               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 RP6Control_05_IO_ADC.c
+     /tmp/ccslvoBZ.s:2      *ABS*:0000003f __SREG__
+     /tmp/ccslvoBZ.s:3      *ABS*:0000003e __SP_H__
+     /tmp/ccslvoBZ.s:4      *ABS*:0000003d __SP_L__
+     /tmp/ccslvoBZ.s:5      *ABS*:00000034 __CCP__
+     /tmp/ccslvoBZ.s:6      *ABS*:00000000 __tmp_reg__
+     /tmp/ccslvoBZ.s:7      *ABS*:00000001 __zero_reg__
+     /tmp/ccslvoBZ.s:24     .text:00000000 main
+     /tmp/ccslvoBZ.s:226    .progmem.data:000000c4 __c.1753
+     /tmp/ccslvoBZ.s:222    .progmem.data:000000b3 __c.1755
+     /tmp/ccslvoBZ.s:218    .progmem.data:000000a2 __c.1757
+     /tmp/ccslvoBZ.s:214    .progmem.data:00000096 __c.1759
+     /tmp/ccslvoBZ.s:210    .progmem.data:00000086 __c.1761
+     /tmp/ccslvoBZ.s:206    .progmem.data:0000006f __c.1763
+     /tmp/ccslvoBZ.s:202    .progmem.data:00000059 __c.1765
+     /tmp/ccslvoBZ.s:198    .progmem.data:0000004d __c.1767
+     /tmp/ccslvoBZ.s:194    .progmem.data:0000003c __c.1769
+     /tmp/ccslvoBZ.s:190    .progmem.data:0000002c __c.1771
+     /tmp/ccslvoBZ.s:186    .progmem.data:00000015 __c.1773
+     /tmp/ccslvoBZ.s:182    .progmem.data:00000000 __c.1777
+                            *COM*:00000002 timer
+
+UNDEFINED SYMBOLS
+initRP6Control
+initLCD
+writeNStringP
+setLEDs
+_showScreenLCD_P
+beep
+mSleep
+readADC
+writeInteger
+writeString
+writeChar
+__do_copy_data
+__do_clear_bss
