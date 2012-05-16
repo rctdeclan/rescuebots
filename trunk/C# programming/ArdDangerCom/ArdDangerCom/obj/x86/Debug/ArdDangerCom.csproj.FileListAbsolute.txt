@@ -1,0 +1,9 @@
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\bin\Debug\ArdDangerCom.exe
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\bin\Debug\ArdDangerCom.pdb
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\ArdDangerCom.ArDangerComMainForm.resources
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\ArdDangerCom.Properties.Resources.resources
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\ArdDangerCom.exe
+C:\Users\Rowin\Desktop\ArdDangerCom\ArdDangerCom\obj\x86\Debug\ArdDangerCom.pdb
