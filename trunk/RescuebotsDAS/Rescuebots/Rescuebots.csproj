@@ -46,17 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Field.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Field.Designer.cs">
+      <DependentUpon>Field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransparentPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommControl.cs" />
+    <Compile Include="OldForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="OldForm1.Designer.cs">
+      <DependentUpon>OldForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="OldForm1.resx">
+      <DependentUpon>OldForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +98,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\WEST_TO_NORTH_OUT.png" />
+    <EmbeddedResource Include="Resources\SOUTH_TO_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\NOT_ENTERED_ZONE_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_TO_SOUTH_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_TO_EAST_OUT.png" />
+    <EmbeddedResource Include="Resources\EAST_TO_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\EAST_TO_SOUTH_OUT.png" />
+    <EmbeddedResource Include="Resources\WEST_TO_NORTH_IN.png" />
+    <EmbeddedResource Include="Resources\SOUTH_TO_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\NOT_ENTERED_ZONE_IN.png" />
+    <EmbeddedResource Include="Resources\NORTH_TO_SOUTH_IN.png" />
+    <EmbeddedResource Include="Resources\NORTH_TO_EAST_IN.png" />
+    <EmbeddedResource Include="Resources\EAST_TO_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\EAST_TO_SOUTH_IN.png" />
+    <EmbeddedResource Include="Resources\VICTIM.png" />
+    <EmbeddedResource Include="Resources\STARTPOSITION.png" />
+    <EmbeddedResource Include="Resources\NO_STARTPOSITION_OR_VICTIM.png" />
+    <EmbeddedResource Include="Resources\WEST_NORTH_EAST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\WEST_NORTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\WEST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\SOUTH_WEST_NORTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\SOUTH_WEST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\SOUTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\NORTH_SOUTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_SOUTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\NORTH_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\EAST_WEST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\EAST_SOUTH_WEST_CLOSED1.png" />
+    <EmbeddedResource Include="Resources\EAST_SOUTH_CLOSED1.png" />
     <EmbeddedResource Include="Resources\WEST_NORTH_EAST_CLOSED.png" />
     <EmbeddedResource Include="Resources\WEST_NORTH_CLOSED.png" />
     <EmbeddedResource Include="Resources\WEST_CLOSED.png" />
@@ -91,9 +140,44 @@
     <EmbeddedResource Include="Resources\NORTH_CLOSED.png" />
     <EmbeddedResource Include="Resources\EAST_WEST_CLOSED.png" />
     <EmbeddedResource Include="Resources\EAST_SOUTH_WEST_CLOSED.png" />
+    <EmbeddedResource Include="Resources\ALL_OPEN1.png" />
+    <EmbeddedResource Include="Resources\EAST_CLOSED1.png" />
     <EmbeddedResource Include="Resources\EAST_SOUTH_CLOSED.png" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Resources\EAST_CLOSED.png" />
-    <None Include="Resources\ALL_OPEN.png" />
+    <Content Include="Resources\Tekeningen\Main\ALL_OPEN.png" />
+    <Content Include="Resources\Tekeningen\Main\EAST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\EAST_SOUTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\EAST_SOUTH_WEST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\EAST_WEST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\NORTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\NORTH_EAST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\NORTH_EAST_SOUTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\NORTH_SOUTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\SOUTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\SOUTH_WEST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\SOUTH_WEST_NORTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\WEST_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\WEST_NORTH_CLOSED.png" />
+    <Content Include="Resources\Tekeningen\Main\WEST_NORTH_EAST_CLOSED.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Startposition_Victim\NO_STARTPOSITION_OR_VICTIM.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Startposition_Victim\STARTPOSITION.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Startposition_Victim\VICTIM.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\EAST_TO_SOUTH_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\EAST_TO_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\NORTH_TO_EAST_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\NORTH_TO_SOUTH_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\NOT_ENTERED_ZONE_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\SOUTH_TO_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_in\WEST_TO_NORTH_IN.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\EAST_TO_SOUTH_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\EAST_TO_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\NORTH_TO_EAST_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\NORTH_TO_SOUTH_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\NOT_ENTERED_ZONE_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\SOUTH_TO_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\Tekeningen\Way_out\WEST_TO_NORTH_OUT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
