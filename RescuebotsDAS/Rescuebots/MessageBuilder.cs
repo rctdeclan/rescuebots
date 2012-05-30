@@ -77,7 +77,7 @@ namespace Rescuebots
         /// The next (complete) message (including markers), 
         /// or null if no message was found.
         /// </returns>
-        public String FindAndRemoveNextMessage()
+        public int[,] FindAndRemoveNextMessage()
         {
             int beginIndex = bufferedData.IndexOf(messageBeginMarker);
             if (beginIndex != -1)
@@ -85,18 +85,43 @@ namespace Rescuebots
                 int endIndex = bufferedData.IndexOf(messageEndMarker, beginIndex);
                 if (endIndex != -1)
                 {
+                    int[,] convertedstring;
                     String foundMessage = bufferedData.Substring(
-                        beginIndex, (endIndex - beginIndex) + 1);
+                       beginIndex, (endIndex - beginIndex) + 1);
                     bufferedData = bufferedData.Substring(endIndex + 1);
-                    return foundMessage;
+                    convertedstring = StringConvertTo2DArray(foundMessage);
+                    return convertedstring;
                 }
             }
             return null;
         }
 
-        /// <summary>
-        /// Clear all buffered data
-        /// </summary>
+        public int[,] StringConvertTo2DArray(string messageonconverted)
+        {
+            return null;
+            int lengtstring = messageonconverted.Length;
+            if (lengtstring == 100)
+            {
+                int[,] hulp2darray = new int[10, 10];
+                for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 10; j++)
+                    {
+
+                        return null;
+
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+
         public void Clear()
         {
             bufferedData = "";

@@ -118,32 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ALL_OPEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ALL_OPEN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EAST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EAST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EAST_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EAST_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WEST_NORTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_NORTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EAST_SOUTH_WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EAST_SOUTH_WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EAST_WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EAST_WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NORTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NORTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NORTH_EAST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NORTH_EAST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EAST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NORTH_EAST_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NORTH_EAST_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NORTH_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NORTH_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EAST_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,16 +142,121 @@
   <data name="SOUTH_WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SOUTH_WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SOUTH_WEST_NORTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SOUTH_WEST_NORTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NORTH_EAST_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_EAST_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ALL_OPEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ALL_OPEN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WEST_NORTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WEST_NORTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EAST_WEST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_WEST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_SOUTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_SOUTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WEST_NORTH_EAST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WEST_NORTH_EAST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_EAST_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_EAST_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_WEST_NORTH_CLOSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_WEST_NORTH_CLOSED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ALL_OPEN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ALL_OPEN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_SOUTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_SOUTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_SOUTH_WEST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_SOUTH_WEST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_WEST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_WEST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_EAST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_EAST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_EAST_SOUTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_EAST_SOUTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_SOUTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_SOUTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_WEST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_WEST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_WEST_NORTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_WEST_NORTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WEST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WEST_NORTH_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_NORTH_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WEST_NORTH_EAST_CLOSED1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_NORTH_EAST_CLOSED1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NO_STARTPOSITION_OR_VICTIM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NO_STARTPOSITION_OR_VICTIM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STARTPOSITION" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STARTPOSITION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VICTIM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VICTIM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_TO_SOUTH_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_TO_SOUTH_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_TO_WEST_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_TO_WEST_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_TO_EAST_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_TO_EAST_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_TO_SOUTH_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_TO_SOUTH_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOT_ENTERED_ZONE_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NOT_ENTERED_ZONE_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_TO_WEST_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_TO_WEST_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WEST_TO_NORTH_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_TO_NORTH_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_TO_SOUTH_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_TO_SOUTH_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EAST_TO_WEST_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EAST_TO_WEST_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_TO_EAST_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_TO_EAST_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH_TO_SOUTH_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH_TO_SOUTH_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOT_ENTERED_ZONE_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NOT_ENTERED_ZONE_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH_TO_WEST_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH_TO_WEST_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WEST_TO_NORTH_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WEST_TO_NORTH_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
