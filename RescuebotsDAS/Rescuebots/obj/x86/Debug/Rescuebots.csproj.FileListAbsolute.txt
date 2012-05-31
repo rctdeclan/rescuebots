@@ -41,15 +41,6 @@ C:\Users\Declan\Fontys Projects\rescuebots\RescuebotsDAS\Rescuebots\obj\x86\Debu
 C:\Users\Declan\Fontys Projects\rescuebots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.Properties.Resources.resources
 C:\Users\Declan\Fontys Projects\rescuebots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Declan\Fontys Projects\rescuebots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.exe
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.pdb
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.Form1.resources
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.Properties.Resources.resources
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.exe
-C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.pdb
 C:\Users\Kay\Desktop\school\fonty's hbo\p4\ptt22\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.exe
 C:\Users\Kay\Desktop\school\fonty's hbo\p4\ptt22\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.pdb
 C:\Users\Kay\Desktop\school\fonty's hbo\p4\ptt22\RescuebotsDAS\Rescuebots\obj\x86\Debug\ResolveAssemblyReference.cache
@@ -67,3 +58,13 @@ C:\Users\Rowin\Desktop\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.exe
 C:\Users\Rowin\Desktop\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.pdb
 C:\Users\Rowin\Desktop\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.exe
 C:\Users\Rowin\Desktop\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.pdb
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.exe
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\bin\Debug\Rescuebots.pdb
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.Form1.resources
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.MainForm.resources
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.Properties.Resources.resources
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.exe
+C:\Users\Rowin\Desktop\RescueBots\RescuebotsDAS\Rescuebots\obj\x86\Debug\Rescuebots.pdb
