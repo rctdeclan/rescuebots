@@ -116,6 +116,20 @@ namespace Rescuebots.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap EAST_SOUTH_WEST_IN {
+            get {
+                object obj = ResourceManager.GetObject("EAST_SOUTH_WEST_IN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EAST_SOUTH_WEST_OUT {
+            get {
+                object obj = ResourceManager.GetObject("EAST_SOUTH_WEST_OUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap EAST_TO_SOUTH_IN {
             get {
                 object obj = ResourceManager.GetObject("EAST_TO_SOUTH_IN", resourceCulture);
@@ -207,6 +221,48 @@ namespace Rescuebots.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap NORTH_EAST_SOUTH_IN {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_SOUTH_IN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_EAST_SOUTH_OUT {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_SOUTH_OUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_EAST_SOUTH_WEST_IN {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_SOUTH_WEST_IN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_EAST_SOUTH_WEST_OUT {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_SOUTH_WEST_OUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_EAST_WEST_IN {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_WEST_IN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_EAST_WEST_OUT {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_EAST_WEST_OUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap NORTH_SOUTH_CLOSED {
             get {
                 object obj = ResourceManager.GetObject("NORTH_SOUTH_CLOSED", resourceCulture);
@@ -217,6 +273,20 @@ namespace Rescuebots.Properties {
         internal static System.Drawing.Bitmap NORTH_SOUTH_CLOSED1 {
             get {
                 object obj = ResourceManager.GetObject("NORTH_SOUTH_CLOSED1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_SOUTH_WEST_IN {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_SOUTH_WEST_IN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NORTH_SOUTH_WEST_OUT {
+            get {
+                object obj = ResourceManager.GetObject("NORTH_SOUTH_WEST_OUT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

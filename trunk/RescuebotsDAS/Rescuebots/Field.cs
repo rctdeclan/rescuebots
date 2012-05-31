@@ -15,9 +15,9 @@ namespace Rescuebots
         {
             InitializeComponent();
 
-            for (int i = 0; i < 10; i++)
+            for (int j = 0; j < 10; j++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int i = 0; i < 10; i++)
                 {
                     borderPBs[i, j] = new TransparentPictureBox();
                     borderPBs[i, j].Image = Rescuebots.Properties.Resources.ALL_OPEN;
@@ -30,6 +30,12 @@ namespace Rescuebots
                     routePBs[i, j].Location = new System.Drawing.Point(i * 70, j * 70);
                     routePBs[i, j].Size = new System.Drawing.Size(70, 70);
                     this.Controls.Add(routePBs[i, j]);
+
+                    invRoutePBs[i, j] = new TransparentPictureBox();
+                    invRoutePBs[i, j].Image = Rescuebots.Properties.Resources.WEST_TO_NORTH_OUT;
+                    invRoutePBs[i, j].Location = new System.Drawing.Point(i * 70, j * 70);
+                    invRoutePBs[i, j].Size = new System.Drawing.Size(70, 70);
+                    this.Controls.Add(invRoutePBs[i, j]);
                 }
             }
         }
@@ -62,6 +68,11 @@ namespace Rescuebots
         Bitmap NOT_ENTERED_ZONE_IN = new Bitmap(Rescuebots.Properties.Resources.NOT_ENTERED_ZONE_IN);
         Bitmap SOUTH_TO_WEST_IN = new Bitmap(Rescuebots.Properties.Resources.SOUTH_TO_WEST_IN);
         Bitmap WEST_TO_NORTH_IN = new Bitmap(Rescuebots.Properties.Resources.WEST_TO_NORTH_IN);
+        Bitmap NORTH_EAST_SOUTH_IN = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_SOUTH_IN);
+        Bitmap EAST_SOUTH_WEST_IN = new Bitmap(Rescuebots.Properties.Resources.EAST_SOUTH_WEST_IN);
+        Bitmap NORTH_SOUTH_WEST_IN = new Bitmap(Rescuebots.Properties.Resources.NORTH_SOUTH_WEST_IN);
+        Bitmap NORTH_EAST_WEST_IN = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_WEST_IN);
+        Bitmap NORTH_EAST_SOUTH_WEST_IN = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_SOUTH_WEST_IN);
 
         Bitmap EAST_TO_SOUTH_OUT = new Bitmap(Rescuebots.Properties.Resources.EAST_TO_SOUTH_OUT);
         Bitmap EAST_TO_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.EAST_TO_WEST_OUT);
@@ -70,10 +81,15 @@ namespace Rescuebots
         Bitmap NOT_ENTERED_ZONE_OUT = new Bitmap(Rescuebots.Properties.Resources.NOT_ENTERED_ZONE_OUT);
         Bitmap SOUTH_TO_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.SOUTH_TO_WEST_OUT);
         Bitmap WEST_TO_NORTH_OUT = new Bitmap(Rescuebots.Properties.Resources.WEST_TO_NORTH_OUT);
-
+        Bitmap NORTH_EAST_SOUTH_OUT = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_SOUTH_OUT);
+        Bitmap EAST_SOUTH_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.EAST_SOUTH_WEST_OUT);
+        Bitmap NORTH_SOUTH_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.NORTH_SOUTH_WEST_OUT);
+        Bitmap NORTH_EAST_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_WEST_OUT);
+        Bitmap NORTH_EAST_SOUTH_WEST_OUT = new Bitmap(Rescuebots.Properties.Resources.NORTH_EAST_SOUTH_WEST_OUT);
 
         TransparentPictureBox[,] borderPBs = new TransparentPictureBox[10, 10];
         TransparentPictureBox[,] routePBs = new TransparentPictureBox[10, 10];
+        TransparentPictureBox[,] invRoutePBs = new TransparentPictureBox[10, 10];
 
         int[,] borderIndexes = new int[10, 10] 
         { 
@@ -92,6 +108,8 @@ namespace Rescuebots
         int[,] routeIndexes = new int[10, 10] 
         { 
        { 0, 0, 3, 4, 5, 0, 0, 0, 0, 0 },
+       { 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
+       { 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
@@ -99,8 +117,20 @@ namespace Rescuebots
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
+        };
+
+        int[,] invRouteIndexes = new int[10, 10] 
+                { 
+        { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, 
+        { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 8, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
+        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
         };
 
         public void FillWithValues()
@@ -163,16 +193,9 @@ namespace Rescuebots
 
                             break;
                     }
-                }
-            }
-
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    int caseSwitch2 = routeIndexes[i, j];
-                    TransparentPictureBox pb = routePBs[i, j];
-                    switch (caseSwitch2)
+                    caseSwitch = routeIndexes[i, j];
+                    pb = routePBs[i, j];
+                    switch (caseSwitch)
                     {
                         case 0:
                             pb.Image = NOT_ENTERED_ZONE_IN;
@@ -195,8 +218,68 @@ namespace Rescuebots
                         case 6:
                             pb.Image = WEST_TO_NORTH_IN;
                             break;
+                        case 7:
+                            pb.Image = NORTH_EAST_WEST_IN;
+                            break;
+                        case 8:
+                            pb.Image = EAST_SOUTH_WEST_IN;
+                            break;
+                        case 9:
+                            pb.Image = NORTH_SOUTH_WEST_IN;
+                            break;
+                        case 10:
+                            pb.Image = NORTH_EAST_WEST_IN;
+                            break;
+                        case 11:
+                            pb.Image = NORTH_EAST_SOUTH_WEST_IN;
+                            break;
                         default:
                             pb.Image = NOT_ENTERED_ZONE_IN;
+
+                            break;
+                    }
+                    caseSwitch = invRouteIndexes[i, j];
+                    pb = invRoutePBs[i, j];
+                    switch (caseSwitch)
+                    {
+                        case 0:
+                            pb.Image = NOT_ENTERED_ZONE_OUT;
+                            break;
+                        case 1:
+                            pb.Image = EAST_TO_SOUTH_OUT;
+                            break;
+                        case 2:
+                            pb.Image = EAST_TO_WEST_OUT;
+                            break;
+                        case 3:
+                            pb.Image = NORTH_TO_EAST_OUT;
+                            break;
+                        case 4:
+                            pb.Image = NORTH_TO_SOUTH_OUT;
+                            break;
+                        case 5:
+                            pb.Image = SOUTH_TO_WEST_OUT;
+                            break;
+                        case 6:
+                            pb.Image = WEST_TO_NORTH_OUT;
+                            break;
+                        case 7:
+                            pb.Image = NORTH_EAST_WEST_OUT;
+                            break;
+                        case 8:
+                            pb.Image = EAST_SOUTH_WEST_OUT;
+                            break;
+                        case 9:
+                            pb.Image = NORTH_SOUTH_WEST_OUT;
+                            break;
+                        case 10:
+                            pb.Image = NORTH_EAST_WEST_OUT;
+                            break;
+                        case 11:
+                            pb.Image = NORTH_EAST_SOUTH_WEST_OUT;
+                            break;
+                        default:
+                            pb.Image = NOT_ENTERED_ZONE_OUT;
 
                             break;
                     }

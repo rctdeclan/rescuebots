@@ -146,6 +146,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\EAST_CLOSED.png" />
+    <EmbeddedResource Include="Resources\EAST_SOUTH_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\EAST_SOUTH_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_SOUTH_IN.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_SOUTH_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_SOUTH_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_SOUTH_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_WEST_IN.png" />
+    <EmbeddedResource Include="Resources\NORTH_EAST_WEST_OUT.png" />
+    <EmbeddedResource Include="Resources\NORTH_SOUTH_WEST_OUT.png" />
+    <None Include="Resources\NORTH_SOUTH_WEST_IN.png" />
     <Content Include="Resources\Tekeningen\Main\ALL_OPEN.png" />
     <Content Include="Resources\Tekeningen\Main\EAST_CLOSED.png" />
     <Content Include="Resources\Tekeningen\Main\EAST_SOUTH_CLOSED.png" />
