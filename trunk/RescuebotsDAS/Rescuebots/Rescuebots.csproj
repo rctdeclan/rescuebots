@@ -46,22 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertRp6Info.cs" />
     <Compile Include="Field.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Field.Designer.cs">
       <DependentUpon>Field.cs</DependentUpon>
     </Compile>
+    <Compile Include="SerielCom.cs" />
     <Compile Include="TransparentPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CommControl.cs" />
-    <Compile Include="OldForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OldForm1.Designer.cs">
-      <DependentUpon>OldForm1.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,9 +67,6 @@
     <Compile Include="MessageBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="OldForm1.resx">
-      <DependentUpon>OldForm1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +80,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
