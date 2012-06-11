@@ -1,0 +1,206 @@
+   1               		.file	"RP6Control_21_SPIMasterFONTYS.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RP6_SPI_Select
+  18               	RP6_SPI_Select:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 C198      		cbi 56-32,1
+  25               	/* epilogue start */
+  26               	.LM3:
+  27 0002 0895      		ret
+  28               	.LFE6:
+  30               	.global	RP6_SPI_Deselect
+  32               	RP6_SPI_Deselect:
+  33               	.LFB7:
+  34               	.LM4:
+  35               	/* prologue: function */
+  36               	/* frame size = 0 */
+  37               	.LM5:
+  38 0004 C19A      		sbi 56-32,1
+  39               	/* epilogue start */
+  40               	.LM6:
+  41 0006 0895      		ret
+  42               	.LFE7:
+  44               	.global	RP6_SPI_read
+  46               	RP6_SPI_read:
+  47               	.LFB8:
+  48               	.LM7:
+  49               	/* prologue: function */
+  50               	/* frame size = 0 */
+  51               	.LBB6:
+  52               	.LBB7:
+  53               	.LM8:
+  54 0008 C198      		cbi 56-32,1
+  55               	.LBE7:
+  56               	.LBE6:
+  57               	.LM9:
+  58 000a 0E94 0000 		call readWordSPI
+  59               	.LBB8:
+  60               	.LBB9:
+  61               	.LM10:
+  62 000e C19A      		sbi 56-32,1
+  63               	/* epilogue start */
+  64               	.LBE9:
+  65               	.LBE8:
+  66               	.LM11:
+  67 0010 0895      		ret
+  68               	.LFE8:
+  70               	.global	RP6_SPI_init
+  72               	RP6_SPI_init:
+  73               	.LFB9:
+  74               	.LM12:
+  75               	/* prologue: function */
+  76               	/* frame size = 0 */
+  77               	.LM13:
+  78 0012 699A      		sbi 45-32,1
+  79               	.LM14:
+  80 0014 7098      		cbi 46-32,0
+  81               	.LM15:
+  82 0016 0E94 0000 		call RP6_SPI_read
+  83               	/* epilogue start */
+  84               	.LM16:
+  85 001a 0895      		ret
+  86               	.LFE9:
+  88               	.global	main
+  90               	main:
+  91               	.LFB10:
+  92               	.LM17:
+  93               	/* prologue: function */
+  94               	/* frame size = 0 */
+  95               	.LM18:
+  96 001c 0E94 0000 		call initRP6Control
+  97               	.LM19:
+  98 0020 0E94 0000 		call initLCD
+  99               	.LM20:
+ 100 0024 80E0      		ldi r24,lo8(__c.1783)
+ 101 0026 90E0      		ldi r25,hi8(__c.1783)
+ 102 0028 0E94 0000 		call writeNStringP
+ 103               	.LM21:
+ 104 002c 0E94 0000 		call RP6_SPI_init
+ 105               	.LM22:
+ 106 0030 84EB      		ldi r24,lo8(-76)
+ 107 0032 60E5      		ldi r22,lo8(80)
+ 108 0034 70E0      		ldi r23,hi8(80)
+ 109 0036 0E94 0000 		call beep
+ 110 003a 89E6      		ldi r24,lo8(105)
+ 111 003c 90E0      		ldi r25,hi8(105)
+ 112 003e 0E94 0000 		call mSleep
+ 113               	.LM23:
+ 114 0042 8CED      		ldi r24,lo8(-36)
+ 115 0044 60E5      		ldi r22,lo8(80)
+ 116 0046 70E0      		ldi r23,hi8(80)
+ 117 0048 0E94 0000 		call beep
+ 118 004c 89E6      		ldi r24,lo8(105)
+ 119 004e 90E0      		ldi r25,hi8(105)
+ 120 0050 0E94 0000 		call mSleep
+ 121               	.LM24:
+ 122 0054 8FE0      		ldi r24,lo8(15)
+ 123 0056 0E94 0000 		call setLEDs
+ 124               	.LM25:
+ 125 005a 80E0      		ldi r24,lo8(__c.1785)
+ 126 005c 90E0      		ldi r25,hi8(__c.1785)
+ 127 005e 60E0      		ldi r22,lo8(__c.1787)
+ 128 0060 70E0      		ldi r23,hi8(__c.1787)
+ 129 0062 0E94 0000 		call _showScreenLCD_P
+ 130               	.LM26:
+ 131 0066 84EF      		ldi r24,lo8(500)
+ 132 0068 91E0      		ldi r25,hi8(500)
+ 133 006a 0E94 0000 		call mSleep
+ 134               	.LM27:
+ 135 006e 80E0      		ldi r24,lo8(__c.1789)
+ 136 0070 90E0      		ldi r25,hi8(__c.1789)
+ 137 0072 60E0      		ldi r22,lo8(__c.1791)
+ 138 0074 70E0      		ldi r23,hi8(__c.1791)
+ 139 0076 0E94 0000 		call _showScreenLCD_P
+ 140               	.LM28:
+ 141 007a 88EE      		ldi r24,lo8(1000)
+ 142 007c 93E0      		ldi r25,hi8(1000)
+ 143 007e 0E94 0000 		call mSleep
+ 144               	.LM29:
+ 145 0082 80E0      		ldi r24,lo8(0)
+ 146 0084 0E94 0000 		call setLEDs
+ 147               	.L10:
+ 148               	.LM30:
+ 149 0088 84E6      		ldi r24,lo8(100)
+ 150 008a 0E94 0000 		call sleep
+ 151               	.LM31:
+ 152 008e 0E94 0000 		call RP6_SPI_read
+ 153 0092 9695      		lsr r25
+ 154 0094 8795      		ror r24
+ 155 0096 9695      		lsr r25
+ 156 0098 8795      		ror r24
+ 157 009a 6AE0      		ldi r22,lo8(10)
+ 158 009c 0E94 0000 		call writeInteger
+ 159               	.LM32:
+ 160 00a0 8AE0      		ldi r24,lo8(10)
+ 161 00a2 0E94 0000 		call writeChar
+ 162 00a6 00C0      		rjmp .L10
+ 163               	.LFE10:
+ 165               		.section	.progmem.data,"a",@progbits
+ 168               	__c.1791:
+ 169 0000 4779 726F 		.string	"Gyroscope"
+ 169      7363 6F70 
+ 169      6500 
+ 172               	__c.1789:
+ 173 000a 5350 492D 		.string	"SPI-Master"
+ 173      4D61 7374 
+ 173      6572 00
+ 176               	__c.1787:
+ 177 0015 2323 2323 		.string	"################"
+ 177      2323 2323 
+ 177      2323 2323 
+ 177      2323 2323 
+ 177      00
+ 180               	__c.1785:
+ 181 0026 2323 2323 		.string	"################"
+ 181      2323 2323 
+ 181      2323 2323 
+ 181      2323 2323 
+ 181      00
+ 184               	__c.1783:
+ 185 0037 0A0A 5250 		.string	"\n\nRP6 CONTROL M32 SPI Gyroscope Module Test Program!\n"
+ 185      3620 434F 
+ 185      4E54 524F 
+ 185      4C20 4D33 
+ 185      3220 5350 
+ 242               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 RP6Control_21_SPIMasterFONTYS.c
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:2      *ABS*:0000003f __SREG__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:5      *ABS*:00000034 __CCP__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:18     .text:00000000 RP6_SPI_Select
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:32     .text:00000004 RP6_SPI_Deselect
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:46     .text:00000008 RP6_SPI_read
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:72     .text:00000012 RP6_SPI_init
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:90     .text:0000001c main
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:184    .progmem.data:00000037 __c.1783
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:180    .progmem.data:00000026 __c.1785
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:176    .progmem.data:00000015 __c.1787
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:172    .progmem.data:0000000a __c.1789
+C:\Users\Tom\AppData\Local\Temp/ccd7ta88.s:168    .progmem.data:00000000 __c.1791
+
+UNDEFINED SYMBOLS
+readWordSPI
+initRP6Control
+initLCD
+writeNStringP
+beep
+mSleep
+setLEDs
+_showScreenLCD_P
+sleep
+writeInteger
+writeChar
