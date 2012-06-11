@@ -14,7 +14,7 @@ namespace Rescuebots
     public partial class MainForm : Form
     {
         private CommControl COM;
-        private const int connectionSpeed = 38400;
+        private const int connectionSpeed = 9600;
         private const String messageBeginMarker = "#";
         private const String messageEndMarker = "%";
         private SerialPort serialPort;
@@ -151,5 +151,26 @@ namespace Rescuebots
         {
             field.FillWithValues();
         }
+
+        private void YCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+         
+            
+            
+
+
+        }
+
+        private void XCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SendCoordinatesBtn_Click(object sender, EventArgs e)
+        {
+            SendMessage("#" + XCOORDINATEnumericUpDown.Value + YCOORDINATEnumericUpDown.Value + "%");
+        }
+
+        
     }
 }

@@ -41,11 +41,17 @@
             this.sendMessagesListBox = new System.Windows.Forms.ListBox();
             this.readMessageTimer = new System.Windows.Forms.Timer(this.components);
             this.FillMapBtn = new System.Windows.Forms.Button();
+            this.XCOORDINATEnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.YCOORDINATEnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.field = new Rescuebots.Field();
+            this.SendCoordinatesBtn = new System.Windows.Forms.Button();
             this.receivedRawDataGroupBox.SuspendLayout();
             this.connectionGroupBox.SuspendLayout();
             this.receivedMessagesGroupBox.SuspendLayout();
             this.sendMessagesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.XCOORDINATEnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCOORDINATEnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // receivedRawDataGroupBox
@@ -150,13 +156,33 @@
             // 
             // FillMapBtn
             // 
-            this.FillMapBtn.Location = new System.Drawing.Point(931, 542);
+            this.FillMapBtn.Location = new System.Drawing.Point(884, 542);
             this.FillMapBtn.Name = "FillMapBtn";
-            this.FillMapBtn.Size = new System.Drawing.Size(75, 23);
+            this.FillMapBtn.Size = new System.Drawing.Size(122, 23);
             this.FillMapBtn.TabIndex = 111;
             this.FillMapBtn.Text = "Fill Map";
             this.FillMapBtn.UseVisualStyleBackColor = true;
             this.FillMapBtn.Click += new System.EventHandler(this.FillMapBtn_Click);
+            // 
+            // XCOORDINATEnumericUpDown
+            // 
+            this.XCOORDINATEnumericUpDown.Location = new System.Drawing.Point(765, 583);
+            this.XCOORDINATEnumericUpDown.Name = "XCOORDINATEnumericUpDown";
+            this.XCOORDINATEnumericUpDown.Size = new System.Drawing.Size(66, 20);
+            this.XCOORDINATEnumericUpDown.TabIndex = 113;
+            this.XCOORDINATEnumericUpDown.ValueChanged += new System.EventHandler(this.XCOORDINATEnumericUpDown_ValueChanged);
+            // 
+            // YCOORDINATEnumericUpDown
+            // 
+            this.YCOORDINATEnumericUpDown.Location = new System.Drawing.Point(765, 635);
+            this.YCOORDINATEnumericUpDown.Name = "YCOORDINATEnumericUpDown";
+            this.YCOORDINATEnumericUpDown.Size = new System.Drawing.Size(66, 20);
+            this.YCOORDINATEnumericUpDown.TabIndex = 114;
+            this.YCOORDINATEnumericUpDown.ValueChanged += new System.EventHandler(this.YCOORDINATEnumericUpDown_ValueChanged);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.WriteBufferSize = 5000;
             // 
             // field
             // 
@@ -165,11 +191,24 @@
             this.field.Size = new System.Drawing.Size(700, 700);
             this.field.TabIndex = 112;
             // 
+            // SendCoordinatesBtn
+            // 
+            this.SendCoordinatesBtn.Location = new System.Drawing.Point(884, 605);
+            this.SendCoordinatesBtn.Name = "SendCoordinatesBtn";
+            this.SendCoordinatesBtn.Size = new System.Drawing.Size(122, 23);
+            this.SendCoordinatesBtn.TabIndex = 115;
+            this.SendCoordinatesBtn.Text = "Send Coördinates";
+            this.SendCoordinatesBtn.UseVisualStyleBackColor = true;
+            this.SendCoordinatesBtn.Click += new System.EventHandler(this.SendCoordinatesBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 702);
+            this.Controls.Add(this.SendCoordinatesBtn);
+            this.Controls.Add(this.YCOORDINATEnumericUpDown);
+            this.Controls.Add(this.XCOORDINATEnumericUpDown);
             this.Controls.Add(this.field);
             this.Controls.Add(this.FillMapBtn);
             this.Controls.Add(this.receivedRawDataGroupBox);
@@ -184,6 +223,8 @@
             this.connectionGroupBox.ResumeLayout(false);
             this.receivedMessagesGroupBox.ResumeLayout(false);
             this.sendMessagesGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.XCOORDINATEnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCOORDINATEnumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,6 +244,10 @@
         private System.Windows.Forms.Timer readMessageTimer;
         private System.Windows.Forms.Button FillMapBtn;
         private Field field;
+        private System.Windows.Forms.NumericUpDown XCOORDINATEnumericUpDown;
+        private System.Windows.Forms.NumericUpDown YCOORDINATEnumericUpDown;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Button SendCoordinatesBtn;
     }
 }
 

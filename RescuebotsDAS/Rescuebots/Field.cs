@@ -93,21 +93,22 @@ namespace Rescuebots
 
         int[,] borderIndexes = new int[10, 10] 
         { 
-        { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 8, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 }, 
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        { 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101, 1101 },
+        
         };
 
         int[,] routeIndexes = new int[10, 10] 
         { 
-       { 0, 0, 3, 4, 5, 0, 0, 0, 0, 0 },
+       { 1, 0, 3, 4, 5, 0, 0, 0, 0, 0 },
        { 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
        { 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
@@ -120,8 +121,8 @@ namespace Rescuebots
         };
 
         int[,] invRouteIndexes = new int[10, 10] 
-                { 
-        { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, 
+        { 
+        { 1, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, 
         { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
         { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
         { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
@@ -143,49 +144,49 @@ namespace Rescuebots
                     TransparentPictureBox pb = borderPBs[i, j];
                     switch (caseSwitch)
                     {
-                        case 0:
+                        case 0000:
                             pb.Image = ALL_OPEN;
                             break;
-                        case 1:
+                        case 0100:
                             pb.Image = EAST_CLOSED;
                             break;
-                        case 2:
+                        case 0110:
                             pb.Image = EAST_SOUTH_CLOSED;
                             break;
-                        case 3:
+                        case 0111:
                             pb.Image = EAST_SOUTH_WEST_CLOSED;
                             break;
-                        case 4:
+                        case 0101:
                             pb.Image = EAST_WEST_CLOSED;
                             break;
-                        case 5:
+                        case 1000:
                             pb.Image = NORTH_CLOSED;
                             break;
-                        case 6:
+                        case 1100:
                             pb.Image = NORTH_EAST_CLOSED;
                             break;
-                        case 7:
+                        case 1110:
                             pb.Image = NORTH_EAST_SOUTH_CLOSED;
                             break;
-                        case 8:
+                        case 1010:
                             pb.Image = NORTH_SOUTH_CLOSED;
                             break;
-                        case 9:
+                        case 0010:
                             pb.Image = SOUTH_CLOSED;
                             break;
-                        case 10:
+                        case 0011:
                             pb.Image = SOUTH_WEST_CLOSED;
                             break;
-                        case 11:
+                        case 1011:
                             pb.Image = SOUTH_WEST_NORTH_CLOSED;
                             break;
-                        case 12:
+                        case 0001:
                             pb.Image = WEST_CLOSED;
                             break;
-                        case 13:
+                        case 1001:
                             pb.Image = WEST_NORTH_CLOSED;
                             break;
-                        case 14:
+                        case 1101:
                             pb.Image = WEST_NORTH_EAST_CLOSED;
                             break;
                         default:
