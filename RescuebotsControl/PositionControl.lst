@@ -1,0 +1,433 @@
+   1               		.file	"PositionControl.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	acsStateChanged
+  18               	acsStateChanged:
+  19               	.LFB8:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	/* stack size = 0 */
+  24               	.L__stack_usage = 0
+  25               	.LM2:
+  26 0000 8091 0000 		lds r24,kState
+  27 0004 8130      		cpi r24,lo8(1)
+  28 0006 01F4      		brne .L1
+  29               	.LM3:
+  30 0008 8091 0000 		lds r24,obstacle_left
+  31 000c 8823      		tst r24
+  32 000e 01F4      		brne .L3
+  33 0010 8091 0000 		lds r24,obstacle_right
+  34 0014 8823      		tst r24
+  35 0016 01F0      		breq .L1
+  36               	.L3:
+  37               	.LM4:
+  38 0018 82E8      		ldi r24,lo8(-126)
+  39 001a 64E6      		ldi r22,lo8(100)
+  40 001c 70E0      		ldi r23,hi8(100)
+  41 001e 0E94 0000 		call beep
+  42               	.LM5:
+  43 0022 0E94 0000 		call stop
+  44               	.L1:
+  45 0026 0895      		ret
+  46               	.LFE8:
+  48               	.global	I2C_transmissionError
+  50               	I2C_transmissionError:
+  51               	.LFB7:
+  52               	.LM6:
+  53               	.LVL0:
+  54 0028 1F93      		push r17
+  55               	/* prologue: function */
+  56               	/* frame size = 0 */
+  57               	/* stack size = 1 */
+  58               	.L__stack_usage = 1
+  59 002a 182F      		mov r17,r24
+  60               	.LM7:
+  61 002c 80E0      		ldi r24,lo8(__c.2182)
+  62 002e 90E0      		ldi r25,hi8(__c.2182)
+  63               	.LVL1:
+  64 0030 0E94 0000 		call writeNStringP
+  65               	.LM8:
+  66 0034 812F      		mov r24,r17
+  67 0036 90E0      		ldi r25,lo8(0)
+  68 0038 60E1      		ldi r22,lo8(16)
+  69 003a 0E94 0000 		call writeInteger
+  70               	.LM9:
+  71 003e 8AE0      		ldi r24,lo8(10)
+  72 0040 0E94 0000 		call writeChar
+  73               	/* epilogue start */
+  74               	.LM10:
+  75 0044 1F91      		pop r17
+  76               	.LVL2:
+  77 0046 0895      		ret
+  78               	.LFE7:
+  80               	.global	I2C_requestedDataReady
+  82               	I2C_requestedDataReady:
+  83               	.LFB6:
+  84               	.LM11:
+  85               	.LVL3:
+  86               	/* prologue: function */
+  87               	/* frame size = 0 */
+  88               	/* stack size = 0 */
+  89               	.L__stack_usage = 0
+  90               	.LM12:
+  91 0048 0E94 0000 		call checkRP6Status
+  92               	.LVL4:
+  93               	/* epilogue start */
+  94               	.LM13:
+  95 004c 0895      		ret
+  96               	.LFE6:
+  98               	.global	readAvgADC
+ 100               	readAvgADC:
+ 101               	.LFB9:
+ 102               	.LM14:
+ 103               	.LVL5:
+ 104 004e EF92      		push r14
+ 105 0050 FF92      		push r15
+ 106 0052 0F93      		push r16
+ 107 0054 1F93      		push r17
+ 108 0056 DF93      		push r29
+ 109 0058 CF93      		push r28
+ 110 005a 0F92      		push __tmp_reg__
+ 111 005c CDB7      		in r28,__SP_L__
+ 112 005e DEB7      		in r29,__SP_H__
+ 113               	/* prologue: function */
+ 114               	/* frame size = 1 */
+ 115               	/* stack size = 7 */
+ 116               	.L__stack_usage = 7
+ 117 0060 182F      		mov r17,r24
+ 118               	.LVL6:
+ 119               	.LM15:
+ 120 0062 062F      		mov r16,r22
+ 121               	.LM16:
+ 122 0064 EE24      		clr r14
+ 123 0066 FF24      		clr r15
+ 124               	.LM17:
+ 125 0068 00C0      		rjmp .L7
+ 126               	.LVL7:
+ 127               	.L8:
+ 128               	.LM18:
+ 129 006a 812F      		mov r24,r17
+ 130 006c 6983      		std Y+1,r22
+ 131 006e 0E94 0000 		call readADC
+ 132 0072 E80E      		add r14,r24
+ 133 0074 F91E      		adc r15,r25
+ 134               	.LVL8:
+ 135 0076 0150      		subi r16,lo8(-(-1))
+ 136 0078 6981      		ldd r22,Y+1
+ 137               	.LVL9:
+ 138               	.L7:
+ 139               	.LM19:
+ 140 007a 0023      		tst r16
+ 141 007c 01F4      		brne .L8
+ 142               	.LM20:
+ 143 007e C701      		movw r24,r14
+ 144 0080 70E0      		ldi r23,lo8(0)
+ 145 0082 0E94 0000 		call __udivmodhi4
+ 146               	.LM21:
+ 147 0086 CB01      		movw r24,r22
+ 148               	/* epilogue start */
+ 149 0088 0F90      		pop __tmp_reg__
+ 150 008a CF91      		pop r28
+ 151 008c DF91      		pop r29
+ 152 008e 1F91      		pop r17
+ 153               	.LVL10:
+ 154 0090 0F91      		pop r16
+ 155 0092 FF90      		pop r15
+ 156 0094 EF90      		pop r14
+ 157               	.LVL11:
+ 158 0096 0895      		ret
+ 159               	.LFE9:
+ 161               	.global	wallIsLeft
+ 163               	wallIsLeft:
+ 164               	.LFB10:
+ 165               	.LM22:
+ 166 0098 CF93      		push r28
+ 167 009a DF93      		push r29
+ 168               	/* prologue: function */
+ 169               	/* frame size = 0 */
+ 170               	/* stack size = 2 */
+ 171               	.L__stack_usage = 2
+ 172               	.LM23:
+ 173 009c 85E0      		ldi r24,lo8(5)
+ 174 009e 0E94 0000 		call readADC
+ 175 00a2 EC01      		movw r28,r24
+ 176               	.LVL12:
+ 177               	.LM24:
+ 178 00a4 82E0      		ldi r24,lo8(2)
+ 179               	.LVL13:
+ 180 00a6 0E94 0000 		call readADC
+ 181               	.LVL14:
+ 182               	.LM25:
+ 183 00aa 282F      		mov r18,r24
+ 184 00ac 392F      		mov r19,r25
+ 185 00ae 2C17      		cp r18,r28
+ 186 00b0 3D07      		cpc r19,r29
+ 187 00b2 00F4      		brsh .L10
+ 188 00b4 9E01      		movw r18,r28
+ 189               	.L10:
+ 190               	.LVL15:
+ 191               	.LM26:
+ 192 00b6 8091 0000 		lds r24,lowerAvgWallBoundary
+ 193 00ba 9091 0000 		lds r25,lowerAvgWallBoundary+1
+ 194               	.LVL16:
+ 195 00be 2817      		cp r18,r24
+ 196 00c0 3907      		cpc r19,r25
+ 197 00c2 00F0      		brlo .L13
+ 198               	.LM27:
+ 199 00c4 81E0      		ldi r24,lo8(1)
+ 200 00c6 90E0      		ldi r25,hi8(1)
+ 201 00c8 4091 0000 		lds r20,higherAvgWallBoundary
+ 202 00cc 5091 0000 		lds r21,higherAvgWallBoundary+1
+ 203 00d0 4217      		cp r20,r18
+ 204 00d2 5307      		cpc r21,r19
+ 205 00d4 00F4      		brsh .L11
+ 206               	.L13:
+ 207               	.LM28:
+ 208 00d6 80E0      		ldi r24,lo8(0)
+ 209 00d8 90E0      		ldi r25,hi8(0)
+ 210               	.L11:
+ 211               	/* epilogue start */
+ 212               	.LM29:
+ 213 00da DF91      		pop r29
+ 214 00dc CF91      		pop r28
+ 215               	.LVL17:
+ 216 00de 0895      		ret
+ 217               	.LFE10:
+ 219               	.global	wallIsRight
+ 221               	wallIsRight:
+ 222               	.LFB11:
+ 223               	.LM30:
+ 224 00e0 CF93      		push r28
+ 225 00e2 DF93      		push r29
+ 226               	/* prologue: function */
+ 227               	/* frame size = 0 */
+ 228               	/* stack size = 2 */
+ 229               	.L__stack_usage = 2
+ 230               	.LM31:
+ 231 00e4 84E0      		ldi r24,lo8(4)
+ 232 00e6 0E94 0000 		call readADC
+ 233 00ea EC01      		movw r28,r24
+ 234               	.LVL18:
+ 235               	.LM32:
+ 236 00ec 83E0      		ldi r24,lo8(3)
+ 237               	.LVL19:
+ 238 00ee 0E94 0000 		call readADC
+ 239               	.LVL20:
+ 240               	.LM33:
+ 241 00f2 282F      		mov r18,r24
+ 242 00f4 392F      		mov r19,r25
+ 243 00f6 2C17      		cp r18,r28
+ 244 00f8 3D07      		cpc r19,r29
+ 245 00fa 00F4      		brsh .L15
+ 246 00fc 9E01      		movw r18,r28
+ 247               	.L15:
+ 248               	.LVL21:
+ 249               	.LM34:
+ 250 00fe 8091 0000 		lds r24,lowerAvgWallBoundary
+ 251 0102 9091 0000 		lds r25,lowerAvgWallBoundary+1
+ 252               	.LVL22:
+ 253 0106 2817      		cp r18,r24
+ 254 0108 3907      		cpc r19,r25
+ 255 010a 00F0      		brlo .L18
+ 256               	.LM35:
+ 257 010c 81E0      		ldi r24,lo8(1)
+ 258 010e 90E0      		ldi r25,hi8(1)
+ 259 0110 4091 0000 		lds r20,higherAvgWallBoundary
+ 260 0114 5091 0000 		lds r21,higherAvgWallBoundary+1
+ 261 0118 4217      		cp r20,r18
+ 262 011a 5307      		cpc r21,r19
+ 263 011c 00F4      		brsh .L16
+ 264               	.L18:
+ 265               	.LM36:
+ 266 011e 80E0      		ldi r24,lo8(0)
+ 267 0120 90E0      		ldi r25,hi8(0)
+ 268               	.L16:
+ 269               	/* epilogue start */
+ 270               	.LM37:
+ 271 0122 DF91      		pop r29
+ 272 0124 CF91      		pop r28
+ 273               	.LVL23:
+ 274 0126 0895      		ret
+ 275               	.LFE11:
+ 277               	.global	wallIsFront
+ 279               	wallIsFront:
+ 280               	.LFB12:
+ 281               	.LM38:
+ 282               	/* prologue: function */
+ 283               	/* frame size = 0 */
+ 284               	/* stack size = 0 */
+ 285               	.L__stack_usage = 0
+ 286               	.LM39:
+ 287 0128 8091 0000 		lds r24,obstacle_right
+ 288 012c 8823      		tst r24
+ 289 012e 01F4      		brne .L22
+ 290               	.LM40:
+ 291 0130 81E0      		ldi r24,lo8(1)
+ 292 0132 90E0      		ldi r25,hi8(1)
+ 293 0134 2091 0000 		lds r18,obstacle_left
+ 294 0138 2223      		tst r18
+ 295 013a 01F4      		brne .L20
+ 296 013c 80E0      		ldi r24,lo8(0)
+ 297 013e 90E0      		ldi r25,hi8(0)
+ 298 0140 0895      		ret
+ 299               	.L22:
+ 300               	.LM41:
+ 301 0142 81E0      		ldi r24,lo8(1)
+ 302 0144 90E0      		ldi r25,hi8(1)
+ 303               	.L20:
+ 304               	.LM42:
+ 305 0146 0895      		ret
+ 306               	.LFE12:
+ 308               	.global	initPositionControl
+ 310               	initPositionControl:
+ 311               	.LFB13:
+ 312               	.LM43:
+ 313               	/* prologue: function */
+ 314               	/* frame size = 0 */
+ 315               	/* stack size = 0 */
+ 316               	.L__stack_usage = 0
+ 317               	.LM44:
+ 318 0148 80E0      		ldi r24,lo8(gs(acsStateChanged))
+ 319 014a 90E0      		ldi r25,hi8(gs(acsStateChanged))
+ 320 014c 0E94 0000 		call ACS_setStateChangedHandler
+ 321               	.LM45:
+ 322 0150 88E4      		ldi r24,lo8(72)
+ 323 0152 0E94 0000 		call __I2CTWI_initMaster
+ 324               	.LM46:
+ 325 0156 80E0      		ldi r24,lo8(gs(I2C_transmissionError))
+ 326 0158 90E0      		ldi r25,hi8(gs(I2C_transmissionError))
+ 327 015a 0E94 0000 		call I2CTWI_setTransmissionErrorHandler
+ 328               	.LM47:
+ 329 015e 80E0      		ldi r24,lo8(gs(I2C_requestedDataReady))
+ 330 0160 90E0      		ldi r25,hi8(gs(I2C_requestedDataReady))
+ 331 0162 0E94 0000 		call I2CTWI_setRequestedDataReadyHandler
+ 332               	.LM48:
+ 333 0166 88EE      		ldi r24,lo8(1000)
+ 334 0168 93E0      		ldi r25,hi8(1000)
+ 335 016a 0E94 0000 		call mSleep
+ 336               	.LM49:
+ 337 016e 8AE0      		ldi r24,lo8(10)
+ 338 0170 60E0      		ldi r22,lo8(0)
+ 339 0172 49E0      		ldi r20,lo8(9)
+ 340 0174 22E0      		ldi r18,lo8(2)
+ 341 0176 0E94 0000 		call I2CTWI_transmit3Bytes
+ 342               	.LM50:
+ 343 017a 81E6      		ldi r24,lo8(97)
+ 344 017c 60E2      		ldi r22,lo8(32)
+ 345 017e 40E0      		ldi r20,lo8(0)
+ 346 0180 0E94 0000 		call setPortMode
+ 347               	.LM51:
+ 348 0184 81E6      		ldi r24,lo8(97)
+ 349 0186 60E1      		ldi r22,lo8(16)
+ 350 0188 40E0      		ldi r20,lo8(0)
+ 351 018a 0E94 0000 		call setPortMode
+ 352               	.LM52:
+ 353 018e 81E6      		ldi r24,lo8(97)
+ 354 0190 68E0      		ldi r22,lo8(8)
+ 355 0192 40E0      		ldi r20,lo8(0)
+ 356 0194 0E94 0000 		call setPortMode
+ 357               	.LM53:
+ 358 0198 81E6      		ldi r24,lo8(97)
+ 359 019a 64E0      		ldi r22,lo8(4)
+ 360 019c 40E0      		ldi r20,lo8(0)
+ 361 019e 0E94 0000 		call setPortMode
+ 362               	/* epilogue start */
+ 363               	.LM54:
+ 364 01a2 0895      		ret
+ 365               	.LFE13:
+ 367               	.global	updatePositionControl
+ 369               	updatePositionControl:
+ 370               	.LFB14:
+ 371               	.LM55:
+ 372               	/* prologue: function */
+ 373               	/* frame size = 0 */
+ 374               	/* stack size = 0 */
+ 375               	.L__stack_usage = 0
+ 376               	.LM56:
+ 377 01a4 0E94 0000 		call task_checkINT0
+ 378               	.LM57:
+ 379 01a8 0E94 0000 		call task_I2CTWI
+ 380               	/* epilogue start */
+ 381               	.LM58:
+ 382 01ac 0895      		ret
+ 383               	.LFE14:
+ 385               	.global	lowerAvgWallBoundary
+ 386               		.data
+ 389               	lowerAvgWallBoundary:
+ 390 0000 F401      		.word	500
+ 391               	.global	higherAvgWallBoundary
+ 394               	higherAvgWallBoundary:
+ 395 0002 F401      		.word	500
+ 396               		.comm timer,2,1
+ 397               		.comm interrupt_status,1,1
+ 398               		.comm status,1,1
+ 399               		.comm drive_status,1,1
+ 400               		.comm dist360,2,1
+ 401               		.comm cells,800,1
+ 402               		.comm kState,1,1
+ 403               		.comm conditionedWallDistance,2,1
+ 404               		.section	.progmem.data,"a",@progbits
+ 407               	__c.2182:
+ 408 0000 0A49 3243 		.string	"\nI2C ERROR - TWI STATE: 0x"
+ 408      2045 5252 
+ 408      4F52 202D 
+ 408      2054 5749 
+ 408      2053 5441 
+ 497               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 PositionControl.c
+     /tmp/cccryVM2.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cccryVM2.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cccryVM2.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cccryVM2.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cccryVM2.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cccryVM2.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cccryVM2.s:18     .text:0000000000000000 acsStateChanged
+                            *COM*:0000000000000001 kState
+     /tmp/cccryVM2.s:50     .text:0000000000000028 I2C_transmissionError
+     /tmp/cccryVM2.s:407    .progmem.data:0000000000000000 __c.2182
+     /tmp/cccryVM2.s:82     .text:0000000000000048 I2C_requestedDataReady
+     /tmp/cccryVM2.s:100    .text:000000000000004e readAvgADC
+     /tmp/cccryVM2.s:163    .text:0000000000000098 wallIsLeft
+     /tmp/cccryVM2.s:389    .data:0000000000000000 lowerAvgWallBoundary
+     /tmp/cccryVM2.s:394    .data:0000000000000002 higherAvgWallBoundary
+     /tmp/cccryVM2.s:221    .text:00000000000000e0 wallIsRight
+     /tmp/cccryVM2.s:279    .text:0000000000000128 wallIsFront
+     /tmp/cccryVM2.s:310    .text:0000000000000148 initPositionControl
+     /tmp/cccryVM2.s:369    .text:00000000000001a4 updatePositionControl
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 interrupt_status
+                            *COM*:0000000000000001 status
+                            *COM*:0000000000000001 drive_status
+                            *COM*:0000000000000002 dist360
+                            *COM*:0000000000000320 cells
+                            *COM*:0000000000000002 conditionedWallDistance
+
+UNDEFINED SYMBOLS
+obstacle_left
+obstacle_right
+beep
+stop
+writeNStringP
+writeInteger
+writeChar
+checkRP6Status
+readADC
+__udivmodhi4
+ACS_setStateChangedHandler
+__I2CTWI_initMaster
+I2CTWI_setTransmissionErrorHandler
+I2CTWI_setRequestedDataReadyHandler
+mSleep
+I2CTWI_transmit3Bytes
+setPortMode
+task_checkINT0
+task_I2CTWI
+__do_copy_data
+__do_clear_bss
