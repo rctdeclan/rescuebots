@@ -1,0 +1,893 @@
+   1               		.file	"RP6Control_I2CMasterLib.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	BUMPERS_stateChanged_DUMMY
+  18               	BUMPERS_stateChanged_DUMMY:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	/* stack size = 0 */
+  24               	.L__stack_usage = 0
+  25               	/* epilogue start */
+  26               	.LM2:
+  27 0000 0895      		ret
+  28               	.LFE6:
+  30               	.global	MOTIONCONTROL_stateChanged_DUMMY
+  32               	MOTIONCONTROL_stateChanged_DUMMY:
+  33               	.LFB8:
+  34               	.LM3:
+  35               	/* prologue: function */
+  36               	/* frame size = 0 */
+  37               	/* stack size = 0 */
+  38               	.L__stack_usage = 0
+  39               	/* epilogue start */
+  40               	.LM4:
+  41 0002 0895      		ret
+  42               	.LFE8:
+  44               	.global	IRCOMM_RC5dataReady_DUMMY
+  46               	IRCOMM_RC5dataReady_DUMMY:
+  47               	.LFB10:
+  48               	.LM5:
+  49               	.LVL0:
+  50               	/* prologue: function */
+  51               	/* frame size = 0 */
+  52               	/* stack size = 0 */
+  53               	.L__stack_usage = 0
+  54               	/* epilogue start */
+  55               	.LM6:
+  56 0004 0895      		ret
+  57               	.LFE10:
+  59               	.global	ACS_stateChanged_DUMMY
+  61               	ACS_stateChanged_DUMMY:
+  62               	.LFB12:
+  63               	.LM7:
+  64               	/* prologue: function */
+  65               	/* frame size = 0 */
+  66               	/* stack size = 0 */
+  67               	.L__stack_usage = 0
+  68               	/* epilogue start */
+  69               	.LM8:
+  70 0006 0895      		ret
+  71               	.LFE12:
+  73               	.global	BATTERY_lowVoltage_DUMMY
+  75               	BATTERY_lowVoltage_DUMMY:
+  76               	.LFB14:
+  77               	.LM9:
+  78               	.LVL1:
+  79               	/* prologue: function */
+  80               	/* frame size = 0 */
+  81               	/* stack size = 0 */
+  82               	.L__stack_usage = 0
+  83               	/* epilogue start */
+  84               	.LM10:
+  85 0008 0895      		ret
+  86               	.LFE14:
+  88               	.global	WDT_request_DUMMY
+  90               	WDT_request_DUMMY:
+  91               	.LFB16:
+  92               	.LM11:
+  93               	/* prologue: function */
+  94               	/* frame size = 0 */
+  95               	/* stack size = 0 */
+  96               	.L__stack_usage = 0
+  97               	/* epilogue start */
+  98               	.LM12:
+  99 000a 0895      		ret
+ 100               	.LFE16:
+ 102               	.global	BUMPERS_setStateChangedHandler
+ 104               	BUMPERS_setStateChangedHandler:
+ 105               	.LFB7:
+ 106               	.LM13:
+ 107               	.LVL2:
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110               	/* stack size = 0 */
+ 111               	.L__stack_usage = 0
+ 112               	.LM14:
+ 113 000c 9093 0000 		sts BUMPERS_stateChangedHandler+1,r25
+ 114 0010 8093 0000 		sts BUMPERS_stateChangedHandler,r24
+ 115               	/* epilogue start */
+ 116               	.LM15:
+ 117 0014 0895      		ret
+ 118               	.LFE7:
+ 120               	.global	MOTIONCONTROL_setStateChangedHandler
+ 122               	MOTIONCONTROL_setStateChangedHandler:
+ 123               	.LFB9:
+ 124               	.LM16:
+ 125               	.LVL3:
+ 126               	/* prologue: function */
+ 127               	/* frame size = 0 */
+ 128               	/* stack size = 0 */
+ 129               	.L__stack_usage = 0
+ 130               	.LM17:
+ 131 0016 9093 0000 		sts MOTIONCONTROL_stateChangedHandler+1,r25
+ 132 001a 8093 0000 		sts MOTIONCONTROL_stateChangedHandler,r24
+ 133               	/* epilogue start */
+ 134               	.LM18:
+ 135 001e 0895      		ret
+ 136               	.LFE9:
+ 138               	.global	IRCOMM_setRC5DataReadyHandler
+ 140               	IRCOMM_setRC5DataReadyHandler:
+ 141               	.LFB11:
+ 142               	.LM19:
+ 143               	.LVL4:
+ 144               	/* prologue: function */
+ 145               	/* frame size = 0 */
+ 146               	/* stack size = 0 */
+ 147               	.L__stack_usage = 0
+ 148               	.LM20:
+ 149 0020 9093 0000 		sts IRCOMM_RC5dataReadyHandler+1,r25
+ 150 0024 8093 0000 		sts IRCOMM_RC5dataReadyHandler,r24
+ 151               	/* epilogue start */
+ 152               	.LM21:
+ 153 0028 0895      		ret
+ 154               	.LFE11:
+ 156               	.global	ACS_setStateChangedHandler
+ 158               	ACS_setStateChangedHandler:
+ 159               	.LFB13:
+ 160               	.LM22:
+ 161               	.LVL5:
+ 162               	/* prologue: function */
+ 163               	/* frame size = 0 */
+ 164               	/* stack size = 0 */
+ 165               	.L__stack_usage = 0
+ 166               	.LM23:
+ 167 002a 9093 0000 		sts ACS_stateChangedHandler+1,r25
+ 168 002e 8093 0000 		sts ACS_stateChangedHandler,r24
+ 169               	/* epilogue start */
+ 170               	.LM24:
+ 171 0032 0895      		ret
+ 172               	.LFE13:
+ 174               	.global	BATTERY_setLowVoltageHandler
+ 176               	BATTERY_setLowVoltageHandler:
+ 177               	.LFB15:
+ 178               	.LM25:
+ 179               	.LVL6:
+ 180               	/* prologue: function */
+ 181               	/* frame size = 0 */
+ 182               	/* stack size = 0 */
+ 183               	.L__stack_usage = 0
+ 184               	.LM26:
+ 185 0034 9093 0000 		sts BATTERY_lowVoltageHandler+1,r25
+ 186 0038 8093 0000 		sts BATTERY_lowVoltageHandler,r24
+ 187               	/* epilogue start */
+ 188               	.LM27:
+ 189 003c 0895      		ret
+ 190               	.LFE15:
+ 192               	.global	WDT_setRequestHandler
+ 194               	WDT_setRequestHandler:
+ 195               	.LFB17:
+ 196               	.LM28:
+ 197               	.LVL7:
+ 198               	/* prologue: function */
+ 199               	/* frame size = 0 */
+ 200               	/* stack size = 0 */
+ 201               	.L__stack_usage = 0
+ 202               	.LM29:
+ 203 003e 9093 0000 		sts WDT_requestHandler+1,r25
+ 204 0042 8093 0000 		sts WDT_requestHandler,r24
+ 205               	/* epilogue start */
+ 206               	.LM30:
+ 207 0046 0895      		ret
+ 208               	.LFE17:
+ 210               	.global	getAllSensors
+ 212               	getAllSensors:
+ 213               	.LFB18:
+ 214               	.LM31:
+ 215               	/* prologue: function */
+ 216               	/* frame size = 0 */
+ 217               	/* stack size = 0 */
+ 218               	.L__stack_usage = 0
+ 219               	.LM32:
+ 220 0048 8AE0      		ldi r24,lo8(10)
+ 221 004a 63E0      		ldi r22,lo8(3)
+ 222 004c 40E0      		ldi r20,lo8(sensorBuf)
+ 223 004e 50E0      		ldi r21,hi8(sensorBuf)
+ 224 0050 28E1      		ldi r18,lo8(24)
+ 225 0052 0E94 0000 		call I2CTWI_readRegisters
+ 226               	.LM33:
+ 227 0056 8091 0000 		lds r24,sensorBuf
+ 228 005a 8093 0000 		sts mleft_power,r24
+ 229               	.LM34:
+ 230 005e 8091 0000 		lds r24,sensorBuf+1
+ 231 0062 8093 0000 		sts mright_power,r24
+ 232               	.LM35:
+ 233 0066 8091 0000 		lds r24,sensorBuf+2
+ 234 006a 8093 0000 		sts mleft_speed,r24
+ 235               	.LM36:
+ 236 006e 8091 0000 		lds r24,sensorBuf+3
+ 237 0072 8093 0000 		sts mright_speed,r24
+ 238               	.LM37:
+ 239 0076 8091 0000 		lds r24,sensorBuf+4
+ 240 007a 8093 0000 		sts mleft_des_speed,r24
+ 241               	.LM38:
+ 242 007e 8091 0000 		lds r24,sensorBuf+5
+ 243 0082 8093 0000 		sts mright_des_speed,r24
+ 244               	.LM39:
+ 245 0086 9091 0000 		lds r25,sensorBuf+7
+ 246 008a 80E0      		ldi r24,lo8(0)
+ 247 008c 2091 0000 		lds r18,sensorBuf+6
+ 248 0090 820F      		add r24,r18
+ 249 0092 911D      		adc r25,__zero_reg__
+ 250 0094 9093 0000 		sts mleft_dist+1,r25
+ 251 0098 8093 0000 		sts mleft_dist,r24
+ 252               	.LM40:
+ 253 009c 9091 0000 		lds r25,sensorBuf+9
+ 254 00a0 80E0      		ldi r24,lo8(0)
+ 255 00a2 2091 0000 		lds r18,sensorBuf+8
+ 256 00a6 820F      		add r24,r18
+ 257 00a8 911D      		adc r25,__zero_reg__
+ 258 00aa 9093 0000 		sts mright_dist+1,r25
+ 259 00ae 8093 0000 		sts mright_dist,r24
+ 260               	.LM41:
+ 261 00b2 9091 0000 		lds r25,sensorBuf+11
+ 262 00b6 80E0      		ldi r24,lo8(0)
+ 263 00b8 2091 0000 		lds r18,sensorBuf+10
+ 264 00bc 820F      		add r24,r18
+ 265 00be 911D      		adc r25,__zero_reg__
+ 266 00c0 9093 0000 		sts adcLSL+1,r25
+ 267 00c4 8093 0000 		sts adcLSL,r24
+ 268               	.LM42:
+ 269 00c8 9091 0000 		lds r25,sensorBuf+13
+ 270 00cc 80E0      		ldi r24,lo8(0)
+ 271 00ce 2091 0000 		lds r18,sensorBuf+12
+ 272 00d2 820F      		add r24,r18
+ 273 00d4 911D      		adc r25,__zero_reg__
+ 274 00d6 9093 0000 		sts adcLSR+1,r25
+ 275 00da 8093 0000 		sts adcLSR,r24
+ 276               	.LM43:
+ 277 00de 9091 0000 		lds r25,sensorBuf+15
+ 278 00e2 80E0      		ldi r24,lo8(0)
+ 279 00e4 2091 0000 		lds r18,sensorBuf+14
+ 280 00e8 820F      		add r24,r18
+ 281 00ea 911D      		adc r25,__zero_reg__
+ 282 00ec 9093 0000 		sts adcMotorCurrentLeft+1,r25
+ 283 00f0 8093 0000 		sts adcMotorCurrentLeft,r24
+ 284               	.LM44:
+ 285 00f4 9091 0000 		lds r25,sensorBuf+17
+ 286 00f8 80E0      		ldi r24,lo8(0)
+ 287 00fa 2091 0000 		lds r18,sensorBuf+16
+ 288 00fe 820F      		add r24,r18
+ 289 0100 911D      		adc r25,__zero_reg__
+ 290 0102 9093 0000 		sts adcMotorCurrentRight+1,r25
+ 291 0106 8093 0000 		sts adcMotorCurrentRight,r24
+ 292               	.LM45:
+ 293 010a 9091 0000 		lds r25,sensorBuf+19
+ 294 010e 80E0      		ldi r24,lo8(0)
+ 295 0110 2091 0000 		lds r18,sensorBuf+18
+ 296 0114 820F      		add r24,r18
+ 297 0116 911D      		adc r25,__zero_reg__
+ 298 0118 9093 0000 		sts adcBat+1,r25
+ 299 011c 8093 0000 		sts adcBat,r24
+ 300               	.LM46:
+ 301 0120 9091 0000 		lds r25,sensorBuf+21
+ 302 0124 80E0      		ldi r24,lo8(0)
+ 303 0126 2091 0000 		lds r18,sensorBuf+20
+ 304 012a 820F      		add r24,r18
+ 305 012c 911D      		adc r25,__zero_reg__
+ 306 012e 9093 0000 		sts adc0+1,r25
+ 307 0132 8093 0000 		sts adc0,r24
+ 308               	.LM47:
+ 309 0136 9091 0000 		lds r25,sensorBuf+23
+ 310 013a 80E0      		ldi r24,lo8(0)
+ 311 013c 2091 0000 		lds r18,sensorBuf+22
+ 312 0140 820F      		add r24,r18
+ 313 0142 911D      		adc r25,__zero_reg__
+ 314 0144 9093 0000 		sts adc1+1,r25
+ 315 0148 8093 0000 		sts adc1,r24
+ 316               	/* epilogue start */
+ 317               	.LM48:
+ 318 014c 0895      		ret
+ 319               	.LFE18:
+ 321               	.global	task_checkINT0
+ 323               	task_checkINT0:
+ 324               	.LFB19:
+ 325               	.LM49:
+ 326               	/* prologue: function */
+ 327               	/* frame size = 0 */
+ 328               	/* stack size = 0 */
+ 329               	.L__stack_usage = 0
+ 330               	.LM50:
+ 331 014e 8091 0000 		lds r24,block
+ 332 0152 8823      		tst r24
+ 333 0154 01F4      		brne .L14
+ 334               	.LM51:
+ 335 0156 829B      		sbis 48-32,2
+ 336 0158 00C0      		rjmp .L14
+ 337               	.LM52:
+ 338 015a 81E0      		ldi r24,lo8(1)
+ 339 015c 8093 0000 		sts block,r24
+ 340               	.LM53:
+ 341 0160 8AE0      		ldi r24,lo8(10)
+ 342 0162 60E0      		ldi r22,lo8(0)
+ 343 0164 40E0      		ldi r20,lo8(0)
+ 344 0166 23E0      		ldi r18,lo8(3)
+ 345 0168 0E94 0000 		call I2CTWI_requestRegisterFromDevice
+ 346               	.L14:
+ 347 016c 0895      		ret
+ 348               	.LFE19:
+ 350               	.global	checkRP6Status
+ 352               	checkRP6Status:
+ 353               	.LFB20:
+ 354               	.LM54:
+ 355               	.LVL8:
+ 356 016e 0F93      		push r16
+ 357 0170 1F93      		push r17
+ 358 0172 DF93      		push r29
+ 359 0174 CF93      		push r28
+ 360 0176 00D0      		rcall .
+ 361 0178 CDB7      		in r28,__SP_L__
+ 362 017a DEB7      		in r29,__SP_H__
+ 363               	/* prologue: function */
+ 364               	/* frame size = 2 */
+ 365               	/* stack size = 6 */
+ 366               	.L__stack_usage = 6
+ 367               	.LM55:
+ 368 017c 8823      		tst r24
+ 369 017e 01F0      		breq .+2
+ 370 0180 00C0      		rjmp .L24
+ 371               	.LBB2:
+ 372               	.LM56:
+ 373 0182 80E0      		ldi r24,lo8(messageBuf)
+ 374 0184 90E0      		ldi r25,hi8(messageBuf)
+ 375               	.LVL9:
+ 376 0186 63E0      		ldi r22,lo8(3)
+ 377 0188 0E94 0000 		call I2CTWI_getReceivedData
+ 378               	.LM57:
+ 379 018c 2091 0000 		lds r18,messageBuf
+ 380 0190 0091 0000 		lds r16,interrupt_status
+ 381 0194 0227      		eor r16,r18
+ 382               	.LVL10:
+ 383               	.LM58:
+ 384 0196 2093 0000 		sts interrupt_status,r18
+ 385               	.LM59:
+ 386 019a 10E0      		ldi r17,lo8(0)
+ 387 019c C801      		movw r24,r16
+ 388 019e 8076      		andi r24,lo8(96)
+ 389 01a0 9070      		andi r25,hi8(96)
+ 390 01a2 0097      		sbiw r24,0
+ 391 01a4 01F0      		breq .L18
+ 392               	.LM60:
+ 393 01a6 822F      		mov r24,r18
+ 394 01a8 8295      		swap r24
+ 395 01aa 8695      		lsr r24
+ 396 01ac 8170      		andi r24,lo8(1)
+ 397 01ae 8093 0000 		sts obstacle_left,r24
+ 398               	.LM61:
+ 399 01b2 2295      		swap r18
+ 400 01b4 2695      		lsr r18
+ 401 01b6 2695      		lsr r18
+ 402 01b8 2170      		andi r18,lo8(1)
+ 403 01ba 2093 0000 		sts obstacle_right,r18
+ 404               	.LM62:
+ 405 01be E091 0000 		lds r30,ACS_stateChangedHandler
+ 406 01c2 F091 0000 		lds r31,ACS_stateChangedHandler+1
+ 407 01c6 0995      		icall
+ 408               	.L18:
+ 409               	.LM63:
+ 410 01c8 C801      		movw r24,r16
+ 411 01ca 8670      		andi r24,lo8(6)
+ 412 01cc 9070      		andi r25,hi8(6)
+ 413 01ce 0097      		sbiw r24,0
+ 414 01d0 01F0      		breq .L19
+ 415               	.LM64:
+ 416 01d2 8091 0000 		lds r24,interrupt_status
+ 417 01d6 982F      		mov r25,r24
+ 418 01d8 9695      		lsr r25
+ 419 01da 9170      		andi r25,lo8(1)
+ 420 01dc 9093 0000 		sts bumper_left,r25
+ 421               	.LM65:
+ 422 01e0 8695      		lsr r24
+ 423 01e2 8695      		lsr r24
+ 424 01e4 8170      		andi r24,lo8(1)
+ 425 01e6 8093 0000 		sts bumper_right,r24
+ 426               	.LM66:
+ 427 01ea E091 0000 		lds r30,BUMPERS_stateChangedHandler
+ 428 01ee F091 0000 		lds r31,BUMPERS_stateChangedHandler+1
+ 429 01f2 0995      		icall
+ 430               	.L19:
+ 431               	.LM67:
+ 432 01f4 03FF      		sbrs r16,3
+ 433 01f6 00C0      		rjmp .L20
+ 434               	.LBB3:
+ 435               	.LM68:
+ 436 01f8 8AE0      		ldi r24,lo8(10)
+ 437 01fa 6BE1      		ldi r22,lo8(27)
+ 438 01fc 0E94 0000 		call I2CTWI_transmitByte
+ 439               	.LM69:
+ 440 0200 8AE0      		ldi r24,lo8(10)
+ 441 0202 BE01      		movw r22,r28
+ 442 0204 6F5F      		subi r22,lo8(-(1))
+ 443 0206 7F4F      		sbci r23,hi8(-(1))
+ 444 0208 42E0      		ldi r20,lo8(2)
+ 445 020a 0E94 0000 		call I2CTWI_readBytes
+ 446               	.LM70:
+ 447 020e E091 0000 		lds r30,IRCOMM_RC5dataReadyHandler
+ 448 0212 F091 0000 		lds r31,IRCOMM_RC5dataReadyHandler+1
+ 449               	.LM71:
+ 450 0216 2981      		ldd r18,Y+1
+ 451 0218 30E0      		ldi r19,lo8(0)
+ 452 021a 86E0      		ldi r24,6
+ 453 021c 220F      	1:	lsl r18
+ 454 021e 331F      		rol r19
+ 455 0220 8A95      		dec r24
+ 456 0222 01F4      		brne 1b
+ 457 0224 8A81      		ldd r24,Y+2
+ 458 0226 90E0      		ldi r25,lo8(0)
+ 459 0228 282B      		or r18,r24
+ 460 022a 392B      		or r19,r25
+ 461               	.LM72:
+ 462 022c C901      		movw r24,r18
+ 463 022e 0995      		icall
+ 464               	.L20:
+ 465               	.LBE3:
+ 466               	.LM73:
+ 467 0230 00FF      		sbrs r16,0
+ 468 0232 00C0      		rjmp .L21
+ 469               	.LM74:
+ 470 0234 8AE0      		ldi r24,lo8(10)
+ 471 0236 65E1      		ldi r22,lo8(21)
+ 472 0238 0E94 0000 		call I2CTWI_transmitByte
+ 473               	.LM75:
+ 474 023c 8AE0      		ldi r24,lo8(10)
+ 475 023e BE01      		movw r22,r28
+ 476 0240 6F5F      		subi r22,lo8(-(1))
+ 477 0242 7F4F      		sbci r23,hi8(-(1))
+ 478 0244 42E0      		ldi r20,lo8(2)
+ 479 0246 0E94 0000 		call I2CTWI_readBytes
+ 480               	.LM76:
+ 481 024a 3A81      		ldd r19,Y+2
+ 482 024c 20E0      		ldi r18,lo8(0)
+ 483 024e 8981      		ldd r24,Y+1
+ 484 0250 90E0      		ldi r25,lo8(0)
+ 485 0252 822B      		or r24,r18
+ 486 0254 932B      		or r25,r19
+ 487 0256 9093 0000 		sts adcBat+1,r25
+ 488 025a 8093 0000 		sts adcBat,r24
+ 489               	.LM77:
+ 490 025e 8091 0000 		lds r24,interrupt_status
+ 491 0262 E091 0000 		lds r30,BATTERY_lowVoltageHandler
+ 492 0266 F091 0000 		lds r31,BATTERY_lowVoltageHandler+1
+ 493 026a 8170      		andi r24,lo8(1)
+ 494 026c 0995      		icall
+ 495               	.L21:
+ 496               	.LM78:
+ 497 026e 8091 0000 		lds r24,messageBuf+1
+ 498 0272 8093 0000 		sts status,r24
+ 499               	.LM79:
+ 500 0276 83FF      		sbrs r24,3
+ 501 0278 00C0      		rjmp .L22
+ 502               	.LM80:
+ 503 027a E091 0000 		lds r30,WDT_requestHandler
+ 504 027e F091 0000 		lds r31,WDT_requestHandler+1
+ 505 0282 0995      		icall
+ 506               	.L22:
+ 507               	.LM81:
+ 508 0284 8091 0000 		lds r24,messageBuf+2
+ 509 0288 8093 0000 		sts drive_status,r24
+ 510               	.LM82:
+ 511 028c 8091 0000 		lds r24,interrupt_status
+ 512 0290 87FF      		sbrs r24,7
+ 513 0292 00C0      		rjmp .L23
+ 514               	.LM83:
+ 515 0294 E091 0000 		lds r30,MOTIONCONTROL_stateChangedHandler
+ 516 0298 F091 0000 		lds r31,MOTIONCONTROL_stateChangedHandler+1
+ 517 029c 0995      		icall
+ 518               	.L23:
+ 519               	.LM84:
+ 520 029e 1092 0000 		sts block,__zero_reg__
+ 521               	.LM85:
+ 522 02a2 81E0      		ldi r24,lo8(1)
+ 523 02a4 00C0      		rjmp .L17
+ 524               	.LVL11:
+ 525               	.L24:
+ 526               	.LBE2:
+ 527               	.LM86:
+ 528 02a6 80E0      		ldi r24,lo8(0)
+ 529               	.LVL12:
+ 530               	.L17:
+ 531               	/* epilogue start */
+ 532               	.LM87:
+ 533 02a8 0F90      		pop __tmp_reg__
+ 534 02aa 0F90      		pop __tmp_reg__
+ 535 02ac CF91      		pop r28
+ 536 02ae DF91      		pop r29
+ 537 02b0 1F91      		pop r17
+ 538 02b2 0F91      		pop r16
+ 539 02b4 0895      		ret
+ 540               	.LFE20:
+ 542               	.global	waitForTransmitComplete
+ 544               	waitForTransmitComplete:
+ 545               	.LFB21:
+ 546               	.LM88:
+ 547               	/* prologue: function */
+ 548               	/* frame size = 0 */
+ 549               	/* stack size = 0 */
+ 550               	.L__stack_usage = 0
+ 551               	.LM89:
+ 552 02b6 00C0      		rjmp .L26
+ 553               	.L27:
+ 554               	.LM90:
+ 555 02b8 0E94 0000 		call task_I2CTWI
+ 556               	.L26:
+ 557               	.LM91:
+ 558 02bc 06B6      		in __tmp_reg__,86-32
+ 559 02be 00FC      		sbrc __tmp_reg__,0
+ 560 02c0 00C0      		rjmp .L27
+ 561               	.LM92:
+ 562 02c2 8091 0000 		lds r24,TWI_operation
+ 563 02c6 8823      		tst r24
+ 564 02c8 01F4      		brne .L27
+ 565               	.LM93:
+ 566 02ca 86E0      		ldi r24,lo8(6)
+ 567 02cc 90E0      		ldi r25,hi8(6)
+ 568 02ce 0E94 0000 		call mSleep
+ 569               	.LM94:
+ 570 02d2 0E94 0000 		call task_checkINT0
+ 571               	.LM95:
+ 572 02d6 00C0      		rjmp .L28
+ 573               	.L29:
+ 574               	.LM96:
+ 575 02d8 0E94 0000 		call task_I2CTWI
+ 576               	.L28:
+ 577               	.LM97:
+ 578 02dc 06B6      		in __tmp_reg__,86-32
+ 579 02de 00FC      		sbrc __tmp_reg__,0
+ 580 02e0 00C0      		rjmp .L29
+ 581               	.LM98:
+ 582 02e2 8091 0000 		lds r24,TWI_operation
+ 583 02e6 8823      		tst r24
+ 584 02e8 01F4      		brne .L29
+ 585               	/* epilogue start */
+ 586               	.LM99:
+ 587 02ea 0895      		ret
+ 588               	.LFE21:
+ 590               	.global	moveAtSpeed
+ 592               	moveAtSpeed:
+ 593               	.LFB22:
+ 594               	.LM100:
+ 595               	.LVL13:
+ 596 02ec 0F93      		push r16
+ 597               	/* prologue: function */
+ 598               	/* frame size = 0 */
+ 599               	/* stack size = 1 */
+ 600               	.L__stack_usage = 1
+ 601 02ee 282F      		mov r18,r24
+ 602 02f0 062F      		mov r16,r22
+ 603               	.LM101:
+ 604 02f2 8AE0      		ldi r24,lo8(10)
+ 605               	.LVL14:
+ 606 02f4 60E0      		ldi r22,lo8(0)
+ 607               	.LVL15:
+ 608 02f6 45E0      		ldi r20,lo8(5)
+ 609 02f8 0E94 0000 		call I2CTWI_transmit4Bytes
+ 610               	.LVL16:
+ 611               	.LM102:
+ 612 02fc 00C0      		rjmp .L31
+ 613               	.L32:
+ 614               	.LM103:
+ 615 02fe 0E94 0000 		call task_I2CTWI
+ 616               	.L31:
+ 617               	.LM104:
+ 618 0302 06B6      		in __tmp_reg__,86-32
+ 619 0304 00FC      		sbrc __tmp_reg__,0
+ 620 0306 00C0      		rjmp .L32
+ 621               	.LM105:
+ 622 0308 8091 0000 		lds r24,TWI_operation
+ 623 030c 8823      		tst r24
+ 624 030e 01F4      		brne .L32
+ 625               	/* epilogue start */
+ 626               	.LM106:
+ 627 0310 0F91      		pop r16
+ 628               	.LVL17:
+ 629 0312 0895      		ret
+ 630               	.LFE22:
+ 632               	.global	changeDirection
+ 634               	changeDirection:
+ 635               	.LFB23:
+ 636               	.LM107:
+ 637               	.LVL18:
+ 638               	/* prologue: function */
+ 639               	/* frame size = 0 */
+ 640               	/* stack size = 0 */
+ 641               	.L__stack_usage = 0
+ 642 0314 282F      		mov r18,r24
+ 643               	.LM108:
+ 644 0316 8AE0      		ldi r24,lo8(10)
+ 645               	.LVL19:
+ 646 0318 60E0      		ldi r22,lo8(0)
+ 647 031a 46E0      		ldi r20,lo8(6)
+ 648 031c 0E94 0000 		call I2CTWI_transmit3Bytes
+ 649               	.LVL20:
+ 650               	.LM109:
+ 651 0320 00C0      		rjmp .L34
+ 652               	.L35:
+ 653               	.LM110:
+ 654 0322 0E94 0000 		call task_I2CTWI
+ 655               	.L34:
+ 656               	.LM111:
+ 657 0326 06B6      		in __tmp_reg__,86-32
+ 658 0328 00FC      		sbrc __tmp_reg__,0
+ 659 032a 00C0      		rjmp .L35
+ 660               	.LM112:
+ 661 032c 8091 0000 		lds r24,TWI_operation
+ 662 0330 8823      		tst r24
+ 663 0332 01F4      		brne .L35
+ 664               	/* epilogue start */
+ 665               	.LM113:
+ 666 0334 0895      		ret
+ 667               	.LFE23:
+ 669               	.global	stop
+ 671               	stop:
+ 672               	.LFB24:
+ 673               	.LM114:
+ 674               	/* prologue: function */
+ 675               	/* frame size = 0 */
+ 676               	/* stack size = 0 */
+ 677               	.L__stack_usage = 0
+ 678               	.LM115:
+ 679 0336 8AE0      		ldi r24,lo8(10)
+ 680 0338 60E0      		ldi r22,lo8(0)
+ 681 033a 44E0      		ldi r20,lo8(4)
+ 682 033c 0E94 0000 		call I2CTWI_transmit2Bytes
+ 683               	.LM116:
+ 684 0340 0E94 0000 		call waitForTransmitComplete
+ 685               	/* epilogue start */
+ 686               	.LM117:
+ 687 0344 0895      		ret
+ 688               	.LFE24:
+ 690               	.global	rotate
+ 692               	rotate:
+ 693               	.LFB25:
+ 694               	.LM118:
+ 695               	.LVL21:
+ 696 0346 DF93      		push r29
+ 697 0348 CF93      		push r28
+ 698 034a 0F92      		push __tmp_reg__
+ 699 034c CDB7      		in r28,__SP_L__
+ 700 034e DEB7      		in r29,__SP_H__
+ 701               	/* prologue: function */
+ 702               	/* frame size = 1 */
+ 703               	/* stack size = 3 */
+ 704               	.L__stack_usage = 3
+ 705               	.LM119:
+ 706 0350 1092 0000 		sts transmit_buffer,__zero_reg__
+ 707               	.LM120:
+ 708 0354 98E0      		ldi r25,lo8(8)
+ 709 0356 9093 0000 		sts transmit_buffer+1,r25
+ 710               	.LM121:
+ 711 035a 8093 0000 		sts transmit_buffer+2,r24
+ 712               	.LM122:
+ 713 035e 6093 0000 		sts transmit_buffer+3,r22
+ 714               	.LM123:
+ 715 0362 5093 0000 		sts transmit_buffer+4,r21
+ 716               	.LM124:
+ 717 0366 4093 0000 		sts transmit_buffer+5,r20
+ 718               	.LM125:
+ 719 036a 8AE0      		ldi r24,lo8(10)
+ 720               	.LVL22:
+ 721 036c 60E0      		ldi r22,lo8(transmit_buffer)
+ 722 036e 70E0      		ldi r23,hi8(transmit_buffer)
+ 723               	.LVL23:
+ 724 0370 46E0      		ldi r20,lo8(6)
+ 725               	.LVL24:
+ 726 0372 2983      		std Y+1,r18
+ 727 0374 0E94 0000 		call I2CTWI_transmitBytes
+ 728               	.LVL25:
+ 729               	.LM126:
+ 730 0378 0E94 0000 		call waitForTransmitComplete
+ 731               	.LM127:
+ 732 037c 2981      		ldd r18,Y+1
+ 733 037e 2223      		tst r18
+ 734 0380 01F0      		breq .L37
+ 735 0382 00C0      		rjmp .L41
+ 736               	.L40:
+ 737               	.LM128:
+ 738 0384 0E94 0000 		call task_checkINT0
+ 739               	.LM129:
+ 740 0388 0E94 0000 		call task_I2CTWI
+ 741               	.L41:
+ 742               	.LM130:
+ 743 038c 8091 0000 		lds r24,drive_status
+ 744 0390 80FF      		sbrs r24,0
+ 745 0392 00C0      		rjmp .L40
+ 746               	.L37:
+ 747               	/* epilogue start */
+ 748               	.LM131:
+ 749 0394 0F90      		pop __tmp_reg__
+ 750 0396 CF91      		pop r28
+ 751 0398 DF91      		pop r29
+ 752 039a 0895      		ret
+ 753               	.LFE25:
+ 755               	.global	move
+ 757               	move:
+ 758               	.LFB26:
+ 759               	.LM132:
+ 760               	.LVL26:
+ 761 039c DF93      		push r29
+ 762 039e CF93      		push r28
+ 763 03a0 0F92      		push __tmp_reg__
+ 764 03a2 CDB7      		in r28,__SP_L__
+ 765 03a4 DEB7      		in r29,__SP_H__
+ 766               	/* prologue: function */
+ 767               	/* frame size = 1 */
+ 768               	/* stack size = 3 */
+ 769               	.L__stack_usage = 3
+ 770               	.LM133:
+ 771 03a6 1092 0000 		sts transmit_buffer,__zero_reg__
+ 772               	.LM134:
+ 773 03aa 97E0      		ldi r25,lo8(7)
+ 774 03ac 9093 0000 		sts transmit_buffer+1,r25
+ 775               	.LM135:
+ 776 03b0 8093 0000 		sts transmit_buffer+2,r24
+ 777               	.LM136:
+ 778 03b4 6093 0000 		sts transmit_buffer+3,r22
+ 779               	.LM137:
+ 780 03b8 5093 0000 		sts transmit_buffer+4,r21
+ 781               	.LM138:
+ 782 03bc 4093 0000 		sts transmit_buffer+5,r20
+ 783               	.LM139:
+ 784 03c0 8AE0      		ldi r24,lo8(10)
+ 785               	.LVL27:
+ 786 03c2 60E0      		ldi r22,lo8(transmit_buffer)
+ 787 03c4 70E0      		ldi r23,hi8(transmit_buffer)
+ 788               	.LVL28:
+ 789 03c6 46E0      		ldi r20,lo8(6)
+ 790               	.LVL29:
+ 791 03c8 2983      		std Y+1,r18
+ 792 03ca 0E94 0000 		call I2CTWI_transmitBytes
+ 793               	.LVL30:
+ 794               	.LM140:
+ 795 03ce 0E94 0000 		call waitForTransmitComplete
+ 796               	.LM141:
+ 797 03d2 2981      		ldd r18,Y+1
+ 798 03d4 2223      		tst r18
+ 799 03d6 01F0      		breq .L42
+ 800 03d8 00C0      		rjmp .L46
+ 801               	.L45:
+ 802               	.LM142:
+ 803 03da 0E94 0000 		call task_checkINT0
+ 804               	.LM143:
+ 805 03de 0E94 0000 		call task_I2CTWI
+ 806               	.L46:
+ 807               	.LM144:
+ 808 03e2 8091 0000 		lds r24,drive_status
+ 809 03e6 80FF      		sbrs r24,0
+ 810 03e8 00C0      		rjmp .L45
+ 811               	.L42:
+ 812               	/* epilogue start */
+ 813               	.LM145:
+ 814 03ea 0F90      		pop __tmp_reg__
+ 815 03ec CF91      		pop r28
+ 816 03ee DF91      		pop r29
+ 817 03f0 0895      		ret
+ 818               	.LFE26:
+ 820               	.global	block
+ 821               	.global	block
+ 822               		.section .bss
+ 825               	block:
+ 826 0000 00        		.skip 1,0
+ 827               		.comm timer,2,1
+ 828               		.comm interrupt_status,1,1
+ 829               		.comm status,1,1
+ 830               		.comm drive_status,1,1
+ 831               		.comm mleft_speed,1,1
+ 832               		.comm mright_speed,1,1
+ 833               		.comm mleft_dist,2,1
+ 834               		.comm mright_dist,2,1
+ 835               		.comm mleft_des_speed,1,1
+ 836               		.comm mright_des_speed,1,1
+ 837               		.comm mleft_power,1,1
+ 838               		.comm mright_power,1,1
+ 839               		.comm bumper_left,1,1
+ 840               		.comm bumper_right,1,1
+ 841               		.comm obstacle_left,1,1
+ 842               		.comm obstacle_right,1,1
+ 843               		.comm adcBat,2,1
+ 844               		.comm adcMotorCurrentLeft,2,1
+ 845               		.comm adcMotorCurrentRight,2,1
+ 846               		.comm adcLSL,2,1
+ 847               		.comm adcLSR,2,1
+ 848               		.comm adc0,2,1
+ 849               		.comm adc1,2,1
+ 850               		.comm sensorBuf,24,1
+ 851               		.comm messageBuf,16,1
+ 852               		.comm transmit_buffer,10,1
+ 853               		.data
+ 856               	ACS_stateChangedHandler:
+ 857 0000 0000      		.word	gs(ACS_stateChanged_DUMMY)
+ 860               	BUMPERS_stateChangedHandler:
+ 861 0002 0000      		.word	gs(BUMPERS_stateChanged_DUMMY)
+ 864               	IRCOMM_RC5dataReadyHandler:
+ 865 0004 0000      		.word	gs(IRCOMM_RC5dataReady_DUMMY)
+ 868               	BATTERY_lowVoltageHandler:
+ 869 0006 0000      		.word	gs(BATTERY_lowVoltage_DUMMY)
+ 872               	WDT_requestHandler:
+ 873 0008 0000      		.word	gs(WDT_request_DUMMY)
+ 876               	MOTIONCONTROL_stateChangedHandler:
+ 877 000a 0000      		.word	gs(MOTIONCONTROL_stateChanged_DUMMY)
+ 1062               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 RP6Control_I2CMasterLib.c
+     /tmp/ccaabiBH.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccaabiBH.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaabiBH.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaabiBH.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccaabiBH.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaabiBH.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaabiBH.s:18     .text:0000000000000000 BUMPERS_stateChanged_DUMMY
+     /tmp/ccaabiBH.s:32     .text:0000000000000002 MOTIONCONTROL_stateChanged_DUMMY
+     /tmp/ccaabiBH.s:46     .text:0000000000000004 IRCOMM_RC5dataReady_DUMMY
+     /tmp/ccaabiBH.s:61     .text:0000000000000006 ACS_stateChanged_DUMMY
+     /tmp/ccaabiBH.s:75     .text:0000000000000008 BATTERY_lowVoltage_DUMMY
+     /tmp/ccaabiBH.s:90     .text:000000000000000a WDT_request_DUMMY
+     /tmp/ccaabiBH.s:104    .text:000000000000000c BUMPERS_setStateChangedHandler
+     /tmp/ccaabiBH.s:860    .data:0000000000000002 BUMPERS_stateChangedHandler
+     /tmp/ccaabiBH.s:122    .text:0000000000000016 MOTIONCONTROL_setStateChangedHandler
+     /tmp/ccaabiBH.s:876    .data:000000000000000a MOTIONCONTROL_stateChangedHandler
+     /tmp/ccaabiBH.s:140    .text:0000000000000020 IRCOMM_setRC5DataReadyHandler
+     /tmp/ccaabiBH.s:864    .data:0000000000000004 IRCOMM_RC5dataReadyHandler
+     /tmp/ccaabiBH.s:158    .text:000000000000002a ACS_setStateChangedHandler
+     /tmp/ccaabiBH.s:856    .data:0000000000000000 ACS_stateChangedHandler
+     /tmp/ccaabiBH.s:176    .text:0000000000000034 BATTERY_setLowVoltageHandler
+     /tmp/ccaabiBH.s:868    .data:0000000000000006 BATTERY_lowVoltageHandler
+     /tmp/ccaabiBH.s:194    .text:000000000000003e WDT_setRequestHandler
+     /tmp/ccaabiBH.s:872    .data:0000000000000008 WDT_requestHandler
+     /tmp/ccaabiBH.s:212    .text:0000000000000048 getAllSensors
+                            *COM*:0000000000000018 sensorBuf
+                            *COM*:0000000000000001 mleft_power
+                            *COM*:0000000000000001 mright_power
+                            *COM*:0000000000000001 mleft_speed
+                            *COM*:0000000000000001 mright_speed
+                            *COM*:0000000000000001 mleft_des_speed
+                            *COM*:0000000000000001 mright_des_speed
+                            *COM*:0000000000000002 mleft_dist
+                            *COM*:0000000000000002 mright_dist
+                            *COM*:0000000000000002 adcLSL
+                            *COM*:0000000000000002 adcLSR
+                            *COM*:0000000000000002 adcMotorCurrentLeft
+                            *COM*:0000000000000002 adcMotorCurrentRight
+                            *COM*:0000000000000002 adcBat
+                            *COM*:0000000000000002 adc0
+                            *COM*:0000000000000002 adc1
+     /tmp/ccaabiBH.s:323    .text:000000000000014e task_checkINT0
+     /tmp/ccaabiBH.s:825    .bss:0000000000000000 block
+     /tmp/ccaabiBH.s:352    .text:000000000000016e checkRP6Status
+                            *COM*:0000000000000010 messageBuf
+                            *COM*:0000000000000001 interrupt_status
+                            *COM*:0000000000000001 obstacle_left
+                            *COM*:0000000000000001 obstacle_right
+                            *COM*:0000000000000001 bumper_left
+                            *COM*:0000000000000001 bumper_right
+                            *COM*:0000000000000001 status
+                            *COM*:0000000000000001 drive_status
+     /tmp/ccaabiBH.s:544    .text:00000000000002b6 waitForTransmitComplete
+     /tmp/ccaabiBH.s:592    .text:00000000000002ec moveAtSpeed
+     /tmp/ccaabiBH.s:634    .text:0000000000000314 changeDirection
+     /tmp/ccaabiBH.s:671    .text:0000000000000336 stop
+     /tmp/ccaabiBH.s:692    .text:0000000000000346 rotate
+                            *COM*:000000000000000a transmit_buffer
+     /tmp/ccaabiBH.s:757    .text:000000000000039c move
+                            *COM*:0000000000000002 timer
+
+UNDEFINED SYMBOLS
+I2CTWI_readRegisters
+I2CTWI_requestRegisterFromDevice
+I2CTWI_getReceivedData
+I2CTWI_transmitByte
+I2CTWI_readBytes
+task_I2CTWI
+TWI_operation
+mSleep
+I2CTWI_transmit4Bytes
+I2CTWI_transmit3Bytes
+I2CTWI_transmit2Bytes
+I2CTWI_transmitBytes
+__do_copy_data
+__do_clear_bss
