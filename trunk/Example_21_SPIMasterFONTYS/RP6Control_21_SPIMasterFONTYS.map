@@ -1,0 +1,719 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              ../../RP6lib/RP6control/RP6ControlLib.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              ../../RP6lib/RP6control/RP6ControlLib.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                              ../../RP6lib/RP6control/RP6ControlLib.o (itoa)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o) (strrev)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o) (__udivmodhi4)
+
+Allocating common symbols
+Common symbol       size              file
+
+uart_status         0x1               ../../RP6lib/RP6common/RP6uart.o
+controlStatus       0x1               ../../RP6lib/RP6control/RP6ControlLib.o
+uart_receive_bytes  0x1               ../../RP6lib/RP6common/RP6uart.o
+buffer_pos          0x1               ../../RP6lib/RP6common/RP6uart.o
+lcd_tmp_buffer      0x11              ../../RP6lib/RP6control/RP6ControlLib.o
+stopwatches         0x11              ../../RP6lib/RP6control/RP6ControlLib.o
+externalPort        0x1               ../../RP6lib/RP6control/RP6ControlLib.o
+delay_timer         0x1               ../../RP6lib/RP6control/RP6ControlLib.o
+ms_timer            0x1               ../../RP6lib/RP6control/RP6ControlLib.o
+uart_receive_buffer
+                    0x10              ../../RP6lib/RP6common/RP6uart.o
+sound_timer         0x2               ../../RP6lib/RP6control/RP6ControlLib.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD RP6Control_21_SPIMasterFONTYS.o
+LOAD ../../RP6lib/RP6control/RP6ControlLib.o
+LOAD ../../RP6lib/RP6common/RP6uart.o
+LOAD ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1360
+ *(.vectors)
+ .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000054       0x6d RP6Control_21_SPIMasterFONTYS.o
+                0x000000c2                . = ALIGN (0x2)
+ *fill*         0x000000c1        0x1 00
+                0x000000c2                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000c2        0x0 linker stubs
+ *(.trampolines*)
+                0x000000c2                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000c2                __ctors_start = .
+ *(.ctors)
+                0x000000c2                __ctors_end = .
+                0x000000c2                __dtors_start = .
+ *(.dtors)
+                0x000000c2                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000c2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x000000c2                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000c2        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000ce       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000000ce                __do_copy_data
+ .init4         0x000000e4       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000000e4                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000f4        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x000000fc        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x000000fc                __vector_12
+                0x000000fc                __bad_interrupt
+                0x000000fc                __vector_6
+                0x000000fc                __vector_11
+                0x000000fc                __vector_17
+                0x000000fc                __vector_7
+                0x000000fc                __vector_5
+                0x000000fc                __vector_4
+                0x000000fc                __vector_9
+                0x000000fc                __vector_15
+                0x000000fc                __vector_8
+                0x000000fc                __vector_14
+                0x000000fc                __vector_16
+                0x000000fc                __vector_18
+                0x000000fc                __vector_20
+ .text          0x00000100       0xa8 RP6Control_21_SPIMasterFONTYS.o
+                0x00000104                RP6_SPI_Deselect
+                0x00000100                RP6_SPI_Select
+                0x0000011c                main
+                0x00000108                RP6_SPI_read
+                0x00000112                RP6_SPI_init
+ .text          0x000001a8      0x8c4 ../../RP6lib/RP6control/RP6ControlLib.o
+                0x00000970                initRP6Control
+                0x00000946                mSleep
+                0x000001b4                __vector_1
+                0x0000090e                setBeeperPitch
+                0x0000034c                SPI_EEPROM_readByte
+                0x0000031a                writeBufferSPI
+                0x00000470                setLEDs
+                0x000003ce                SPI_EEPROM_writeBytes
+                0x000004f2                initLCD
+                0x000009e8                writeIntegerLengthLCD
+                0x00000742                checkReleasedKeyEvent
+                0x000004b0                write4BitLCDData
+                0x0000092c                sleep
+                0x00000204                INT1_setEventHandler
+                0x00000268                __vector_3
+                0x00000964                delayCycles
+                0x00000720                checkPressedKeyEvent
+                0x00000332                readBufferSPI
+                0x0000039a                SPI_EEPROM_enableWrite
+                0x000002b6                readADC
+                0x00000636                writeStringLengthLCD
+                0x00000794                getMicrophonePeak
+                0x000004d8                writeLCDCommand
+                0x00000484                setLCDD
+                0x00000660                setCursorPosLCD
+                0x0000045c                outputExt
+                0x000005cc                clearLCD
+                0x0000030c                writeWordSPI
+                0x000002d6                writeSPI
+                0x000001aa                INT0_setEventHandler
+                0x0000020e                __vector_2
+                0x0000076c                dischargePeakDetector
+                0x000005e6                writeCharLCD
+                0x0000061c                writeStringLCD
+                0x000002de                readSPI
+                0x00000202                INT1_event_DUMMY
+                0x000009ca                writeIntegerLCD
+                0x00000426                SPI_EEPROM_writeByte
+                0x0000025e                INT2_setEventHandler
+                0x000008f2                beep
+                0x000006b8                getPressedKeyNumber
+                0x0000069e                clearPosLCD
+                0x000001a8                INT0_event_DUMMY
+                0x000002ea                readWordSPI
+                0x00000670                _showScreenLCD_P
+                0x0000036c                SPI_EEPROM_readBytes
+                0x000007b2                __vector_10
+                0x00000600                writeNStringLCD_P
+                0x000003b6                SPI_EEPROM_getStatus
+                0x000003a8                SPI_EEPROM_disableWrite
+                0x0000025c                INT2_event_DUMMY
+ .text          0x00000a6c      0x1fe ../../RP6lib/RP6common/RP6uart.o
+                0x00000a74                writeString
+                0x00000bec                writeIntegerLength
+                0x00000b2c                waitUntilReceptionComplete
+                0x00000aba                __vector_13
+                0x00000ba8                writeInteger
+                0x00000b60                stopReception
+                0x00000b1e                receiveBytes
+                0x00000a6c                writeChar
+                0x00000a9c                writeStringLength
+                0x00000a88                writeNStringP
+                0x00000b36                copyReceivedBytesToBuffer
+                0x00000b6c                receiveBytesToBuffer
+ .text          0x00000c6a      0x668 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                0x00001174                I2CTWI_transmitBytes
+                0x00001098                I2CTWI_transmit3Bytes
+                0x00000ee4                I2CTWI_readBytes
+                0x00000c86                I2CTWI_requestedDataReady_DUMMY
+                0x00000fe2                I2CTWI_transmitByte
+                0x00000c6a                __I2CTWI_initMaster
+                0x00000c9e                I2CTWI_delay
+                0x00000c94                I2CTWI_setTransmissionErrorHandler
+                0x00000db2                I2CTWI_requestDataFromDevice
+                0x00000c88                I2CTWI_setRequestedDataReadyHandler
+                0x000011ee                __vector_19
+                0x00001102                I2CTWI_transmit4Bytes
+                0x00000e62                I2CTWI_getState
+                0x00000cbe                task_I2CTWI
+                0x00000df0                I2CTWI_requestRegisterFromDevice
+                0x00001038                I2CTWI_transmit2Bytes
+                0x00000e38                I2CTWI_getReceivedData
+                0x00000c92                I2CTWI_transmissionError_DUMMY
+                0x00000e6e                I2CTWI_readRegisters
+                0x00000f6e                I2CTWI_readByte
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .text          0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000012d2                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000012d2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x000012d2       0x42 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x000012d2                itoa
+ .text.avr-libc
+                0x00001314       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00001314                strrev
+ .text.libgcc   0x00001334       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001334                __udivmodhi4
+                0x0000135c                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000135c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000135c                exit
+                0x0000135c                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000135c        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001360                _etext = .
+
+.data           0x00800060        0xa load address 0x00001360
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 RP6Control_21_SPIMasterFONTYS.o
+ .data          0x00800060        0x6 ../../RP6lib/RP6control/RP6ControlLib.o
+ .data          0x00800066        0x0 ../../RP6lib/RP6common/RP6uart.o
+ .data          0x00800066        0x4 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .data          0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080006a                . = ALIGN (0x2)
+                0x0080006a                _edata = .
+                0x0080006a                PROVIDE (__data_end, .)
+
+.bss            0x0080006a       0x87
+                0x0080006a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080006a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x0080006a        0x0 RP6Control_21_SPIMasterFONTYS.o
+ .bss           0x0080006a        0x2 ../../RP6lib/RP6control/RP6ControlLib.o
+ .bss           0x0080006c        0x0 ../../RP6lib/RP6common/RP6uart.o
+ .bss           0x0080006c       0x4a ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                0x0080006f                I2CTWI_request_reg
+                0x0080006e                I2CTWI_request_adr
+                0x00800071                I2CTWI_requestID
+                0x0080006c                TWI_statusReg
+                0x0080006d                TWI_TWSR_state
+                0x00800073                TWI_operation
+                0x00800070                I2CTWI_request_size
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .bss           0x008000b6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x008000b6       0x28 ../../RP6lib/RP6control/RP6ControlLib.o
+                0x008000b6                controlStatus
+                0x008000b7                lcd_tmp_buffer
+                0x008000c8                stopwatches
+                0x008000d9                externalPort
+                0x008000da                delay_timer
+                0x008000db                ms_timer
+                0x008000dc                sound_timer
+ COMMON         0x008000de       0x13 ../../RP6lib/RP6common/RP6uart.o
+                0x008000de                uart_status
+                0x008000df                uart_receive_bytes
+                0x008000e0                buffer_pos
+                0x008000e1                uart_receive_buffer
+                0x008000f1                PROVIDE (__bss_end, .)
+                0x00001360                __data_load_start = LOADADDR (.data)
+                0x0000136a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008000f1        0x0
+                0x008000f1                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008000f1                PROVIDE (__noinit_end, .)
+                0x008000f1                _end = .
+                0x008000f1                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x80
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 RP6Control_21_SPIMasterFONTYS.o
+ .debug_aranges
+                0x00000020       0x20 ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_aranges
+                0x00000040       0x20 ../../RP6lib/RP6common/RP6uart.o
+ .debug_aranges
+                0x00000060       0x20 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_pubnames
+                0x00000000      0x8d1
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x65 RP6Control_21_SPIMasterFONTYS.o
+ .debug_pubnames
+                0x00000065      0x45c ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_pubnames
+                0x000004c1      0x157 ../../RP6lib/RP6common/RP6uart.o
+ .debug_pubnames
+                0x00000618      0x2b9 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_info     0x00000000     0x1eaa
+ *(.debug_info)
+ .debug_info    0x00000000      0x1e6 RP6Control_21_SPIMasterFONTYS.o
+ .debug_info    0x000001e6     0x1075 ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_info    0x0000125b      0x467 ../../RP6lib/RP6common/RP6uart.o
+ .debug_info    0x000016c2      0x7e8 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x864
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xd2 RP6Control_21_SPIMasterFONTYS.o
+ .debug_abbrev  0x000000d2      0x359 ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_abbrev  0x0000042b      0x1f4 ../../RP6lib/RP6common/RP6uart.o
+ .debug_abbrev  0x0000061f      0x245 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_line     0x00000000     0x175e
+ *(.debug_line)
+ .debug_line    0x00000000      0x19c RP6Control_21_SPIMasterFONTYS.o
+ .debug_line    0x0000019c      0xbee ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_line    0x00000d8a      0x2fa ../../RP6lib/RP6common/RP6uart.o
+ .debug_line    0x00001084      0x6da ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_frame    0x00000000      0x5c0
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x60 RP6Control_21_SPIMasterFONTYS.o
+ .debug_frame   0x00000060      0x340 ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_frame   0x000003a0       0xd0 ../../RP6lib/RP6common/RP6uart.o
+ .debug_frame   0x00000470      0x150 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_str      0x00000000      0xabf
+ *(.debug_str)
+ .debug_str     0x00000000       0xfd RP6Control_21_SPIMasterFONTYS.o
+                                0x145 (size before relaxing)
+ .debug_str     0x000000fd      0x555 ../../RP6lib/RP6control/RP6ControlLib.o
+                                0x5fe (size before relaxing)
+ .debug_str     0x00000652      0x13c ../../RP6lib/RP6common/RP6uart.o
+                                0x25c (size before relaxing)
+ .debug_str     0x0000078e      0x331 ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                                0x452 (size before relaxing)
+
+.debug_loc      0x00000000      0xd28
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x64b ../../RP6lib/RP6control/RP6ControlLib.o
+ .debug_loc     0x0000064b      0x152 ../../RP6lib/RP6common/RP6uart.o
+ .debug_loc     0x0000079d      0x58b ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(RP6Control_21_SPIMasterFONTYS.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0x48
+ .debug_ranges  0x00000000       0x48 ../../RP6lib/RP6common/RP6uart.o
+
+Cross Reference Table
+
+Symbol                                            File
+I2CTWI_delay                                      ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_getReceivedData                            ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_getState                                   ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_readByte                                   ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_readBytes                                  ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_readRegisters                              ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestDataFromDevice                      ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestID                                  ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestRegisterFromDevice                  ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_request_adr                                ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_request_reg                                ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_request_size                               ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestedDataReady_DUMMY                   ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_setRequestedDataReadyHandler               ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_setTransmissionErrorHandler                ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmissionError_DUMMY                    ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmit2Bytes                             ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmit3Bytes                             ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmit4Bytes                             ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmitByte                               ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmitBytes                              ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+INT0_event_DUMMY                                  ../../RP6lib/RP6control/RP6ControlLib.o
+INT0_setEventHandler                              ../../RP6lib/RP6control/RP6ControlLib.o
+INT1_event_DUMMY                                  ../../RP6lib/RP6control/RP6ControlLib.o
+INT1_setEventHandler                              ../../RP6lib/RP6control/RP6ControlLib.o
+INT2_event_DUMMY                                  ../../RP6lib/RP6control/RP6ControlLib.o
+INT2_setEventHandler                              ../../RP6lib/RP6control/RP6ControlLib.o
+RP6_SPI_Deselect                                  RP6Control_21_SPIMasterFONTYS.o
+RP6_SPI_Select                                    RP6Control_21_SPIMasterFONTYS.o
+RP6_SPI_init                                      RP6Control_21_SPIMasterFONTYS.o
+RP6_SPI_read                                      RP6Control_21_SPIMasterFONTYS.o
+SPI_EEPROM_disableWrite                           ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_enableWrite                            ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_getStatus                              ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_readByte                               ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_readBytes                              ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_writeByte                              ../../RP6lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_writeBytes                             ../../RP6lib/RP6control/RP6ControlLib.o
+TWI_TWSR_state                                    ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+TWI_operation                                     ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+TWI_statusReg                                     ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+__I2CTWI_initMaster                               ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+__bad_interrupt                                   c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__bss_end                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_start                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__do_clear_bss                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                                                  ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                                                  ../../RP6lib/RP6common/RP6uart.o
+                                                  ../../RP6lib/RP6control/RP6ControlLib.o
+__do_copy_data                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                                                  ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                                                  ../../RP6lib/RP6control/RP6ControlLib.o
+__heap_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__init                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__stack                                           c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__udivmodhi4                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+__vector_1                                        ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_10                                       ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_11                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_12                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_13                                       ../../RP6lib/RP6common/RP6uart.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_14                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_15                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_16                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_17                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_18                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_19                                       ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_2                                        ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_20                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_3                                        ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_4                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_5                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_6                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_7                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_8                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_9                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vector_default                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+__vectors                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+_exit                                             c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+_showScreenLCD_P                                  ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+beep                                              ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+buffer_pos                                        ../../RP6lib/RP6common/RP6uart.o
+checkPressedKeyEvent                              ../../RP6lib/RP6control/RP6ControlLib.o
+checkReleasedKeyEvent                             ../../RP6lib/RP6control/RP6ControlLib.o
+clearLCD                                          ../../RP6lib/RP6control/RP6ControlLib.o
+clearPosLCD                                       ../../RP6lib/RP6control/RP6ControlLib.o
+controlStatus                                     ../../RP6lib/RP6control/RP6ControlLib.o
+copyReceivedBytesToBuffer                         ../../RP6lib/RP6common/RP6uart.o
+delayCycles                                       ../../RP6lib/RP6control/RP6ControlLib.o
+delay_timer                                       ../../RP6lib/RP6control/RP6ControlLib.o
+dischargePeakDetector                             ../../RP6lib/RP6control/RP6ControlLib.o
+exit                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+externalPort                                      ../../RP6lib/RP6control/RP6ControlLib.o
+getMicrophonePeak                                 ../../RP6lib/RP6control/RP6ControlLib.o
+getPressedKeyNumber                               ../../RP6lib/RP6control/RP6ControlLib.o
+initLCD                                           ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+initRP6Control                                    ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+itoa                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                                                  ../../RP6lib/RP6common/RP6uart.o
+                                                  ../../RP6lib/RP6control/RP6ControlLib.o
+lcd_tmp_buffer                                    ../../RP6lib/RP6control/RP6ControlLib.o
+mSleep                                            ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+main                                              RP6Control_21_SPIMasterFONTYS.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ms_timer                                          ../../RP6lib/RP6control/RP6ControlLib.o
+outputExt                                         ../../RP6lib/RP6control/RP6ControlLib.o
+readADC                                           ../../RP6lib/RP6control/RP6ControlLib.o
+readBufferSPI                                     ../../RP6lib/RP6control/RP6ControlLib.o
+readSPI                                           ../../RP6lib/RP6control/RP6ControlLib.o
+readWordSPI                                       ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+receiveBytes                                      ../../RP6lib/RP6common/RP6uart.o
+receiveBytesToBuffer                              ../../RP6lib/RP6common/RP6uart.o
+setBeeperPitch                                    ../../RP6lib/RP6control/RP6ControlLib.o
+setCursorPosLCD                                   ../../RP6lib/RP6control/RP6ControlLib.o
+setLCDD                                           ../../RP6lib/RP6control/RP6ControlLib.o
+setLEDs                                           ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+sleep                                             ../../RP6lib/RP6control/RP6ControlLib.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+sound_timer                                       ../../RP6lib/RP6control/RP6ControlLib.o
+stopReception                                     ../../RP6lib/RP6common/RP6uart.o
+stopwatches                                       ../../RP6lib/RP6control/RP6ControlLib.o
+strrev                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+task_I2CTWI                                       ../../RP6lib/RP6common/RP6I2CmasterTWI.o
+uart_receive_buffer                               ../../RP6lib/RP6common/RP6uart.o
+uart_receive_bytes                                ../../RP6lib/RP6common/RP6uart.o
+uart_status                                       ../../RP6lib/RP6common/RP6uart.o
+waitUntilReceptionComplete                        ../../RP6lib/RP6common/RP6uart.o
+write4BitLCDData                                  ../../RP6lib/RP6control/RP6ControlLib.o
+writeBufferSPI                                    ../../RP6lib/RP6control/RP6ControlLib.o
+writeChar                                         ../../RP6lib/RP6common/RP6uart.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+writeCharLCD                                      ../../RP6lib/RP6control/RP6ControlLib.o
+writeInteger                                      ../../RP6lib/RP6common/RP6uart.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+writeIntegerLCD                                   ../../RP6lib/RP6control/RP6ControlLib.o
+writeIntegerLength                                ../../RP6lib/RP6common/RP6uart.o
+writeIntegerLengthLCD                             ../../RP6lib/RP6control/RP6ControlLib.o
+writeLCDCommand                                   ../../RP6lib/RP6control/RP6ControlLib.o
+writeNStringLCD_P                                 ../../RP6lib/RP6control/RP6ControlLib.o
+writeNStringP                                     ../../RP6lib/RP6common/RP6uart.o
+                                                  RP6Control_21_SPIMasterFONTYS.o
+writeSPI                                          ../../RP6lib/RP6control/RP6ControlLib.o
+writeString                                       ../../RP6lib/RP6common/RP6uart.o
+writeStringLCD                                    ../../RP6lib/RP6control/RP6ControlLib.o
+writeStringLength                                 ../../RP6lib/RP6common/RP6uart.o
+writeStringLengthLCD                              ../../RP6lib/RP6control/RP6ControlLib.o
+writeWordSPI                                      ../../RP6lib/RP6control/RP6ControlLib.o

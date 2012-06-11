@@ -1,0 +1,4096 @@
+
+RP6Control_21_SPIMasterFONTYS.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001360  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000a  00800060  00001360  000013f4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000087  0080006a  0080006a  000013fe  2**0
+                  ALLOC
+  3 .debug_aranges 00000080  00000000  00000000  000013fe  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000008d1  00000000  00000000  0000147e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001eaa  00000000  00000000  00001d4f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000864  00000000  00000000  00003bf9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000175e  00000000  00000000  0000445d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000005c0  00000000  00000000  00005bbc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000abf  00000000  00000000  0000617c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000d28  00000000  00000000  00006c3b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  00007963  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__ctors_end>
+       4:	0c 94 da 00 	jmp	0x1b4	; 0x1b4 <__vector_1>
+       8:	0c 94 07 01 	jmp	0x20e	; 0x20e <__vector_2>
+       c:	0c 94 34 01 	jmp	0x268	; 0x268 <__vector_3>
+      10:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      14:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      18:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      1c:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      20:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      24:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      28:	0c 94 d9 03 	jmp	0x7b2	; 0x7b2 <__vector_10>
+      2c:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      30:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      34:	0c 94 5d 05 	jmp	0xaba	; 0xaba <__vector_13>
+      38:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      3c:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      40:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      44:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      48:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+      4c:	0c 94 f7 08 	jmp	0x11ee	; 0x11ee <__vector_19>
+      50:	0c 94 7e 00 	jmp	0xfc	; 0xfc <__bad_interrupt>
+
+00000054 <__c.1791>:
+      54:	47 79 72 6f 73 63 6f 70 65 00                       Gyroscope.
+
+0000005e <__c.1789>:
+      5e:	53 50 49 2d 4d 61 73 74 65 72 00                    SPI-Master.
+
+00000069 <__c.1787>:
+      69:	23 23 23 23 23 23 23 23 23 23 23 23 23 23 23 23     ################
+	...
+
+0000007a <__c.1785>:
+      7a:	23 23 23 23 23 23 23 23 23 23 23 23 23 23 23 23     ################
+	...
+
+0000008b <__c.1783>:
+      8b:	0a 0a 52 50 36 20 43 4f 4e 54 52 4f 4c 20 4d 33     ..RP6 CONTROL M3
+      9b:	32 20 53 50 49 20 47 79 72 6f 73 63 6f 70 65 20     2 SPI Gyroscope 
+      ab:	4d 6f 64 75 6c 65 20 54 65 73 74 20 50 72 6f 67     Module Test Prog
+      bb:	72 61 6d 21 0a 00 00                                ram!...
+
+000000c2 <__ctors_end>:
+      c2:	11 24       	eor	r1, r1
+      c4:	1f be       	out	0x3f, r1	; 63
+      c6:	cf e5       	ldi	r28, 0x5F	; 95
+      c8:	d8 e0       	ldi	r29, 0x08	; 8
+      ca:	de bf       	out	0x3e, r29	; 62
+      cc:	cd bf       	out	0x3d, r28	; 61
+
+000000ce <__do_copy_data>:
+      ce:	10 e0       	ldi	r17, 0x00	; 0
+      d0:	a0 e6       	ldi	r26, 0x60	; 96
+      d2:	b0 e0       	ldi	r27, 0x00	; 0
+      d4:	e0 e6       	ldi	r30, 0x60	; 96
+      d6:	f3 e1       	ldi	r31, 0x13	; 19
+      d8:	02 c0       	rjmp	.+4      	; 0xde <.do_copy_data_start>
+
+000000da <.do_copy_data_loop>:
+      da:	05 90       	lpm	r0, Z+
+      dc:	0d 92       	st	X+, r0
+
+000000de <.do_copy_data_start>:
+      de:	aa 36       	cpi	r26, 0x6A	; 106
+      e0:	b1 07       	cpc	r27, r17
+      e2:	d9 f7       	brne	.-10     	; 0xda <.do_copy_data_loop>
+
+000000e4 <__do_clear_bss>:
+      e4:	10 e0       	ldi	r17, 0x00	; 0
+      e6:	aa e6       	ldi	r26, 0x6A	; 106
+      e8:	b0 e0       	ldi	r27, 0x00	; 0
+      ea:	01 c0       	rjmp	.+2      	; 0xee <.do_clear_bss_start>
+
+000000ec <.do_clear_bss_loop>:
+      ec:	1d 92       	st	X+, r1
+
+000000ee <.do_clear_bss_start>:
+      ee:	a1 3f       	cpi	r26, 0xF1	; 241
+      f0:	b1 07       	cpc	r27, r17
+      f2:	e1 f7       	brne	.-8      	; 0xec <.do_clear_bss_loop>
+      f4:	0e 94 8e 00 	call	0x11c	; 0x11c <main>
+      f8:	0c 94 ae 09 	jmp	0x135c	; 0x135c <_exit>
+
+000000fc <__bad_interrupt>:
+      fc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000100 <RP6_SPI_Select>:
+#include "RP6ControlLib.h" 		// The RP6 Control Library. 
+								// Always needs to be included!
+
+void RP6_SPI_Select(void)
+{
+	PORTB &= ~MEM_CS2;
+     100:	c1 98       	cbi	0x18, 1	; 24
+}
+     102:	08 95       	ret
+
+00000104 <RP6_SPI_Deselect>:
+
+void RP6_SPI_Deselect(void)
+{
+	PORTB |= MEM_CS2;
+     104:	c1 9a       	sbi	0x18, 1	; 24
+}
+     106:	08 95       	ret
+
+00000108 <RP6_SPI_read>:
+#include "RP6ControlLib.h" 		// The RP6 Control Library. 
+								// Always needs to be included!
+
+void RP6_SPI_Select(void)
+{
+	PORTB &= ~MEM_CS2;
+     108:	c1 98       	cbi	0x18, 1	; 24
+unsigned short RP6_SPI_read(void)
+{
+	unsigned short result;
+	RP6_SPI_Select();
+	//sleep(10);
+	result = readWordSPI();
+     10a:	0e 94 75 01 	call	0x2ea	; 0x2ea <readWordSPI>
+	PORTB &= ~MEM_CS2;
+}
+
+void RP6_SPI_Deselect(void)
+{
+	PORTB |= MEM_CS2;
+     10e:	c1 9a       	sbi	0x18, 1	; 24
+	//sleep(10);
+	result = readWordSPI();
+	//sleep(10);
+	RP6_SPI_Deselect();
+	return result;
+}
+     110:	08 95       	ret
+
+00000112 <RP6_SPI_init>:
+	// lower clock rate to 1 MHz.
+	// SPCR |= (1<<SPR0);
+	// SPSR &= ~(1<<SPI2X);
+
+	// lower clock rate to 250 kHz.
+	SPCR |= (1<<SPR1);
+     112:	69 9a       	sbi	0x0d, 1	; 13
+	SPSR &= ~(1<<SPI2X);
+     114:	70 98       	cbi	0x0e, 0	; 14
+
+	// lower clock rate to 125 kHz.
+	// SPCR |= (1<<SPR1) | (1<<SPR0);
+	// SPSR &= ~(1<<SPI2X);
+
+	dummy = RP6_SPI_read();
+     116:	0e 94 84 00 	call	0x108	; 0x108 <RP6_SPI_read>
+}
+     11a:	08 95       	ret
+
+0000011c <main>:
+
+// Main function - The program starts here:
+
+int16_t main(void)
+{
+	initRP6Control(); // Always call this first! The Processor will not work
+     11c:	0e 94 b8 04 	call	0x970	; 0x970 <initRP6Control>
+					  // correctly otherwise. 
+
+	initLCD(); // Initialize the LC-Display (LCD)
+     120:	0e 94 79 02 	call	0x4f2	; 0x4f2 <initLCD>
+			   // Always call this before using the LCD!
+			   
+	writeString_P("\n\nRP6 CONTROL M32 SPI Gyroscope Module Test Program!\n"); 
+     124:	8b e8       	ldi	r24, 0x8B	; 139
+     126:	90 e0       	ldi	r25, 0x00	; 0
+     128:	0e 94 44 05 	call	0xa88	; 0xa88 <writeNStringP>
+
+	RP6_SPI_init();
+     12c:	0e 94 89 00 	call	0x112	; 0x112 <RP6_SPI_init>
+
+	// Play two sounds:
+	sound(180,80,25);
+     130:	84 eb       	ldi	r24, 0xB4	; 180
+     132:	60 e5       	ldi	r22, 0x50	; 80
+     134:	70 e0       	ldi	r23, 0x00	; 0
+     136:	0e 94 79 04 	call	0x8f2	; 0x8f2 <beep>
+     13a:	89 e6       	ldi	r24, 0x69	; 105
+     13c:	90 e0       	ldi	r25, 0x00	; 0
+     13e:	0e 94 a3 04 	call	0x946	; 0x946 <mSleep>
+	sound(220,80,25);
+     142:	8c ed       	ldi	r24, 0xDC	; 220
+     144:	60 e5       	ldi	r22, 0x50	; 80
+     146:	70 e0       	ldi	r23, 0x00	; 0
+     148:	0e 94 79 04 	call	0x8f2	; 0x8f2 <beep>
+     14c:	89 e6       	ldi	r24, 0x69	; 105
+     14e:	90 e0       	ldi	r25, 0x00	; 0
+     150:	0e 94 a3 04 	call	0x946	; 0x946 <mSleep>
+
+	setLEDs(0b1111); // Turn all LEDs on!
+     154:	8f e0       	ldi	r24, 0x0F	; 15
+     156:	0e 94 38 02 	call	0x470	; 0x470 <setLEDs>
+
+	showScreenLCD("################", "################");
+     15a:	8a e7       	ldi	r24, 0x7A	; 122
+     15c:	90 e0       	ldi	r25, 0x00	; 0
+     15e:	69 e6       	ldi	r22, 0x69	; 105
+     160:	70 e0       	ldi	r23, 0x00	; 0
+     162:	0e 94 38 03 	call	0x670	; 0x670 <_showScreenLCD_P>
+	mSleep(500);
+     166:	84 ef       	ldi	r24, 0xF4	; 244
+     168:	91 e0       	ldi	r25, 0x01	; 1
+     16a:	0e 94 a3 04 	call	0x946	; 0x946 <mSleep>
+	showScreenLCD("SPI-Master", "Gyroscope");
+     16e:	8e e5       	ldi	r24, 0x5E	; 94
+     170:	90 e0       	ldi	r25, 0x00	; 0
+     172:	64 e5       	ldi	r22, 0x54	; 84
+     174:	70 e0       	ldi	r23, 0x00	; 0
+     176:	0e 94 38 03 	call	0x670	; 0x670 <_showScreenLCD_P>
+	mSleep(1000);
+     17a:	88 ee       	ldi	r24, 0xE8	; 232
+     17c:	93 e0       	ldi	r25, 0x03	; 3
+     17e:	0e 94 a3 04 	call	0x946	; 0x946 <mSleep>
+	// ---------------------------------------
+	setLEDs(0b0000); // All LEDs off!
+     182:	80 e0       	ldi	r24, 0x00	; 0
+     184:	0e 94 38 02 	call	0x470	; 0x470 <setLEDs>
+	
+	while(true) 
+	{
+		sleep(100);
+     188:	84 e6       	ldi	r24, 0x64	; 100
+     18a:	0e 94 96 04 	call	0x92c	; 0x92c <sleep>
+		// setLEDs(0b0001);
+		// writeString_P("Gyroscope data: "); 
+		writeInteger((RP6_SPI_read() >> 2), DEC);
+     18e:	0e 94 84 00 	call	0x108	; 0x108 <RP6_SPI_read>
+     192:	96 95       	lsr	r25
+     194:	87 95       	ror	r24
+     196:	96 95       	lsr	r25
+     198:	87 95       	ror	r24
+     19a:	6a e0       	ldi	r22, 0x0A	; 10
+     19c:	0e 94 d4 05 	call	0xba8	; 0xba8 <writeInteger>
+		writeChar('\n');
+     1a0:	8a e0       	ldi	r24, 0x0A	; 10
+     1a2:	0e 94 36 05 	call	0xa6c	; 0xa6c <writeChar>
+     1a6:	f0 cf       	rjmp	.-32     	; 0x188 <main+0x6c>
+
+000001a8 <INT0_event_DUMMY>:
+// Event Handlers. 
+// Please make sure that you keep the Event Handler Functions as
+// short as possible! 
+// --> You usually don't need this stuff. 
+
+void INT0_event_DUMMY(void){}
+     1a8:	08 95       	ret
+
+000001aa <INT0_setEventHandler>:
+static void (*INT0_eventHandler)(void) = INT0_event_DUMMY;
+void INT0_setEventHandler(void (*i0eventHandler)(void))
+{
+	INT0_eventHandler = i0eventHandler;
+     1aa:	90 93 65 00 	sts	0x0065, r25
+     1ae:	80 93 64 00 	sts	0x0064, r24
+}
+     1b2:	08 95       	ret
+
+000001b4 <__vector_1>:
+
+/**
+ * External Interrupt 0 ISR
+ */
+ISR (INT0_vect)
+{
+     1b4:	1f 92       	push	r1
+     1b6:	0f 92       	push	r0
+     1b8:	0f b6       	in	r0, 0x3f	; 63
+     1ba:	0f 92       	push	r0
+     1bc:	11 24       	eor	r1, r1
+     1be:	2f 93       	push	r18
+     1c0:	3f 93       	push	r19
+     1c2:	4f 93       	push	r20
+     1c4:	5f 93       	push	r21
+     1c6:	6f 93       	push	r22
+     1c8:	7f 93       	push	r23
+     1ca:	8f 93       	push	r24
+     1cc:	9f 93       	push	r25
+     1ce:	af 93       	push	r26
+     1d0:	bf 93       	push	r27
+     1d2:	ef 93       	push	r30
+     1d4:	ff 93       	push	r31
+	INT0_eventHandler();
+     1d6:	e0 91 64 00 	lds	r30, 0x0064
+     1da:	f0 91 65 00 	lds	r31, 0x0065
+     1de:	09 95       	icall
+}
+     1e0:	ff 91       	pop	r31
+     1e2:	ef 91       	pop	r30
+     1e4:	bf 91       	pop	r27
+     1e6:	af 91       	pop	r26
+     1e8:	9f 91       	pop	r25
+     1ea:	8f 91       	pop	r24
+     1ec:	7f 91       	pop	r23
+     1ee:	6f 91       	pop	r22
+     1f0:	5f 91       	pop	r21
+     1f2:	4f 91       	pop	r20
+     1f4:	3f 91       	pop	r19
+     1f6:	2f 91       	pop	r18
+     1f8:	0f 90       	pop	r0
+     1fa:	0f be       	out	0x3f, r0	; 63
+     1fc:	0f 90       	pop	r0
+     1fe:	1f 90       	pop	r1
+     200:	18 95       	reti
+
+00000202 <INT1_event_DUMMY>:
+
+void INT1_event_DUMMY(void){}
+     202:	08 95       	ret
+
+00000204 <INT1_setEventHandler>:
+static void (*INT1_eventHandler)(void) = INT1_event_DUMMY;
+void INT1_setEventHandler(void (*i1eventHandler)(void))
+{
+	INT1_eventHandler = i1eventHandler;
+     204:	90 93 63 00 	sts	0x0063, r25
+     208:	80 93 62 00 	sts	0x0062, r24
+}
+     20c:	08 95       	ret
+
+0000020e <__vector_2>:
+
+/**
+ * External Interrupt 1 ISR
+ */
+ISR (INT1_vect)
+{
+     20e:	1f 92       	push	r1
+     210:	0f 92       	push	r0
+     212:	0f b6       	in	r0, 0x3f	; 63
+     214:	0f 92       	push	r0
+     216:	11 24       	eor	r1, r1
+     218:	2f 93       	push	r18
+     21a:	3f 93       	push	r19
+     21c:	4f 93       	push	r20
+     21e:	5f 93       	push	r21
+     220:	6f 93       	push	r22
+     222:	7f 93       	push	r23
+     224:	8f 93       	push	r24
+     226:	9f 93       	push	r25
+     228:	af 93       	push	r26
+     22a:	bf 93       	push	r27
+     22c:	ef 93       	push	r30
+     22e:	ff 93       	push	r31
+	INT1_eventHandler();
+     230:	e0 91 62 00 	lds	r30, 0x0062
+     234:	f0 91 63 00 	lds	r31, 0x0063
+     238:	09 95       	icall
+}
+     23a:	ff 91       	pop	r31
+     23c:	ef 91       	pop	r30
+     23e:	bf 91       	pop	r27
+     240:	af 91       	pop	r26
+     242:	9f 91       	pop	r25
+     244:	8f 91       	pop	r24
+     246:	7f 91       	pop	r23
+     248:	6f 91       	pop	r22
+     24a:	5f 91       	pop	r21
+     24c:	4f 91       	pop	r20
+     24e:	3f 91       	pop	r19
+     250:	2f 91       	pop	r18
+     252:	0f 90       	pop	r0
+     254:	0f be       	out	0x3f, r0	; 63
+     256:	0f 90       	pop	r0
+     258:	1f 90       	pop	r1
+     25a:	18 95       	reti
+
+0000025c <INT2_event_DUMMY>:
+
+void INT2_event_DUMMY(void){}
+     25c:	08 95       	ret
+
+0000025e <INT2_setEventHandler>:
+static void (*INT2_eventHandler)(void) = INT2_event_DUMMY;
+void INT2_setEventHandler(void (*i2eventHandler)(void))
+{
+	INT2_eventHandler = i2eventHandler;
+     25e:	90 93 61 00 	sts	0x0061, r25
+     262:	80 93 60 00 	sts	0x0060, r24
+}
+     266:	08 95       	ret
+
+00000268 <__vector_3>:
+
+/**
+ * External Interrupt 2 ISR
+ */
+ISR (INT2_vect)
+{
+     268:	1f 92       	push	r1
+     26a:	0f 92       	push	r0
+     26c:	0f b6       	in	r0, 0x3f	; 63
+     26e:	0f 92       	push	r0
+     270:	11 24       	eor	r1, r1
+     272:	2f 93       	push	r18
+     274:	3f 93       	push	r19
+     276:	4f 93       	push	r20
+     278:	5f 93       	push	r21
+     27a:	6f 93       	push	r22
+     27c:	7f 93       	push	r23
+     27e:	8f 93       	push	r24
+     280:	9f 93       	push	r25
+     282:	af 93       	push	r26
+     284:	bf 93       	push	r27
+     286:	ef 93       	push	r30
+     288:	ff 93       	push	r31
+	INT2_eventHandler();
+     28a:	e0 91 60 00 	lds	r30, 0x0060
+     28e:	f0 91 61 00 	lds	r31, 0x0061
+     292:	09 95       	icall
+}
+     294:	ff 91       	pop	r31
+     296:	ef 91       	pop	r30
+     298:	bf 91       	pop	r27
+     29a:	af 91       	pop	r26
+     29c:	9f 91       	pop	r25
+     29e:	8f 91       	pop	r24
+     2a0:	7f 91       	pop	r23
+     2a2:	6f 91       	pop	r22
+     2a4:	5f 91       	pop	r21
+     2a6:	4f 91       	pop	r20
+     2a8:	3f 91       	pop	r19
+     2aa:	2f 91       	pop	r18
+     2ac:	0f 90       	pop	r0
+     2ae:	0f be       	out	0x3f, r0	; 63
+     2b0:	0f 90       	pop	r0
+     2b2:	1f 90       	pop	r1
+     2b4:	18 95       	reti
+
+000002b6 <readADC>:
+ * is complete. 
+ *
+ */
+uint16_t readADC(uint8_t channel)
+{
+	if((ADCSRA & (1<<ADSC))) return 0; // check if ADC is buisy...
+     2b6:	36 9b       	sbis	0x06, 6	; 6
+     2b8:	03 c0       	rjmp	.+6      	; 0x2c0 <readADC+0xa>
+     2ba:	20 e0       	ldi	r18, 0x00	; 0
+     2bc:	30 e0       	ldi	r19, 0x00	; 0
+     2be:	09 c0       	rjmp	.+18     	; 0x2d2 <readADC+0x1c>
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     2c0:	80 64       	ori	r24, 0x40	; 64
+     2c2:	87 b9       	out	0x07, r24	; 7
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+     2c4:	86 ed       	ldi	r24, 0xD6	; 214
+     2c6:	86 b9       	out	0x06, r24	; 6
+	while ((ADCSRA & (1<<ADSC))); 
+     2c8:	36 99       	sbic	0x06, 6	; 6
+     2ca:	fe cf       	rjmp	.-4      	; 0x2c8 <readADC+0x12>
+	ADCSRA |= (1<<ADIF);
+     2cc:	34 9a       	sbi	0x06, 4	; 6
+	return ADC;
+     2ce:	24 b1       	in	r18, 0x04	; 4
+     2d0:	35 b1       	in	r19, 0x05	; 5
+}
+     2d2:	c9 01       	movw	r24, r18
+     2d4:	08 95       	ret
+
+000002d6 <writeSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     2d6:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     2d8:	77 9b       	sbis	0x0e, 7	; 14
+     2da:	fe cf       	rjmp	.-4      	; 0x2d8 <writeSPI+0x2>
+}
+     2dc:	08 95       	ret
+
+000002de <readSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     2de:	8f ef       	ldi	r24, 0xFF	; 255
+     2e0:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     2e2:	77 9b       	sbis	0x0e, 7	; 14
+     2e4:	fe cf       	rjmp	.-4      	; 0x2e2 <readSPI+0x4>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+     2e6:	8f b1       	in	r24, 0x0f	; 15
+}
+     2e8:	08 95       	ret
+
+000002ea <readWordSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     2ea:	8f ef       	ldi	r24, 0xFF	; 255
+     2ec:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     2ee:	77 9b       	sbis	0x0e, 7	; 14
+     2f0:	fe cf       	rjmp	.-4      	; 0x2ee <readWordSPI+0x4>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+     2f2:	3f b1       	in	r19, 0x0f	; 15
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     2f4:	8f ef       	ldi	r24, 0xFF	; 255
+     2f6:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     2f8:	77 9b       	sbis	0x0e, 7	; 14
+     2fa:	fe cf       	rjmp	.-4      	; 0x2f8 <readWordSPI+0xe>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+     2fc:	2f b1       	in	r18, 0x0f	; 15
+ * a 16 Bit value with first byte read in the upper 8 bits.
+ */
+uint16_t readWordSPI(void)
+{
+	uint16_t data = 0;
+	data = readSPI() << 8;
+     2fe:	93 2f       	mov	r25, r19
+     300:	80 e0       	ldi	r24, 0x00	; 0
+     302:	30 e0       	ldi	r19, 0x00	; 0
+     304:	28 2b       	or	r18, r24
+     306:	39 2b       	or	r19, r25
+	data |= readSPI();
+	return data;
+}
+     308:	c9 01       	movw	r24, r18
+     30a:	08 95       	ret
+
+0000030c <writeWordSPI>:
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     30c:	9f b9       	out	0x0f, r25	; 15
+	while(!(SPSR & (1<<SPIF)));
+     30e:	77 9b       	sbis	0x0e, 7	; 14
+     310:	fe cf       	rjmp	.-4      	; 0x30e <writeWordSPI+0x2>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     312:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     314:	77 9b       	sbis	0x0e, 7	; 14
+     316:	fe cf       	rjmp	.-4      	; 0x314 <writeWordSPI+0x8>
+ */
+void writeWordSPI(uint16_t data)
+{
+	writeSPI((uint8_t)(data >> 8));
+	writeSPI((uint8_t)data);
+}
+     318:	08 95       	ret
+
+0000031a <writeBufferSPI>:
+ * This function writes up to 255 Bytes to the SPI Interface.
+ * The numer of bytes in the Buffer that shall be written is given 
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+     31a:	fc 01       	movw	r30, r24
+     31c:	90 e0       	ldi	r25, 0x00	; 0
+     31e:	06 c0       	rjmp	.+12     	; 0x32c <writeBufferSPI+0x12>
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = buffer[i];    
+     320:	80 81       	ld	r24, Z
+     322:	8f b9       	out	0x0f, r24	; 15
+		while(!(SPSR & (1<<SPIF)));
+     324:	77 9b       	sbis	0x0e, 7	; 14
+     326:	fe cf       	rjmp	.-4      	; 0x324 <writeBufferSPI+0xa>
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+     328:	9f 5f       	subi	r25, 0xFF	; 255
+     32a:	31 96       	adiw	r30, 0x01	; 1
+     32c:	96 17       	cp	r25, r22
+     32e:	c0 f3       	brcs	.-16     	; 0x320 <writeBufferSPI+0x6>
+		SPDR = buffer[i];    
+		while(!(SPSR & (1<<SPIF)));
+	}
+}
+     330:	08 95       	ret
+
+00000332 <readBufferSPI>:
+
+/** 
+ * Reads "length" Bytes from SPI Interface into the buffer.
+ */
+void readBufferSPI(uint8_t *buffer, uint8_t length)
+{
+     332:	fc 01       	movw	r30, r24
+     334:	90 e0       	ldi	r25, 0x00	; 0
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = 0xFF;    
+     336:	2f ef       	ldi	r18, 0xFF	; 255
+     338:	06 c0       	rjmp	.+12     	; 0x346 <readBufferSPI+0x14>
+     33a:	2f b9       	out	0x0f, r18	; 15
+		while(!(SPSR & (1<<SPIF)));
+     33c:	77 9b       	sbis	0x0e, 7	; 14
+     33e:	fe cf       	rjmp	.-4      	; 0x33c <readBufferSPI+0xa>
+		buffer[i] = SPDR;
+     340:	8f b1       	in	r24, 0x0f	; 15
+     342:	81 93       	st	Z+, r24
+ * Reads "length" Bytes from SPI Interface into the buffer.
+ */
+void readBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+     344:	9f 5f       	subi	r25, 0xFF	; 255
+     346:	96 17       	cp	r25, r22
+     348:	c0 f3       	brcs	.-16     	; 0x33a <readBufferSPI+0x8>
+		SPDR = 0xFF;    
+		while(!(SPSR & (1<<SPIF)));
+		buffer[i] = SPDR;
+	}
+}
+     34a:	08 95       	ret
+
+0000034c <SPI_EEPROM_readByte>:
+
+/**
+ * Reads a single Byte from the external EEPROM.
+ */
+uint8_t SPI_EEPROM_readByte(uint16_t memAddr)
+{
+     34c:	9c 01       	movw	r18, r24
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+     34e:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     350:	83 e0       	ldi	r24, 0x03	; 3
+     352:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     354:	77 9b       	sbis	0x0e, 7	; 14
+     356:	fe cf       	rjmp	.-4      	; 0x354 <SPI_EEPROM_readByte+0x8>
+uint8_t SPI_EEPROM_readByte(uint16_t memAddr)
+{
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(memAddr);
+     358:	c9 01       	movw	r24, r18
+     35a:	0e 94 86 01 	call	0x30c	; 0x30c <writeWordSPI>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     35e:	8f ef       	ldi	r24, 0xFF	; 255
+     360:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     362:	77 9b       	sbis	0x0e, 7	; 14
+     364:	fe cf       	rjmp	.-4      	; 0x362 <SPI_EEPROM_readByte+0x16>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+     366:	8f b1       	in	r24, 0x0f	; 15
+	uint8_t data;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(memAddr);
+	data = readSPI();
+	PORTB |= MEM_CS;
+     368:	c0 9a       	sbi	0x18, 0	; 24
+	return data;
+}
+     36a:	08 95       	ret
+
+0000036c <SPI_EEPROM_readBytes>:
+ * Reads "length" Bytes into the Buffer "buffer" from startAdr on. 
+ * You can read the complete EEPROM into a buffer at once - if it is large enough. 
+ * (But you only have 2KB SRAM on a MEGA32 ;) )
+ */
+void SPI_EEPROM_readBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+     36c:	1f 93       	push	r17
+     36e:	cf 93       	push	r28
+     370:	df 93       	push	r29
+     372:	9c 01       	movw	r18, r24
+     374:	eb 01       	movw	r28, r22
+     376:	14 2f       	mov	r17, r20
+	PORTB &= ~MEM_CS;
+     378:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     37a:	83 e0       	ldi	r24, 0x03	; 3
+     37c:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     37e:	77 9b       	sbis	0x0e, 7	; 14
+     380:	fe cf       	rjmp	.-4      	; 0x37e <SPI_EEPROM_readBytes+0x12>
+ */
+void SPI_EEPROM_readBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_READ);
+	writeWordSPI(startAddr);
+     382:	c9 01       	movw	r24, r18
+     384:	0e 94 86 01 	call	0x30c	; 0x30c <writeWordSPI>
+	readBufferSPI(&buffer[0], length);
+     388:	ce 01       	movw	r24, r28
+     38a:	61 2f       	mov	r22, r17
+     38c:	0e 94 99 01 	call	0x332	; 0x332 <readBufferSPI>
+	PORTB |= MEM_CS;
+     390:	c0 9a       	sbi	0x18, 0	; 24
+}
+     392:	df 91       	pop	r29
+     394:	cf 91       	pop	r28
+     396:	1f 91       	pop	r17
+     398:	08 95       	ret
+
+0000039a <SPI_EEPROM_enableWrite>:
+/**
+ * Enable Write Mode
+ */
+void SPI_EEPROM_enableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+     39a:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     39c:	86 e0       	ldi	r24, 0x06	; 6
+     39e:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     3a0:	77 9b       	sbis	0x0e, 7	; 14
+     3a2:	fe cf       	rjmp	.-4      	; 0x3a0 <SPI_EEPROM_enableWrite+0x6>
+ */
+void SPI_EEPROM_enableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WREN);
+	PORTB |= MEM_CS;
+     3a4:	c0 9a       	sbi	0x18, 0	; 24
+}
+     3a6:	08 95       	ret
+
+000003a8 <SPI_EEPROM_disableWrite>:
+/**
+ * Disable Write Mode
+ */
+void SPI_EEPROM_disableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+     3a8:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     3aa:	84 e0       	ldi	r24, 0x04	; 4
+     3ac:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     3ae:	77 9b       	sbis	0x0e, 7	; 14
+     3b0:	fe cf       	rjmp	.-4      	; 0x3ae <SPI_EEPROM_disableWrite+0x6>
+ */
+void SPI_EEPROM_disableWrite(void)
+{
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRDI);
+	PORTB |= MEM_CS;
+     3b2:	c0 9a       	sbi	0x18, 0	; 24
+}
+     3b4:	08 95       	ret
+
+000003b6 <SPI_EEPROM_getStatus>:
+ * Writing takes about 5ms. 
+ */
+uint8_t SPI_EEPROM_getStatus(void)
+{
+	uint8_t status;
+	PORTB &= ~MEM_CS;
+     3b6:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     3b8:	85 e0       	ldi	r24, 0x05	; 5
+     3ba:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     3bc:	77 9b       	sbis	0x0e, 7	; 14
+     3be:	fe cf       	rjmp	.-4      	; 0x3bc <SPI_EEPROM_getStatus+0x6>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     3c0:	8f ef       	ldi	r24, 0xFF	; 255
+     3c2:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     3c4:	77 9b       	sbis	0x0e, 7	; 14
+     3c6:	fe cf       	rjmp	.-4      	; 0x3c4 <SPI_EEPROM_getStatus+0xe>
+ * Reads a single Databyte from the SPI Interface.
+ */
+uint8_t readSPI(void)
+{
+	writeSPI(0xFF);
+	return SPDR;
+     3c8:	8f b1       	in	r24, 0x0f	; 15
+{
+	uint8_t status;
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_RDSR);
+	status = readSPI();
+	PORTB |= MEM_CS;
+     3ca:	c0 9a       	sbi	0x18, 0	; 24
+	return status;
+}
+     3cc:	08 95       	ret
+
+000003ce <SPI_EEPROM_writeBytes>:
+ * instead only up to 63 and then it continues at Byte 0 and writes 
+ * the rest up to Byte 10!
+ *
+ */
+void SPI_EEPROM_writeBytes(uint16_t startAddr, uint8_t *buffer, uint8_t length)
+{
+     3ce:	ff 92       	push	r15
+     3d0:	0f 93       	push	r16
+     3d2:	1f 93       	push	r17
+     3d4:	cf 93       	push	r28
+     3d6:	df 93       	push	r29
+     3d8:	ec 01       	movw	r28, r24
+     3da:	16 2f       	mov	r17, r22
+     3dc:	07 2f       	mov	r16, r23
+     3de:	f4 2e       	mov	r15, r20
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+     3e0:	0e 94 db 01 	call	0x3b6	; 0x3b6 <SPI_EEPROM_getStatus>
+     3e4:	80 fd       	sbrc	r24, 0
+     3e6:	fc cf       	rjmp	.-8      	; 0x3e0 <SPI_EEPROM_writeBytes+0x12>
+	SPI_EEPROM_enableWrite();
+     3e8:	0e 94 cd 01 	call	0x39a	; 0x39a <SPI_EEPROM_enableWrite>
+	PORTB &= ~MEM_CS;
+     3ec:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     3ee:	82 e0       	ldi	r24, 0x02	; 2
+     3f0:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     3f2:	77 9b       	sbis	0x0e, 7	; 14
+     3f4:	fe cf       	rjmp	.-4      	; 0x3f2 <SPI_EEPROM_writeBytes+0x24>
+{
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(startAddr);
+     3f6:	ce 01       	movw	r24, r28
+     3f8:	0e 94 86 01 	call	0x30c	; 0x30c <writeWordSPI>
+     3fc:	81 2f       	mov	r24, r17
+     3fe:	90 2f       	mov	r25, r16
+     400:	9c 01       	movw	r18, r24
+     402:	f9 01       	movw	r30, r18
+     404:	90 e0       	ldi	r25, 0x00	; 0
+     406:	06 c0       	rjmp	.+12     	; 0x414 <SPI_EEPROM_writeBytes+0x46>
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+		SPDR = buffer[i];    
+     408:	80 81       	ld	r24, Z
+     40a:	8f b9       	out	0x0f, r24	; 15
+		while(!(SPSR & (1<<SPIF)));
+     40c:	77 9b       	sbis	0x0e, 7	; 14
+     40e:	fe cf       	rjmp	.-4      	; 0x40c <SPI_EEPROM_writeBytes+0x3e>
+ * by the parameter length.
+ */
+void writeBufferSPI(uint8_t *buffer, uint8_t length)
+{
+	uint8_t i = 0;
+	for(; i < length; i++) {
+     410:	9f 5f       	subi	r25, 0xFF	; 255
+     412:	31 96       	adiw	r30, 0x01	; 1
+     414:	9f 15       	cp	r25, r15
+     416:	c0 f3       	brcs	.-16     	; 0x408 <SPI_EEPROM_writeBytes+0x3a>
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(startAddr);
+	writeBufferSPI(&buffer[0], length);
+	PORTB |= MEM_CS;
+     418:	c0 9a       	sbi	0x18, 0	; 24
+}
+     41a:	df 91       	pop	r29
+     41c:	cf 91       	pop	r28
+     41e:	1f 91       	pop	r17
+     420:	0f 91       	pop	r16
+     422:	ff 90       	pop	r15
+     424:	08 95       	ret
+
+00000426 <SPI_EEPROM_writeByte>:
+
+/**
+ * Write a single data byte to the specified EEPROM address.
+ */
+void SPI_EEPROM_writeByte(uint16_t memAddr, uint8_t data)
+{
+     426:	1f 93       	push	r17
+     428:	cf 93       	push	r28
+     42a:	df 93       	push	r29
+     42c:	ec 01       	movw	r28, r24
+     42e:	16 2f       	mov	r17, r22
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+     430:	0e 94 db 01 	call	0x3b6	; 0x3b6 <SPI_EEPROM_getStatus>
+     434:	80 fd       	sbrc	r24, 0
+     436:	fc cf       	rjmp	.-8      	; 0x430 <SPI_EEPROM_writeByte+0xa>
+	SPI_EEPROM_enableWrite();
+     438:	0e 94 cd 01 	call	0x39a	; 0x39a <SPI_EEPROM_enableWrite>
+	PORTB &= ~MEM_CS;
+     43c:	c0 98       	cbi	0x18, 0	; 24
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     43e:	82 e0       	ldi	r24, 0x02	; 2
+     440:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     442:	77 9b       	sbis	0x0e, 7	; 14
+     444:	fe cf       	rjmp	.-4      	; 0x442 <SPI_EEPROM_writeByte+0x1c>
+{
+	while(SPI_EEPROM_getStatus() & SPI_EEPROM_STAT_WIP);
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(memAddr);
+     446:	ce 01       	movw	r24, r28
+     448:	0e 94 86 01 	call	0x30c	; 0x30c <writeWordSPI>
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     44c:	1f b9       	out	0x0f, r17	; 15
+	while(!(SPSR & (1<<SPIF)));
+     44e:	77 9b       	sbis	0x0e, 7	; 14
+     450:	fe cf       	rjmp	.-4      	; 0x44e <SPI_EEPROM_writeByte+0x28>
+	SPI_EEPROM_enableWrite();
+	PORTB &= ~MEM_CS;
+	writeSPI(SPI_EEPROM_WRITE);
+	writeWordSPI(memAddr);
+	writeSPI(data);
+	PORTB |= MEM_CS;
+     452:	c0 9a       	sbi	0x18, 0	; 24
+}
+     454:	df 91       	pop	r29
+     456:	cf 91       	pop	r28
+     458:	1f 91       	pop	r17
+     45a:	08 95       	ret
+
+0000045c <outputExt>:
+ * in 4 or 8bit mode - we use 4bit mode to save portpins) 
+ *
+ */
+void outputExt(void)
+{      
+  writeSPI(externalPort.byte);   
+     45c:	80 91 d9 00 	lds	r24, 0x00D9
+/**
+ * Writes a single Databyte to the SPI Interface.
+ */
+void writeSPI(uint8_t data) 
+{     
+	SPDR = data;    
+     460:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+     462:	77 9b       	sbis	0x0e, 7	; 14
+     464:	fe cf       	rjmp	.-4      	; 0x462 <outputExt+0x6>
+ *
+ */
+void outputExt(void)
+{      
+  writeSPI(externalPort.byte);   
+  PORTD |= STR;
+     466:	94 9a       	sbi	0x12, 4	; 18
+  nop();
+     468:	00 00       	nop
+  nop();
+     46a:	00 00       	nop
+  PORTD &= ~STR;        
+     46c:	94 98       	cbi	0x12, 4	; 18
+}
+     46e:	08 95       	ret
+
+00000470 <setLEDs>:
+ * are connected to the LCD! 
+ *
+ */
+void setLEDs(uint8_t leds)
+{
+	externalPort.LEDS = leds;
+     470:	8f 70       	andi	r24, 0x0F	; 15
+     472:	90 91 d9 00 	lds	r25, 0x00D9
+     476:	90 7f       	andi	r25, 0xF0	; 240
+     478:	98 2b       	or	r25, r24
+     47a:	90 93 d9 00 	sts	0x00D9, r25
+	outputExt();
+     47e:	0e 94 2e 02 	call	0x45c	; 0x45c <outputExt>
+}
+     482:	08 95       	ret
+
+00000484 <setLCDD>:
+ * enable line of the LCD to 'inform' the LCD about the new data.
+ *
+ */
+void setLCDD(uint8_t lcdd)
+{
+	externalPort.LCDD = lcdd;
+     484:	82 95       	swap	r24
+     486:	80 7f       	andi	r24, 0xF0	; 240
+     488:	90 91 d9 00 	lds	r25, 0x00D9
+     48c:	9f 70       	andi	r25, 0x0F	; 15
+     48e:	98 2b       	or	r25, r24
+     490:	90 93 d9 00 	sts	0x00D9, r25
+	outputExt();
+     494:	0e 94 2e 02 	call	0x45c	; 0x45c <outputExt>
+	PORTB |= LCD_EN;
+     498:	c4 9a       	sbi	0x18, 4	; 24
+     49a:	82 e3       	ldi	r24, 0x32	; 50
+     49c:	90 e0       	ldi	r25, 0x00	; 0
+     49e:	01 c0       	rjmp	.+2      	; 0x4a2 <setLCDD+0x1e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     4a0:	00 00       	nop
+     4a2:	01 97       	sbiw	r24, 0x01	; 1
+     4a4:	2f ef       	ldi	r18, 0xFF	; 255
+     4a6:	8f 3f       	cpi	r24, 0xFF	; 255
+     4a8:	92 07       	cpc	r25, r18
+     4aa:	d1 f7       	brne	.-12     	; 0x4a0 <setLCDD+0x1c>
+{
+	externalPort.LCDD = lcdd;
+	outputExt();
+	PORTB |= LCD_EN;
+	delayCycles(50);
+	PORTB &= ~LCD_EN;
+     4ac:	c4 98       	cbi	0x18, 4	; 24
+}
+     4ae:	08 95       	ret
+
+000004b0 <write4BitLCDData>:
+
+/**
+ * Write a 8bit-byte in two nibbles of 4bit to the LCD.
+ */
+void write4BitLCDData(uint8_t data)
+{
+     4b0:	1f 93       	push	r17
+     4b2:	18 2f       	mov	r17, r24
+	setLCDD(data >> 4);
+     4b4:	82 95       	swap	r24
+     4b6:	8f 70       	andi	r24, 0x0F	; 15
+     4b8:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+	setLCDD(data);
+     4bc:	81 2f       	mov	r24, r17
+     4be:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+     4c2:	86 e9       	ldi	r24, 0x96	; 150
+     4c4:	90 e0       	ldi	r25, 0x00	; 0
+     4c6:	01 c0       	rjmp	.+2      	; 0x4ca <write4BitLCDData+0x1a>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     4c8:	00 00       	nop
+     4ca:	01 97       	sbiw	r24, 0x01	; 1
+     4cc:	2f ef       	ldi	r18, 0xFF	; 255
+     4ce:	8f 3f       	cpi	r24, 0xFF	; 255
+     4d0:	92 07       	cpc	r25, r18
+     4d2:	d1 f7       	brne	.-12     	; 0x4c8 <write4BitLCDData+0x18>
+void write4BitLCDData(uint8_t data)
+{
+	setLCDD(data >> 4);
+	setLCDD(data);
+	delayCycles(150);
+}
+     4d4:	1f 91       	pop	r17
+     4d6:	08 95       	ret
+
+000004d8 <writeLCDCommand>:
+/**
+ * Write a command to the LCD.
+ */
+void writeLCDCommand(uint8_t cmd)
+{
+	PORTB &= ~LCD_RS;
+     4d8:	c3 98       	cbi	0x18, 3	; 24
+	write4BitLCDData(cmd);
+     4da:	0e 94 58 02 	call	0x4b0	; 0x4b0 <write4BitLCDData>
+     4de:	86 e9       	ldi	r24, 0x96	; 150
+     4e0:	90 e0       	ldi	r25, 0x00	; 0
+     4e2:	01 c0       	rjmp	.+2      	; 0x4e6 <writeLCDCommand+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     4e4:	00 00       	nop
+     4e6:	01 97       	sbiw	r24, 0x01	; 1
+     4e8:	2f ef       	ldi	r18, 0xFF	; 255
+     4ea:	8f 3f       	cpi	r24, 0xFF	; 255
+     4ec:	92 07       	cpc	r25, r18
+     4ee:	d1 f7       	brne	.-12     	; 0x4e4 <writeLCDCommand+0xc>
+void writeLCDCommand(uint8_t cmd)
+{
+	PORTB &= ~LCD_RS;
+	write4BitLCDData(cmd);
+	delayCycles(150);
+}
+     4f0:	08 95       	ret
+
+000004f2 <initLCD>:
+ */
+void initLCD(void)
+{
+	//delayCycles(34000); No need for Power ON delay as usually the
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+     4f2:	83 e0       	ldi	r24, 0x03	; 3
+     4f4:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+     4f8:	80 e5       	ldi	r24, 0x50	; 80
+     4fa:	96 e4       	ldi	r25, 0x46	; 70
+     4fc:	01 c0       	rjmp	.+2      	; 0x500 <initLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     4fe:	00 00       	nop
+     500:	01 97       	sbiw	r24, 0x01	; 1
+     502:	2f ef       	ldi	r18, 0xFF	; 255
+     504:	8f 3f       	cpi	r24, 0xFF	; 255
+     506:	92 07       	cpc	r25, r18
+     508:	d1 f7       	brne	.-12     	; 0x4fe <initLCD+0xc>
+{
+	//delayCycles(34000); No need for Power ON delay as usually the
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+	delayCycles(18000);
+	setLCDD(0b0011);
+     50a:	83 e0       	ldi	r24, 0x03	; 3
+     50c:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+     510:	8c e7       	ldi	r24, 0x7C	; 124
+     512:	95 e1       	ldi	r25, 0x15	; 21
+     514:	01 c0       	rjmp	.+2      	; 0x518 <initLCD+0x26>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     516:	00 00       	nop
+     518:	01 97       	sbiw	r24, 0x01	; 1
+     51a:	2f ef       	ldi	r18, 0xFF	; 255
+     51c:	8f 3f       	cpi	r24, 0xFF	; 255
+     51e:	92 07       	cpc	r25, r18
+     520:	d1 f7       	brne	.-12     	; 0x516 <initLCD+0x24>
+	// Bootloader should have been executed before...
+	setLCDD(0b0011);
+	delayCycles(18000);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0011);
+     522:	83 e0       	ldi	r24, 0x03	; 3
+     524:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+     528:	8c e7       	ldi	r24, 0x7C	; 124
+     52a:	95 e1       	ldi	r25, 0x15	; 21
+     52c:	01 c0       	rjmp	.+2      	; 0x530 <initLCD+0x3e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     52e:	00 00       	nop
+     530:	01 97       	sbiw	r24, 0x01	; 1
+     532:	2f ef       	ldi	r18, 0xFF	; 255
+     534:	8f 3f       	cpi	r24, 0xFF	; 255
+     536:	92 07       	cpc	r25, r18
+     538:	d1 f7       	brne	.-12     	; 0x52e <initLCD+0x3c>
+	delayCycles(18000);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0010);
+     53a:	82 e0       	ldi	r24, 0x02	; 2
+     53c:	0e 94 42 02 	call	0x484	; 0x484 <setLCDD>
+     540:	8c e7       	ldi	r24, 0x7C	; 124
+     542:	95 e1       	ldi	r25, 0x15	; 21
+     544:	01 c0       	rjmp	.+2      	; 0x548 <initLCD+0x56>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     546:	00 00       	nop
+     548:	01 97       	sbiw	r24, 0x01	; 1
+     54a:	2f ef       	ldi	r18, 0xFF	; 255
+     54c:	8f 3f       	cpi	r24, 0xFF	; 255
+     54e:	92 07       	cpc	r25, r18
+     550:	d1 f7       	brne	.-12     	; 0x546 <initLCD+0x54>
+	delayCycles(5500);
+	setLCDD(0b0011);
+	delayCycles(5500);
+	setLCDD(0b0010);
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+     552:	88 e2       	ldi	r24, 0x28	; 40
+     554:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     558:	8c e7       	ldi	r24, 0x7C	; 124
+     55a:	95 e1       	ldi	r25, 0x15	; 21
+     55c:	01 c0       	rjmp	.+2      	; 0x560 <initLCD+0x6e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     55e:	00 00       	nop
+     560:	01 97       	sbiw	r24, 0x01	; 1
+     562:	2f ef       	ldi	r18, 0xFF	; 255
+     564:	8f 3f       	cpi	r24, 0xFF	; 255
+     566:	92 07       	cpc	r25, r18
+     568:	d1 f7       	brne	.-12     	; 0x55e <initLCD+0x6c>
+	delayCycles(5500);
+	setLCDD(0b0010);
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+     56a:	88 e0       	ldi	r24, 0x08	; 8
+     56c:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     570:	8c e7       	ldi	r24, 0x7C	; 124
+     572:	95 e1       	ldi	r25, 0x15	; 21
+     574:	01 c0       	rjmp	.+2      	; 0x578 <initLCD+0x86>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     576:	00 00       	nop
+     578:	01 97       	sbiw	r24, 0x01	; 1
+     57a:	2f ef       	ldi	r18, 0xFF	; 255
+     57c:	8f 3f       	cpi	r24, 0xFF	; 255
+     57e:	92 07       	cpc	r25, r18
+     580:	d1 f7       	brne	.-12     	; 0x576 <initLCD+0x84>
+	delayCycles(5500);
+	writeLCDCommand(0b00101000);
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+     582:	81 e0       	ldi	r24, 0x01	; 1
+     584:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     588:	8c e7       	ldi	r24, 0x7C	; 124
+     58a:	95 e1       	ldi	r25, 0x15	; 21
+     58c:	01 c0       	rjmp	.+2      	; 0x590 <initLCD+0x9e>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     58e:	00 00       	nop
+     590:	01 97       	sbiw	r24, 0x01	; 1
+     592:	2f ef       	ldi	r18, 0xFF	; 255
+     594:	8f 3f       	cpi	r24, 0xFF	; 255
+     596:	92 07       	cpc	r25, r18
+     598:	d1 f7       	brne	.-12     	; 0x58e <initLCD+0x9c>
+	delayCycles(5500);
+	writeLCDCommand(0b00001000);
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+     59a:	82 e0       	ldi	r24, 0x02	; 2
+     59c:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     5a0:	8c e7       	ldi	r24, 0x7C	; 124
+     5a2:	95 e1       	ldi	r25, 0x15	; 21
+     5a4:	01 c0       	rjmp	.+2      	; 0x5a8 <initLCD+0xb6>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     5a6:	00 00       	nop
+     5a8:	01 97       	sbiw	r24, 0x01	; 1
+     5aa:	2f ef       	ldi	r18, 0xFF	; 255
+     5ac:	8f 3f       	cpi	r24, 0xFF	; 255
+     5ae:	92 07       	cpc	r25, r18
+     5b0:	d1 f7       	brne	.-12     	; 0x5a6 <initLCD+0xb4>
+	delayCycles(5500);
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+	delayCycles(5500);
+	writeLCDCommand(0b00001100);
+     5b2:	8c e0       	ldi	r24, 0x0C	; 12
+     5b4:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     5b8:	8c e7       	ldi	r24, 0x7C	; 124
+     5ba:	95 e1       	ldi	r25, 0x15	; 21
+     5bc:	01 c0       	rjmp	.+2      	; 0x5c0 <initLCD+0xce>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     5be:	00 00       	nop
+     5c0:	01 97       	sbiw	r24, 0x01	; 1
+     5c2:	2f ef       	ldi	r18, 0xFF	; 255
+     5c4:	8f 3f       	cpi	r24, 0xFF	; 255
+     5c6:	92 07       	cpc	r25, r18
+     5c8:	d1 f7       	brne	.-12     	; 0x5be <initLCD+0xcc>
+	delayCycles(5500);
+	writeLCDCommand(0b00000010);
+	delayCycles(5500);
+	writeLCDCommand(0b00001100);
+	delayCycles(5500);
+}
+     5ca:	08 95       	ret
+
+000005cc <clearLCD>:
+/**
+ * Clears the whole LCD!
+ */
+void clearLCD(void)
+{
+	writeLCDCommand(0b00000001);
+     5cc:	81 e0       	ldi	r24, 0x01	; 1
+     5ce:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+     5d2:	8c e7       	ldi	r24, 0x7C	; 124
+     5d4:	95 e1       	ldi	r25, 0x15	; 21
+     5d6:	01 c0       	rjmp	.+2      	; 0x5da <clearLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     5d8:	00 00       	nop
+     5da:	01 97       	sbiw	r24, 0x01	; 1
+     5dc:	2f ef       	ldi	r18, 0xFF	; 255
+     5de:	8f 3f       	cpi	r24, 0xFF	; 255
+     5e0:	92 07       	cpc	r25, r18
+     5e2:	d1 f7       	brne	.-12     	; 0x5d8 <clearLCD+0xc>
+ */
+void clearLCD(void)
+{
+	writeLCDCommand(0b00000001);
+	delayCycles(5500);
+}
+     5e4:	08 95       	ret
+
+000005e6 <writeCharLCD>:
+ *			use setCursorPos function to move the cursor to a 
+ *			different location!
+ */
+void writeCharLCD(uint8_t ch)
+{
+	PORTB |= LCD_RS;
+     5e6:	c3 9a       	sbi	0x18, 3	; 24
+	write4BitLCDData(ch);
+     5e8:	0e 94 58 02 	call	0x4b0	; 0x4b0 <write4BitLCDData>
+     5ec:	82 e3       	ldi	r24, 0x32	; 50
+     5ee:	90 e0       	ldi	r25, 0x00	; 0
+     5f0:	01 c0       	rjmp	.+2      	; 0x5f4 <writeCharLCD+0xe>
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     5f2:	00 00       	nop
+     5f4:	01 97       	sbiw	r24, 0x01	; 1
+     5f6:	2f ef       	ldi	r18, 0xFF	; 255
+     5f8:	8f 3f       	cpi	r24, 0xFF	; 255
+     5fa:	92 07       	cpc	r25, r18
+     5fc:	d1 f7       	brne	.-12     	; 0x5f2 <writeCharLCD+0xc>
+void writeCharLCD(uint8_t ch)
+{
+	PORTB |= LCD_RS;
+	write4BitLCDData(ch);
+	delayCycles(50);
+}
+     5fe:	08 95       	ret
+
+00000600 <writeNStringLCD_P>:
+ *			// you can simply write:
+ *			writeStringLCD_P("RP6 Control");
+ *
+ */
+void writeNStringLCD_P(const char *pstring)
+{
+     600:	cf 93       	push	r28
+     602:	df 93       	push	r29
+     604:	ec 01       	movw	r28, r24
+     606:	02 c0       	rjmp	.+4      	; 0x60c <writeNStringLCD_P+0xc>
+    uint8_t c;
+    for (;(c = pgm_read_byte_near(pstring++));writeCharLCD(c));
+     608:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <writeCharLCD>
+     60c:	fe 01       	movw	r30, r28
+     60e:	21 96       	adiw	r28, 0x01	; 1
+     610:	84 91       	lpm	r24, Z+
+     612:	88 23       	and	r24, r24
+     614:	c9 f7       	brne	.-14     	; 0x608 <writeNStringLCD_P+0x8>
+}
+     616:	df 91       	pop	r29
+     618:	cf 91       	pop	r28
+     61a:	08 95       	ret
+
+0000061c <writeStringLCD>:
+
+/**
+ * Writes a String from SRAM to the LCD.
+ */
+void writeStringLCD(char *string)
+{
+     61c:	cf 93       	push	r28
+     61e:	df 93       	push	r29
+     620:	ec 01       	movw	r28, r24
+     622:	03 c0       	rjmp	.+6      	; 0x62a <writeStringLCD+0xe>
+	while(*string)
+		writeCharLCD(*string++);
+     624:	21 96       	adiw	r28, 0x01	; 1
+     626:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <writeCharLCD>
+/**
+ * Writes a String from SRAM to the LCD.
+ */
+void writeStringLCD(char *string)
+{
+	while(*string)
+     62a:	88 81       	ld	r24, Y
+     62c:	88 23       	and	r24, r24
+     62e:	d1 f7       	brne	.-12     	; 0x624 <writeStringLCD+0x8>
+		writeCharLCD(*string++);
+}
+     630:	df 91       	pop	r29
+     632:	cf 91       	pop	r28
+     634:	08 95       	ret
+
+00000636 <writeStringLengthLCD>:
+ *			// would output: "Robot System"
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLengthLCD(char *string, uint8_t length, uint8_t offset)
+{
+     636:	1f 93       	push	r17
+     638:	cf 93       	push	r28
+     63a:	df 93       	push	r29
+     63c:	16 2f       	mov	r17, r22
+	for(string = &string[offset]; *string && length; length--)
+     63e:	ec 01       	movw	r28, r24
+     640:	c4 0f       	add	r28, r20
+     642:	d1 1d       	adc	r29, r1
+     644:	04 c0       	rjmp	.+8      	; 0x64e <writeStringLengthLCD+0x18>
+		writeCharLCD(*string++);
+     646:	21 96       	adiw	r28, 0x01	; 1
+     648:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <writeCharLCD>
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLengthLCD(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+     64c:	11 50       	subi	r17, 0x01	; 1
+     64e:	88 81       	ld	r24, Y
+     650:	88 23       	and	r24, r24
+     652:	11 f0       	breq	.+4      	; 0x658 <writeStringLengthLCD+0x22>
+     654:	11 23       	and	r17, r17
+     656:	b9 f7       	brne	.-18     	; 0x646 <writeStringLengthLCD+0x10>
+		writeCharLCD(*string++);
+}
+     658:	df 91       	pop	r29
+     65a:	cf 91       	pop	r28
+     65c:	1f 91       	pop	r17
+     65e:	08 95       	ret
+
+00000660 <setCursorPosLCD>:
+/**
+ * Sets the cursor position on LCD.
+ */
+void setCursorPosLCD(uint8_t line, uint8_t pos)
+{
+	pos |= 128;
+     660:	60 68       	ori	r22, 0x80	; 128
+	if(line==1) pos += 0x40;
+     662:	81 30       	cpi	r24, 0x01	; 1
+     664:	09 f4       	brne	.+2      	; 0x668 <setCursorPosLCD+0x8>
+     666:	60 5c       	subi	r22, 0xC0	; 192
+	writeLCDCommand(pos);
+     668:	86 2f       	mov	r24, r22
+     66a:	0e 94 6c 02 	call	0x4d8	; 0x4d8 <writeLCDCommand>
+}
+     66e:	08 95       	ret
+
+00000670 <_showScreenLCD_P>:
+ * This function is useful for displaying text screens on the LCD.
+ * It clears the whole LCD and writes the two Strings to line 1 and
+ * line 2.
+ */
+void _showScreenLCD_P(const char *line1, const char *line2)
+{
+     670:	ef 92       	push	r14
+     672:	ff 92       	push	r15
+     674:	0f 93       	push	r16
+     676:	1f 93       	push	r17
+     678:	8c 01       	movw	r16, r24
+     67a:	7b 01       	movw	r14, r22
+	clearLCD();
+     67c:	0e 94 e6 02 	call	0x5cc	; 0x5cc <clearLCD>
+	writeNStringLCD_P(line1);
+     680:	c8 01       	movw	r24, r16
+     682:	0e 94 00 03 	call	0x600	; 0x600 <writeNStringLCD_P>
+	setCursorPosLCD(1, 0);
+     686:	81 e0       	ldi	r24, 0x01	; 1
+     688:	60 e0       	ldi	r22, 0x00	; 0
+     68a:	0e 94 30 03 	call	0x660	; 0x660 <setCursorPosLCD>
+	writeNStringLCD_P(line2);
+     68e:	c7 01       	movw	r24, r14
+     690:	0e 94 00 03 	call	0x600	; 0x600 <writeNStringLCD_P>
+}
+     694:	1f 91       	pop	r17
+     696:	0f 91       	pop	r16
+     698:	ff 90       	pop	r15
+     69a:	ef 90       	pop	r14
+     69c:	08 95       	ret
+
+0000069e <clearPosLCD>:
+
+/**
+ * Clears some characters after the given position.
+ */
+void clearPosLCD(uint8_t line, uint8_t pos, uint8_t length)
+{
+     69e:	1f 93       	push	r17
+     6a0:	14 2f       	mov	r17, r20
+	setCursorPosLCD(line,pos);
+     6a2:	0e 94 30 03 	call	0x660	; 0x660 <setCursorPosLCD>
+     6a6:	04 c0       	rjmp	.+8      	; 0x6b0 <clearPosLCD+0x12>
+	while(length--)
+		writeCharLCD(' ');
+     6a8:	80 e2       	ldi	r24, 0x20	; 32
+     6aa:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <writeCharLCD>
+     6ae:	11 50       	subi	r17, 0x01	; 1
+ * Clears some characters after the given position.
+ */
+void clearPosLCD(uint8_t line, uint8_t pos, uint8_t length)
+{
+	setCursorPosLCD(line,pos);
+	while(length--)
+     6b0:	11 23       	and	r17, r17
+     6b2:	d1 f7       	brne	.-12     	; 0x6a8 <clearPosLCD+0xa>
+		writeCharLCD(' ');
+}
+     6b4:	1f 91       	pop	r17
+     6b6:	08 95       	ret
+
+000006b8 <getPressedKeyNumber>:
+ * Maybe you need to adjust these values because of variations
+ * in the resitors of the keypad!
+ *
+ */
+uint8_t getPressedKeyNumber(void)
+{
+     6b8:	cf 93       	push	r28
+     6ba:	df 93       	push	r29
+	uint16_t keys;
+	keys = readADC(ADC_KEYPAD);
+     6bc:	81 e0       	ldi	r24, 0x01	; 1
+     6be:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <readADC>
+     6c2:	ec 01       	movw	r28, r24
+	if(keys < 1020) {
+     6c4:	83 e0       	ldi	r24, 0x03	; 3
+     6c6:	cc 3f       	cpi	r28, 0xFC	; 252
+     6c8:	d8 07       	cpc	r29, r24
+     6ca:	78 f4       	brcc	.+30     	; 0x6ea <getPressedKeyNumber+0x32>
+		nop();
+     6cc:	00 00       	nop
+		nop();
+     6ce:	00 00       	nop
+		nop();
+     6d0:	00 00       	nop
+		keys += readADC(ADC_KEYPAD);
+     6d2:	81 e0       	ldi	r24, 0x01	; 1
+     6d4:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <readADC>
+     6d8:	c8 0f       	add	r28, r24
+     6da:	d9 1f       	adc	r29, r25
+		keys >>= 1;
+     6dc:	d6 95       	lsr	r29
+     6de:	c7 95       	ror	r28
+	}
+	if(keys < 50)
+     6e0:	c2 33       	cpi	r28, 0x32	; 50
+     6e2:	d1 05       	cpc	r29, r1
+     6e4:	10 f4       	brcc	.+4      	; 0x6ea <getPressedKeyNumber+0x32>
+     6e6:	81 e0       	ldi	r24, 0x01	; 1
+     6e8:	18 c0       	rjmp	.+48     	; 0x71a <getPressedKeyNumber+0x62>
+		return 1;
+	if(keys < 580)
+     6ea:	82 e0       	ldi	r24, 0x02	; 2
+     6ec:	c4 34       	cpi	r28, 0x44	; 68
+     6ee:	d8 07       	cpc	r29, r24
+     6f0:	10 f4       	brcc	.+4      	; 0x6f6 <getPressedKeyNumber+0x3e>
+     6f2:	82 e0       	ldi	r24, 0x02	; 2
+     6f4:	12 c0       	rjmp	.+36     	; 0x71a <getPressedKeyNumber+0x62>
+		return 2;
+	if(keys < 700)
+     6f6:	82 e0       	ldi	r24, 0x02	; 2
+     6f8:	cc 3b       	cpi	r28, 0xBC	; 188
+     6fa:	d8 07       	cpc	r29, r24
+     6fc:	10 f4       	brcc	.+4      	; 0x702 <getPressedKeyNumber+0x4a>
+     6fe:	83 e0       	ldi	r24, 0x03	; 3
+     700:	0c c0       	rjmp	.+24     	; 0x71a <getPressedKeyNumber+0x62>
+		return 3;
+	if(keys < 790)
+     702:	83 e0       	ldi	r24, 0x03	; 3
+     704:	c6 31       	cpi	r28, 0x16	; 22
+     706:	d8 07       	cpc	r29, r24
+     708:	10 f4       	brcc	.+4      	; 0x70e <getPressedKeyNumber+0x56>
+     70a:	84 e0       	ldi	r24, 0x04	; 4
+     70c:	06 c0       	rjmp	.+12     	; 0x71a <getPressedKeyNumber+0x62>
+		return 4;
+	if(keys < 830)
+     70e:	ce 53       	subi	r28, 0x3E	; 62
+     710:	d3 40       	sbci	r29, 0x03	; 3
+     712:	10 f0       	brcs	.+4      	; 0x718 <getPressedKeyNumber+0x60>
+     714:	80 e0       	ldi	r24, 0x00	; 0
+     716:	01 c0       	rjmp	.+2      	; 0x71a <getPressedKeyNumber+0x62>
+     718:	85 e0       	ldi	r24, 0x05	; 5
+		return 5;
+	return 0;
+}
+     71a:	df 91       	pop	r29
+     71c:	cf 91       	pop	r28
+     71e:	08 95       	ret
+
+00000720 <checkPressedKeyEvent>:
+ * to be released again!
+ */
+uint8_t checkPressedKeyEvent(void)
+{
+	static uint8_t pressed_key = 0;
+	if(pressed_key) {
+     720:	80 91 6b 00 	lds	r24, 0x006B
+     724:	88 23       	and	r24, r24
+     726:	41 f0       	breq	.+16     	; 0x738 <checkPressedKeyEvent+0x18>
+		if(!getPressedKeyNumber()) 
+     728:	0e 94 5c 03 	call	0x6b8	; 0x6b8 <getPressedKeyNumber>
+     72c:	88 23       	and	r24, r24
+     72e:	11 f4       	brne	.+4      	; 0x734 <checkPressedKeyEvent+0x14>
+			pressed_key = 0;
+     730:	10 92 6b 00 	sts	0x006B, r1
+     734:	80 e0       	ldi	r24, 0x00	; 0
+     736:	08 95       	ret
+	}
+	else {
+		pressed_key = getPressedKeyNumber();
+     738:	0e 94 5c 03 	call	0x6b8	; 0x6b8 <getPressedKeyNumber>
+     73c:	80 93 6b 00 	sts	0x006B, r24
+		if(pressed_key)
+			return pressed_key;
+	}
+	return 0;
+}
+     740:	08 95       	ret
+
+00000742 <checkReleasedKeyEvent>:
+ * main loop. You don't need something like 
+ * "while(getPressedKeyNumber());" to wait for the button
+ * to be released again!
+ */
+uint8_t checkReleasedKeyEvent(void)
+{
+     742:	1f 93       	push	r17
+	static uint8_t released_key = 0;
+	if(released_key) {
+     744:	10 91 6a 00 	lds	r17, 0x006A
+     748:	11 23       	and	r17, r17
+     74a:	49 f0       	breq	.+18     	; 0x75e <checkReleasedKeyEvent+0x1c>
+		if(!getPressedKeyNumber()) {
+     74c:	0e 94 5c 03 	call	0x6b8	; 0x6b8 <getPressedKeyNumber>
+     750:	88 23       	and	r24, r24
+     752:	11 f0       	breq	.+4      	; 0x758 <checkReleasedKeyEvent+0x16>
+     754:	10 e0       	ldi	r17, 0x00	; 0
+     756:	07 c0       	rjmp	.+14     	; 0x766 <checkReleasedKeyEvent+0x24>
+			uint8_t tmp = released_key;
+			released_key = 0;
+     758:	10 92 6a 00 	sts	0x006A, r1
+     75c:	04 c0       	rjmp	.+8      	; 0x766 <checkReleasedKeyEvent+0x24>
+			return tmp;
+		}
+	}
+	else
+		released_key = getPressedKeyNumber();
+     75e:	0e 94 5c 03 	call	0x6b8	; 0x6b8 <getPressedKeyNumber>
+     762:	80 93 6a 00 	sts	0x006A, r24
+	return 0;
+}
+     766:	81 2f       	mov	r24, r17
+     768:	1f 91       	pop	r17
+     76a:	08 95       	ret
+
+0000076c <dischargePeakDetector>:
+ * used for the Microphone. This is required to remove any previous
+ * charge from the capacitor. 
+ */
+void dischargePeakDetector(void)
+{
+	DDRA |= MIC;
+     76c:	d0 9a       	sbi	0x1a, 0	; 26
+	PORTA &= ~MIC;
+     76e:	d8 98       	cbi	0x1b, 0	; 27
+     770:	21 e0       	ldi	r18, 0x01	; 1
+     772:	30 e0       	ldi	r19, 0x00	; 0
+     774:	07 c0       	rjmp	.+14     	; 0x784 <dischargePeakDetector+0x18>
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+     776:	10 92 da 00 	sts	0x00DA, r1
+	while (delay_timer <= time+1);
+     77a:	80 91 da 00 	lds	r24, 0x00DA
+     77e:	90 e0       	ldi	r25, 0x00	; 0
+     780:	0c 97       	sbiw	r24, 0x0c	; 12
+     782:	dc f3       	brlt	.-10     	; 0x77a <dischargePeakDetector+0xe>
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+	while (time--) sleep(10);
+     784:	21 50       	subi	r18, 0x01	; 1
+     786:	30 40       	sbci	r19, 0x00	; 0
+     788:	8f ef       	ldi	r24, 0xFF	; 255
+     78a:	2f 3f       	cpi	r18, 0xFF	; 255
+     78c:	38 07       	cpc	r19, r24
+     78e:	99 f7       	brne	.-26     	; 0x776 <dischargePeakDetector+0xa>
+void dischargePeakDetector(void)
+{
+	DDRA |= MIC;
+	PORTA &= ~MIC;
+	mSleep(1);
+	DDRA &= ~MIC;
+     790:	d0 98       	cbi	0x1a, 0	; 26
+}
+     792:	08 95       	ret
+
+00000794 <getMicrophonePeak>:
+/**
+ * Reads the Microphone peak detector and discharges it afterwards.
+ * 
+ */
+uint16_t getMicrophonePeak(void)
+{
+     794:	cf 93       	push	r28
+     796:	df 93       	push	r29
+	uint16_t tmp;
+	tmp = readADC(ADC_MIC);
+     798:	80 e0       	ldi	r24, 0x00	; 0
+     79a:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <readADC>
+     79e:	ec 01       	movw	r28, r24
+	if(tmp > 4) 
+     7a0:	85 30       	cpi	r24, 0x05	; 5
+     7a2:	91 05       	cpc	r25, r1
+     7a4:	10 f0       	brcs	.+4      	; 0x7aa <getMicrophonePeak+0x16>
+		dischargePeakDetector();
+     7a6:	0e 94 b6 03 	call	0x76c	; 0x76c <dischargePeakDetector>
+	return tmp;
+}
+     7aa:	ce 01       	movw	r24, r28
+     7ac:	df 91       	pop	r29
+     7ae:	cf 91       	pop	r28
+     7b0:	08 95       	ret
+
+000007b2 <__vector_10>:
+ *
+ * By default, it runs at 10kHz which means this ISR is called
+ * every ~100µs! This is nice for timing stuff!
+ */
+ISR (TIMER0_COMP_vect)
+{
+     7b2:	1f 92       	push	r1
+     7b4:	0f 92       	push	r0
+     7b6:	0f b6       	in	r0, 0x3f	; 63
+     7b8:	0f 92       	push	r0
+     7ba:	11 24       	eor	r1, r1
+     7bc:	8f 93       	push	r24
+     7be:	9f 93       	push	r25
+	// Blocking delay (100µs):
+	delay_timer++;
+     7c0:	80 91 da 00 	lds	r24, 0x00DA
+     7c4:	8f 5f       	subi	r24, 0xFF	; 255
+     7c6:	80 93 da 00 	sts	0x00DA, r24
+	
+	// All 1ms based timing stuff
+	if(ms_timer++ >= 10) { // 10 * 100µs = 1ms
+     7ca:	80 91 db 00 	lds	r24, 0x00DB
+     7ce:	8f 5f       	subi	r24, 0xFF	; 255
+     7d0:	80 93 db 00 	sts	0x00DB, r24
+     7d4:	81 50       	subi	r24, 0x01	; 1
+     7d6:	8a 30       	cpi	r24, 0x0A	; 10
+     7d8:	08 f4       	brcc	.+2      	; 0x7dc <__vector_10+0x2a>
+     7da:	84 c0       	rjmp	.+264    	; 0x8e4 <__stack+0x85>
+		// 16bit Stopwatches:
+		if(stopwatches.watches & STOPWATCH1)
+     7dc:	80 91 c8 00 	lds	r24, 0x00C8
+     7e0:	80 ff       	sbrs	r24, 0
+     7e2:	09 c0       	rjmp	.+18     	; 0x7f6 <__vector_10+0x44>
+			stopwatches.watch1++;
+     7e4:	80 91 c9 00 	lds	r24, 0x00C9
+     7e8:	90 91 ca 00 	lds	r25, 0x00CA
+     7ec:	01 96       	adiw	r24, 0x01	; 1
+     7ee:	90 93 ca 00 	sts	0x00CA, r25
+     7f2:	80 93 c9 00 	sts	0x00C9, r24
+		if(stopwatches.watches & STOPWATCH2)
+     7f6:	80 91 c8 00 	lds	r24, 0x00C8
+     7fa:	81 ff       	sbrs	r24, 1
+     7fc:	09 c0       	rjmp	.+18     	; 0x810 <__vector_10+0x5e>
+			stopwatches.watch2++;
+     7fe:	80 91 cb 00 	lds	r24, 0x00CB
+     802:	90 91 cc 00 	lds	r25, 0x00CC
+     806:	01 96       	adiw	r24, 0x01	; 1
+     808:	90 93 cc 00 	sts	0x00CC, r25
+     80c:	80 93 cb 00 	sts	0x00CB, r24
+		if(stopwatches.watches & STOPWATCH3)
+     810:	80 91 c8 00 	lds	r24, 0x00C8
+     814:	82 ff       	sbrs	r24, 2
+     816:	09 c0       	rjmp	.+18     	; 0x82a <__vector_10+0x78>
+			stopwatches.watch3++;
+     818:	80 91 cd 00 	lds	r24, 0x00CD
+     81c:	90 91 ce 00 	lds	r25, 0x00CE
+     820:	01 96       	adiw	r24, 0x01	; 1
+     822:	90 93 ce 00 	sts	0x00CE, r25
+     826:	80 93 cd 00 	sts	0x00CD, r24
+		if(stopwatches.watches & STOPWATCH4)
+     82a:	80 91 c8 00 	lds	r24, 0x00C8
+     82e:	83 ff       	sbrs	r24, 3
+     830:	09 c0       	rjmp	.+18     	; 0x844 <__vector_10+0x92>
+			stopwatches.watch4++;
+     832:	80 91 cf 00 	lds	r24, 0x00CF
+     836:	90 91 d0 00 	lds	r25, 0x00D0
+     83a:	01 96       	adiw	r24, 0x01	; 1
+     83c:	90 93 d0 00 	sts	0x00D0, r25
+     840:	80 93 cf 00 	sts	0x00CF, r24
+		if(stopwatches.watches & STOPWATCH5)
+     844:	80 91 c8 00 	lds	r24, 0x00C8
+     848:	84 ff       	sbrs	r24, 4
+     84a:	09 c0       	rjmp	.+18     	; 0x85e <__vector_10+0xac>
+			stopwatches.watch5++;
+     84c:	80 91 d1 00 	lds	r24, 0x00D1
+     850:	90 91 d2 00 	lds	r25, 0x00D2
+     854:	01 96       	adiw	r24, 0x01	; 1
+     856:	90 93 d2 00 	sts	0x00D2, r25
+     85a:	80 93 d1 00 	sts	0x00D1, r24
+		if(stopwatches.watches & STOPWATCH6)
+     85e:	80 91 c8 00 	lds	r24, 0x00C8
+     862:	85 ff       	sbrs	r24, 5
+     864:	09 c0       	rjmp	.+18     	; 0x878 <__stack+0x19>
+			stopwatches.watch6++;
+     866:	80 91 d3 00 	lds	r24, 0x00D3
+     86a:	90 91 d4 00 	lds	r25, 0x00D4
+     86e:	01 96       	adiw	r24, 0x01	; 1
+     870:	90 93 d4 00 	sts	0x00D4, r25
+     874:	80 93 d3 00 	sts	0x00D3, r24
+		if(stopwatches.watches & STOPWATCH7)
+     878:	80 91 c8 00 	lds	r24, 0x00C8
+     87c:	86 ff       	sbrs	r24, 6
+     87e:	09 c0       	rjmp	.+18     	; 0x892 <__stack+0x33>
+			stopwatches.watch7++;
+     880:	80 91 d5 00 	lds	r24, 0x00D5
+     884:	90 91 d6 00 	lds	r25, 0x00D6
+     888:	01 96       	adiw	r24, 0x01	; 1
+     88a:	90 93 d6 00 	sts	0x00D6, r25
+     88e:	80 93 d5 00 	sts	0x00D5, r24
+		if(stopwatches.watches & STOPWATCH8)
+     892:	80 91 c8 00 	lds	r24, 0x00C8
+     896:	87 ff       	sbrs	r24, 7
+     898:	09 c0       	rjmp	.+18     	; 0x8ac <__stack+0x4d>
+			stopwatches.watch8++;
+     89a:	80 91 d7 00 	lds	r24, 0x00D7
+     89e:	90 91 d8 00 	lds	r25, 0x00D8
+     8a2:	01 96       	adiw	r24, 0x01	; 1
+     8a4:	90 93 d8 00 	sts	0x00D8, r25
+     8a8:	80 93 d7 00 	sts	0x00D7, r24
+
+		// Sound generation timing:
+		if(controlStatus.beep) {
+     8ac:	80 91 b6 00 	lds	r24, 0x00B6
+     8b0:	80 ff       	sbrs	r24, 0
+     8b2:	16 c0       	rjmp	.+44     	; 0x8e0 <__stack+0x81>
+			if(sound_timer < 1) { // sound_timer * 1ms
+     8b4:	80 91 dc 00 	lds	r24, 0x00DC
+     8b8:	90 91 dd 00 	lds	r25, 0x00DD
+     8bc:	89 2b       	or	r24, r25
+     8be:	39 f4       	brne	.+14     	; 0x8ce <__stack+0x6f>
+				TCCR2 = 0;
+     8c0:	15 bc       	out	0x25, r1	; 37
+				controlStatus.beep = false;
+     8c2:	80 91 b6 00 	lds	r24, 0x00B6
+     8c6:	8e 7f       	andi	r24, 0xFE	; 254
+     8c8:	80 93 b6 00 	sts	0x00B6, r24
+     8cc:	09 c0       	rjmp	.+18     	; 0x8e0 <__stack+0x81>
+			}
+			else
+				sound_timer--;
+     8ce:	80 91 dc 00 	lds	r24, 0x00DC
+     8d2:	90 91 dd 00 	lds	r25, 0x00DD
+     8d6:	01 97       	sbiw	r24, 0x01	; 1
+     8d8:	90 93 dd 00 	sts	0x00DD, r25
+     8dc:	80 93 dc 00 	sts	0x00DC, r24
+		}
+		
+		ms_timer = 0;
+     8e0:	10 92 db 00 	sts	0x00DB, r1
+	}
+}
+     8e4:	9f 91       	pop	r25
+     8e6:	8f 91       	pop	r24
+     8e8:	0f 90       	pop	r0
+     8ea:	0f be       	out	0x3f, r0	; 63
+     8ec:	0f 90       	pop	r0
+     8ee:	1f 90       	pop	r1
+     8f0:	18 95       	reti
+
+000008f2 <beep>:
+ * sounds when you need to do other things at the same
+ * time... 
+ */
+void beep(uint8_t pitch, uint16_t time)
+{
+	controlStatus.beep = true;
+     8f2:	90 91 b6 00 	lds	r25, 0x00B6
+     8f6:	91 60       	ori	r25, 0x01	; 1
+     8f8:	90 93 b6 00 	sts	0x00B6, r25
+	sound_timer = time;
+     8fc:	70 93 dd 00 	sts	0x00DD, r23
+     900:	60 93 dc 00 	sts	0x00DC, r22
+	OCR2 = 255-pitch;
+     904:	80 95       	com	r24
+     906:	83 bd       	out	0x23, r24	; 35
+	TCCR2 =  (1 << WGM21) | (1 << COM20) | (1 << CS22) | (1 << CS21);
+     908:	8e e1       	ldi	r24, 0x1E	; 30
+     90a:	85 bd       	out	0x25, r24	; 37
+}
+     90c:	08 95       	ret
+
+0000090e <setBeeperPitch>:
+ * would sound bad if the beeper turns of for a very short time
+ * in between - such as alarm tones or special melodies etc. 
+ */
+void setBeeperPitch(uint8_t pitch)
+{
+	controlStatus.beep = false;
+     90e:	90 91 b6 00 	lds	r25, 0x00B6
+     912:	9e 7f       	andi	r25, 0xFE	; 254
+     914:	90 93 b6 00 	sts	0x00B6, r25
+	OCR2 = 255-pitch;
+     918:	98 2f       	mov	r25, r24
+     91a:	90 95       	com	r25
+     91c:	93 bd       	out	0x23, r25	; 35
+	if(pitch) 
+     91e:	88 23       	and	r24, r24
+     920:	19 f0       	breq	.+6      	; 0x928 <setBeeperPitch+0x1a>
+		TCCR2 =  (1 << WGM21) | (1 << COM20) | (1 << CS22) | (1 << CS21);	
+     922:	8e e1       	ldi	r24, 0x1E	; 30
+     924:	85 bd       	out	0x25, r24	; 37
+     926:	08 95       	ret
+	else 
+		TCCR2 = 0;
+     928:	15 bc       	out	0x25, r1	; 37
+     92a:	08 95       	ret
+
+0000092c <sleep>:
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+     92c:	10 92 da 00 	sts	0x00DA, r1
+	while (delay_timer <= time+1);
+     930:	28 2f       	mov	r18, r24
+     932:	30 e0       	ldi	r19, 0x00	; 0
+     934:	2f 5f       	subi	r18, 0xFF	; 255
+     936:	3f 4f       	sbci	r19, 0xFF	; 255
+     938:	80 91 da 00 	lds	r24, 0x00DA
+     93c:	90 e0       	ldi	r25, 0x00	; 0
+     93e:	28 17       	cp	r18, r24
+     940:	39 07       	cpc	r19, r25
+     942:	d4 f7       	brge	.-12     	; 0x938 <sleep+0xc>
+}
+     944:	08 95       	ret
+
+00000946 <mSleep>:
+ *      mSleep(100); // delay 100 * 1ms = 100ms = 0.1s
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+     946:	9c 01       	movw	r18, r24
+     948:	09 c0       	rjmp	.+18     	; 0x95c <mSleep+0x16>
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	delay_timer = 0;
+     94a:	10 92 da 00 	sts	0x00DA, r1
+	while (delay_timer <= time+1);
+     94e:	80 91 da 00 	lds	r24, 0x00DA
+     952:	90 e0       	ldi	r25, 0x00	; 0
+     954:	0c 97       	sbiw	r24, 0x0c	; 12
+     956:	dc f3       	brlt	.-10     	; 0x94e <mSleep+0x8>
+     958:	21 50       	subi	r18, 0x01	; 1
+     95a:	30 40       	sbci	r19, 0x00	; 0
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+	while (time--) sleep(10);
+     95c:	21 15       	cp	r18, r1
+     95e:	31 05       	cpc	r19, r1
+     960:	a1 f7       	brne	.-24     	; 0x94a <mSleep+0x4>
+}
+     962:	08 95       	ret
+
+00000964 <delayCycles>:
+ *
+ * Example:
+ * 	delayCycles(1000); // Delays for *about* 1000 instruction cycles
+ */
+void delayCycles(uint16_t dly)
+{
+     964:	02 c0       	rjmp	.+4      	; 0x96a <delayCycles+0x6>
+	while(dly--) nop();
+     966:	00 00       	nop
+     968:	01 97       	sbiw	r24, 0x01	; 1
+     96a:	00 97       	sbiw	r24, 0x00	; 0
+     96c:	e1 f7       	brne	.-8      	; 0x966 <delayCycles+0x2>
+}
+     96e:	08 95       	ret
+
+00000970 <initRP6Control>:
+ *			}
+ *
+ */
+void initRP6Control(void)
+{
+	portInit();		// Setup port directions and initial values.
+     970:	1b ba       	out	0x1b, r1	; 27
+     972:	87 e0       	ldi	r24, 0x07	; 7
+     974:	88 bb       	out	0x18, r24	; 24
+     976:	8c ef       	ldi	r24, 0xFC	; 252
+     978:	85 bb       	out	0x15, r24	; 21
+     97a:	80 e6       	ldi	r24, 0x60	; 96
+     97c:	82 bb       	out	0x12, r24	; 18
+     97e:	1a ba       	out	0x1a, r1	; 26
+     980:	8b eb       	ldi	r24, 0xBB	; 187
+     982:	87 bb       	out	0x17, r24	; 23
+     984:	14 ba       	out	0x14, r1	; 20
+     986:	82 e9       	ldi	r24, 0x92	; 146
+     988:	81 bb       	out	0x11, r24	; 17
+					// This is the most important step!
+
+	cli();			// Disable global interrupts.
+     98a:	f8 94       	cli
+
+	// UART:
+	UBRRH = UBRR_BAUD_LOW >> 8;	// Setup UART: Baud is Low Speed
+     98c:	10 bc       	out	0x20, r1	; 32
+	UBRRL = (uint8_t) UBRR_BAUD_LOW;
+     98e:	89 e1       	ldi	r24, 0x19	; 25
+     990:	89 b9       	out	0x09, r24	; 9
+	UCSRA = 0x00;
+     992:	1b b8       	out	0x0b, r1	; 11
+    UCSRC = (1<<URSEL)|(1<<UCSZ1)|(1<<UCSZ0);
+     994:	86 e8       	ldi	r24, 0x86	; 134
+     996:	80 bd       	out	0x20, r24	; 32
+    UCSRB = (1 << TXEN) | (1 << RXEN) | (1 << RXCIE);
+     998:	88 e9       	ldi	r24, 0x98	; 152
+     99a:	8a b9       	out	0x0a, r24	; 10
+	
+	// Initialize ADC:
+	ADMUX = 0; //external reference 
+     99c:	17 b8       	out	0x07, r1	; 7
+	ADCSRA = (0<<ADIE) | (0<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+     99e:	86 e1       	ldi	r24, 0x16	; 22
+     9a0:	86 b9       	out	0x06, r24	; 6
+	SFIOR = 0;
+     9a2:	10 be       	out	0x30, r1	; 48
+
+	// Initialize External interrupts - all disabled:
+	MCUCR = (1 << ISC11) | (1 << ISC10) | (1 << ISC01) | (1 << ISC00);
+     9a4:	8f e0       	ldi	r24, 0x0F	; 15
+     9a6:	85 bf       	out	0x35, r24	; 53
+	GICR = (0 << INT2) | (0 << INT1) | (0 << INT0);
+     9a8:	1b be       	out	0x3b, r1	; 59
+	MCUCSR = (0 << ISC2);
+     9aa:	14 be       	out	0x34, r1	; 52
+	
+	
+	// 10kHz Timer 0:
+	TCCR0 =   (0 << WGM00) 
+     9ac:	8a e0       	ldi	r24, 0x0A	; 10
+     9ae:	83 bf       	out	0x33, r24	; 51
+			| (0 << COM00) 
+			| (0 << COM01) 
+			| (0 << CS02)  
+			| (1 << CS01) 
+			| (0 << CS00);
+	OCR0  = 199;
+     9b0:	87 ec       	ldi	r24, 0xC7	; 199
+     9b2:	8c bf       	out	0x3c, r24	; 60
+/*
+	Timer 1 is free for your application!
+*/
+
+	// Timer 2 - used for beeper:
+	TCCR2 =  0; 
+     9b4:	15 bc       	out	0x25, r1	; 37
+	OCR2  = 0xFF; 
+     9b6:	8f ef       	ldi	r24, 0xFF	; 255
+     9b8:	83 bd       	out	0x23, r24	; 35
+
+	// Enable timer interrupts:
+	TIMSK =   (1 << OCIE0); 
+     9ba:	82 e0       	ldi	r24, 0x02	; 2
+     9bc:	89 bf       	out	0x39, r24	; 57
+
+	// SPI Master (SPI Mode 0, SCK Frequency is F_CPU/2, which means it is 8MHz 
+	// on the RP6 CONTROL M32...):
+	SPCR =    (0<<SPIE) 
+     9be:	80 e5       	ldi	r24, 0x50	; 80
+     9c0:	8d b9       	out	0x0d, r24	; 13
+			| (1<<MSTR) 
+			| (0<<SPR0) 
+			| (0<<SPR1) 
+			| (0<<CPOL) 
+			| (0<<CPHA);  
+	SPSR = (1<<SPI2X);
+     9c2:	81 e0       	ldi	r24, 0x01	; 1
+     9c4:	8e b9       	out	0x0e, r24	; 14
+	
+	sei(); // Enable Global Interrupts
+     9c6:	78 94       	sei
+}
+     9c8:	08 95       	ret
+
+000009ca <writeIntegerLCD>:
+ *			writeInteger(1024,DEC);  	// Decimal
+ *			writeInteger(511,OCT);		// Ocal
+ *			writeInteger(0b11010111,BIN); // Binary
+ */
+void writeIntegerLCD(int16_t number, uint8_t base)
+{
+     9ca:	0f 93       	push	r16
+     9cc:	1f 93       	push	r17
+     9ce:	46 2f       	mov	r20, r22
+	itoa(number, &lcd_tmp_buffer[0], base);
+     9d0:	07 eb       	ldi	r16, 0xB7	; 183
+     9d2:	10 e0       	ldi	r17, 0x00	; 0
+     9d4:	b8 01       	movw	r22, r16
+     9d6:	50 e0       	ldi	r21, 0x00	; 0
+     9d8:	0e 94 69 09 	call	0x12d2	; 0x12d2 <itoa>
+	writeStringLCD(&lcd_tmp_buffer[0]);
+     9dc:	c8 01       	movw	r24, r16
+     9de:	0e 94 0e 03 	call	0x61c	; 0x61c <writeStringLCD>
+}
+     9e2:	1f 91       	pop	r17
+     9e4:	0f 91       	pop	r16
+     9e6:	08 95       	ret
+
+000009e8 <writeIntegerLengthLCD>:
+ *			writeIntegerLength(511,OCT,4);		// Ocal
+ *			writeIntegerLength(0b11010111,BIN,8); // Binary
+ */
+ 
+void writeIntegerLengthLCD(int16_t number, uint8_t base, uint8_t length)
+{
+     9e8:	ef 92       	push	r14
+     9ea:	ff 92       	push	r15
+     9ec:	0f 93       	push	r16
+     9ee:	1f 93       	push	r17
+     9f0:	df 93       	push	r29
+     9f2:	cf 93       	push	r28
+     9f4:	cd b7       	in	r28, 0x3d	; 61
+     9f6:	de b7       	in	r29, 0x3e	; 62
+     9f8:	61 97       	sbiw	r28, 0x11	; 17
+     9fa:	0f b6       	in	r0, 0x3f	; 63
+     9fc:	f8 94       	cli
+     9fe:	de bf       	out	0x3e, r29	; 62
+     a00:	0f be       	out	0x3f, r0	; 63
+     a02:	cd bf       	out	0x3d, r28	; 61
+     a04:	26 2f       	mov	r18, r22
+     a06:	04 2f       	mov	r16, r20
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+     a08:	7e 01       	movw	r14, r28
+     a0a:	08 94       	sec
+     a0c:	e1 1c       	adc	r14, r1
+     a0e:	f1 1c       	adc	r15, r1
+     a10:	b7 01       	movw	r22, r14
+     a12:	42 2f       	mov	r20, r18
+     a14:	50 e0       	ldi	r21, 0x00	; 0
+     a16:	0e 94 69 09 	call	0x12d2	; 0x12d2 <itoa>
+	int8_t cnt = length - strlen(buffer);
+     a1a:	f7 01       	movw	r30, r14
+     a1c:	01 90       	ld	r0, Z+
+     a1e:	00 20       	and	r0, r0
+     a20:	e9 f7       	brne	.-6      	; 0xa1c <writeIntegerLengthLCD+0x34>
+     a22:	31 97       	sbiw	r30, 0x01	; 1
+     a24:	ee 19       	sub	r30, r14
+     a26:	ff 09       	sbc	r31, r15
+     a28:	10 2f       	mov	r17, r16
+     a2a:	1e 1b       	sub	r17, r30
+	if(cnt > 0) {
+     a2c:	11 16       	cp	r1, r17
+     a2e:	5c f4       	brge	.+22     	; 0xa46 <writeIntegerLengthLCD+0x5e>
+		for(; cnt > 0; cnt--, writeCharLCD('0'));
+     a30:	11 50       	subi	r17, 0x01	; 1
+     a32:	80 e3       	ldi	r24, 0x30	; 48
+     a34:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <writeCharLCD>
+     a38:	11 23       	and	r17, r17
+     a3a:	d1 f7       	brne	.-12     	; 0xa30 <writeIntegerLengthLCD+0x48>
+		writeStringLCD(&buffer[0]);
+     a3c:	ce 01       	movw	r24, r28
+     a3e:	01 96       	adiw	r24, 0x01	; 1
+     a40:	0e 94 0e 03 	call	0x61c	; 0x61c <writeStringLCD>
+     a44:	06 c0       	rjmp	.+12     	; 0xa52 <writeIntegerLengthLCD+0x6a>
+	}
+	else 
+		writeStringLengthLCD(&buffer[0],length,-cnt);
+     a46:	11 95       	neg	r17
+     a48:	c7 01       	movw	r24, r14
+     a4a:	60 2f       	mov	r22, r16
+     a4c:	41 2f       	mov	r20, r17
+     a4e:	0e 94 1b 03 	call	0x636	; 0x636 <writeStringLengthLCD>
+}
+     a52:	61 96       	adiw	r28, 0x11	; 17
+     a54:	0f b6       	in	r0, 0x3f	; 63
+     a56:	f8 94       	cli
+     a58:	de bf       	out	0x3e, r29	; 62
+     a5a:	0f be       	out	0x3f, r0	; 63
+     a5c:	cd bf       	out	0x3d, r28	; 61
+     a5e:	cf 91       	pop	r28
+     a60:	df 91       	pop	r29
+     a62:	1f 91       	pop	r17
+     a64:	0f 91       	pop	r16
+     a66:	ff 90       	pop	r15
+     a68:	ef 90       	pop	r14
+     a6a:	08 95       	ret
+
+00000a6c <writeChar>:
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+     a6c:	5d 9b       	sbis	0x0b, 5	; 11
+     a6e:	fe cf       	rjmp	.-4      	; 0xa6c <writeChar>
+    UDR = (uint8_t)ch;
+     a70:	8c b9       	out	0x0c, r24	; 12
+}
+     a72:	08 95       	ret
+
+00000a74 <writeString>:
+ *
+ *			writeString("RP6 Robot System\n");
+ *
+ */
+void writeString(char *string)
+{
+     a74:	fc 01       	movw	r30, r24
+     a76:	04 c0       	rjmp	.+8      	; 0xa80 <writeString+0xc>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+     a78:	5d 9b       	sbis	0x0b, 5	; 11
+     a7a:	fe cf       	rjmp	.-4      	; 0xa78 <writeString+0x4>
+ *
+ */
+void writeString(char *string)
+{
+	while(*string)
+		writeChar(*string++);
+     a7c:	31 96       	adiw	r30, 0x01	; 1
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+     a7e:	8c b9       	out	0x0c, r24	; 12
+ *			writeString("RP6 Robot System\n");
+ *
+ */
+void writeString(char *string)
+{
+	while(*string)
+     a80:	80 81       	ld	r24, Z
+     a82:	88 23       	and	r24, r24
+     a84:	c9 f7       	brne	.-14     	; 0xa78 <writeString+0x4>
+		writeChar(*string++);
+}
+     a86:	08 95       	ret
+
+00000a88 <writeNStringP>:
+ *			// you can simply write:
+ *			writeString_P("RP6 Robot System\n");
+ *
+ */
+void writeNStringP(const char *pstring)
+{
+     a88:	03 c0       	rjmp	.+6      	; 0xa90 <writeNStringP+0x8>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+     a8a:	5d 9b       	sbis	0x0b, 5	; 11
+     a8c:	fe cf       	rjmp	.-4      	; 0xa8a <writeNStringP+0x2>
+    UDR = (uint8_t)ch;
+     a8e:	2c b9       	out	0x0c, r18	; 12
+     a90:	fc 01       	movw	r30, r24
+ *
+ */
+void writeNStringP(const char *pstring)
+{
+    uint8_t c;
+    for (;(c = pgm_read_byte_near(pstring++));writeChar(c));
+     a92:	01 96       	adiw	r24, 0x01	; 1
+     a94:	24 91       	lpm	r18, Z+
+     a96:	22 23       	and	r18, r18
+     a98:	c1 f7       	brne	.-16     	; 0xa8a <writeNStringP+0x2>
+}
+     a9a:	08 95       	ret
+
+00000a9c <writeStringLength>:
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+     a9c:	fc 01       	movw	r30, r24
+     a9e:	e4 0f       	add	r30, r20
+     aa0:	f1 1d       	adc	r31, r1
+     aa2:	05 c0       	rjmp	.+10     	; 0xaae <writeStringLength+0x12>
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+     aa4:	5d 9b       	sbis	0x0b, 5	; 11
+     aa6:	fe cf       	rjmp	.-4      	; 0xaa4 <writeStringLength+0x8>
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+		writeChar(*string++);
+     aa8:	31 96       	adiw	r30, 0x01	; 1
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+     aaa:	8c b9       	out	0x0c, r24	; 12
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+     aac:	61 50       	subi	r22, 0x01	; 1
+     aae:	80 81       	ld	r24, Z
+     ab0:	88 23       	and	r24, r24
+     ab2:	11 f0       	breq	.+4      	; 0xab8 <writeStringLength+0x1c>
+     ab4:	66 23       	and	r22, r22
+     ab6:	b1 f7       	brne	.-20     	; 0xaa4 <writeStringLength+0x8>
+     ab8:	08 95       	ret
+
+00000aba <__vector_13>:
+
+/**
+ * UART receive ISR.
+ */
+ISR(USART_RXC_vect)
+{
+     aba:	1f 92       	push	r1
+     abc:	0f 92       	push	r0
+     abe:	0f b6       	in	r0, 0x3f	; 63
+     ac0:	0f 92       	push	r0
+     ac2:	11 24       	eor	r1, r1
+     ac4:	8f 93       	push	r24
+     ac6:	9f 93       	push	r25
+     ac8:	ef 93       	push	r30
+     aca:	ff 93       	push	r31
+     acc:	df 93       	push	r29
+     ace:	cf 93       	push	r28
+     ad0:	0f 92       	push	r0
+     ad2:	cd b7       	in	r28, 0x3d	; 61
+     ad4:	de b7       	in	r29, 0x3e	; 62
+	volatile char recChar = UDR;
+     ad6:	8c b1       	in	r24, 0x0c	; 12
+     ad8:	89 83       	std	Y+1, r24	; 0x01
+	if(uart_status == UART_BUISY) {
+     ada:	80 91 de 00 	lds	r24, 0x00DE
+     ade:	88 23       	and	r24, r24
+     ae0:	91 f4       	brne	.+36     	; 0xb06 <__vector_13+0x4c>
+		uart_receive_buffer[buffer_pos++] = recChar;
+     ae2:	90 91 e0 00 	lds	r25, 0x00E0
+     ae6:	e9 2f       	mov	r30, r25
+     ae8:	f0 e0       	ldi	r31, 0x00	; 0
+     aea:	89 81       	ldd	r24, Y+1	; 0x01
+     aec:	ef 51       	subi	r30, 0x1F	; 31
+     aee:	ff 4f       	sbci	r31, 0xFF	; 255
+     af0:	80 83       	st	Z, r24
+     af2:	9f 5f       	subi	r25, 0xFF	; 255
+     af4:	90 93 e0 00 	sts	0x00E0, r25
+		if(buffer_pos >= uart_receive_bytes)
+     af8:	80 91 df 00 	lds	r24, 0x00DF
+     afc:	98 17       	cp	r25, r24
+     afe:	18 f0       	brcs	.+6      	; 0xb06 <__vector_13+0x4c>
+			uart_status = UART_DATA_AVAILABLE;
+     b00:	82 e0       	ldi	r24, 0x02	; 2
+     b02:	80 93 de 00 	sts	0x00DE, r24
+	}
+}
+     b06:	0f 90       	pop	r0
+     b08:	cf 91       	pop	r28
+     b0a:	df 91       	pop	r29
+     b0c:	ff 91       	pop	r31
+     b0e:	ef 91       	pop	r30
+     b10:	9f 91       	pop	r25
+     b12:	8f 91       	pop	r24
+     b14:	0f 90       	pop	r0
+     b16:	0f be       	out	0x3f, r0	; 63
+     b18:	0f 90       	pop	r0
+     b1a:	1f 90       	pop	r1
+     b1c:	18 95       	reti
+
+00000b1e <receiveBytes>:
+/**
+ *
+ */
+void receiveBytes(uint8_t numberOfBytes)
+{
+	buffer_pos = 0;
+     b1e:	10 92 e0 00 	sts	0x00E0, r1
+	uart_receive_bytes = numberOfBytes;
+     b22:	80 93 df 00 	sts	0x00DF, r24
+	uart_status = UART_BUISY;
+     b26:	10 92 de 00 	sts	0x00DE, r1
+}
+     b2a:	08 95       	ret
+
+00000b2c <waitUntilReceptionComplete>:
+/**
+ *
+ */
+void waitUntilReceptionComplete(void)
+{
+	while(getUARTReceiveStatus() == UART_BUISY);
+     b2c:	80 91 de 00 	lds	r24, 0x00DE
+     b30:	88 23       	and	r24, r24
+     b32:	e1 f3       	breq	.-8      	; 0xb2c <waitUntilReceptionComplete>
+}
+     b34:	08 95       	ret
+
+00000b36 <copyReceivedBytesToBuffer>:
+
+/**
+ *
+ */
+void copyReceivedBytesToBuffer(char *buffer)
+{
+     b36:	ac 01       	movw	r20, r24
+     b38:	20 e0       	ldi	r18, 0x00	; 0
+     b3a:	0a c0       	rjmp	.+20     	; 0xb50 <copyReceivedBytesToBuffer+0x1a>
+	uint8_t i = 0;
+	while(i < uart_receive_bytes) {
+		buffer[i] = uart_receive_buffer[i];
+     b3c:	e2 2f       	mov	r30, r18
+     b3e:	f0 e0       	ldi	r31, 0x00	; 0
+     b40:	df 01       	movw	r26, r30
+     b42:	af 51       	subi	r26, 0x1F	; 31
+     b44:	bf 4f       	sbci	r27, 0xFF	; 255
+     b46:	8c 91       	ld	r24, X
+     b48:	e4 0f       	add	r30, r20
+     b4a:	f5 1f       	adc	r31, r21
+     b4c:	80 83       	st	Z, r24
+		i++;
+     b4e:	2f 5f       	subi	r18, 0xFF	; 255
+ *
+ */
+void copyReceivedBytesToBuffer(char *buffer)
+{
+	uint8_t i = 0;
+	while(i < uart_receive_bytes) {
+     b50:	80 91 df 00 	lds	r24, 0x00DF
+     b54:	28 17       	cp	r18, r24
+     b56:	90 f3       	brcs	.-28     	; 0xb3c <copyReceivedBytesToBuffer+0x6>
+		buffer[i] = uart_receive_buffer[i];
+		i++;
+	}
+	uart_status = UART_READY;
+     b58:	81 e0       	ldi	r24, 0x01	; 1
+     b5a:	80 93 de 00 	sts	0x00DE, r24
+}
+     b5e:	08 95       	ret
+
+00000b60 <stopReception>:
+/**
+ *
+ */
+void stopReception(void)
+{
+	uart_receive_bytes = 0;
+     b60:	10 92 df 00 	sts	0x00DF, r1
+	uart_status = UART_READY;
+     b64:	81 e0       	ldi	r24, 0x01	; 1
+     b66:	80 93 de 00 	sts	0x00DE, r24
+}
+     b6a:	08 95       	ret
+
+00000b6c <receiveBytesToBuffer>:
+/**
+ *
+ */
+void receiveBytes(uint8_t numberOfBytes)
+{
+	buffer_pos = 0;
+     b6c:	10 92 e0 00 	sts	0x00E0, r1
+	uart_receive_bytes = numberOfBytes;
+     b70:	80 93 df 00 	sts	0x00DF, r24
+	uart_status = UART_BUISY;
+     b74:	10 92 de 00 	sts	0x00DE, r1
+/**
+ *
+ */
+void waitUntilReceptionComplete(void)
+{
+	while(getUARTReceiveStatus() == UART_BUISY);
+     b78:	80 91 de 00 	lds	r24, 0x00DE
+     b7c:	88 23       	and	r24, r24
+     b7e:	e1 f3       	breq	.-8      	; 0xb78 <receiveBytesToBuffer+0xc>
+     b80:	90 e0       	ldi	r25, 0x00	; 0
+     b82:	0a c0       	rjmp	.+20     	; 0xb98 <receiveBytesToBuffer+0x2c>
+ */
+void copyReceivedBytesToBuffer(char *buffer)
+{
+	uint8_t i = 0;
+	while(i < uart_receive_bytes) {
+		buffer[i] = uart_receive_buffer[i];
+     b84:	e9 2f       	mov	r30, r25
+     b86:	f0 e0       	ldi	r31, 0x00	; 0
+     b88:	df 01       	movw	r26, r30
+     b8a:	af 51       	subi	r26, 0x1F	; 31
+     b8c:	bf 4f       	sbci	r27, 0xFF	; 255
+     b8e:	8c 91       	ld	r24, X
+     b90:	e6 0f       	add	r30, r22
+     b92:	f7 1f       	adc	r31, r23
+     b94:	80 83       	st	Z, r24
+		i++;
+     b96:	9f 5f       	subi	r25, 0xFF	; 255
+ *
+ */
+void copyReceivedBytesToBuffer(char *buffer)
+{
+	uint8_t i = 0;
+	while(i < uart_receive_bytes) {
+     b98:	80 91 df 00 	lds	r24, 0x00DF
+     b9c:	98 17       	cp	r25, r24
+     b9e:	90 f3       	brcs	.-28     	; 0xb84 <receiveBytesToBuffer+0x18>
+		buffer[i] = uart_receive_buffer[i];
+		i++;
+	}
+	uart_status = UART_READY;
+     ba0:	81 e0       	ldi	r24, 0x01	; 1
+     ba2:	80 93 de 00 	sts	0x00DE, r24
+void receiveBytesToBuffer(uint8_t numberOfBytes, char *buffer)
+{
+	receiveBytes(numberOfBytes);
+	waitUntilReceptionComplete();
+	copyReceivedBytesToBuffer(&buffer[0]);
+}
+     ba6:	08 95       	ret
+
+00000ba8 <writeInteger>:
+ *			writeInteger(1024,DEC);  	// Decimal
+ *			writeInteger(044,OCT);		// Ocal
+ *			writeInteger(0b11010111,BIN); // Binary
+ */
+void writeInteger(int16_t number, uint8_t base)
+{
+     ba8:	0f 93       	push	r16
+     baa:	1f 93       	push	r17
+     bac:	df 93       	push	r29
+     bae:	cf 93       	push	r28
+     bb0:	cd b7       	in	r28, 0x3d	; 61
+     bb2:	de b7       	in	r29, 0x3e	; 62
+     bb4:	61 97       	sbiw	r28, 0x11	; 17
+     bb6:	0f b6       	in	r0, 0x3f	; 63
+     bb8:	f8 94       	cli
+     bba:	de bf       	out	0x3e, r29	; 62
+     bbc:	0f be       	out	0x3f, r0	; 63
+     bbe:	cd bf       	out	0x3d, r28	; 61
+     bc0:	46 2f       	mov	r20, r22
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+     bc2:	8e 01       	movw	r16, r28
+     bc4:	0f 5f       	subi	r16, 0xFF	; 255
+     bc6:	1f 4f       	sbci	r17, 0xFF	; 255
+     bc8:	b8 01       	movw	r22, r16
+     bca:	50 e0       	ldi	r21, 0x00	; 0
+     bcc:	0e 94 69 09 	call	0x12d2	; 0x12d2 <itoa>
+	writeString(&buffer[0]);
+     bd0:	c8 01       	movw	r24, r16
+     bd2:	0e 94 3a 05 	call	0xa74	; 0xa74 <writeString>
+}
+     bd6:	61 96       	adiw	r28, 0x11	; 17
+     bd8:	0f b6       	in	r0, 0x3f	; 63
+     bda:	f8 94       	cli
+     bdc:	de bf       	out	0x3e, r29	; 62
+     bde:	0f be       	out	0x3f, r0	; 63
+     be0:	cd bf       	out	0x3d, r28	; 61
+     be2:	cf 91       	pop	r28
+     be4:	df 91       	pop	r29
+     be6:	1f 91       	pop	r17
+     be8:	0f 91       	pop	r16
+     bea:	08 95       	ret
+
+00000bec <writeIntegerLength>:
+ *			writeIntegerLength(1024,DEC,6);  	// Decimal
+ *			writeIntegerLength(044,OCT,4);		// Ocal
+ *			writeIntegerLength(0b11010111,BIN,8); // Binary
+ */
+void writeIntegerLength(int16_t number, uint8_t base, uint8_t length)
+{
+     bec:	ff 92       	push	r15
+     bee:	0f 93       	push	r16
+     bf0:	1f 93       	push	r17
+     bf2:	df 93       	push	r29
+     bf4:	cf 93       	push	r28
+     bf6:	cd b7       	in	r28, 0x3d	; 61
+     bf8:	de b7       	in	r29, 0x3e	; 62
+     bfa:	61 97       	sbiw	r28, 0x11	; 17
+     bfc:	0f b6       	in	r0, 0x3f	; 63
+     bfe:	f8 94       	cli
+     c00:	de bf       	out	0x3e, r29	; 62
+     c02:	0f be       	out	0x3f, r0	; 63
+     c04:	cd bf       	out	0x3d, r28	; 61
+     c06:	26 2f       	mov	r18, r22
+     c08:	f4 2e       	mov	r15, r20
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+     c0a:	8e 01       	movw	r16, r28
+     c0c:	0f 5f       	subi	r16, 0xFF	; 255
+     c0e:	1f 4f       	sbci	r17, 0xFF	; 255
+     c10:	b8 01       	movw	r22, r16
+     c12:	42 2f       	mov	r20, r18
+     c14:	50 e0       	ldi	r21, 0x00	; 0
+     c16:	0e 94 69 09 	call	0x12d2	; 0x12d2 <itoa>
+	int8_t cnt = length - strlen(buffer);
+     c1a:	f8 01       	movw	r30, r16
+     c1c:	01 90       	ld	r0, Z+
+     c1e:	00 20       	and	r0, r0
+     c20:	e9 f7       	brne	.-6      	; 0xc1c <writeIntegerLength+0x30>
+     c22:	31 97       	sbiw	r30, 0x01	; 1
+     c24:	e0 1b       	sub	r30, r16
+     c26:	f1 0b       	sbc	r31, r17
+     c28:	4f 2d       	mov	r20, r15
+     c2a:	4e 1b       	sub	r20, r30
+	if(cnt > 0) {
+     c2c:	14 16       	cp	r1, r20
+     c2e:	64 f4       	brge	.+24     	; 0xc48 <writeIntegerLength+0x5c>
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    UDR = (uint8_t)ch;
+     c30:	80 e3       	ldi	r24, 0x30	; 48
+{
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+	int8_t cnt = length - strlen(buffer);
+	if(cnt > 0) {
+		for(; cnt > 0; cnt--, writeChar('0'));
+     c32:	41 50       	subi	r20, 0x01	; 1
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+     c34:	5d 9b       	sbis	0x0b, 5	; 11
+     c36:	fe cf       	rjmp	.-4      	; 0xc34 <writeIntegerLength+0x48>
+    UDR = (uint8_t)ch;
+     c38:	8c b9       	out	0x0c, r24	; 12
+{
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+	int8_t cnt = length - strlen(buffer);
+	if(cnt > 0) {
+		for(; cnt > 0; cnt--, writeChar('0'));
+     c3a:	44 23       	and	r20, r20
+     c3c:	d1 f7       	brne	.-12     	; 0xc32 <writeIntegerLength+0x46>
+		writeString(&buffer[0]);
+     c3e:	ce 01       	movw	r24, r28
+     c40:	01 96       	adiw	r24, 0x01	; 1
+     c42:	0e 94 3a 05 	call	0xa74	; 0xa74 <writeString>
+     c46:	05 c0       	rjmp	.+10     	; 0xc52 <writeIntegerLength+0x66>
+	}
+	else 
+		writeStringLength(&buffer[0],length,-cnt);
+     c48:	41 95       	neg	r20
+     c4a:	c8 01       	movw	r24, r16
+     c4c:	6f 2d       	mov	r22, r15
+     c4e:	0e 94 4e 05 	call	0xa9c	; 0xa9c <writeStringLength>
+}
+     c52:	61 96       	adiw	r28, 0x11	; 17
+     c54:	0f b6       	in	r0, 0x3f	; 63
+     c56:	f8 94       	cli
+     c58:	de bf       	out	0x3e, r29	; 62
+     c5a:	0f be       	out	0x3f, r0	; 63
+     c5c:	cd bf       	out	0x3d, r28	; 61
+     c5e:	cf 91       	pop	r28
+     c60:	df 91       	pop	r29
+     c62:	1f 91       	pop	r17
+     c64:	0f 91       	pop	r16
+     c66:	ff 90       	pop	r15
+     c68:	08 95       	ret
+
+00000c6a <__I2CTWI_initMaster>:
+ * 							// but directly calculated with the formula in the
+ *							// MEGA32 datasheet.
+ */
+void __I2CTWI_initMaster(uint8_t twi_bitrate)
+{
+	cli();
+     c6a:	f8 94       	cli
+	TWBR = twi_bitrate;
+     c6c:	80 b9       	out	0x00, r24	; 0
+	TWSR = 0x00;      // DO NOT USE PRESCALER! Otherwise you need to mask the
+     c6e:	11 b8       	out	0x01, r1	; 1
+	TWDR = 0xFF;      // TWSR Prescaler bits everywhere TWSR is read!  	      
+     c70:	8f ef       	ldi	r24, 0xFF	; 255
+     c72:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWEN);
+     c74:	84 e0       	ldi	r24, 0x04	; 4
+     c76:	86 bf       	out	0x36, r24	; 54
+	TWI_statusReg.lastTransOK = 1;
+     c78:	80 91 6c 00 	lds	r24, 0x006C
+     c7c:	81 60       	ori	r24, 0x01	; 1
+     c7e:	80 93 6c 00 	sts	0x006C, r24
+    sei();                      
+     c82:	78 94       	sei
+}
+     c84:	08 95       	ret
+
+00000c86 <I2CTWI_requestedDataReady_DUMMY>:
+
+/*****************************************************************************/
+// TWI Event handlers
+// These functions are used to receive Data or react on errors.
+
+void I2CTWI_requestedDataReady_DUMMY(uint8_t requestID){}
+     c86:	08 95       	ret
+
+00000c88 <I2CTWI_setRequestedDataReadyHandler>:
+static void (*I2CTWI_requestedDataReadyHandler)(uint8_t) = I2CTWI_requestedDataReady_DUMMY;
+void I2CTWI_setRequestedDataReadyHandler(void (*requestedDataReadyHandler)(uint8_t))
+{
+	I2CTWI_requestedDataReadyHandler = requestedDataReadyHandler;
+     c88:	90 93 67 00 	sts	0x0067, r25
+     c8c:	80 93 66 00 	sts	0x0066, r24
+}
+     c90:	08 95       	ret
+
+00000c92 <I2CTWI_transmissionError_DUMMY>:
+
+void I2CTWI_transmissionError_DUMMY(uint8_t requestID){}
+     c92:	08 95       	ret
+
+00000c94 <I2CTWI_setTransmissionErrorHandler>:
+static void (*I2CTWI_transmissionErrorHandler)(uint8_t) = I2CTWI_transmissionError_DUMMY;
+void I2CTWI_setTransmissionErrorHandler(void (*transmissionErrorHandler)(uint8_t))
+{
+	I2CTWI_transmissionErrorHandler = transmissionErrorHandler;
+     c94:	90 93 69 00 	sts	0x0069, r25
+     c98:	80 93 68 00 	sts	0x0068, r24
+}
+     c9c:	08 95       	ret
+
+00000c9e <I2CTWI_delay>:
+/**
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+     c9e:	df 93       	push	r29
+     ca0:	cf 93       	push	r28
+     ca2:	0f 92       	push	r0
+     ca4:	cd b7       	in	r28, 0x3d	; 61
+     ca6:	de b7       	in	r29, 0x3e	; 62
+	volatile uint8_t dly = 150;
+     ca8:	86 e9       	ldi	r24, 0x96	; 150
+     caa:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+     cac:	89 81       	ldd	r24, Y+1	; 0x01
+     cae:	81 50       	subi	r24, 0x01	; 1
+     cb0:	89 83       	std	Y+1, r24	; 0x01
+     cb2:	8f 5f       	subi	r24, 0xFF	; 255
+     cb4:	d9 f7       	brne	.-10     	; 0xcac <I2CTWI_delay+0xe>
+}
+     cb6:	0f 90       	pop	r0
+     cb8:	cf 91       	pop	r28
+     cba:	df 91       	pop	r29
+     cbc:	08 95       	ret
+
+00000cbe <task_I2CTWI>:
+/**
+ * You have to call this functions frequently out of the
+ * main loop. It calls the event handlers above automatically if data has been received.
+ */
+void task_I2CTWI(void)
+{
+     cbe:	df 93       	push	r29
+     cc0:	cf 93       	push	r28
+     cc2:	0f 92       	push	r0
+     cc4:	cd b7       	in	r28, 0x3d	; 61
+     cc6:	de b7       	in	r29, 0x3e	; 62
+	if (!I2CTWI_isBusy()) {
+     cc8:	06 b6       	in	r0, 0x36	; 54
+     cca:	00 fc       	sbrc	r0, 0
+     ccc:	6e c0       	rjmp	.+220    	; 0xdaa <task_I2CTWI+0xec>
+		if (TWI_statusReg.lastTransOK) {
+     cce:	80 91 6c 00 	lds	r24, 0x006C
+     cd2:	80 ff       	sbrs	r24, 0
+     cd4:	4e c0       	rjmp	.+156    	; 0xd72 <task_I2CTWI+0xb4>
+			if(TWI_operation) {
+     cd6:	80 91 73 00 	lds	r24, 0x0073
+     cda:	88 23       	and	r24, r24
+     cdc:	09 f4       	brne	.+2      	; 0xce0 <task_I2CTWI+0x22>
+     cde:	65 c0       	rjmp	.+202    	; 0xdaa <task_I2CTWI+0xec>
+				if(TWI_operation == I2CTWI_SEND_REGISTER) {
+     ce0:	81 30       	cpi	r24, 0x01	; 1
+     ce2:	c9 f4       	brne	.+50     	; 0xd16 <task_I2CTWI+0x58>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+     ce4:	86 e9       	ldi	r24, 0x96	; 150
+     ce6:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+     ce8:	89 81       	ldd	r24, Y+1	; 0x01
+     cea:	81 50       	subi	r24, 0x01	; 1
+     cec:	89 83       	std	Y+1, r24	; 0x01
+     cee:	8f 5f       	subi	r24, 0xFF	; 255
+     cf0:	d9 f7       	brne	.-10     	; 0xce8 <task_I2CTWI+0x2a>
+	if (!I2CTWI_isBusy()) {
+		if (TWI_statusReg.lastTransOK) {
+			if(TWI_operation) {
+				if(TWI_operation == I2CTWI_SEND_REGISTER) {
+					I2CTWI_delay();
+					TWI_msgSize = 2;
+     cf2:	92 e0       	ldi	r25, 0x02	; 2
+     cf4:	90 93 b5 00 	sts	0x00B5, r25
+					I2CTWI_buf[0] = I2CTWI_request_adr;
+     cf8:	80 91 6e 00 	lds	r24, 0x006E
+     cfc:	80 93 75 00 	sts	0x0075, r24
+					I2CTWI_buf[1] = I2CTWI_request_reg;
+     d00:	80 91 6f 00 	lds	r24, 0x006F
+     d04:	80 93 76 00 	sts	0x0076, r24
+					TWI_statusReg.all = 0;
+     d08:	10 92 6c 00 	sts	0x006C, r1
+					TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+     d0c:	85 ea       	ldi	r24, 0xA5	; 165
+     d0e:	86 bf       	out	0x36, r24	; 54
+					TWI_operation = I2CTWI_REQUEST_BYTES;
+     d10:	90 93 73 00 	sts	0x0073, r25
+     d14:	4a c0       	rjmp	.+148    	; 0xdaa <task_I2CTWI+0xec>
+				}
+				else if (TWI_operation == I2CTWI_REQUEST_BYTES) {
+     d16:	82 30       	cpi	r24, 0x02	; 2
+     d18:	d9 f4       	brne	.+54     	; 0xd50 <task_I2CTWI+0x92>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+     d1a:	86 e9       	ldi	r24, 0x96	; 150
+     d1c:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+     d1e:	89 81       	ldd	r24, Y+1	; 0x01
+     d20:	81 50       	subi	r24, 0x01	; 1
+     d22:	89 83       	std	Y+1, r24	; 0x01
+     d24:	8f 5f       	subi	r24, 0xFF	; 255
+     d26:	d9 f7       	brne	.-10     	; 0xd1e <task_I2CTWI+0x60>
+					TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+					TWI_operation = I2CTWI_REQUEST_BYTES;
+				}
+				else if (TWI_operation == I2CTWI_REQUEST_BYTES) {
+					I2CTWI_delay();
+					TWI_msgSize = I2CTWI_request_size + 1;
+     d28:	80 91 70 00 	lds	r24, 0x0070
+     d2c:	8f 5f       	subi	r24, 0xFF	; 255
+     d2e:	80 93 b5 00 	sts	0x00B5, r24
+					I2CTWI_request_adr = I2CTWI_request_adr | TWI_READ;
+     d32:	80 91 6e 00 	lds	r24, 0x006E
+     d36:	81 60       	ori	r24, 0x01	; 1
+     d38:	80 93 6e 00 	sts	0x006E, r24
+					I2CTWI_buf[0]  = I2CTWI_request_adr | TWI_READ; 
+     d3c:	80 93 75 00 	sts	0x0075, r24
+					TWI_statusReg.all = 0;
+     d40:	10 92 6c 00 	sts	0x006C, r1
+					TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);	
+     d44:	85 ea       	ldi	r24, 0xA5	; 165
+     d46:	86 bf       	out	0x36, r24	; 54
+					TWI_operation = I2CTWI_READ_BYTES_FROM_BUFFER;
+     d48:	83 e0       	ldi	r24, 0x03	; 3
+     d4a:	80 93 73 00 	sts	0x0073, r24
+     d4e:	2d c0       	rjmp	.+90     	; 0xdaa <task_I2CTWI+0xec>
+				}
+				else if (TWI_operation == I2CTWI_READ_BYTES_FROM_BUFFER) { 
+     d50:	83 30       	cpi	r24, 0x03	; 3
+     d52:	59 f5       	brne	.+86     	; 0xdaa <task_I2CTWI+0xec>
+					TWI_operation = I2CTWI_NO_OPERATION;
+     d54:	10 92 73 00 	sts	0x0073, r1
+					if(I2CTWI_requestID!=-1)
+     d58:	80 91 71 00 	lds	r24, 0x0071
+     d5c:	90 91 72 00 	lds	r25, 0x0072
+     d60:	2f ef       	ldi	r18, 0xFF	; 255
+     d62:	8f 3f       	cpi	r24, 0xFF	; 255
+     d64:	92 07       	cpc	r25, r18
+     d66:	09 f1       	breq	.+66     	; 0xdaa <task_I2CTWI+0xec>
+						I2CTWI_requestedDataReadyHandler(I2CTWI_requestID);
+     d68:	e0 91 66 00 	lds	r30, 0x0066
+     d6c:	f0 91 67 00 	lds	r31, 0x0067
+     d70:	1b c0       	rjmp	.+54     	; 0xda8 <task_I2CTWI+0xea>
+ * This function returns the last TWI State / Error State. It waits until
+ * TWI Module has completed last operation! 
+ */
+uint8_t I2CTWI_getState(void)
+{
+	while(I2CTWI_isBusy()); // Wait until TWI has completed the transmission.
+     d72:	06 b6       	in	r0, 0x36	; 54
+     d74:	00 fc       	sbrc	r0, 0
+     d76:	fd cf       	rjmp	.-6      	; 0xd72 <task_I2CTWI+0xb4>
+	return (TWI_TWSR_state); // Return error state.
+     d78:	90 91 6d 00 	lds	r25, 0x006D
+				}
+			}
+		}
+		else {
+			uint8_t errState = I2CTWI_getState();
+			if(errState != 0) {
+     d7c:	99 23       	and	r25, r25
+     d7e:	a9 f0       	breq	.+42     	; 0xdaa <task_I2CTWI+0xec>
+				TWI_operation = I2CTWI_NO_OPERATION;
+     d80:	10 92 73 00 	sts	0x0073, r1
+				TWI_statusReg.lastTransOK = 1;
+     d84:	80 91 6c 00 	lds	r24, 0x006C
+     d88:	81 60       	ori	r24, 0x01	; 1
+     d8a:	80 93 6c 00 	sts	0x006C, r24
+				I2CTWI_request_adr = 0;
+     d8e:	10 92 6e 00 	sts	0x006E, r1
+				I2CTWI_requestID = 0;
+     d92:	10 92 72 00 	sts	0x0072, r1
+     d96:	10 92 71 00 	sts	0x0071, r1
+				I2CTWI_request_size = 0;
+     d9a:	10 92 70 00 	sts	0x0070, r1
+				I2CTWI_transmissionErrorHandler(errState);
+     d9e:	e0 91 68 00 	lds	r30, 0x0068
+     da2:	f0 91 69 00 	lds	r31, 0x0069
+     da6:	89 2f       	mov	r24, r25
+     da8:	09 95       	icall
+			}
+		}
+	}
+}
+     daa:	0f 90       	pop	r0
+     dac:	cf 91       	pop	r28
+     dae:	df 91       	pop	r29
+     db0:	08 95       	ret
+
+00000db2 <I2CTWI_requestDataFromDevice>:
+ * Requests a number of Bytes from the target device. You need to set a requestID 
+ * to be able to identify the request after the data has been received and the 
+ * "requestedDataReady" event handler is called.
+ */
+void I2CTWI_requestDataFromDevice(uint8_t targetAdr, uint8_t requestID, uint8_t numberOfBytes)
+{	
+     db2:	ff 92       	push	r15
+     db4:	0f 93       	push	r16
+     db6:	1f 93       	push	r17
+     db8:	18 2f       	mov	r17, r24
+     dba:	06 2f       	mov	r16, r22
+     dbc:	f4 2e       	mov	r15, r20
+     dbe:	02 c0       	rjmp	.+4      	; 0xdc4 <I2CTWI_requestDataFromDevice+0x12>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     dc0:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     dc4:	06 b6       	in	r0, 0x36	; 54
+     dc6:	00 fc       	sbrc	r0, 0
+     dc8:	fb cf       	rjmp	.-10     	; 0xdc0 <I2CTWI_requestDataFromDevice+0xe>
+     dca:	80 91 73 00 	lds	r24, 0x0073
+     dce:	88 23       	and	r24, r24
+     dd0:	b9 f7       	brne	.-18     	; 0xdc0 <I2CTWI_requestDataFromDevice+0xe>
+	TWI_operation = I2CTWI_REQUEST_BYTES;
+     dd2:	82 e0       	ldi	r24, 0x02	; 2
+     dd4:	80 93 73 00 	sts	0x0073, r24
+	I2CTWI_request_adr = targetAdr;
+     dd8:	10 93 6e 00 	sts	0x006E, r17
+	I2CTWI_requestID = (int16_t)requestID;
+     ddc:	00 93 71 00 	sts	0x0071, r16
+     de0:	10 92 72 00 	sts	0x0072, r1
+	I2CTWI_request_size = numberOfBytes;
+     de4:	f0 92 70 00 	sts	0x0070, r15
+}
+     de8:	1f 91       	pop	r17
+     dea:	0f 91       	pop	r16
+     dec:	ff 90       	pop	r15
+     dee:	08 95       	ret
+
+00000df0 <I2CTWI_requestRegisterFromDevice>:
+ * that has to be read and transmits the register number before! 
+ * This is neccessary for the reaction on interrupt requests of slave devices as this
+ * function is non-blocking and thus very well suited for calls directly from ISRs. 
+ */
+void I2CTWI_requestRegisterFromDevice(uint8_t targetAdr, uint8_t requestID, uint8_t reg, uint8_t numberOfBytes)
+{	
+     df0:	ef 92       	push	r14
+     df2:	ff 92       	push	r15
+     df4:	0f 93       	push	r16
+     df6:	1f 93       	push	r17
+     df8:	e8 2e       	mov	r14, r24
+     dfa:	16 2f       	mov	r17, r22
+     dfc:	04 2f       	mov	r16, r20
+     dfe:	f2 2e       	mov	r15, r18
+     e00:	02 c0       	rjmp	.+4      	; 0xe06 <I2CTWI_requestRegisterFromDevice+0x16>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     e02:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     e06:	06 b6       	in	r0, 0x36	; 54
+     e08:	00 fc       	sbrc	r0, 0
+     e0a:	fb cf       	rjmp	.-10     	; 0xe02 <I2CTWI_requestRegisterFromDevice+0x12>
+     e0c:	80 91 73 00 	lds	r24, 0x0073
+     e10:	88 23       	and	r24, r24
+     e12:	b9 f7       	brne	.-18     	; 0xe02 <I2CTWI_requestRegisterFromDevice+0x12>
+	TWI_operation = I2CTWI_SEND_REGISTER;
+     e14:	81 e0       	ldi	r24, 0x01	; 1
+     e16:	80 93 73 00 	sts	0x0073, r24
+	I2CTWI_requestID = (int16_t)requestID;
+     e1a:	10 93 71 00 	sts	0x0071, r17
+     e1e:	10 92 72 00 	sts	0x0072, r1
+	I2CTWI_request_adr = targetAdr;
+     e22:	e0 92 6e 00 	sts	0x006E, r14
+	I2CTWI_request_reg = reg;
+     e26:	00 93 6f 00 	sts	0x006F, r16
+	I2CTWI_request_size = numberOfBytes;
+     e2a:	f0 92 70 00 	sts	0x0070, r15
+}
+     e2e:	1f 91       	pop	r17
+     e30:	0f 91       	pop	r16
+     e32:	ff 90       	pop	r15
+     e34:	ef 90       	pop	r14
+     e36:	08 95       	ret
+
+00000e38 <I2CTWI_getReceivedData>:
+ * with the msgSize parameter.
+ * It does not make sense to use this function anywhere else as you 
+ * can not guarantee what is in the reception buffer...
+ */
+void I2CTWI_getReceivedData(uint8_t *msg, uint8_t msgSize)
+{
+     e38:	9c 01       	movw	r18, r24
+	while(I2CTWI_isBusy());
+     e3a:	06 b6       	in	r0, 0x36	; 54
+     e3c:	00 fc       	sbrc	r0, 0
+     e3e:	fd cf       	rjmp	.-6      	; 0xe3a <I2CTWI_getReceivedData+0x2>
+	uint8_t i = 0;
+	if(TWI_statusReg.lastTransOK)
+     e40:	80 91 6c 00 	lds	r24, 0x006C
+     e44:	80 ff       	sbrs	r24, 0
+     e46:	0c c0       	rjmp	.+24     	; 0xe60 <I2CTWI_getReceivedData+0x28>
+     e48:	e6 e8       	ldi	r30, 0x86	; 134
+     e4a:	f0 e0       	ldi	r31, 0x00	; 0
+     e4c:	d9 01       	movw	r26, r18
+		for(; i < msgSize; i++)
+     e4e:	70 e0       	ldi	r23, 0x00	; 0
+     e50:	6e 0f       	add	r22, r30
+     e52:	7f 1f       	adc	r23, r31
+     e54:	02 c0       	rjmp	.+4      	; 0xe5a <I2CTWI_getReceivedData+0x22>
+			msg[i] = I2CTWI_recbuf[i+1];
+     e56:	81 91       	ld	r24, Z+
+     e58:	8d 93       	st	X+, r24
+void I2CTWI_getReceivedData(uint8_t *msg, uint8_t msgSize)
+{
+	while(I2CTWI_isBusy());
+	uint8_t i = 0;
+	if(TWI_statusReg.lastTransOK)
+		for(; i < msgSize; i++)
+     e5a:	e6 17       	cp	r30, r22
+     e5c:	f7 07       	cpc	r31, r23
+     e5e:	d9 f7       	brne	.-10     	; 0xe56 <I2CTWI_getReceivedData+0x1e>
+     e60:	08 95       	ret
+
+00000e62 <I2CTWI_getState>:
+ * This function returns the last TWI State / Error State. It waits until
+ * TWI Module has completed last operation! 
+ */
+uint8_t I2CTWI_getState(void)
+{
+	while(I2CTWI_isBusy()); // Wait until TWI has completed the transmission.
+     e62:	06 b6       	in	r0, 0x36	; 54
+     e64:	00 fc       	sbrc	r0, 0
+     e66:	fd cf       	rjmp	.-6      	; 0xe62 <I2CTWI_getState>
+	return (TWI_TWSR_state); // Return error state.
+}
+     e68:	80 91 6d 00 	lds	r24, 0x006D
+     e6c:	08 95       	ret
+
+00000e6e <I2CTWI_readRegisters>:
+/**
+ * Reads "numberOfBytes" from "targetAdr" Register "reg" into "messageBuffer". 
+ * If the slave device supports auto increment, then it reads all subsequent registers of course! 
+ */
+void I2CTWI_readRegisters(uint8_t targetAdr, uint8_t reg, uint8_t * messageBuffer, uint8_t numberOfBytes)
+{
+     e6e:	ff 92       	push	r15
+     e70:	0f 93       	push	r16
+     e72:	1f 93       	push	r17
+     e74:	cf 93       	push	r28
+     e76:	df 93       	push	r29
+     e78:	08 2f       	mov	r16, r24
+     e7a:	f6 2e       	mov	r15, r22
+     e7c:	ea 01       	movw	r28, r20
+     e7e:	12 2f       	mov	r17, r18
+     e80:	02 c0       	rjmp	.+4      	; 0xe86 <I2CTWI_readRegisters+0x18>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     e82:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     e86:	06 b6       	in	r0, 0x36	; 54
+     e88:	00 fc       	sbrc	r0, 0
+     e8a:	fb cf       	rjmp	.-10     	; 0xe82 <I2CTWI_readRegisters+0x14>
+     e8c:	80 91 73 00 	lds	r24, 0x0073
+     e90:	88 23       	and	r24, r24
+     e92:	b9 f7       	brne	.-18     	; 0xe82 <I2CTWI_readRegisters+0x14>
+	TWI_operation = I2CTWI_SEND_REGISTER;
+     e94:	81 e0       	ldi	r24, 0x01	; 1
+     e96:	80 93 73 00 	sts	0x0073, r24
+	I2CTWI_request_adr = targetAdr;
+     e9a:	00 93 6e 00 	sts	0x006E, r16
+	I2CTWI_requestID = -1;
+     e9e:	8f ef       	ldi	r24, 0xFF	; 255
+     ea0:	9f ef       	ldi	r25, 0xFF	; 255
+     ea2:	90 93 72 00 	sts	0x0072, r25
+     ea6:	80 93 71 00 	sts	0x0071, r24
+	I2CTWI_request_reg = reg;
+     eaa:	f0 92 6f 00 	sts	0x006F, r15
+	I2CTWI_request_size = numberOfBytes;
+     eae:	10 93 70 00 	sts	0x0070, r17
+     eb2:	02 c0       	rjmp	.+4      	; 0xeb8 <I2CTWI_readRegisters+0x4a>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     eb4:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     eb8:	06 b6       	in	r0, 0x36	; 54
+     eba:	00 fc       	sbrc	r0, 0
+     ebc:	fb cf       	rjmp	.-10     	; 0xeb4 <I2CTWI_readRegisters+0x46>
+     ebe:	80 91 73 00 	lds	r24, 0x0073
+     ec2:	88 23       	and	r24, r24
+     ec4:	b9 f7       	brne	.-18     	; 0xeb4 <I2CTWI_readRegisters+0x46>
+	if (TWI_statusReg.lastTransOK) 
+     ec6:	80 91 6c 00 	lds	r24, 0x006C
+     eca:	80 ff       	sbrs	r24, 0
+     ecc:	05 c0       	rjmp	.+10     	; 0xed8 <I2CTWI_readRegisters+0x6a>
+		I2CTWI_getReceivedData(&messageBuffer[0], numberOfBytes+1);
+     ece:	1f 5f       	subi	r17, 0xFF	; 255
+     ed0:	ce 01       	movw	r24, r28
+     ed2:	61 2f       	mov	r22, r17
+     ed4:	0e 94 1c 07 	call	0xe38	; 0xe38 <I2CTWI_getReceivedData>
+}
+     ed8:	df 91       	pop	r29
+     eda:	cf 91       	pop	r28
+     edc:	1f 91       	pop	r17
+     ede:	0f 91       	pop	r16
+     ee0:	ff 90       	pop	r15
+     ee2:	08 95       	ret
+
+00000ee4 <I2CTWI_readBytes>:
+ * Same as readRegisters, but you need to make sure which register to read yourself - if there
+ * are any registers at all in your slave device.  
+ * 
+ */
+void I2CTWI_readBytes(uint8_t targetAdr, uint8_t * messageBuffer, uint8_t numberOfBytes)
+{
+     ee4:	ef 92       	push	r14
+     ee6:	ff 92       	push	r15
+     ee8:	0f 93       	push	r16
+     eea:	1f 93       	push	r17
+     eec:	df 93       	push	r29
+     eee:	cf 93       	push	r28
+     ef0:	0f 92       	push	r0
+     ef2:	cd b7       	in	r28, 0x3d	; 61
+     ef4:	de b7       	in	r29, 0x3e	; 62
+     ef6:	08 2f       	mov	r16, r24
+     ef8:	7b 01       	movw	r14, r22
+     efa:	14 2f       	mov	r17, r20
+     efc:	02 c0       	rjmp	.+4      	; 0xf02 <I2CTWI_readBytes+0x1e>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     efe:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     f02:	06 b6       	in	r0, 0x36	; 54
+     f04:	00 fc       	sbrc	r0, 0
+     f06:	fb cf       	rjmp	.-10     	; 0xefe <I2CTWI_readBytes+0x1a>
+     f08:	80 91 73 00 	lds	r24, 0x0073
+     f0c:	88 23       	and	r24, r24
+     f0e:	b9 f7       	brne	.-18     	; 0xefe <I2CTWI_readBytes+0x1a>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+     f10:	86 e9       	ldi	r24, 0x96	; 150
+     f12:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+     f14:	89 81       	ldd	r24, Y+1	; 0x01
+     f16:	81 50       	subi	r24, 0x01	; 1
+     f18:	89 83       	std	Y+1, r24	; 0x01
+     f1a:	8f 5f       	subi	r24, 0xFF	; 255
+     f1c:	d9 f7       	brne	.-10     	; 0xf14 <I2CTWI_readBytes+0x30>
+ */
+void I2CTWI_readBytes(uint8_t targetAdr, uint8_t * messageBuffer, uint8_t numberOfBytes)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_operation = I2CTWI_REQUEST_BYTES;
+     f1e:	82 e0       	ldi	r24, 0x02	; 2
+     f20:	80 93 73 00 	sts	0x0073, r24
+	I2CTWI_request_adr = targetAdr;
+     f24:	00 93 6e 00 	sts	0x006E, r16
+	I2CTWI_requestID = -1;
+     f28:	8f ef       	ldi	r24, 0xFF	; 255
+     f2a:	9f ef       	ldi	r25, 0xFF	; 255
+     f2c:	90 93 72 00 	sts	0x0072, r25
+     f30:	80 93 71 00 	sts	0x0071, r24
+	I2CTWI_request_size = numberOfBytes;
+     f34:	10 93 70 00 	sts	0x0070, r17
+     f38:	02 c0       	rjmp	.+4      	; 0xf3e <I2CTWI_readBytes+0x5a>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     f3a:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     f3e:	06 b6       	in	r0, 0x36	; 54
+     f40:	00 fc       	sbrc	r0, 0
+     f42:	fb cf       	rjmp	.-10     	; 0xf3a <I2CTWI_readBytes+0x56>
+     f44:	80 91 73 00 	lds	r24, 0x0073
+     f48:	88 23       	and	r24, r24
+     f4a:	b9 f7       	brne	.-18     	; 0xf3a <I2CTWI_readBytes+0x56>
+	if (TWI_statusReg.lastTransOK) 
+     f4c:	80 91 6c 00 	lds	r24, 0x006C
+     f50:	80 ff       	sbrs	r24, 0
+     f52:	05 c0       	rjmp	.+10     	; 0xf5e <I2CTWI_readBytes+0x7a>
+		I2CTWI_getReceivedData(&messageBuffer[0], numberOfBytes+1);
+     f54:	1f 5f       	subi	r17, 0xFF	; 255
+     f56:	c7 01       	movw	r24, r14
+     f58:	61 2f       	mov	r22, r17
+     f5a:	0e 94 1c 07 	call	0xe38	; 0xe38 <I2CTWI_getReceivedData>
+}
+     f5e:	0f 90       	pop	r0
+     f60:	cf 91       	pop	r28
+     f62:	df 91       	pop	r29
+     f64:	1f 91       	pop	r17
+     f66:	0f 91       	pop	r16
+     f68:	ff 90       	pop	r15
+     f6a:	ef 90       	pop	r14
+     f6c:	08 95       	ret
+
+00000f6e <I2CTWI_readByte>:
+
+/**
+ * Reads a single byte from the slave device. 
+ */
+uint8_t I2CTWI_readByte(uint8_t targetAdr)
+{
+     f6e:	1f 93       	push	r17
+     f70:	df 93       	push	r29
+     f72:	cf 93       	push	r28
+     f74:	0f 92       	push	r0
+     f76:	cd b7       	in	r28, 0x3d	; 61
+     f78:	de b7       	in	r29, 0x3e	; 62
+     f7a:	18 2f       	mov	r17, r24
+     f7c:	02 c0       	rjmp	.+4      	; 0xf82 <I2CTWI_readByte+0x14>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     f7e:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     f82:	06 b6       	in	r0, 0x36	; 54
+     f84:	00 fc       	sbrc	r0, 0
+     f86:	fb cf       	rjmp	.-10     	; 0xf7e <I2CTWI_readByte+0x10>
+     f88:	80 91 73 00 	lds	r24, 0x0073
+     f8c:	88 23       	and	r24, r24
+     f8e:	b9 f7       	brne	.-18     	; 0xf7e <I2CTWI_readByte+0x10>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+     f90:	86 e9       	ldi	r24, 0x96	; 150
+     f92:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+     f94:	89 81       	ldd	r24, Y+1	; 0x01
+     f96:	81 50       	subi	r24, 0x01	; 1
+     f98:	89 83       	std	Y+1, r24	; 0x01
+     f9a:	8f 5f       	subi	r24, 0xFF	; 255
+     f9c:	d9 f7       	brne	.-10     	; 0xf94 <I2CTWI_readByte+0x26>
+ */
+uint8_t I2CTWI_readByte(uint8_t targetAdr)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_operation = I2CTWI_REQUEST_BYTES;
+     f9e:	82 e0       	ldi	r24, 0x02	; 2
+     fa0:	80 93 73 00 	sts	0x0073, r24
+	I2CTWI_request_adr = targetAdr;
+     fa4:	10 93 6e 00 	sts	0x006E, r17
+	I2CTWI_requestID = -1;
+     fa8:	8f ef       	ldi	r24, 0xFF	; 255
+     faa:	9f ef       	ldi	r25, 0xFF	; 255
+     fac:	90 93 72 00 	sts	0x0072, r25
+     fb0:	80 93 71 00 	sts	0x0071, r24
+	I2CTWI_request_size = 1;
+     fb4:	81 e0       	ldi	r24, 0x01	; 1
+     fb6:	80 93 70 00 	sts	0x0070, r24
+     fba:	02 c0       	rjmp	.+4      	; 0xfc0 <I2CTWI_readByte+0x52>
+	while(TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     fbc:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     fc0:	80 91 73 00 	lds	r24, 0x0073
+     fc4:	88 23       	and	r24, r24
+     fc6:	d1 f7       	brne	.-12     	; 0xfbc <I2CTWI_readByte+0x4e>
+	if (TWI_statusReg.lastTransOK)
+     fc8:	80 91 6c 00 	lds	r24, 0x006C
+     fcc:	80 fd       	sbrc	r24, 0
+     fce:	02 c0       	rjmp	.+4      	; 0xfd4 <I2CTWI_readByte+0x66>
+     fd0:	80 e0       	ldi	r24, 0x00	; 0
+     fd2:	02 c0       	rjmp	.+4      	; 0xfd8 <I2CTWI_readByte+0x6a>
+		return I2CTWI_recbuf[1];
+     fd4:	80 91 86 00 	lds	r24, 0x0086
+	else
+		return 0;
+}
+     fd8:	0f 90       	pop	r0
+     fda:	cf 91       	pop	r28
+     fdc:	df 91       	pop	r29
+     fde:	1f 91       	pop	r17
+     fe0:	08 95       	ret
+
+00000fe2 <I2CTWI_transmitByte>:
+ * it does NOT wait until this transmission is finished! 
+ * This allows you to perform other things while the transmission is 
+ * in progress! 
+ */
+void I2CTWI_transmitByte(uint8_t targetAdr, uint8_t data)
+{
+     fe2:	0f 93       	push	r16
+     fe4:	1f 93       	push	r17
+     fe6:	df 93       	push	r29
+     fe8:	cf 93       	push	r28
+     fea:	0f 92       	push	r0
+     fec:	cd b7       	in	r28, 0x3d	; 61
+     fee:	de b7       	in	r29, 0x3e	; 62
+     ff0:	18 2f       	mov	r17, r24
+     ff2:	06 2f       	mov	r16, r22
+     ff4:	02 c0       	rjmp	.+4      	; 0xffa <I2CTWI_transmitByte+0x18>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+     ff6:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+     ffa:	06 b6       	in	r0, 0x36	; 54
+     ffc:	00 fc       	sbrc	r0, 0
+     ffe:	fb cf       	rjmp	.-10     	; 0xff6 <I2CTWI_transmitByte+0x14>
+    1000:	80 91 73 00 	lds	r24, 0x0073
+    1004:	88 23       	and	r24, r24
+    1006:	b9 f7       	brne	.-18     	; 0xff6 <I2CTWI_transmitByte+0x14>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+    1008:	86 e9       	ldi	r24, 0x96	; 150
+    100a:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+    100c:	89 81       	ldd	r24, Y+1	; 0x01
+    100e:	81 50       	subi	r24, 0x01	; 1
+    1010:	89 83       	std	Y+1, r24	; 0x01
+    1012:	8f 5f       	subi	r24, 0xFF	; 255
+    1014:	d9 f7       	brne	.-10     	; 0x100c <I2CTWI_transmitByte+0x2a>
+ */
+void I2CTWI_transmitByte(uint8_t targetAdr, uint8_t data)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_msgSize = 2;
+    1016:	82 e0       	ldi	r24, 0x02	; 2
+    1018:	80 93 b5 00 	sts	0x00B5, r24
+	I2CTWI_buf[0] = targetAdr;
+    101c:	10 93 75 00 	sts	0x0075, r17
+	I2CTWI_buf[1] = data;
+    1020:	00 93 76 00 	sts	0x0076, r16
+	TWI_statusReg.all = 0;
+    1024:	10 92 6c 00 	sts	0x006C, r1
+	TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+    1028:	85 ea       	ldi	r24, 0xA5	; 165
+    102a:	86 bf       	out	0x36, r24	; 54
+}
+    102c:	0f 90       	pop	r0
+    102e:	cf 91       	pop	r28
+    1030:	df 91       	pop	r29
+    1032:	1f 91       	pop	r17
+    1034:	0f 91       	pop	r16
+    1036:	08 95       	ret
+
+00001038 <I2CTWI_transmit2Bytes>:
+/**
+ * This is just the same as transmitByte, but you can pass 2 Bytes to
+ * this function which are then transferred. 
+ */
+void I2CTWI_transmit2Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2)
+{
+    1038:	ff 92       	push	r15
+    103a:	0f 93       	push	r16
+    103c:	1f 93       	push	r17
+    103e:	df 93       	push	r29
+    1040:	cf 93       	push	r28
+    1042:	0f 92       	push	r0
+    1044:	cd b7       	in	r28, 0x3d	; 61
+    1046:	de b7       	in	r29, 0x3e	; 62
+    1048:	18 2f       	mov	r17, r24
+    104a:	06 2f       	mov	r16, r22
+    104c:	f4 2e       	mov	r15, r20
+    104e:	02 c0       	rjmp	.+4      	; 0x1054 <I2CTWI_transmit2Bytes+0x1c>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+    1050:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+    1054:	06 b6       	in	r0, 0x36	; 54
+    1056:	00 fc       	sbrc	r0, 0
+    1058:	fb cf       	rjmp	.-10     	; 0x1050 <I2CTWI_transmit2Bytes+0x18>
+    105a:	80 91 73 00 	lds	r24, 0x0073
+    105e:	88 23       	and	r24, r24
+    1060:	b9 f7       	brne	.-18     	; 0x1050 <I2CTWI_transmit2Bytes+0x18>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+    1062:	86 e9       	ldi	r24, 0x96	; 150
+    1064:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+    1066:	89 81       	ldd	r24, Y+1	; 0x01
+    1068:	81 50       	subi	r24, 0x01	; 1
+    106a:	89 83       	std	Y+1, r24	; 0x01
+    106c:	8f 5f       	subi	r24, 0xFF	; 255
+    106e:	d9 f7       	brne	.-10     	; 0x1066 <I2CTWI_transmit2Bytes+0x2e>
+ */
+void I2CTWI_transmit2Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_msgSize = 3;
+    1070:	83 e0       	ldi	r24, 0x03	; 3
+    1072:	80 93 b5 00 	sts	0x00B5, r24
+	I2CTWI_buf[0] = targetAdr;
+    1076:	10 93 75 00 	sts	0x0075, r17
+	I2CTWI_buf[1] = data1;
+    107a:	00 93 76 00 	sts	0x0076, r16
+	I2CTWI_buf[2] = data2;
+    107e:	f0 92 77 00 	sts	0x0077, r15
+	TWI_statusReg.all = 0;
+    1082:	10 92 6c 00 	sts	0x006C, r1
+	TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+    1086:	85 ea       	ldi	r24, 0xA5	; 165
+    1088:	86 bf       	out	0x36, r24	; 54
+}
+    108a:	0f 90       	pop	r0
+    108c:	cf 91       	pop	r28
+    108e:	df 91       	pop	r29
+    1090:	1f 91       	pop	r17
+    1092:	0f 91       	pop	r16
+    1094:	ff 90       	pop	r15
+    1096:	08 95       	ret
+
+00001098 <I2CTWI_transmit3Bytes>:
+
+/**
+ * Transmits 3 Bytes to the slave.
+ */
+void I2CTWI_transmit3Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2, uint8_t data3)
+{
+    1098:	ef 92       	push	r14
+    109a:	ff 92       	push	r15
+    109c:	0f 93       	push	r16
+    109e:	1f 93       	push	r17
+    10a0:	df 93       	push	r29
+    10a2:	cf 93       	push	r28
+    10a4:	0f 92       	push	r0
+    10a6:	cd b7       	in	r28, 0x3d	; 61
+    10a8:	de b7       	in	r29, 0x3e	; 62
+    10aa:	18 2f       	mov	r17, r24
+    10ac:	06 2f       	mov	r16, r22
+    10ae:	f4 2e       	mov	r15, r20
+    10b0:	e2 2e       	mov	r14, r18
+    10b2:	02 c0       	rjmp	.+4      	; 0x10b8 <I2CTWI_transmit3Bytes+0x20>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+    10b4:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+    10b8:	06 b6       	in	r0, 0x36	; 54
+    10ba:	00 fc       	sbrc	r0, 0
+    10bc:	fb cf       	rjmp	.-10     	; 0x10b4 <I2CTWI_transmit3Bytes+0x1c>
+    10be:	80 91 73 00 	lds	r24, 0x0073
+    10c2:	88 23       	and	r24, r24
+    10c4:	b9 f7       	brne	.-18     	; 0x10b4 <I2CTWI_transmit3Bytes+0x1c>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+    10c6:	86 e9       	ldi	r24, 0x96	; 150
+    10c8:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+    10ca:	89 81       	ldd	r24, Y+1	; 0x01
+    10cc:	81 50       	subi	r24, 0x01	; 1
+    10ce:	89 83       	std	Y+1, r24	; 0x01
+    10d0:	8f 5f       	subi	r24, 0xFF	; 255
+    10d2:	d9 f7       	brne	.-10     	; 0x10ca <I2CTWI_transmit3Bytes+0x32>
+ */
+void I2CTWI_transmit3Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2, uint8_t data3)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_msgSize = 4;
+    10d4:	84 e0       	ldi	r24, 0x04	; 4
+    10d6:	80 93 b5 00 	sts	0x00B5, r24
+	I2CTWI_buf[0] = targetAdr;
+    10da:	10 93 75 00 	sts	0x0075, r17
+	I2CTWI_buf[1] = data1;
+    10de:	00 93 76 00 	sts	0x0076, r16
+	I2CTWI_buf[2] = data2;
+    10e2:	f0 92 77 00 	sts	0x0077, r15
+	I2CTWI_buf[3] = data3;
+    10e6:	e0 92 78 00 	sts	0x0078, r14
+	TWI_statusReg.all = 0;
+    10ea:	10 92 6c 00 	sts	0x006C, r1
+	TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+    10ee:	85 ea       	ldi	r24, 0xA5	; 165
+    10f0:	86 bf       	out	0x36, r24	; 54
+}
+    10f2:	0f 90       	pop	r0
+    10f4:	cf 91       	pop	r28
+    10f6:	df 91       	pop	r29
+    10f8:	1f 91       	pop	r17
+    10fa:	0f 91       	pop	r16
+    10fc:	ff 90       	pop	r15
+    10fe:	ef 90       	pop	r14
+    1100:	08 95       	ret
+
+00001102 <I2CTWI_transmit4Bytes>:
+
+/**
+ * Transmits 4 Bytes to the slave.
+ */
+void I2CTWI_transmit4Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2, uint8_t data3, uint8_t data4)
+{
+    1102:	df 92       	push	r13
+    1104:	ef 92       	push	r14
+    1106:	ff 92       	push	r15
+    1108:	0f 93       	push	r16
+    110a:	1f 93       	push	r17
+    110c:	df 93       	push	r29
+    110e:	cf 93       	push	r28
+    1110:	0f 92       	push	r0
+    1112:	cd b7       	in	r28, 0x3d	; 61
+    1114:	de b7       	in	r29, 0x3e	; 62
+    1116:	18 2f       	mov	r17, r24
+    1118:	f6 2e       	mov	r15, r22
+    111a:	e4 2e       	mov	r14, r20
+    111c:	d2 2e       	mov	r13, r18
+    111e:	02 c0       	rjmp	.+4      	; 0x1124 <I2CTWI_transmit4Bytes+0x22>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+    1120:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+    1124:	06 b6       	in	r0, 0x36	; 54
+    1126:	00 fc       	sbrc	r0, 0
+    1128:	fb cf       	rjmp	.-10     	; 0x1120 <I2CTWI_transmit4Bytes+0x1e>
+    112a:	80 91 73 00 	lds	r24, 0x0073
+    112e:	88 23       	and	r24, r24
+    1130:	b9 f7       	brne	.-18     	; 0x1120 <I2CTWI_transmit4Bytes+0x1e>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+    1132:	86 e9       	ldi	r24, 0x96	; 150
+    1134:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+    1136:	89 81       	ldd	r24, Y+1	; 0x01
+    1138:	81 50       	subi	r24, 0x01	; 1
+    113a:	89 83       	std	Y+1, r24	; 0x01
+    113c:	8f 5f       	subi	r24, 0xFF	; 255
+    113e:	d9 f7       	brne	.-10     	; 0x1136 <I2CTWI_transmit4Bytes+0x34>
+ */
+void I2CTWI_transmit4Bytes(uint8_t targetAdr, uint8_t data1, uint8_t data2, uint8_t data3, uint8_t data4)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	TWI_msgSize = 5;
+    1140:	85 e0       	ldi	r24, 0x05	; 5
+    1142:	80 93 b5 00 	sts	0x00B5, r24
+	I2CTWI_buf[0] = targetAdr;
+    1146:	10 93 75 00 	sts	0x0075, r17
+	I2CTWI_buf[1] = data1;
+    114a:	f0 92 76 00 	sts	0x0076, r15
+	I2CTWI_buf[2] = data2;
+    114e:	e0 92 77 00 	sts	0x0077, r14
+	I2CTWI_buf[3] = data3;
+    1152:	d0 92 78 00 	sts	0x0078, r13
+	I2CTWI_buf[4] = data4;
+    1156:	00 93 79 00 	sts	0x0079, r16
+	TWI_statusReg.all = 0;
+    115a:	10 92 6c 00 	sts	0x006C, r1
+	TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+    115e:	85 ea       	ldi	r24, 0xA5	; 165
+    1160:	86 bf       	out	0x36, r24	; 54
+}
+    1162:	0f 90       	pop	r0
+    1164:	cf 91       	pop	r28
+    1166:	df 91       	pop	r29
+    1168:	1f 91       	pop	r17
+    116a:	0f 91       	pop	r16
+    116c:	ff 90       	pop	r15
+    116e:	ef 90       	pop	r14
+    1170:	df 90       	pop	r13
+    1172:	08 95       	ret
+
+00001174 <I2CTWI_transmitBytes>:
+/**
+ * Transmits "numberOfBytes" Bytes to the Slave device. The Bytes need to be
+ * in the Buffer "msg". Otherwise it is just the same as the other transmit functions.
+ */
+void I2CTWI_transmitBytes(uint8_t targetAdr, uint8_t *msg, uint8_t numberOfBytes)
+{
+    1174:	ef 92       	push	r14
+    1176:	ff 92       	push	r15
+    1178:	0f 93       	push	r16
+    117a:	1f 93       	push	r17
+    117c:	df 93       	push	r29
+    117e:	cf 93       	push	r28
+    1180:	0f 92       	push	r0
+    1182:	cd b7       	in	r28, 0x3d	; 61
+    1184:	de b7       	in	r29, 0x3e	; 62
+    1186:	08 2f       	mov	r16, r24
+    1188:	f6 2e       	mov	r15, r22
+    118a:	e7 2e       	mov	r14, r23
+    118c:	14 2f       	mov	r17, r20
+    118e:	02 c0       	rjmp	.+4      	; 0x1194 <I2CTWI_transmitBytes+0x20>
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+    1190:	0e 94 5f 06 	call	0xcbe	; 0xcbe <task_I2CTWI>
+    1194:	06 b6       	in	r0, 0x36	; 54
+    1196:	00 fc       	sbrc	r0, 0
+    1198:	fb cf       	rjmp	.-10     	; 0x1190 <I2CTWI_transmitBytes+0x1c>
+    119a:	80 91 73 00 	lds	r24, 0x0073
+    119e:	88 23       	and	r24, r24
+    11a0:	b9 f7       	brne	.-18     	; 0x1190 <I2CTWI_transmitBytes+0x1c>
+ * A small delay that is required between some transfers. Without this delay
+ * the transmission may fail.
+ */
+void I2CTWI_delay(void)
+{
+	volatile uint8_t dly = 150;
+    11a2:	86 e9       	ldi	r24, 0x96	; 150
+    11a4:	89 83       	std	Y+1, r24	; 0x01
+	while(dly--);
+    11a6:	89 81       	ldd	r24, Y+1	; 0x01
+    11a8:	81 50       	subi	r24, 0x01	; 1
+    11aa:	89 83       	std	Y+1, r24	; 0x01
+    11ac:	8f 5f       	subi	r24, 0xFF	; 255
+    11ae:	d9 f7       	brne	.-10     	; 0x11a6 <I2CTWI_transmitBytes+0x32>
+ */
+void I2CTWI_transmitBytes(uint8_t targetAdr, uint8_t *msg, uint8_t numberOfBytes)
+{
+	while(I2CTWI_isBusy() || TWI_operation != I2CTWI_NO_OPERATION) task_I2CTWI();
+	I2CTWI_delay();
+	numberOfBytes++; 
+    11b0:	41 2f       	mov	r20, r17
+    11b2:	4f 5f       	subi	r20, 0xFF	; 255
+	TWI_msgSize = numberOfBytes;
+    11b4:	40 93 b5 00 	sts	0x00B5, r20
+	I2CTWI_buf[0]  = targetAdr;
+    11b8:	00 93 75 00 	sts	0x0075, r16
+    11bc:	a6 e7       	ldi	r26, 0x76	; 118
+    11be:	b0 e0       	ldi	r27, 0x00	; 0
+    11c0:	8f 2d       	mov	r24, r15
+    11c2:	9e 2d       	mov	r25, r14
+    11c4:	9c 01       	movw	r18, r24
+    11c6:	f9 01       	movw	r30, r18
+    11c8:	02 c0       	rjmp	.+4      	; 0x11ce <I2CTWI_transmitBytes+0x5a>
+	uint8_t i = 0;
+	for(; i < numberOfBytes; i++)
+		I2CTWI_buf[i+1] = msg[i];
+    11ca:	81 91       	ld	r24, Z+
+    11cc:	8d 93       	st	X+, r24
+	I2CTWI_delay();
+	numberOfBytes++; 
+	TWI_msgSize = numberOfBytes;
+	I2CTWI_buf[0]  = targetAdr;
+	uint8_t i = 0;
+	for(; i < numberOfBytes; i++)
+    11ce:	8e 2f       	mov	r24, r30
+    11d0:	8f 19       	sub	r24, r15
+    11d2:	84 17       	cp	r24, r20
+    11d4:	d0 f3       	brcs	.-12     	; 0x11ca <I2CTWI_transmitBytes+0x56>
+		I2CTWI_buf[i+1] = msg[i];
+	TWI_statusReg.all = 0;
+    11d6:	10 92 6c 00 	sts	0x006C, r1
+	TWCR = (1<<TWEN)|(1<<TWIE)|(1<<TWINT)|(0<<TWEA)|(1<<TWSTA)|(0<<TWSTO);
+    11da:	85 ea       	ldi	r24, 0xA5	; 165
+    11dc:	86 bf       	out	0x36, r24	; 54
+}
+    11de:	0f 90       	pop	r0
+    11e0:	cf 91       	pop	r28
+    11e2:	df 91       	pop	r29
+    11e4:	1f 91       	pop	r17
+    11e6:	0f 91       	pop	r16
+    11e8:	ff 90       	pop	r15
+    11ea:	ef 90       	pop	r14
+    11ec:	08 95       	ret
+
+000011ee <__vector_19>:
+
+/*
+ * TWI ISR
+ */
+ISR (TWI_vect)
+{
+    11ee:	1f 92       	push	r1
+    11f0:	0f 92       	push	r0
+    11f2:	0f b6       	in	r0, 0x3f	; 63
+    11f4:	0f 92       	push	r0
+    11f6:	11 24       	eor	r1, r1
+    11f8:	2f 93       	push	r18
+    11fa:	3f 93       	push	r19
+    11fc:	8f 93       	push	r24
+    11fe:	9f 93       	push	r25
+    1200:	ef 93       	push	r30
+    1202:	ff 93       	push	r31
+	static uint8_t TWI_bufPos = 0;
+	switch (TWSR)
+    1204:	81 b1       	in	r24, 0x01	; 1
+    1206:	88 32       	cpi	r24, 0x28	; 40
+    1208:	c9 f0       	breq	.+50     	; 0x123c <__vector_19+0x4e>
+    120a:	89 32       	cpi	r24, 0x29	; 41
+    120c:	40 f4       	brcc	.+16     	; 0x121e <__vector_19+0x30>
+    120e:	80 31       	cpi	r24, 0x10	; 16
+    1210:	99 f0       	breq	.+38     	; 0x1238 <__vector_19+0x4a>
+    1212:	88 31       	cpi	r24, 0x18	; 24
+    1214:	99 f0       	breq	.+38     	; 0x123c <__vector_19+0x4e>
+    1216:	88 30       	cpi	r24, 0x08	; 8
+    1218:	09 f0       	breq	.+2      	; 0x121c <__vector_19+0x2e>
+    121a:	4b c0       	rjmp	.+150    	; 0x12b2 <__vector_19+0xc4>
+    121c:	0d c0       	rjmp	.+26     	; 0x1238 <__vector_19+0x4a>
+    121e:	80 34       	cpi	r24, 0x40	; 64
+    1220:	41 f1       	breq	.+80     	; 0x1272 <__vector_19+0x84>
+    1222:	81 34       	cpi	r24, 0x41	; 65
+    1224:	20 f4       	brcc	.+8      	; 0x122e <__vector_19+0x40>
+    1226:	88 33       	cpi	r24, 0x38	; 56
+    1228:	09 f0       	breq	.+2      	; 0x122c <__vector_19+0x3e>
+    122a:	43 c0       	rjmp	.+134    	; 0x12b2 <__vector_19+0xc4>
+    122c:	3d c0       	rjmp	.+122    	; 0x12a8 <__vector_19+0xba>
+    122e:	80 35       	cpi	r24, 0x50	; 80
+    1230:	a9 f0       	breq	.+42     	; 0x125c <__vector_19+0x6e>
+    1232:	88 35       	cpi	r24, 0x58	; 88
+    1234:	f1 f5       	brne	.+124    	; 0x12b2 <__vector_19+0xc4>
+    1236:	2b c0       	rjmp	.+86     	; 0x128e <__vector_19+0xa0>
+	{
+		case TWI_START:             // START has been transmitted  
+		case TWI_REP_START:         // Repeated START has been transmitted
+		  TWI_bufPos = 0;           // Set buffer pointer to the TWI Address location
+    1238:	10 92 74 00 	sts	0x0074, r1
+		case TWI_MTX_ADR_ACK:       // SLA+W has been transmitted and ACK received
+		case TWI_MTX_DATA_ACK:      // Data byte has been transmitted and ACK received
+		  if (TWI_bufPos < TWI_msgSize) {
+    123c:	90 91 74 00 	lds	r25, 0x0074
+    1240:	80 91 b5 00 	lds	r24, 0x00B5
+    1244:	98 17       	cp	r25, r24
+    1246:	50 f5       	brcc	.+84     	; 0x129c <__vector_19+0xae>
+			TWDR = I2CTWI_buf[TWI_bufPos++];
+    1248:	e9 2f       	mov	r30, r25
+    124a:	f0 e0       	ldi	r31, 0x00	; 0
+    124c:	eb 58       	subi	r30, 0x8B	; 139
+    124e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1250:	80 81       	ld	r24, Z
+    1252:	83 b9       	out	0x03, r24	; 3
+    1254:	9f 5f       	subi	r25, 0xFF	; 255
+    1256:	90 93 74 00 	sts	0x0074, r25
+    125a:	17 c0       	rjmp	.+46     	; 0x128a <__vector_19+0x9c>
+				   (0<<TWEA)|(0<<TWSTA)|(1<<TWSTO)|           // Initiate a STOP condition.
+				   (0<<TWWC);                                 //
+		  }
+		  break;
+		case TWI_MRX_DATA_ACK:      // Data byte has been received and ACK transmitted
+		  I2CTWI_recbuf[TWI_bufPos++] = TWDR;
+    125c:	80 91 74 00 	lds	r24, 0x0074
+    1260:	93 b1       	in	r25, 0x03	; 3
+    1262:	e8 2f       	mov	r30, r24
+    1264:	f0 e0       	ldi	r31, 0x00	; 0
+    1266:	eb 57       	subi	r30, 0x7B	; 123
+    1268:	ff 4f       	sbci	r31, 0xFF	; 255
+    126a:	90 83       	st	Z, r25
+    126c:	8f 5f       	subi	r24, 0xFF	; 255
+    126e:	80 93 74 00 	sts	0x0074, r24
+		case TWI_MRX_ADR_ACK:       // SLA+R has been transmitted and ACK received
+		  if (TWI_bufPos < (TWI_msgSize-1) ) {                 // Detect the last byte to NACK it.
+    1272:	20 91 74 00 	lds	r18, 0x0074
+    1276:	30 e0       	ldi	r19, 0x00	; 0
+    1278:	80 91 b5 00 	lds	r24, 0x00B5
+    127c:	90 e0       	ldi	r25, 0x00	; 0
+    127e:	01 97       	sbiw	r24, 0x01	; 1
+    1280:	28 17       	cp	r18, r24
+    1282:	39 07       	cpc	r19, r25
+    1284:	14 f4       	brge	.+4      	; 0x128a <__vector_19+0x9c>
+			TWCR = (1<<TWEN)|                                 // TWI Interface enabled
+    1286:	85 ec       	ldi	r24, 0xC5	; 197
+    1288:	18 c0       	rjmp	.+48     	; 0x12ba <__vector_19+0xcc>
+				   (1<<TWIE)|(1<<TWINT)|                      // Enable TWI Interupt and clear the flag to read next byte
+				   (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Send ACK after reception
+				   (0<<TWWC);                                 //  
+		  } else {                   // Send NACK after next reception
+			TWCR = (1<<TWEN)|                                 // TWI Interface enabled
+    128a:	85 e8       	ldi	r24, 0x85	; 133
+    128c:	16 c0       	rjmp	.+44     	; 0x12ba <__vector_19+0xcc>
+				   (0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Send NACK after reception
+				   (0<<TWWC);                                 // 
+		  }    
+		  break; 
+		case TWI_MRX_DATA_NACK:     // Data byte has been received and NACK transmitted
+		  I2CTWI_recbuf[TWI_bufPos] = TWDR;
+    128e:	83 b1       	in	r24, 0x03	; 3
+    1290:	e0 91 74 00 	lds	r30, 0x0074
+    1294:	f0 e0       	ldi	r31, 0x00	; 0
+    1296:	eb 57       	subi	r30, 0x7B	; 123
+    1298:	ff 4f       	sbci	r31, 0xFF	; 255
+    129a:	80 83       	st	Z, r24
+		  TWI_statusReg.lastTransOK = 1;                 	// Set status bits to completed successfully. 		 
+    129c:	80 91 6c 00 	lds	r24, 0x006C
+    12a0:	81 60       	ori	r24, 0x01	; 1
+    12a2:	80 93 6c 00 	sts	0x006C, r24
+    12a6:	08 c0       	rjmp	.+16     	; 0x12b8 <__vector_19+0xca>
+				 (0<<TWIE)|(1<<TWINT)|                      // Disable TWI Interrupt and clear the flag
+				 (0<<TWEA)|(0<<TWSTA)|(1<<TWSTO)|           // Initiate a STOP condition.
+				 (0<<TWWC);                                 //
+		  break;      
+		case TWI_ARB_LOST:          // Arbitration lost
+		  TWI_TWSR_state = TWSR;  							// Store TWSR 	
+    12a8:	81 b1       	in	r24, 0x01	; 1
+    12aa:	80 93 6d 00 	sts	0x006D, r24
+		  TWCR = (1<<TWEN)|                                 // TWI Interface enabled
+    12ae:	85 ea       	ldi	r24, 0xA5	; 165
+    12b0:	04 c0       	rjmp	.+8      	; 0x12ba <__vector_19+0xcc>
+				 (1<<TWIE)|(1<<TWINT)|                      // Enable TWI Interupt and clear the flag
+				 (0<<TWEA)|(1<<TWSTA)|(0<<TWSTO)|           // Initiate a (RE)START condition.
+				 (0<<TWWC);                                 //
+		  break;
+		default:     
+		  TWI_TWSR_state = TWSR;                     		// Store TWSR 					
+    12b2:	81 b1       	in	r24, 0x01	; 1
+    12b4:	80 93 6d 00 	sts	0x006D, r24
+		  TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
+    12b8:	84 e9       	ldi	r24, 0x94	; 148
+    12ba:	86 bf       	out	0x36, r24	; 54
+				 (0<<TWIE)|(1<<TWINT)|                      // Disable Interupt
+				 (0<<TWEA)|(0<<TWSTA)|(1<<TWSTO)|           // No Signal requests
+				 (0<<TWWC); 
+		break;
+	}
+}
+    12bc:	ff 91       	pop	r31
+    12be:	ef 91       	pop	r30
+    12c0:	9f 91       	pop	r25
+    12c2:	8f 91       	pop	r24
+    12c4:	3f 91       	pop	r19
+    12c6:	2f 91       	pop	r18
+    12c8:	0f 90       	pop	r0
+    12ca:	0f be       	out	0x3f, r0	; 63
+    12cc:	0f 90       	pop	r0
+    12ce:	1f 90       	pop	r1
+    12d0:	18 95       	reti
+
+000012d2 <itoa>:
+    12d2:	fb 01       	movw	r30, r22
+    12d4:	9f 01       	movw	r18, r30
+    12d6:	e8 94       	clt
+    12d8:	42 30       	cpi	r20, 0x02	; 2
+    12da:	c4 f0       	brlt	.+48     	; 0x130c <itoa+0x3a>
+    12dc:	45 32       	cpi	r20, 0x25	; 37
+    12de:	b4 f4       	brge	.+44     	; 0x130c <itoa+0x3a>
+    12e0:	4a 30       	cpi	r20, 0x0A	; 10
+    12e2:	29 f4       	brne	.+10     	; 0x12ee <itoa+0x1c>
+    12e4:	97 fb       	bst	r25, 7
+    12e6:	1e f4       	brtc	.+6      	; 0x12ee <itoa+0x1c>
+    12e8:	90 95       	com	r25
+    12ea:	81 95       	neg	r24
+    12ec:	9f 4f       	sbci	r25, 0xFF	; 255
+    12ee:	64 2f       	mov	r22, r20
+    12f0:	77 27       	eor	r23, r23
+    12f2:	0e 94 9a 09 	call	0x1334	; 0x1334 <__udivmodhi4>
+    12f6:	80 5d       	subi	r24, 0xD0	; 208
+    12f8:	8a 33       	cpi	r24, 0x3A	; 58
+    12fa:	0c f0       	brlt	.+2      	; 0x12fe <itoa+0x2c>
+    12fc:	89 5d       	subi	r24, 0xD9	; 217
+    12fe:	81 93       	st	Z+, r24
+    1300:	cb 01       	movw	r24, r22
+    1302:	00 97       	sbiw	r24, 0x00	; 0
+    1304:	a1 f7       	brne	.-24     	; 0x12ee <itoa+0x1c>
+    1306:	16 f4       	brtc	.+4      	; 0x130c <itoa+0x3a>
+    1308:	5d e2       	ldi	r21, 0x2D	; 45
+    130a:	51 93       	st	Z+, r21
+    130c:	10 82       	st	Z, r1
+    130e:	c9 01       	movw	r24, r18
+    1310:	0c 94 8a 09 	jmp	0x1314	; 0x1314 <strrev>
+
+00001314 <strrev>:
+    1314:	dc 01       	movw	r26, r24
+    1316:	fc 01       	movw	r30, r24
+    1318:	67 2f       	mov	r22, r23
+    131a:	71 91       	ld	r23, Z+
+    131c:	77 23       	and	r23, r23
+    131e:	e1 f7       	brne	.-8      	; 0x1318 <strrev+0x4>
+    1320:	32 97       	sbiw	r30, 0x02	; 2
+    1322:	04 c0       	rjmp	.+8      	; 0x132c <strrev+0x18>
+    1324:	7c 91       	ld	r23, X
+    1326:	6d 93       	st	X+, r22
+    1328:	70 83       	st	Z, r23
+    132a:	62 91       	ld	r22, -Z
+    132c:	ae 17       	cp	r26, r30
+    132e:	bf 07       	cpc	r27, r31
+    1330:	c8 f3       	brcs	.-14     	; 0x1324 <strrev+0x10>
+    1332:	08 95       	ret
+
+00001334 <__udivmodhi4>:
+    1334:	aa 1b       	sub	r26, r26
+    1336:	bb 1b       	sub	r27, r27
+    1338:	51 e1       	ldi	r21, 0x11	; 17
+    133a:	07 c0       	rjmp	.+14     	; 0x134a <__udivmodhi4_ep>
+
+0000133c <__udivmodhi4_loop>:
+    133c:	aa 1f       	adc	r26, r26
+    133e:	bb 1f       	adc	r27, r27
+    1340:	a6 17       	cp	r26, r22
+    1342:	b7 07       	cpc	r27, r23
+    1344:	10 f0       	brcs	.+4      	; 0x134a <__udivmodhi4_ep>
+    1346:	a6 1b       	sub	r26, r22
+    1348:	b7 0b       	sbc	r27, r23
+
+0000134a <__udivmodhi4_ep>:
+    134a:	88 1f       	adc	r24, r24
+    134c:	99 1f       	adc	r25, r25
+    134e:	5a 95       	dec	r21
+    1350:	a9 f7       	brne	.-22     	; 0x133c <__udivmodhi4_loop>
+    1352:	80 95       	com	r24
+    1354:	90 95       	com	r25
+    1356:	bc 01       	movw	r22, r24
+    1358:	cd 01       	movw	r24, r26
+    135a:	08 95       	ret
+
+0000135c <_exit>:
+    135c:	f8 94       	cli
+
+0000135e <__stop_program>:
+    135e:	ff cf       	rjmp	.-2      	; 0x135e <__stop_program>
