@@ -14,37 +14,43 @@ namespace Rescuebots
     public partial class MainForm : Form
     {
 
-        private const int connectionSpeed = 9600;
-        private const String messageBeginMarker = "#";
-        private const String messageEndMarker = "%";
+        private const int connectionSpeed = 38400;
         private SerialPort serialPort;
-        private MessageBuilder messageBuilder;
 
+        List<cell> cells = new List<cell>();
+        List<cell> invCells = new List<cell>();
 
         public MainForm()
         {
             InitializeComponent();
+            MakeConnectionWithRP6Robot();
+
+        }
+
+        private void MakeConnectionWithRP6Robot()
+        {
             FillSerialPortSelectionBoxWithAvailablePorts();
 
             serialPort = new SerialPort();
             serialPort.BaudRate = connectionSpeed;
-            // Choose: 9600, 19200 or 38400. Getting errors? Choose lower speed.
-            // Also be sure that you set the speed on the arduino to the same value!
+            serialPort.Parity = Parity.None;
+            serialPort.DataBits = 8;
+            serialPort.Handshake = Handshake.None;
 
-            messageBuilder = new MessageBuilder(messageBeginMarker, messageEndMarker);
+            orientBox.SelectedIndex = 0;
+            
         }
-
-
 
         private void refreshSerialPortsButton_Click(object sender, EventArgs e)
         {
             FillSerialPortSelectionBoxWithAvailablePorts();
         }
+
         private void connectButton_Click(object sender, EventArgs e)
         {
+            MakeConnectionWithRP6Robot();
             if (serialPort.IsOpen)
             {
-                readMessageTimer.Enabled = false;
                 serialPort.Close();
             }
             else
@@ -56,11 +62,11 @@ namespace Rescuebots
                     serialPort.Open();
                     if (serialPort.IsOpen)
                     {
-                        ClearAllMessageData();
                         serialPort.DiscardInBuffer();
                         serialPort.DiscardOutBuffer();
                     }
-                    readMessageTimer.Enabled = true;
+                    sendBtn.Enabled = true;
+                    receiveBtn.Enabled = true;
                 }
                 catch (Exception exception)
                 {
@@ -68,124 +74,87 @@ namespace Rescuebots
                 }
             }
 
-            UpdateUserInterface();
         }
-        private void DisplayReceivedMessage(String message)
+
+
+        private void receiveBtn_Click(object sender, EventArgs e)
         {
-            receivedMessagesListBox.Items.Insert(0, message);
-        }
-        private void DisplaySendMessage(String message)
-        {
-            sendMessagesListBox.Items.Insert(0, message);
-        }
-        private void serialPortSelectionBox_Leave(object sender, EventArgs e)
-        {
-            serialPortSelectionBox.Text = serialPortSelectionBox.Text.ToUpper();
-        }
-        private void DisplayReceivedRawData(String data)
-        {
-            receivedRawDataTextBox.AppendText(data);
-        }
-        private void messageReceiveTimer_Tick(object sender, EventArgs e)
-        {
-            if (serialPort.IsOpen
-                && serialPort.BytesToRead > 0)
+
+            byte[] buffer = new byte[1];
+            buffer[0] = 0x24;
+            serialPort.Write(buffer, 0, 1);//Send ready signal
+
+            while (serialPort.BytesToRead==0) { }
+            int i = 0;
+            while (serialPort.BytesToRead >= 7)
             {
-                try
-                {
-                    String dataFromSocket = serialPort.ReadExisting();
-                    DisplayReceivedRawData(dataFromSocket);
-                    messageBuilder.Append(dataFromSocket);
-                    ProcessMessages();
-                }
-                catch (Exception exception) // Not very nice to catch Exception...but for now it's good enough.
-                {
-                    Debug.WriteLine("Could not read from serial port: " + exception.Message);
-                }
+                cell c = new cell();
+                c.north = (serialPort.ReadByte() == 0x1);
+                c.east = (serialPort.ReadByte() == 0x1);
+                c.south = (serialPort.ReadByte() == 0x1);
+                c.west = (serialPort.ReadByte() == 0x1);
+                c.x = serialPort.ReadByte();
+                c.y = serialPort.ReadByte();
+                c.a = (Rescuebots.Action) serialPort.ReadByte();
+                cells.Add(c);
+                i++;
             }
-        }
-        private void ClearAllMessageData()
-        {
-            sendMessagesListBox.Items.Clear();
-            receivedMessagesListBox.Items.Clear();
-            receivedRawDataTextBox.Clear();
-            messageBuilder.Clear();
-        }
-        private void ProcessMessages()
-        {
-            String message = messageBuilder.FindAndRemoveNextMessage();
-            while (message != null)
+
+            //send values to field.
+            field.FillBorders(cells);
+            field.FillRoute();
+
+            if (serialPort.BytesToRead == 1)
             {
-                DisplayReceivedMessage(message);
-                MessageReceived(message);
-                message = messageBuilder.FindAndRemoveNextMessage();
-            }
-        }
-        private void UpdateUserInterface()
-        {
-            bool isConnected = serialPort.IsOpen;
-            if (isConnected)
-            {
-                connectButton.Text = "Disconnect";
+                serialPort.DiscardInBuffer();
+                field.softEndRoute = false;
+                
             }
             else
             {
-                connectButton.Text = "Connect";
-            }
-            refreshSerialPortsButton.Enabled = !isConnected;
-            serialPortSelectionBox.Enabled = !isConnected;
-            receivedMessagesGroupBox.Enabled = isConnected;
-            sendMessagesGroupBox.Enabled = isConnected;
-            receivedRawDataGroupBox.Enabled = isConnected;
-        }
-        private void MessageReceived(String message)
-        {
-            if (message.Contains("#%"))
-            {
-                string Inbox = message;
-                int StartValue = Inbox.IndexOf(":") + 1;
-                int EndValue = Inbox.IndexOf("%");
-                string Value = Inbox.Substring(StartValue, EndValue - StartValue);
-                int Value2 = Convert.ToInt32(Value);
+                byte[] buffer1 = new byte[1];
+                buffer1[0] = 0x24;
+                serialPort.Write(buffer1, 0, 1);//Send ready signal
 
-            }
-        }
-        private bool SendMessage(String message)
-        {
-            if (serialPort.IsOpen)
-            {
-                try
+                while (serialPort.BytesToRead == 0) { }
+
+                int j = 0;
+                while (serialPort.BytesToRead >= 7)
                 {
-                    serialPort.Write(message);
-                    DisplaySendMessage(message);
-                    return true;
+                    cell c = new cell();
+                    c.north = (serialPort.ReadByte() == 0x1);
+                    c.east = (serialPort.ReadByte() == 0x1);
+                    c.south = (serialPort.ReadByte() == 0x1);
+                    c.west = (serialPort.ReadByte() == 0x1);
+                    c.x = serialPort.ReadByte();
+                    c.y = serialPort.ReadByte();
+                    c.a = (Rescuebots.Action)serialPort.ReadByte();
+                    invCells.Add(c);
+                    j++;
                 }
-                catch (Exception exception) // Not very nice to catch Exception...but for now it's good enough.
+
+                //send values to field
+                field.FillInvRoute();
+
+                if (serialPort.BytesToRead == 1)
                 {
-                    Debug.WriteLine("Could not write to serial port: " + exception.Message);
+                    serialPort.DiscardInBuffer();
+                    field.softEndInvRoute = false;
                 }
             }
-            return false;
+
+
         }
-        private void FillMapBtn_Click(object sender, EventArgs e)
+        
+
+        private void sendBtn_Click(object sender, EventArgs e)
         {
-            field.FillWithValues();
-        }
-        private void YCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-         
+            byte[] buffer = new byte[3];
+            buffer[0] = (byte) Convert.ToByte(xNud.Value);
+            buffer[1] = (byte) Convert.ToByte(yNud.Value);
+            buffer[2] = (byte) Convert.ToByte(orientBox.SelectedIndex);
+            serialPort.Write(buffer,0,3);
             
-            
-
-
-        }
-        private void XCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void SendCoordinatesBtn_Click(object sender, EventArgs e)
-        {
-            SendMessage("#" + textBox1.Text + "%");
         }
         private void FillSerialPortSelectionBoxWithAvailablePorts()
         {
@@ -199,4 +168,32 @@ namespace Rescuebots
             }
         }
     }
+
+    public enum Orientation
+    {
+        facingNorth,
+        facingEast,
+        facingSouth,
+        facingWest
+    }
+
+    public struct cell
+    {
+        public Boolean north;
+        public Boolean east;
+        public Boolean south;
+        public Boolean west;
+        public int x;
+        public int y;
+        public Rescuebots.Action a;
+    }
+
+    public enum Action
+    {
+        tLeft,
+        tRight,
+        mForward,
+        t180s
+    }
+
 }
