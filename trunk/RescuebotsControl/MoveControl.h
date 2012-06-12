@@ -26,6 +26,7 @@ void moveBack(void);
 
 void turnLeft(void);
 void turnRight(void);
+void turn180(void);
 
 void MoveControl_onEnterCell(void (*onEnterCellHandler)(void));
 void MoveControl_onLeaveCell(void (*onLeaveCellHandler)(void));
@@ -34,5 +35,7 @@ bool wallIsLeft(void);
 bool wallIsRight(void);
 bool wallIsFront(void);
 
+uint8_t cruiseSpeed;
+int cellDist;
 
 #endif /* MOVECONTROL_H_ */

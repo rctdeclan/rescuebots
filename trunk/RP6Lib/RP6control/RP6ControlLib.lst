@@ -1925,76 +1925,76 @@
  2464               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 RP6ControlLib.c
-     /tmp/ccCRsWRx.s:2      *ABS*:000000000000003f __SREG__
-     /tmp/ccCRsWRx.s:3      *ABS*:000000000000003e __SP_H__
-     /tmp/ccCRsWRx.s:4      *ABS*:000000000000003d __SP_L__
-     /tmp/ccCRsWRx.s:5      *ABS*:0000000000000034 __CCP__
-     /tmp/ccCRsWRx.s:6      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccCRsWRx.s:7      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccCRsWRx.s:18     .text:0000000000000000 INT0_event_DUMMY
-     /tmp/ccCRsWRx.s:32     .text:0000000000000002 INT1_event_DUMMY
-     /tmp/ccCRsWRx.s:46     .text:0000000000000004 INT2_event_DUMMY
-     /tmp/ccCRsWRx.s:60     .text:0000000000000006 INT0_setEventHandler
-     /tmp/ccCRsWRx.s:2038   .data:0000000000000004 INT0_eventHandler
-     /tmp/ccCRsWRx.s:78     .text:0000000000000010 __vector_1
-     /tmp/ccCRsWRx.s:129    .text:000000000000005e INT1_setEventHandler
-     /tmp/ccCRsWRx.s:2034   .data:0000000000000002 INT1_eventHandler
-     /tmp/ccCRsWRx.s:147    .text:0000000000000068 __vector_2
-     /tmp/ccCRsWRx.s:198    .text:00000000000000b6 INT2_setEventHandler
-     /tmp/ccCRsWRx.s:2030   .data:0000000000000000 INT2_eventHandler
-     /tmp/ccCRsWRx.s:216    .text:00000000000000c0 __vector_3
-     /tmp/ccCRsWRx.s:267    .text:000000000000010e readADC
-     /tmp/ccCRsWRx.s:310    .text:000000000000012e writeSPI
-     /tmp/ccCRsWRx.s:331    .text:0000000000000136 readSPI
-     /tmp/ccCRsWRx.s:350    .text:0000000000000140 readWordSPI
-     /tmp/ccCRsWRx.s:388    .text:000000000000016a writeWordSPI
-     /tmp/ccCRsWRx.s:413    .text:000000000000017e writeBufferSPI
-     /tmp/ccCRsWRx.s:452    .text:0000000000000198 readBufferSPI
-     /tmp/ccCRsWRx.s:495    .text:00000000000001b6 SPI_EEPROM_readByte
-     /tmp/ccCRsWRx.s:530    .text:00000000000001d6 SPI_EEPROM_readBytes
-     /tmp/ccCRsWRx.s:583    .text:0000000000000218 SPI_EEPROM_enableWrite
-     /tmp/ccCRsWRx.s:604    .text:0000000000000224 SPI_EEPROM_disableWrite
-     /tmp/ccCRsWRx.s:625    .text:0000000000000230 SPI_EEPROM_getStatus
-     /tmp/ccCRsWRx.s:649    .text:0000000000000240 SPI_EEPROM_writeBytes
-     /tmp/ccCRsWRx.s:702    .text:0000000000000280 SPI_EEPROM_writeByte
-     /tmp/ccCRsWRx.s:748    .text:00000000000002b4 outputExt
+     /tmp/cc9qQgA2.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc9qQgA2.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc9qQgA2.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc9qQgA2.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc9qQgA2.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc9qQgA2.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc9qQgA2.s:18     .text:0000000000000000 INT0_event_DUMMY
+     /tmp/cc9qQgA2.s:32     .text:0000000000000002 INT1_event_DUMMY
+     /tmp/cc9qQgA2.s:46     .text:0000000000000004 INT2_event_DUMMY
+     /tmp/cc9qQgA2.s:60     .text:0000000000000006 INT0_setEventHandler
+     /tmp/cc9qQgA2.s:2038   .data:0000000000000004 INT0_eventHandler
+     /tmp/cc9qQgA2.s:78     .text:0000000000000010 __vector_1
+     /tmp/cc9qQgA2.s:129    .text:000000000000005e INT1_setEventHandler
+     /tmp/cc9qQgA2.s:2034   .data:0000000000000002 INT1_eventHandler
+     /tmp/cc9qQgA2.s:147    .text:0000000000000068 __vector_2
+     /tmp/cc9qQgA2.s:198    .text:00000000000000b6 INT2_setEventHandler
+     /tmp/cc9qQgA2.s:2030   .data:0000000000000000 INT2_eventHandler
+     /tmp/cc9qQgA2.s:216    .text:00000000000000c0 __vector_3
+     /tmp/cc9qQgA2.s:267    .text:000000000000010e readADC
+     /tmp/cc9qQgA2.s:310    .text:000000000000012e writeSPI
+     /tmp/cc9qQgA2.s:331    .text:0000000000000136 readSPI
+     /tmp/cc9qQgA2.s:350    .text:0000000000000140 readWordSPI
+     /tmp/cc9qQgA2.s:388    .text:000000000000016a writeWordSPI
+     /tmp/cc9qQgA2.s:413    .text:000000000000017e writeBufferSPI
+     /tmp/cc9qQgA2.s:452    .text:0000000000000198 readBufferSPI
+     /tmp/cc9qQgA2.s:495    .text:00000000000001b6 SPI_EEPROM_readByte
+     /tmp/cc9qQgA2.s:530    .text:00000000000001d6 SPI_EEPROM_readBytes
+     /tmp/cc9qQgA2.s:583    .text:0000000000000218 SPI_EEPROM_enableWrite
+     /tmp/cc9qQgA2.s:604    .text:0000000000000224 SPI_EEPROM_disableWrite
+     /tmp/cc9qQgA2.s:625    .text:0000000000000230 SPI_EEPROM_getStatus
+     /tmp/cc9qQgA2.s:649    .text:0000000000000240 SPI_EEPROM_writeBytes
+     /tmp/cc9qQgA2.s:702    .text:0000000000000280 SPI_EEPROM_writeByte
+     /tmp/cc9qQgA2.s:748    .text:00000000000002b4 outputExt
                             *COM*:0000000000000001 externalPort
-     /tmp/ccCRsWRx.s:781    .text:00000000000002c6 setLEDs
-     /tmp/ccCRsWRx.s:805    .text:00000000000002da getPressedKeyNumber
-     /tmp/ccCRsWRx.s:910    .text:0000000000000344 checkPressedKeyEvent
-     /tmp/ccCRsWRx.s:2025   .bss:0000000000000001 pressed_key.2146
-     /tmp/ccCRsWRx.s:942    .text:0000000000000368 checkReleasedKeyEvent
+     /tmp/cc9qQgA2.s:781    .text:00000000000002c6 setLEDs
+     /tmp/cc9qQgA2.s:805    .text:00000000000002da getPressedKeyNumber
+     /tmp/cc9qQgA2.s:910    .text:0000000000000344 checkPressedKeyEvent
+     /tmp/cc9qQgA2.s:2025   .bss:0000000000000001 pressed_key.2146
+     /tmp/cc9qQgA2.s:942    .text:0000000000000368 checkReleasedKeyEvent
                              .bss:0000000000000000 released_key.2150
-     /tmp/ccCRsWRx.s:984    .text:0000000000000392 __vector_10
+     /tmp/cc9qQgA2.s:984    .text:0000000000000392 __vector_10
                             *COM*:0000000000000002 timer
                             *COM*:0000000000000001 delay_timer
                             *COM*:0000000000000001 ms_timer
                             *COM*:0000000000000011 stopwatches
                             *COM*:0000000000000001 controlStatus
                             *COM*:0000000000000002 sound_timer
-     /tmp/ccCRsWRx.s:1144   .text:00000000000004e4 beep
-     /tmp/ccCRsWRx.s:1174   .text:0000000000000500 setBeeperPitch
-     /tmp/ccCRsWRx.s:1206   .text:000000000000051e sleep
-     /tmp/ccCRsWRx.s:1234   .text:0000000000000534 mSleep
-     /tmp/ccCRsWRx.s:1266   .text:000000000000054e dischargePeakDetector
-     /tmp/ccCRsWRx.s:1290   .text:000000000000055e getMicrophonePeak
-     /tmp/ccCRsWRx.s:1327   .text:0000000000000584 delayCycles
-     /tmp/ccCRsWRx.s:1358   .text:0000000000000590 setLCDD
-     /tmp/ccCRsWRx.s:1391   .text:00000000000005b2 write4BitLCDData
-     /tmp/ccCRsWRx.s:1422   .text:00000000000005d0 writeCharLCD
-     /tmp/ccCRsWRx.s:1446   .text:00000000000005e0 writeStringLengthLCD
-     /tmp/ccCRsWRx.s:1499   .text:000000000000061a writeStringLCD
-     /tmp/ccCRsWRx.s:1539   .text:0000000000000642 writeIntegerLCD
+     /tmp/cc9qQgA2.s:1144   .text:00000000000004e4 beep
+     /tmp/cc9qQgA2.s:1174   .text:0000000000000500 setBeeperPitch
+     /tmp/cc9qQgA2.s:1206   .text:000000000000051e sleep
+     /tmp/cc9qQgA2.s:1234   .text:0000000000000534 mSleep
+     /tmp/cc9qQgA2.s:1266   .text:000000000000054e dischargePeakDetector
+     /tmp/cc9qQgA2.s:1290   .text:000000000000055e getMicrophonePeak
+     /tmp/cc9qQgA2.s:1327   .text:0000000000000584 delayCycles
+     /tmp/cc9qQgA2.s:1358   .text:0000000000000590 setLCDD
+     /tmp/cc9qQgA2.s:1391   .text:00000000000005b2 write4BitLCDData
+     /tmp/cc9qQgA2.s:1422   .text:00000000000005d0 writeCharLCD
+     /tmp/cc9qQgA2.s:1446   .text:00000000000005e0 writeStringLengthLCD
+     /tmp/cc9qQgA2.s:1499   .text:000000000000061a writeStringLCD
+     /tmp/cc9qQgA2.s:1539   .text:0000000000000642 writeIntegerLCD
                             *COM*:0000000000000011 lcd_tmp_buffer
-     /tmp/ccCRsWRx.s:1570   .text:0000000000000660 writeIntegerLengthLCD
-     /tmp/ccCRsWRx.s:1662   .text:00000000000006e2 writeNStringLCD_P
-     /tmp/ccCRsWRx.s:1707   .text:00000000000006fe writeLCDCommand
-     /tmp/ccCRsWRx.s:1731   .text:000000000000070e setCursorPosLCD
-     /tmp/ccCRsWRx.s:1761   .text:000000000000071e clearPosLCD
-     /tmp/ccCRsWRx.s:1794   .text:0000000000000738 clearLCD
-     /tmp/ccCRsWRx.s:1815   .text:0000000000000748 _showScreenLCD_P
-     /tmp/ccCRsWRx.s:1855   .text:0000000000000776 initLCD
-     /tmp/ccCRsWRx.s:1932   .text:00000000000007f6 initRP6Control
+     /tmp/cc9qQgA2.s:1570   .text:0000000000000660 writeIntegerLengthLCD
+     /tmp/cc9qQgA2.s:1662   .text:00000000000006e2 writeNStringLCD_P
+     /tmp/cc9qQgA2.s:1707   .text:00000000000006fe writeLCDCommand
+     /tmp/cc9qQgA2.s:1731   .text:000000000000070e setCursorPosLCD
+     /tmp/cc9qQgA2.s:1761   .text:000000000000071e clearPosLCD
+     /tmp/cc9qQgA2.s:1794   .text:0000000000000738 clearLCD
+     /tmp/cc9qQgA2.s:1815   .text:0000000000000748 _showScreenLCD_P
+     /tmp/cc9qQgA2.s:1855   .text:0000000000000776 initLCD
+     /tmp/cc9qQgA2.s:1932   .text:00000000000007f6 initRP6Control
 
 UNDEFINED SYMBOLS
 itoa

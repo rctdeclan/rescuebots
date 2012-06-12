@@ -11,40 +11,80 @@
 #include "RP6Control_I2CMasterLib.h"
 
 modeState mState;
-int dist360 = 2800;
+int dist360 = 2480;
 int cellCounter = 0;
+direction dir;
+
 
 void onEnterCellHandler(void)
 {
-	//TODO:(Catch what to do if a cell is entered.)
-	//push new cell to cells array.
-	//cells[cellCounter].north = w
-	      cellCounter++;
+	beep(100,10);
+	show_ENTERCELL();
+
+	updateWallData(); //add additional data to last cell.
+
+	cellCounter++;
+
+	//TODO: Set new X and Y depending on current dir!
+	//cellCounter will from this point always be higher than 0.
+	switch(dir)
+	{
+		case facingNorth: cells[cellCounter].y--;break;
+		case facingEast: cells[cellCounter].x++;break;
+		case facingSouth: cells[cellCounter].y++;break;
+		case facingWest: cells[cellCounter].x--;break;
+	}
 }
 
 void onLeaveCellHandler(void)
 {
-	//(Catch what to do if a cell is being left.)
+	show_LEAVECELL();
+	updateWallData();
+
+	mSleep(300);
+	show_WHICHWALL(cells[cellCounter].north,cells[cellCounter].east,cells[cellCounter].south,cells[cellCounter].west);
+	mSleep(300);
+
+	beep(40,10);
+	writeString("\nCELL:");
+	writeInteger(cellCounter,10);
+	writeChar('\n');
+	writeString("North: ");
+	if (cells[cellCounter].north) writeChar('Y');
+	writeChar('\n');
+	writeString("East: ");
+	if (cells[cellCounter].east) writeChar('Y');
+	writeChar('\n');
+	writeString("South: ");
+	if (cells[cellCounter].south) writeChar('Y');
+	writeChar('\n');
+	writeString("West: ");
+	if (cells[cellCounter].west) writeChar('Y');
+	writeChar('\n');
+	writeString("Action: ");
+	writeInteger(cells[cellCounter].a,10);
+	writeChar('\n');
+	writeString("X: ");
+	writeInteger(cells[cellCounter].x,10);
+	writeString(", Y: ");
+	writeInteger(cells[cellCounter].y,10);
+	writeChar('\n');
 }
 
 void initCoreControl(void)
 {
-
 	initLCD();
 	initASI();
 	initMoveControl();
 	initPositionControl();
 
-	MoveControl_onEnterCell(onEnterCellHandler);
-	MoveControl_onLeaveCell(onLeaveCellHandler);
-
-	initCommControl();
+	//initCommControl();
 
 	show_PLACEMEATPOSITION(cells[0].x,cells[0].y);
 	//PRESS ANY KEY TO CONTINUE
 	while(!getPressedKeyNumber()) {}
 
-	mState = calibrating;
+	mState = finding;//calibrating;
 }
 
 
@@ -79,8 +119,8 @@ void calibrate(void)
 	int delta = 2;
 	int totaldelta = 0;
 	int cost;
-	int lastCost = 9000; //intialize
-	int alpha = 20;//learning rate
+	int lastCost = 9000; //initialize
+	int alpha = 80;//learning rate
 	for(int i=0;i<num_iters;i++)
 	{
 
@@ -98,7 +138,7 @@ void calibrate(void)
 		writeString("\n");
 
 		if (i==0) {lastCost = cost;continue;}
-		delta = (abs(lastCost-cost)/alpha) * ((lastCost-cost>0) ? 1 : -1);
+		delta = (abs(lastCost-cost)/alpha) * ((lastCost-cost>=0) ? 1 : -1);
 
 		writeString_P("delta:");
 		writeInteger(delta,10);
@@ -106,7 +146,7 @@ void calibrate(void)
 
 		lastCost = cost;
 
-		if (cost < 1800/alpha) break;
+		if (cost < 800/alpha) break;
 	}
 	totaldelta+=delta; //add last delta.
 	dist360+=totaldelta;
@@ -124,36 +164,54 @@ bool found = false;
  */
 void find(void)
 {
+	show_STARTEDFINDING();
 	while (!found)
 	{
-		if (!wallIsLeft())
+		bool left = wallIsLeft();
+		bool front = wallIsFront();
+		bool right = wallIsRight();
+
+		onLeaveCellHandler();
+		if (!left)
 		{
+			cells[cellCounter].a = tLeft;
+			show_ACTION(tLeft);
 			turnLeft();
+			decEnum(dir,3);
 			moveForward();
 		}
 		else
 		{
-			if(!wallIsFront())
+			if(!front)
 			{
+				cells[cellCounter].a = mForward;
+				show_ACTION(mForward);
 				moveForward();
 			}
 			else
 			{
-				if (!wallIsRight())
+				if (!right)
 				{
+					cells[cellCounter].a = tRight;
+					show_ACTION(tRight);
 					turnRight();
+					incEnum(dir,3);
 					moveForward();
 				}
 				else
 				{
-					turnRight();
-					turnRight();
+					show_ACTION(t180);
+					turn180();
+					decEnum(dir,3);
+					decEnum(dir,3);
 					moveForward();
 				}
 			}
 		}
+		onEnterCellHandler();
 		//TODO:check if victim found (flag in corecontrol. set by eventhandler receiveRC5Data)
 	}
+	//moveForward();
 	mState = returning;
 }
 
@@ -164,7 +222,7 @@ void find(void)
  */
 void returnToStart(void)
 {
-
+	//TODO: Make returnToStart
 	mState = undefined;
 }
 

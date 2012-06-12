@@ -8,20 +8,21 @@
 #include "ASI.h"
 #include "MoveControl.h"
 #include "PositionControl.h"
+#include "IOControl.h"
 
 
 kineticState kState;
-int cellDist = 5000;
+int cellDist = 1800;
 uint8_t cruiseSpeed = 40;
-uint8_t dirErrorFactor = 6;
-uint8_t distErrorFactor = 6;
+uint8_t dirErrorFactor = 4;
+uint8_t distErrorFactor = 128;
 
 
 
 void initMoveControl(void)
 {
 	kState = stationary;
-	conditionedWallDistance = (higherAvgWallBoundary+lowerAvgWallBoundary)/2;
+	conditionedWallDistance = 160;
 
 }
 
@@ -35,55 +36,76 @@ void updateMoveControl(void)
 	}
 }
 
-void MoveControl_onEnterCell_DUMMY(void){}
-static void (*MoveControl_onEnterCellHandler)(void) = MoveControl_onEnterCell_DUMMY;
-void MoveControl_onEnterCell(void (*onEnterCellHandler)(void))
-{
-	MoveControl_onEnterCellHandler = onEnterCellHandler;
-}
-
-void MoveControl_onLeaveCell_DUMMY(void){}
-static void (*MoveControl_onLeaveCellHandler)(void) = MoveControl_onLeaveCell_DUMMY;
-void MoveControl_onLeaveCell(void (*onLeaveCellHandler)(void))
-{
-	MoveControl_onLeaveCellHandler = onLeaveCellHandler;
-}
+//void MoveControl_onEnterCell_DUMMY(void){}
+//static void (*MoveControl_onEnterCellHandler)(void) = MoveControl_onEnterCell_DUMMY;
+//void MoveControl_onEnterCell(void (*onEnterCellHandler)(void))
+//{
+//	MoveControl_onEnterCellHandler = onEnterCellHandler;
+//}
+//
+//void MoveControl_onLeaveCell_DUMMY(void){}
+//static void (*MoveControl_onLeaveCellHandler)(void) = MoveControl_onLeaveCell_DUMMY;
+//void MoveControl_onLeaveCell(void (*onLeaveCellHandler)(void))
+//{
+//	MoveControl_onLeaveCellHandler = onLeaveCellHandler;
+//}
 
 /*
  * moveForward
  *
  *      Author: Ron Engels, Declan Bullock
  */
-void moveForward(void)
+void moveForward()
 {
 	kState = moving;
-
-	//call onLeaveCellHandler
-	MoveControl_onLeaveCellHandler();
-
-	move(cruiseSpeed,FWD,cellDist,false);
-
-
-	uint8_t leftDirError = 0;
-	uint8_t rightDirError = 0;
-	uint8_t leftDistError = 0;
-	uint8_t rightDistError = 0;
+	int leftDirError = 0;
+	int rightDirError = 0;
+	int leftDistError = 0;
+	int rightDistError = 0;
 	bool leftFrontExists = false;
 	bool leftBackExists = false;
 	bool rightFrontExists = false;
 	bool rightBackExists = false;
+
+	move(cruiseSpeed,FWD,cellDist,false);
+
+
+	mSleep(100); //wait otherwise movementComplete flag will still be true.
+
 	while(!drive_status.movementComplete)
 	{
 
-		uint16_t leftFront = readADC(ADC_5);
-		uint16_t leftBack = readADC(ADC_2);
-		uint16_t rightFront = readADC(ADC_4);
-		uint16_t rightBack = readADC(ADC_3);
+		int16_t leftFront = readAvgADC(ADC_5,10);
+		int16_t leftBack = readAvgADC(ADC_2,10);
+		int16_t rightFront = readAvgADC(ADC_4,10);
+		int16_t rightBack = readAvgADC(ADC_3,10);
 
-		leftFrontExists = (leftFront>=lowerAvgWallBoundary && leftFront<=higherAvgWallBoundary);
-		leftBackExists = (leftBack>=lowerAvgWallBoundary && leftBack<=higherAvgWallBoundary);
-		rightFrontExists = (rightFront>=lowerAvgWallBoundary && rightFront<=higherAvgWallBoundary);
-		rightBackExists = (rightBack>=lowerAvgWallBoundary && rightBack<=higherAvgWallBoundary);
+		leftFrontExists = (leftFront>=higherAvgWallBoundary);
+		leftBackExists = (leftBack>=higherAvgWallBoundary);
+		rightFrontExists = (rightFront>=higherAvgWallBoundary);
+		rightBackExists = (rightBack>=higherAvgWallBoundary);
+
+//		writeString("LFront:");
+//		writeInteger(leftFrontExists,10);
+//		writeString(" RFront:");
+//		writeInteger(rightFrontExists,10);
+//		writeChar('\n');
+//		writeString("LBack:");
+//		writeInteger(leftBackExists,10);
+//		writeString(" RBack:");
+//		writeInteger(rightBackExists,10);
+//		writeChar('\n');
+
+//		writeString("LFront:");
+//		writeInteger(leftFront,10);
+//		writeString(" RFront:");
+//		writeInteger(rightFront,10);
+//		writeChar('\n');
+//		writeString("LBack:");
+//		writeInteger(leftBack,10);
+//		writeString(" RBack:");
+//		writeInteger(rightBack,10);
+//		writeChar('\n');
 
 		if (leftFrontExists && leftBackExists)
 		{
@@ -93,6 +115,10 @@ void moveForward(void)
 			if (rightBackExists) leftDistError = (leftBack - rightBack) / distErrorFactor;
 			else
 				leftDistError = (leftFront - conditionedWallDistance);
+		}
+		else
+		{
+			leftDirError=0;
 		}
 
 		if (rightFrontExists && rightBackExists)
@@ -104,12 +130,31 @@ void moveForward(void)
 			else
 				rightDistError = (rightFront - conditionedWallDistance);
 		}
+		else
+		{
+			rightDirError = 0;
+		}
+
+//		writeString("LDir:");
+//		writeInteger(leftDirError,10);
+//		writeString(" RDir:");
+//		writeInteger(rightDirError,10);
+//		writeChar('\n');
+//
+//		writeString("LDist:");
+//		writeInteger(leftDistError,10);
+//		writeString(" RDist:");
+//		writeInteger(rightDistError,10);
+//		writeChar('\n');
 
 		if (rightFrontExists && rightBackExists && leftFrontExists && leftBackExists)
 		{
 			conditionedWallDistance = ((rightFront+leftFront)/2 + (rightBack+leftBack)/2)/2;
 		}
 
+//		writeString("CWD:");
+//		writeInteger(conditionedWallDistance,10);
+//		writeChar('\n');
 
 		//change individual motor speed according to Sharp data.
 		moveAtSpeed(cruiseSpeed+leftDirError+leftDistError,cruiseSpeed+rightDirError+rightDistError);
@@ -119,13 +164,11 @@ void moveForward(void)
 
 		task_checkINT0();
 		task_I2CTWI();
+		//mSleep(20);
 	}
-
+	stop();
 	//set state to stationary.
 	kState = stationary;
-
-	//call onEnterCellHandler
-	MoveControl_onEnterCellHandler();
 }
 
 void turnLeft(void)
@@ -134,7 +177,7 @@ void turnLeft(void)
 	kState = turning;
 
 	//start turning left
-	rotate(cruiseSpeed,LEFT,dist360/4,true);
+	rotate(cruiseSpeed,LEFT,dist360/25,true);
 
 	//set state to stationary
 	kState = stationary;
@@ -146,7 +189,19 @@ void turnRight(void)
 	kState = turning;
 
 	//start turning right
-	rotate(cruiseSpeed,RIGHT,dist360/4,true);
+	rotate(cruiseSpeed,RIGHT,dist360/25,true);
+
+	//set state to stationary
+	kState = stationary;
+}
+void turn180(void)
+{
+
+	//set state to turning
+	kState = turning;
+
+	//start turning right
+	rotate(cruiseSpeed,LEFT,2*dist360/25,true);
 
 	//set state to stationary
 	kState = stationary;

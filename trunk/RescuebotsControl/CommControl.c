@@ -6,6 +6,7 @@
  */
 
 #include "CommControl.h"
+#include "CoreControl.h"
 
 commState cState;
 
@@ -20,6 +21,8 @@ void initCommControl(void)
 
 	uint8_t x = readChar();
 	uint8_t y = readChar();
+	//dir = readChar();
+	dir = facingNorth;//TODO: Remove this hardcode
 	cells[0].x = x;
 	cells[0].y = y;
 
