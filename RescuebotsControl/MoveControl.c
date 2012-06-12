@@ -14,8 +14,8 @@
 kineticState kState;
 int cellDist = 1800;
 uint8_t cruiseSpeed = 40;
-uint8_t dirErrorFactor = 4;
-uint8_t distErrorFactor = 128;
+uint16_t dirErrorFactor = 5;
+uint16_t distErrorFactor = 8;
 
 
 
@@ -114,7 +114,7 @@ void moveForward()
 			else
 			if (rightBackExists) leftDistError = (leftBack - rightBack) / distErrorFactor;
 			else
-				leftDistError = (leftFront - conditionedWallDistance);
+				leftDistError = (leftFront - conditionedWallDistance) / distErrorFactor;
 		}
 		else
 		{
@@ -128,7 +128,7 @@ void moveForward()
 			else
 			if (leftBackExists) rightDistError = (rightBack - leftBack) / distErrorFactor;
 			else
-				rightDistError = (rightFront - conditionedWallDistance);
+				rightDistError = (rightFront - conditionedWallDistance) / distErrorFactor;
 		}
 		else
 		{
@@ -152,6 +152,12 @@ void moveForward()
 			conditionedWallDistance = ((rightFront+leftFront)/2 + (rightBack+leftBack)/2)/2;
 		}
 
+		if (!rightFrontExists && !leftFrontExists && rightBackExists && leftBackExists) //if entering no-wall zone, do a last error fix.
+		{
+			leftDistError = (leftBack - rightBack) / distErrorFactor;
+			rightDistError = (rightBack - leftBack) / distErrorFactor;
+		}
+
 //		writeString("CWD:");
 //		writeInteger(conditionedWallDistance,10);
 //		writeChar('\n');
@@ -165,6 +171,7 @@ void moveForward()
 		task_checkINT0();
 		task_I2CTWI();
 		//mSleep(20);
+		checkProcessEndedAbruptly();
 	}
 	stop();
 	//set state to stationary.

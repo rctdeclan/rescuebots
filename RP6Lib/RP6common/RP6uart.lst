@@ -528,30 +528,30 @@
  669               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 RP6uart.c
-     /tmp/ccv37Ue3.s:2      *ABS*:000000000000003f __SREG__
-     /tmp/ccv37Ue3.s:3      *ABS*:000000000000003e __SP_H__
-     /tmp/ccv37Ue3.s:4      *ABS*:000000000000003d __SP_L__
-     /tmp/ccv37Ue3.s:5      *ABS*:0000000000000034 __CCP__
-     /tmp/ccv37Ue3.s:6      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccv37Ue3.s:7      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccv37Ue3.s:18     .text:0000000000000000 writeChar
-     /tmp/ccv37Ue3.s:39     .text:0000000000000008 writeString
-     /tmp/ccv37Ue3.s:79     .text:0000000000000030 writeNStringP
-     /tmp/ccv37Ue3.s:124    .text:000000000000004c writeStringLength
-     /tmp/ccv37Ue3.s:177    .text:0000000000000086 writeInteger
-     /tmp/ccv37Ue3.s:227    .text:00000000000000ca writeIntegerLength
-     /tmp/ccv37Ue3.s:319    .text:000000000000014c __vector_13
-     /tmp/ccv37Ue3.s:559    .bss:0000000000000003 write_size
-     /tmp/ccv37Ue3.s:553    .bss:0000000000000002 read_size
-     /tmp/ccv37Ue3.s:547    .bss:0000000000000001 write_pos
+     /tmp/ccgy22Hv.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccgy22Hv.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccgy22Hv.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccgy22Hv.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccgy22Hv.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccgy22Hv.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccgy22Hv.s:18     .text:0000000000000000 writeChar
+     /tmp/ccgy22Hv.s:39     .text:0000000000000008 writeString
+     /tmp/ccgy22Hv.s:79     .text:0000000000000030 writeNStringP
+     /tmp/ccgy22Hv.s:124    .text:000000000000004c writeStringLength
+     /tmp/ccgy22Hv.s:177    .text:0000000000000086 writeInteger
+     /tmp/ccgy22Hv.s:227    .text:00000000000000ca writeIntegerLength
+     /tmp/ccgy22Hv.s:319    .text:000000000000014c __vector_13
+     /tmp/ccgy22Hv.s:559    .bss:0000000000000003 write_size
+     /tmp/ccgy22Hv.s:553    .bss:0000000000000002 read_size
+     /tmp/ccgy22Hv.s:547    .bss:0000000000000001 write_pos
                             *COM*:0000000000000021 uart_receive_buffer
                             *COM*:0000000000000001 uart_status
-     /tmp/ccv37Ue3.s:563    .bss:0000000000000005 dummy.1729
-     /tmp/ccv37Ue3.s:389    .text:00000000000001ba readChar
-     /tmp/ccv37Ue3.s:541    .bss:0000000000000000 read_pos
-     /tmp/ccv37Ue3.s:432    .text:00000000000001f6 readChars
-     /tmp/ccv37Ue3.s:489    .text:000000000000023c getBufferLength
-     /tmp/ccv37Ue3.s:507    .text:0000000000000248 clearReceptionBuffer
+     /tmp/ccgy22Hv.s:563    .bss:0000000000000005 dummy.1729
+     /tmp/ccgy22Hv.s:389    .text:00000000000001ba readChar
+     /tmp/ccgy22Hv.s:541    .bss:0000000000000000 read_pos
+     /tmp/ccgy22Hv.s:432    .text:00000000000001f6 readChars
+     /tmp/ccgy22Hv.s:489    .text:000000000000023c getBufferLength
+     /tmp/ccgy22Hv.s:507    .text:0000000000000248 clearReceptionBuffer
                              .bss:0000000000000004 dummy.1747
 
 UNDEFINED SYMBOLS
