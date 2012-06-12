@@ -23,6 +23,14 @@ typedef enum
 #define false 0
 typedef char bool;
 
+typedef enum
+{
+	tLeft,
+	tRight,
+	mForward,
+	t180
+} action;
+
 typedef struct
 {
 	bool north;
@@ -31,9 +39,24 @@ typedef struct
 	bool west;
 	int x;
 	int y;
+	action a;
 } cell;
 
+typedef enum
+{
+	facingNorth,
+	facingEast,
+	facingSouth,
+	facingWest
+} direction;
+
+
+#define incEnum(e,max) if(e==max) e=0; else e++;
+#define decEnum(e,max) if(e==0) e=max; else e--;
+
 cell cells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
+direction dir;
+int cellCounter;
 
 void initCoreControl(void);
 void updateCoreControl(void);

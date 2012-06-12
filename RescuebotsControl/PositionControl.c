@@ -7,6 +7,7 @@
 #include "RP6Control_I2CMasterLib.h"
 #include "ASI.h"
 #include "MoveControl.h"
+#include "CoreControl.h"
 
 void I2C_requestedDataReady(uint8_t dataRequestID)
 {
@@ -20,12 +21,17 @@ void I2C_transmissionError(uint8_t errorState)
 	writeChar('\n');
 }
 
+void bumpersStateChanged(void)
+{
+
+}
+
 void acsStateChanged(void)
 {
-	if(kState==moving && (obstacle_left || obstacle_right))
+	if(kState==moving && (obstacle_left && obstacle_right))
 	{
-		beep(130,100);
-		stop();
+		beep(190,100);
+		//stop();
 	}
 }
 
@@ -38,8 +44,9 @@ uint16_t readAvgADC(uint8_t channel, uint8_t samples)
 	return val/samples;
 }
 
-uint16_t lowerAvgWallBoundary = 500;
-uint16_t higherAvgWallBoundary = 500;
+
+//average wall is 160 in distance.
+uint16_t higherAvgWallBoundary = 120;
 uint16_t conditionedWallDistance;
 
 bool wallIsLeft(void)
@@ -51,7 +58,7 @@ bool wallIsLeft(void)
 
 	uint16_t minLeft = ((leftFront > leftBack) ? leftFront : leftBack);
 
-	return (minLeft >= lowerAvgWallBoundary && minLeft <=higherAvgWallBoundary);
+	return (minLeft >=higherAvgWallBoundary);
 }
 
 bool wallIsRight(void)
@@ -63,22 +70,23 @@ bool wallIsRight(void)
 
 	uint16_t minRight = ((rightFront > rightBack) ? rightFront : rightBack);
 
-	return (minRight >= lowerAvgWallBoundary && minRight <=higherAvgWallBoundary);
+	return (minRight >=higherAvgWallBoundary);
 }
 
 bool wallIsFront(void)
 {
-	return obstacle_right || obstacle_left;
+	return obstacle_left && obstacle_right;
 }
 
 void initPositionControl(void)
 {
 	ACS_setStateChangedHandler(acsStateChanged);
-
+	BUMPERS_setStateChangedHandler(bumpersStateChanged);
 
 	I2CTWI_initMaster(100);
 	I2CTWI_setTransmissionErrorHandler(I2C_transmissionError);
 	I2CTWI_setRequestedDataReadyHandler(I2C_requestedDataReady);
+
 
 	mSleep(1000);
 
@@ -90,7 +98,6 @@ void initPositionControl(void)
 
 	setPortMode('a',ADC3,false);
 	setPortMode('a',ADC2,false);
-
 }
 
 
@@ -98,4 +105,27 @@ void updatePositionControl(void)
 {
 	task_checkINT0();
 	task_I2CTWI();
+}
+
+void updateWallData(void)
+{
+	bool left = wallIsLeft();
+	bool front = wallIsFront();
+	bool right = wallIsRight();
+	switch(dir)
+	{
+		case facingNorth: 	cells[cellCounter].west=left;
+							cells[cellCounter].north=front;
+							cells[cellCounter].east=right; break;
+		case facingEast: 	cells[cellCounter].north=left;
+							cells[cellCounter].east=front;
+							cells[cellCounter].south=right; break;
+		case facingSouth: 	cells[cellCounter].east=left;
+							cells[cellCounter].south=front;
+							cells[cellCounter].west=right; break;
+		case facingWest: 	cells[cellCounter].south=left;
+							cells[cellCounter].west=front;
+							cells[cellCounter].north=right; break;
+	}
+
 }

@@ -6,565 +6,499 @@
    6               	__tmp_reg__ = 0
    7               	__zero_reg__ = 1
   15               	.Ltext0:
-  16               	.global	MoveControl_onEnterCell_DUMMY
-  18               	MoveControl_onEnterCell_DUMMY:
-  19               	.LFB8:
+  16               	.global	initMoveControl
+  18               	initMoveControl:
+  19               	.LFB6:
   20               	.LM1:
   21               	/* prologue: function */
   22               	/* frame size = 0 */
   23               	/* stack size = 0 */
   24               	.L__stack_usage = 0
-  25               	/* epilogue start */
-  26               	.LM2:
-  27 0000 0895      		ret
-  28               	.LFE8:
-  30               	.global	MoveControl_onLeaveCell_DUMMY
-  32               	MoveControl_onLeaveCell_DUMMY:
-  33               	.LFB10:
-  34               	.LM3:
-  35               	/* prologue: function */
-  36               	/* frame size = 0 */
-  37               	/* stack size = 0 */
-  38               	.L__stack_usage = 0
-  39               	/* epilogue start */
-  40               	.LM4:
-  41 0002 0895      		ret
-  42               	.LFE10:
-  44               	.global	initMoveControl
-  46               	initMoveControl:
-  47               	.LFB6:
-  48               	.LM5:
-  49               	/* prologue: function */
-  50               	/* frame size = 0 */
-  51               	/* stack size = 0 */
-  52               	.L__stack_usage = 0
-  53               	.LM6:
-  54 0004 83E0      		ldi r24,lo8(3)
-  55 0006 8093 0000 		sts kState,r24
+  25               	.LM2:
+  26 0000 83E0      		ldi r24,lo8(3)
+  27 0002 8093 0000 		sts kState,r24
+  28               	.LM3:
+  29 0006 80EA      		ldi r24,lo8(160)
+  30 0008 90E0      		ldi r25,hi8(160)
+  31 000a 9093 0000 		sts conditionedWallDistance+1,r25
+  32 000e 8093 0000 		sts conditionedWallDistance,r24
+  33               	/* epilogue start */
+  34               	.LM4:
+  35 0012 0895      		ret
+  36               	.LFE6:
+  38               	.global	updateMoveControl
+  40               	updateMoveControl:
+  41               	.LFB7:
+  42               	.LM5:
+  43               	/* prologue: function */
+  44               	/* frame size = 0 */
+  45               	/* stack size = 0 */
+  46               	.L__stack_usage = 0
+  47               	/* epilogue start */
+  48               	.LM6:
+  49 0014 0895      		ret
+  50               	.LFE7:
+  52               	.global	moveForward
+  54               	moveForward:
+  55               	.LFB8:
   56               	.LM7:
-  57 000a 8091 0000 		lds r24,lowerAvgWallBoundary
-  58 000e 9091 0000 		lds r25,lowerAvgWallBoundary+1
-  59 0012 2091 0000 		lds r18,higherAvgWallBoundary
-  60 0016 3091 0000 		lds r19,higherAvgWallBoundary+1
-  61 001a 820F      		add r24,r18
-  62 001c 931F      		adc r25,r19
-  63 001e 9695      		lsr r25
-  64 0020 8795      		ror r24
-  65 0022 9093 0000 		sts conditionedWallDistance+1,r25
-  66 0026 8093 0000 		sts conditionedWallDistance,r24
-  67               	/* epilogue start */
-  68               	.LM8:
-  69 002a 0895      		ret
-  70               	.LFE6:
-  72               	.global	updateMoveControl
-  74               	updateMoveControl:
-  75               	.LFB7:
-  76               	.LM9:
-  77               	/* prologue: function */
-  78               	/* frame size = 0 */
-  79               	/* stack size = 0 */
-  80               	.L__stack_usage = 0
-  81               	/* epilogue start */
-  82               	.LM10:
-  83 002c 0895      		ret
-  84               	.LFE7:
-  86               	.global	MoveControl_onEnterCell
-  88               	MoveControl_onEnterCell:
-  89               	.LFB9:
-  90               	.LM11:
-  91               	.LVL0:
-  92               	/* prologue: function */
-  93               	/* frame size = 0 */
-  94               	/* stack size = 0 */
-  95               	.L__stack_usage = 0
-  96               	.LM12:
-  97 002e 9093 0000 		sts MoveControl_onEnterCellHandler+1,r25
-  98 0032 8093 0000 		sts MoveControl_onEnterCellHandler,r24
-  99               	/* epilogue start */
- 100               	.LM13:
- 101 0036 0895      		ret
- 102               	.LFE9:
- 104               	.global	MoveControl_onLeaveCell
- 106               	MoveControl_onLeaveCell:
- 107               	.LFB11:
- 108               	.LM14:
- 109               	.LVL1:
- 110               	/* prologue: function */
- 111               	/* frame size = 0 */
- 112               	/* stack size = 0 */
- 113               	.L__stack_usage = 0
- 114               	.LM15:
- 115 0038 9093 0000 		sts MoveControl_onLeaveCellHandler+1,r25
- 116 003c 8093 0000 		sts MoveControl_onLeaveCellHandler,r24
- 117               	/* epilogue start */
- 118               	.LM16:
- 119 0040 0895      		ret
- 120               	.LFE11:
- 122               	.global	moveForward
- 124               	moveForward:
- 125               	.LFB12:
- 126               	.LM17:
- 127 0042 9F92      		push r9
- 128 0044 AF92      		push r10
- 129 0046 BF92      		push r11
- 130 0048 CF92      		push r12
- 131 004a DF92      		push r13
- 132 004c EF92      		push r14
- 133 004e FF92      		push r15
- 134 0050 0F93      		push r16
- 135 0052 1F93      		push r17
- 136 0054 CF93      		push r28
- 137 0056 DF93      		push r29
- 138               	/* prologue: function */
- 139               	/* frame size = 0 */
- 140               	/* stack size = 11 */
- 141               	.L__stack_usage = 11
- 142               	.LM18:
- 143 0058 81E0      		ldi r24,lo8(1)
- 144 005a 8093 0000 		sts kState,r24
- 145               	.LM19:
- 146 005e E091 0000 		lds r30,MoveControl_onLeaveCellHandler
- 147 0062 F091 0000 		lds r31,MoveControl_onLeaveCellHandler+1
- 148 0066 0995      		icall
- 149               	.LM20:
- 150 0068 4091 0000 		lds r20,cellDist
- 151 006c 5091 0000 		lds r21,cellDist+1
- 152 0070 8091 0000 		lds r24,cruiseSpeed
- 153 0074 60E0      		ldi r22,lo8(0)
- 154 0076 20E0      		ldi r18,lo8(0)
- 155 0078 0E94 0000 		call move
- 156               	.LVL2:
- 157               	.LM21:
- 158 007c DD24      		clr r13
- 159               	.LM22:
- 160 007e CC24      		clr r12
- 161               	.LM23:
- 162 0080 BB24      		clr r11
- 163               	.LM24:
- 164 0082 AA24      		clr r10
- 165               	.LM25:
- 166 0084 00C0      		rjmp .L8
- 167               	.LVL3:
- 168               	.L28:
- 169               	.LBB2:
- 170               	.LM26:
- 171 0086 85E0      		ldi r24,lo8(5)
- 172 0088 0E94 0000 		call readADC
- 173 008c 8C01      		movw r16,r24
- 174               	.LVL4:
- 175               	.LM27:
- 176 008e 82E0      		ldi r24,lo8(2)
- 177               	.LVL5:
- 178 0090 0E94 0000 		call readADC
- 179 0094 7C01      		movw r14,r24
- 180               	.LVL6:
- 181               	.LM28:
- 182 0096 84E0      		ldi r24,lo8(4)
- 183               	.LVL7:
- 184 0098 0E94 0000 		call readADC
- 185 009c EC01      		movw r28,r24
- 186               	.LVL8:
- 187               	.LM29:
- 188 009e 83E0      		ldi r24,lo8(3)
- 189               	.LVL9:
- 190 00a0 0E94 0000 		call readADC
- 191 00a4 9C01      		movw r18,r24
- 192               	.LVL10:
- 193               	.LM30:
- 194 00a6 8091 0000 		lds r24,lowerAvgWallBoundary
- 195 00aa 9091 0000 		lds r25,lowerAvgWallBoundary+1
- 196               	.LVL11:
- 197 00ae 0817      		cp r16,r24
- 198 00b0 1907      		cpc r17,r25
- 199 00b2 00F0      		brlo .L29
- 200               	.LM31:
- 201 00b4 41E0      		ldi r20,lo8(1)
- 202 00b6 50E0      		ldi r21,hi8(1)
- 203 00b8 6091 0000 		lds r22,higherAvgWallBoundary
- 204 00bc 7091 0000 		lds r23,higherAvgWallBoundary+1
- 205 00c0 6017      		cp r22,r16
- 206 00c2 7107      		cpc r23,r17
- 207 00c4 00F4      		brsh .L9
- 208               	.L29:
- 209               	.LM32:
- 210 00c6 40E0      		ldi r20,lo8(0)
- 211 00c8 50E0      		ldi r21,hi8(0)
- 212               	.L9:
- 213               	.LM33:
- 214 00ca 942E      		mov r9,r20
- 215               	.LVL12:
- 216               	.LM34:
- 217 00cc E816      		cp r14,r24
- 218 00ce F906      		cpc r15,r25
- 219 00d0 00F0      		brlo .L30
- 220               	.LM35:
- 221 00d2 41E0      		ldi r20,lo8(1)
- 222 00d4 50E0      		ldi r21,hi8(1)
- 223               	.LVL13:
- 224 00d6 6091 0000 		lds r22,higherAvgWallBoundary
- 225 00da 7091 0000 		lds r23,higherAvgWallBoundary+1
- 226 00de 6E15      		cp r22,r14
- 227 00e0 7F05      		cpc r23,r15
- 228 00e2 00F4      		brsh .L11
- 229               	.L30:
- 230               	.LM36:
- 231 00e4 40E0      		ldi r20,lo8(0)
- 232 00e6 50E0      		ldi r21,hi8(0)
- 233               	.L11:
- 234               	.LM37:
- 235 00e8 E42F      		mov r30,r20
- 236               	.LVL14:
- 237               	.LM38:
- 238 00ea C817      		cp r28,r24
- 239 00ec D907      		cpc r29,r25
- 240 00ee 00F0      		brlo .L31
- 241               	.LM39:
- 242 00f0 41E0      		ldi r20,lo8(1)
- 243 00f2 50E0      		ldi r21,hi8(1)
- 244               	.LVL15:
- 245 00f4 6091 0000 		lds r22,higherAvgWallBoundary
- 246 00f8 7091 0000 		lds r23,higherAvgWallBoundary+1
- 247 00fc 6C17      		cp r22,r28
- 248 00fe 7D07      		cpc r23,r29
- 249 0100 00F4      		brsh .L13
- 250               	.L31:
- 251               	.LM40:
- 252 0102 40E0      		ldi r20,lo8(0)
- 253 0104 50E0      		ldi r21,hi8(0)
- 254               	.L13:
- 255               	.LM41:
- 256 0106 F42F      		mov r31,r20
- 257               	.LVL16:
- 258               	.LM42:
- 259 0108 2817      		cp r18,r24
- 260 010a 3907      		cpc r19,r25
- 261 010c 00F0      		brlo .L32
- 262               	.LM43:
- 263 010e 81E0      		ldi r24,lo8(1)
- 264 0110 90E0      		ldi r25,hi8(1)
- 265 0112 4091 0000 		lds r20,higherAvgWallBoundary
- 266 0116 5091 0000 		lds r21,higherAvgWallBoundary+1
- 267               	.LVL17:
- 268 011a 4217      		cp r20,r18
- 269 011c 5307      		cpc r21,r19
- 270 011e 00F4      		brsh .L15
- 271               	.L32:
- 272               	.LM44:
- 273 0120 80E0      		ldi r24,lo8(0)
- 274 0122 90E0      		ldi r25,hi8(0)
- 275               	.L15:
- 276               	.LM45:
- 277 0124 482F      		mov r20,r24
- 278               	.LVL18:
- 279               	.LM46:
- 280 0126 9920      		tst r9
- 281 0128 01F0      		breq .L17
- 282               	.LM47:
- 283 012a EE23      		tst r30
- 284 012c 01F0      		breq .L17
- 285               	.LM48:
- 286 012e C801      		movw r24,r16
- 287               	.LVL19:
- 288 0130 8E19      		sub r24,r14
- 289 0132 9F09      		sbc r25,r15
- 290 0134 6091 0000 		lds r22,dirErrorFactor
- 291 0138 70E0      		ldi r23,lo8(0)
- 292 013a 0E94 0000 		call __udivmodhi4
- 293 013e A62E      		mov r10,r22
- 294               	.LVL20:
- 295               	.LM49:
- 296 0140 FF23      		tst r31
- 297 0142 01F0      		breq .L18
- 298               	.LM50:
- 299 0144 C801      		movw r24,r16
- 300 0146 8C1B      		sub r24,r28
- 301 0148 9D0B      		sbc r25,r29
- 302 014a 6091 0000 		lds r22,distErrorFactor
- 303               	.LVL21:
- 304 014e 70E0      		ldi r23,lo8(0)
- 305 0150 0E94 0000 		call __udivmodhi4
- 306 0154 C62E      		mov r12,r22
- 307               	.LVL22:
- 308 0156 00C0      		rjmp .L19
- 309               	.LVL23:
- 310               	.L18:
- 311               	.LM51:
- 312 0158 4423      		tst r20
- 313 015a 01F0      		breq .L20
- 314               	.LM52:
- 315 015c C701      		movw r24,r14
- 316 015e 821B      		sub r24,r18
- 317 0160 930B      		sbc r25,r19
- 318 0162 6091 0000 		lds r22,distErrorFactor
- 319 0166 70E0      		ldi r23,lo8(0)
- 320 0168 0E94 0000 		call __udivmodhi4
- 321 016c C62E      		mov r12,r22
- 322               	.LVL24:
- 323 016e 00C0      		rjmp .L23
- 324               	.LVL25:
- 325               	.L20:
- 326               	.LM53:
- 327 0170 8091 0000 		lds r24,conditionedWallDistance
- 328 0174 C02E      		mov r12,r16
- 329               	.LVL26:
- 330 0176 C81A      		sub r12,r24
- 331               	.LVL27:
- 332 0178 00C0      		rjmp .L23
- 333               	.L17:
- 334               	.LM54:
- 335 017a FF23      		tst r31
- 336 017c 01F0      		breq .L23
- 337               	.L19:
- 338               	.LM55:
- 339 017e 4423      		tst r20
- 340 0180 01F0      		breq .L23
- 341               	.LM56:
- 342 0182 CE01      		movw r24,r28
- 343 0184 821B      		sub r24,r18
- 344 0186 930B      		sbc r25,r19
- 345 0188 6091 0000 		lds r22,dirErrorFactor
- 346 018c 70E0      		ldi r23,lo8(0)
- 347 018e 0E94 0000 		call __udivmodhi4
- 348 0192 B62E      		mov r11,r22
- 349               	.LVL28:
- 350               	.LM57:
- 351 0194 9920      		tst r9
- 352 0196 01F0      		breq .L24
- 353               	.LM58:
- 354 0198 CE01      		movw r24,r28
- 355 019a 801B      		sub r24,r16
- 356 019c 910B      		sbc r25,r17
- 357 019e 6091 0000 		lds r22,distErrorFactor
- 358               	.LVL29:
- 359 01a2 70E0      		ldi r23,lo8(0)
- 360 01a4 0E94 0000 		call __udivmodhi4
- 361 01a8 D62E      		mov r13,r22
- 362               	.LVL30:
- 363               	.LM59:
- 364 01aa EE23      		tst r30
- 365 01ac 01F4      		brne .L25
- 366 01ae 00C0      		rjmp .L23
- 367               	.LVL31:
- 368               	.L24:
- 369               	.LM60:
- 370 01b0 EE23      		tst r30
- 371 01b2 01F0      		breq .L26
- 372               	.LM61:
- 373 01b4 C901      		movw r24,r18
- 374 01b6 8E19      		sub r24,r14
- 375 01b8 9F09      		sbc r25,r15
- 376 01ba 6091 0000 		lds r22,distErrorFactor
- 377 01be 70E0      		ldi r23,lo8(0)
- 378 01c0 0E94 0000 		call __udivmodhi4
- 379 01c4 D62E      		mov r13,r22
- 380               	.LVL32:
- 381 01c6 00C0      		rjmp .L23
- 382               	.LVL33:
- 383               	.L26:
- 384               	.LM62:
- 385 01c8 8091 0000 		lds r24,conditionedWallDistance
- 386 01cc 9E01      		movw r18,r28
- 387               	.LVL34:
- 388 01ce 281B      		sub r18,r24
- 389 01d0 D22E      		mov r13,r18
- 390               	.LVL35:
- 391 01d2 00C0      		rjmp .L23
- 392               	.LVL36:
- 393               	.L25:
- 394               	.LM63:
- 395 01d4 2E0D      		add r18,r14
- 396 01d6 3F1D      		adc r19,r15
- 397               	.LVL37:
- 398 01d8 3695      		lsr r19
- 399 01da 2795      		ror r18
- 400 01dc C00F      		add r28,r16
- 401 01de D11F      		adc r29,r17
- 402               	.LVL38:
- 403 01e0 D695      		lsr r29
- 404 01e2 C795      		ror r28
- 405 01e4 2C0F      		add r18,r28
- 406 01e6 3D1F      		adc r19,r29
- 407 01e8 3695      		lsr r19
- 408 01ea 2795      		ror r18
- 409               	.LVL39:
- 410 01ec 3093 0000 		sts conditionedWallDistance+1,r19
- 411 01f0 2093 0000 		sts conditionedWallDistance,r18
- 412               	.L23:
- 413               	.LM64:
- 414 01f4 8091 0000 		lds r24,cruiseSpeed
- 415 01f8 9C2D      		mov r25,r12
- 416 01fa 9A0D      		add r25,r10
- 417 01fc 6D2D      		mov r22,r13
- 418 01fe 6B0D      		add r22,r11
- 419 0200 680F      		add r22,r24
- 420 0202 890F      		add r24,r25
- 421 0204 0E94 0000 		call moveAtSpeed
- 422               	.LVL40:
- 423               	.LM65:
- 424 0208 0E94 0000 		call task_checkINT0
- 425               	.LM66:
- 426 020c 0E94 0000 		call task_I2CTWI
- 427               	.LVL41:
- 428               	.L8:
- 429               	.LBE2:
- 430               	.LM67:
- 431 0210 8091 0000 		lds r24,drive_status
- 432 0214 80FF      		sbrs r24,0
- 433 0216 00C0      		rjmp .L28
- 434               	.LM68:
- 435 0218 83E0      		ldi r24,lo8(3)
- 436 021a 8093 0000 		sts kState,r24
- 437               	.LM69:
- 438 021e E091 0000 		lds r30,MoveControl_onEnterCellHandler
- 439 0222 F091 0000 		lds r31,MoveControl_onEnterCellHandler+1
- 440 0226 0995      		icall
- 441               	/* epilogue start */
- 442               	.LM70:
- 443 0228 DF91      		pop r29
- 444 022a CF91      		pop r28
- 445 022c 1F91      		pop r17
- 446 022e 0F91      		pop r16
- 447 0230 FF90      		pop r15
- 448 0232 EF90      		pop r14
- 449 0234 DF90      		pop r13
- 450               	.LVL42:
- 451 0236 CF90      		pop r12
- 452               	.LVL43:
- 453 0238 BF90      		pop r11
- 454               	.LVL44:
- 455 023a AF90      		pop r10
- 456               	.LVL45:
- 457 023c 9F90      		pop r9
- 458 023e 0895      		ret
- 459               	.LFE12:
- 461               	.global	turnLeft
- 463               	turnLeft:
- 464               	.LFB13:
- 465               	.LM71:
- 466               	/* prologue: function */
- 467               	/* frame size = 0 */
- 468               	/* stack size = 0 */
- 469               	.L__stack_usage = 0
- 470               	.LM72:
- 471 0240 82E0      		ldi r24,lo8(2)
- 472 0242 8093 0000 		sts kState,r24
- 473               	.LM73:
- 474 0246 8091 0000 		lds r24,dist360
- 475 024a 9091 0000 		lds r25,dist360+1
- 476 024e 64E0      		ldi r22,lo8(4)
- 477 0250 70E0      		ldi r23,hi8(4)
- 478 0252 0E94 0000 		call __divmodhi4
- 479 0256 AB01      		movw r20,r22
- 480 0258 8091 0000 		lds r24,cruiseSpeed
- 481 025c 62E0      		ldi r22,lo8(2)
- 482 025e 21E0      		ldi r18,lo8(1)
- 483 0260 0E94 0000 		call rotate
- 484               	.LM74:
- 485 0264 83E0      		ldi r24,lo8(3)
- 486 0266 8093 0000 		sts kState,r24
- 487               	/* epilogue start */
- 488               	.LM75:
- 489 026a 0895      		ret
- 490               	.LFE13:
- 492               	.global	turnRight
- 494               	turnRight:
- 495               	.LFB14:
- 496               	.LM76:
- 497               	/* prologue: function */
- 498               	/* frame size = 0 */
- 499               	/* stack size = 0 */
- 500               	.L__stack_usage = 0
- 501               	.LM77:
- 502 026c 82E0      		ldi r24,lo8(2)
- 503 026e 8093 0000 		sts kState,r24
- 504               	.LM78:
- 505 0272 8091 0000 		lds r24,dist360
- 506 0276 9091 0000 		lds r25,dist360+1
- 507 027a 64E0      		ldi r22,lo8(4)
- 508 027c 70E0      		ldi r23,hi8(4)
- 509 027e 0E94 0000 		call __divmodhi4
- 510 0282 AB01      		movw r20,r22
- 511 0284 8091 0000 		lds r24,cruiseSpeed
- 512 0288 63E0      		ldi r22,lo8(3)
- 513 028a 21E0      		ldi r18,lo8(1)
- 514 028c 0E94 0000 		call rotate
- 515               	.LM79:
- 516 0290 83E0      		ldi r24,lo8(3)
- 517 0292 8093 0000 		sts kState,r24
- 518               	/* epilogue start */
- 519               	.LM80:
- 520 0296 0895      		ret
- 521               	.LFE14:
- 523               	.global	cellDist
- 524               		.data
- 527               	cellDist:
- 528 0000 8813      		.word	5000
- 529               	.global	cruiseSpeed
- 532               	cruiseSpeed:
- 533 0002 28        		.byte	40
- 534               	.global	dirErrorFactor
- 537               	dirErrorFactor:
- 538 0003 06        		.byte	6
- 539               	.global	distErrorFactor
- 542               	distErrorFactor:
- 543 0004 06        		.byte	6
- 544               		.comm timer,2,1
- 545               		.comm interrupt_status,1,1
- 546               		.comm status,1,1
- 547               		.comm drive_status,1,1
- 548               		.comm dist360,2,1
- 549               		.comm cells,800,1
- 550               		.comm kState,1,1
- 551               		.comm lowerAvgWallBoundary,2,1
- 552               		.comm higherAvgWallBoundary,2,1
- 553               		.comm conditionedWallDistance,2,1
- 556               	MoveControl_onLeaveCellHandler:
- 557 0005 0000      		.word	gs(MoveControl_onLeaveCell_DUMMY)
- 560               	MoveControl_onEnterCellHandler:
- 561 0007 0000      		.word	gs(MoveControl_onEnterCell_DUMMY)
- 650               	.Letext0:
+  57 0016 4F92      		push r4
+  58 0018 5F92      		push r5
+  59 001a 7F92      		push r7
+  60 001c 8F92      		push r8
+  61 001e 9F92      		push r9
+  62 0020 AF92      		push r10
+  63 0022 BF92      		push r11
+  64 0024 CF92      		push r12
+  65 0026 DF92      		push r13
+  66 0028 EF92      		push r14
+  67 002a FF92      		push r15
+  68 002c 0F93      		push r16
+  69 002e 1F93      		push r17
+  70 0030 CF93      		push r28
+  71 0032 DF93      		push r29
+  72               	/* prologue: function */
+  73               	/* frame size = 0 */
+  74               	/* stack size = 15 */
+  75               	.L__stack_usage = 15
+  76               	.LM8:
+  77 0034 81E0      		ldi r24,lo8(1)
+  78 0036 8093 0000 		sts kState,r24
+  79               	.LVL0:
+  80               	.LM9:
+  81 003a 4091 0000 		lds r20,cellDist
+  82 003e 5091 0000 		lds r21,cellDist+1
+  83 0042 8091 0000 		lds r24,cruiseSpeed
+  84 0046 60E0      		ldi r22,lo8(0)
+  85 0048 20E0      		ldi r18,lo8(0)
+  86 004a 0E94 0000 		call move
+  87               	.LM10:
+  88 004e 84E6      		ldi r24,lo8(100)
+  89 0050 90E0      		ldi r25,hi8(100)
+  90 0052 0E94 0000 		call mSleep
+  91               	.LM11:
+  92 0056 CC24      		clr r12
+  93 0058 DD24      		clr r13
+  94               	.LM12:
+  95 005a AA24      		clr r10
+  96 005c BB24      		clr r11
+  97               	.LBB2:
+  98               	.LM13:
+  99 005e 82E0      		ldi r24,lo8(2)
+ 100 0060 482E      		mov r4,r24
+ 101 0062 512C      		mov r5,__zero_reg__
+ 102               	.LBE2:
+ 103               	.LM14:
+ 104 0064 00C0      		rjmp .L4
+ 105               	.LVL1:
+ 106               	.L20:
+ 107               	.LBB3:
+ 108               	.LM15:
+ 109 0066 85E0      		ldi r24,lo8(5)
+ 110 0068 6AE0      		ldi r22,lo8(10)
+ 111 006a 0E94 0000 		call readAvgADC
+ 112 006e 8C01      		movw r16,r24
+ 113               	.LVL2:
+ 114               	.LM16:
+ 115 0070 82E0      		ldi r24,lo8(2)
+ 116               	.LVL3:
+ 117 0072 6AE0      		ldi r22,lo8(10)
+ 118 0074 0E94 0000 		call readAvgADC
+ 119 0078 7C01      		movw r14,r24
+ 120               	.LVL4:
+ 121               	.LM17:
+ 122 007a 84E0      		ldi r24,lo8(4)
+ 123               	.LVL5:
+ 124 007c 6AE0      		ldi r22,lo8(10)
+ 125 007e 0E94 0000 		call readAvgADC
+ 126 0082 EC01      		movw r28,r24
+ 127               	.LVL6:
+ 128               	.LM18:
+ 129 0084 83E0      		ldi r24,lo8(3)
+ 130               	.LVL7:
+ 131 0086 6AE0      		ldi r22,lo8(10)
+ 132 0088 0E94 0000 		call readAvgADC
+ 133 008c 9C01      		movw r18,r24
+ 134               	.LVL8:
+ 135               	.LM19:
+ 136 008e 8091 0000 		lds r24,higherAvgWallBoundary
+ 137 0092 9091 0000 		lds r25,higherAvgWallBoundary+1
+ 138               	.LVL9:
+ 139 0096 7724      		clr r7
+ 140 0098 7394      		inc r7
+ 141 009a 0817      		cp r16,r24
+ 142 009c 1907      		cpc r17,r25
+ 143 009e 00F4      		brsh .L5
+ 144 00a0 7724      		clr r7
+ 145               	.L5:
+ 146               	.LVL10:
+ 147               	.LM20:
+ 148 00a2 41E0      		ldi r20,lo8(1)
+ 149 00a4 E816      		cp r14,r24
+ 150 00a6 F906      		cpc r15,r25
+ 151 00a8 00F4      		brsh .L6
+ 152 00aa 40E0      		ldi r20,lo8(0)
+ 153               	.L6:
+ 154               	.LVL11:
+ 155               	.LM21:
+ 156 00ac F1E0      		ldi r31,lo8(1)
+ 157 00ae C817      		cp r28,r24
+ 158 00b0 D907      		cpc r29,r25
+ 159 00b2 00F4      		brsh .L7
+ 160 00b4 F0E0      		ldi r31,lo8(0)
+ 161               	.L7:
+ 162               	.LVL12:
+ 163               	.LM22:
+ 164 00b6 E1E0      		ldi r30,lo8(1)
+ 165 00b8 2817      		cp r18,r24
+ 166 00ba 3907      		cpc r19,r25
+ 167 00bc 00F4      		brsh .L8
+ 168 00be E0E0      		ldi r30,lo8(0)
+ 169               	.L8:
+ 170               	.LVL13:
+ 171               	.LM23:
+ 172 00c0 7720      		tst r7
+ 173 00c2 01F0      		breq .L9
+ 174               	.LM24:
+ 175 00c4 4423      		tst r20
+ 176 00c6 01F0      		breq .L9
+ 177               	.LM25:
+ 178 00c8 C801      		movw r24,r16
+ 179 00ca 8E19      		sub r24,r14
+ 180 00cc 9F09      		sbc r25,r15
+ 181 00ce 6091 0000 		lds r22,dirErrorFactor
+ 182 00d2 70E0      		ldi r23,lo8(0)
+ 183 00d4 0E94 0000 		call __divmodhi4
+ 184 00d8 4B01      		movw r8,r22
+ 185               	.LM26:
+ 186 00da FF23      		tst r31
+ 187 00dc 01F0      		breq .L10
+ 188               	.LM27:
+ 189 00de C801      		movw r24,r16
+ 190 00e0 8C1B      		sub r24,r28
+ 191 00e2 9D0B      		sbc r25,r29
+ 192 00e4 6091 0000 		lds r22,distErrorFactor
+ 193 00e8 70E0      		ldi r23,lo8(0)
+ 194 00ea 0E94 0000 		call __divmodhi4
+ 195 00ee 5B01      		movw r10,r22
+ 196 00f0 00C0      		rjmp .L11
+ 197               	.L10:
+ 198               	.LM28:
+ 199 00f2 EE23      		tst r30
+ 200 00f4 01F0      		breq .L12
+ 201               	.LM29:
+ 202 00f6 C701      		movw r24,r14
+ 203 00f8 821B      		sub r24,r18
+ 204 00fa 930B      		sbc r25,r19
+ 205 00fc 6091 0000 		lds r22,distErrorFactor
+ 206 0100 70E0      		ldi r23,lo8(0)
+ 207 0102 0E94 0000 		call __divmodhi4
+ 208 0106 5B01      		movw r10,r22
+ 209 0108 00C0      		rjmp .L22
+ 210               	.L12:
+ 211               	.LM30:
+ 212 010a 8091 0000 		lds r24,conditionedWallDistance
+ 213 010e 9091 0000 		lds r25,conditionedWallDistance+1
+ 214 0112 5801      		movw r10,r16
+ 215 0114 A81A      		sub r10,r24
+ 216 0116 B90A      		sbc r11,r25
+ 217 0118 00C0      		rjmp .L22
+ 218               	.L9:
+ 219               	.LVL14:
+ 220               	.LM31:
+ 221 011a FF23      		tst r31
+ 222 011c 01F4      		brne .+2
+ 223 011e 00C0      		rjmp .L21
+ 224 0120 8824      		clr r8
+ 225 0122 9924      		clr r9
+ 226               	.LVL15:
+ 227               	.L11:
+ 228               	.LM32:
+ 229 0124 EE23      		tst r30
+ 230 0126 01F4      		brne .+2
+ 231 0128 00C0      		rjmp .L22
+ 232               	.LM33:
+ 233 012a CE01      		movw r24,r28
+ 234 012c 821B      		sub r24,r18
+ 235 012e 930B      		sbc r25,r19
+ 236 0130 6091 0000 		lds r22,dirErrorFactor
+ 237 0134 70E0      		ldi r23,lo8(0)
+ 238 0136 0E94 0000 		call __divmodhi4
+ 239 013a FB01      		movw r30,r22
+ 240               	.LVL16:
+ 241               	.LM34:
+ 242 013c 7720      		tst r7
+ 243 013e 01F0      		breq .L16
+ 244               	.LM35:
+ 245 0140 CE01      		movw r24,r28
+ 246 0142 801B      		sub r24,r16
+ 247 0144 910B      		sbc r25,r17
+ 248 0146 6091 0000 		lds r22,distErrorFactor
+ 249 014a 70E0      		ldi r23,lo8(0)
+ 250 014c 0E94 0000 		call __divmodhi4
+ 251 0150 6B01      		movw r12,r22
+ 252               	.LM36:
+ 253 0152 4423      		tst r20
+ 254 0154 01F4      		brne .L17
+ 255 0156 00C0      		rjmp .L15
+ 256               	.L16:
+ 257               	.LM37:
+ 258 0158 4423      		tst r20
+ 259 015a 01F0      		breq .L18
+ 260               	.LM38:
+ 261 015c C901      		movw r24,r18
+ 262 015e 8E19      		sub r24,r14
+ 263 0160 9F09      		sbc r25,r15
+ 264 0162 6091 0000 		lds r22,distErrorFactor
+ 265 0166 70E0      		ldi r23,lo8(0)
+ 266 0168 0E94 0000 		call __divmodhi4
+ 267 016c 6B01      		movw r12,r22
+ 268 016e 00C0      		rjmp .L15
+ 269               	.L18:
+ 270               	.LM39:
+ 271 0170 8091 0000 		lds r24,conditionedWallDistance
+ 272 0174 9091 0000 		lds r25,conditionedWallDistance+1
+ 273 0178 6E01      		movw r12,r28
+ 274 017a C81A      		sub r12,r24
+ 275 017c D90A      		sbc r13,r25
+ 276 017e 00C0      		rjmp .L15
+ 277               	.L17:
+ 278               	.LM40:
+ 279 0180 C901      		movw r24,r18
+ 280 0182 8E0D      		add r24,r14
+ 281 0184 9F1D      		adc r25,r15
+ 282 0186 B201      		movw r22,r4
+ 283 0188 0E94 0000 		call __divmodhi4
+ 284 018c 9B01      		movw r18,r22
+ 285               	.LVL17:
+ 286 018e CE01      		movw r24,r28
+ 287 0190 800F      		add r24,r16
+ 288 0192 911F      		adc r25,r17
+ 289 0194 B201      		movw r22,r4
+ 290 0196 0E94 0000 		call __divmodhi4
+ 291 019a 260F      		add r18,r22
+ 292 019c 371F      		adc r19,r23
+ 293 019e C901      		movw r24,r18
+ 294 01a0 B201      		movw r22,r4
+ 295 01a2 0E94 0000 		call __divmodhi4
+ 296 01a6 7093 0000 		sts conditionedWallDistance+1,r23
+ 297 01aa 6093 0000 		sts conditionedWallDistance,r22
+ 298 01ae 00C0      		rjmp .L15
+ 299               	.LVL18:
+ 300               	.L22:
+ 301               	.LM41:
+ 302 01b0 E0E0      		ldi r30,lo8(0)
+ 303 01b2 F0E0      		ldi r31,hi8(0)
+ 304               	.LVL19:
+ 305               	.L15:
+ 306               	.LM42:
+ 307 01b4 8091 0000 		lds r24,cruiseSpeed
+ 308 01b8 8A0C      		add r8,r10
+ 309 01ba 6E2F      		mov r22,r30
+ 310 01bc 6C0D      		add r22,r12
+ 311 01be 680F      		add r22,r24
+ 312 01c0 880D      		add r24,r8
+ 313 01c2 0E94 0000 		call moveAtSpeed
+ 314               	.LVL20:
+ 315               	.LM43:
+ 316 01c6 0E94 0000 		call task_checkINT0
+ 317               	.LM44:
+ 318 01ca 0E94 0000 		call task_I2CTWI
+ 319               	.LVL21:
+ 320               	.L4:
+ 321               	.LBE3:
+ 322               	.LM45:
+ 323 01ce 8091 0000 		lds r24,drive_status
+ 324 01d2 80FF      		sbrs r24,0
+ 325 01d4 00C0      		rjmp .L20
+ 326               	.LM46:
+ 327 01d6 0E94 0000 		call stop
+ 328               	.LM47:
+ 329 01da 83E0      		ldi r24,lo8(3)
+ 330 01dc 8093 0000 		sts kState,r24
+ 331               	/* epilogue start */
+ 332               	.LM48:
+ 333 01e0 DF91      		pop r29
+ 334 01e2 CF91      		pop r28
+ 335 01e4 1F91      		pop r17
+ 336 01e6 0F91      		pop r16
+ 337 01e8 FF90      		pop r15
+ 338 01ea EF90      		pop r14
+ 339 01ec DF90      		pop r13
+ 340 01ee CF90      		pop r12
+ 341 01f0 BF90      		pop r11
+ 342 01f2 AF90      		pop r10
+ 343 01f4 9F90      		pop r9
+ 344 01f6 8F90      		pop r8
+ 345 01f8 7F90      		pop r7
+ 346 01fa 5F90      		pop r5
+ 347 01fc 4F90      		pop r4
+ 348 01fe 0895      		ret
+ 349               	.LVL22:
+ 350               	.L21:
+ 351               	.LBB4:
+ 352               	.LM49:
+ 353 0200 8824      		clr r8
+ 354 0202 9924      		clr r9
+ 355               	.LVL23:
+ 356 0204 00C0      		rjmp .L22
+ 357               	.LBE4:
+ 358               	.LFE8:
+ 360               	.global	turnLeft
+ 362               	turnLeft:
+ 363               	.LFB9:
+ 364               	.LM50:
+ 365               	/* prologue: function */
+ 366               	/* frame size = 0 */
+ 367               	/* stack size = 0 */
+ 368               	.L__stack_usage = 0
+ 369               	.LM51:
+ 370 0206 82E0      		ldi r24,lo8(2)
+ 371 0208 8093 0000 		sts kState,r24
+ 372               	.LM52:
+ 373 020c 8091 0000 		lds r24,dist360
+ 374 0210 9091 0000 		lds r25,dist360+1
+ 375 0214 69E1      		ldi r22,lo8(25)
+ 376 0216 70E0      		ldi r23,hi8(25)
+ 377 0218 0E94 0000 		call __divmodhi4
+ 378 021c AB01      		movw r20,r22
+ 379 021e 8091 0000 		lds r24,cruiseSpeed
+ 380 0222 62E0      		ldi r22,lo8(2)
+ 381 0224 21E0      		ldi r18,lo8(1)
+ 382 0226 0E94 0000 		call rotate
+ 383               	.LM53:
+ 384 022a 83E0      		ldi r24,lo8(3)
+ 385 022c 8093 0000 		sts kState,r24
+ 386               	/* epilogue start */
+ 387               	.LM54:
+ 388 0230 0895      		ret
+ 389               	.LFE9:
+ 391               	.global	turnRight
+ 393               	turnRight:
+ 394               	.LFB10:
+ 395               	.LM55:
+ 396               	/* prologue: function */
+ 397               	/* frame size = 0 */
+ 398               	/* stack size = 0 */
+ 399               	.L__stack_usage = 0
+ 400               	.LM56:
+ 401 0232 82E0      		ldi r24,lo8(2)
+ 402 0234 8093 0000 		sts kState,r24
+ 403               	.LM57:
+ 404 0238 8091 0000 		lds r24,dist360
+ 405 023c 9091 0000 		lds r25,dist360+1
+ 406 0240 69E1      		ldi r22,lo8(25)
+ 407 0242 70E0      		ldi r23,hi8(25)
+ 408 0244 0E94 0000 		call __divmodhi4
+ 409 0248 AB01      		movw r20,r22
+ 410 024a 8091 0000 		lds r24,cruiseSpeed
+ 411 024e 63E0      		ldi r22,lo8(3)
+ 412 0250 21E0      		ldi r18,lo8(1)
+ 413 0252 0E94 0000 		call rotate
+ 414               	.LM58:
+ 415 0256 83E0      		ldi r24,lo8(3)
+ 416 0258 8093 0000 		sts kState,r24
+ 417               	/* epilogue start */
+ 418               	.LM59:
+ 419 025c 0895      		ret
+ 420               	.LFE10:
+ 422               	.global	turn180
+ 424               	turn180:
+ 425               	.LFB11:
+ 426               	.LM60:
+ 427               	/* prologue: function */
+ 428               	/* frame size = 0 */
+ 429               	/* stack size = 0 */
+ 430               	.L__stack_usage = 0
+ 431               	.LM61:
+ 432 025e 82E0      		ldi r24,lo8(2)
+ 433 0260 8093 0000 		sts kState,r24
+ 434               	.LM62:
+ 435 0264 8091 0000 		lds r24,dist360
+ 436 0268 9091 0000 		lds r25,dist360+1
+ 437 026c 880F      		lsl r24
+ 438 026e 991F      		rol r25
+ 439 0270 69E1      		ldi r22,lo8(25)
+ 440 0272 70E0      		ldi r23,hi8(25)
+ 441 0274 0E94 0000 		call __divmodhi4
+ 442 0278 AB01      		movw r20,r22
+ 443 027a 8091 0000 		lds r24,cruiseSpeed
+ 444 027e 62E0      		ldi r22,lo8(2)
+ 445 0280 21E0      		ldi r18,lo8(1)
+ 446 0282 0E94 0000 		call rotate
+ 447               	.LM63:
+ 448 0286 83E0      		ldi r24,lo8(3)
+ 449 0288 8093 0000 		sts kState,r24
+ 450               	/* epilogue start */
+ 451               	.LM64:
+ 452 028c 0895      		ret
+ 453               	.LFE11:
+ 455               	.global	cellDist
+ 456               		.data
+ 459               	cellDist:
+ 460 0000 0807      		.word	1800
+ 461               	.global	cruiseSpeed
+ 464               	cruiseSpeed:
+ 465 0002 28        		.byte	40
+ 466               	.global	dirErrorFactor
+ 469               	dirErrorFactor:
+ 470 0003 04        		.byte	4
+ 471               	.global	distErrorFactor
+ 474               	distErrorFactor:
+ 475 0004 80        		.byte	-128
+ 476               		.comm timer,2,1
+ 477               		.comm interrupt_status,1,1
+ 478               		.comm status,1,1
+ 479               		.comm drive_status,1,1
+ 480               		.comm dist360,2,1
+ 481               		.comm cells,900,1
+ 482               		.comm dir,1,1
+ 483               		.comm cellCounter,2,1
+ 484               		.comm kState,1,1
+ 485               		.comm lowerAvgWallBoundary,2,1
+ 486               		.comm higherAvgWallBoundary,2,1
+ 487               		.comm conditionedWallDistance,2,1
+ 552               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 MoveControl.c
-     /tmp/cc1qKIyP.s:2      *ABS*:000000000000003f __SREG__
-     /tmp/cc1qKIyP.s:3      *ABS*:000000000000003e __SP_H__
-     /tmp/cc1qKIyP.s:4      *ABS*:000000000000003d __SP_L__
-     /tmp/cc1qKIyP.s:5      *ABS*:0000000000000034 __CCP__
-     /tmp/cc1qKIyP.s:6      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc1qKIyP.s:7      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc1qKIyP.s:18     .text:0000000000000000 MoveControl_onEnterCell_DUMMY
-     /tmp/cc1qKIyP.s:32     .text:0000000000000002 MoveControl_onLeaveCell_DUMMY
-     /tmp/cc1qKIyP.s:46     .text:0000000000000004 initMoveControl
+     /tmp/cclF3rQR.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cclF3rQR.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cclF3rQR.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cclF3rQR.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cclF3rQR.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cclF3rQR.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cclF3rQR.s:18     .text:0000000000000000 initMoveControl
                             *COM*:0000000000000001 kState
-                            *COM*:0000000000000002 lowerAvgWallBoundary
-                            *COM*:0000000000000002 higherAvgWallBoundary
                             *COM*:0000000000000002 conditionedWallDistance
-     /tmp/cc1qKIyP.s:74     .text:000000000000002c updateMoveControl
-     /tmp/cc1qKIyP.s:88     .text:000000000000002e MoveControl_onEnterCell
-     /tmp/cc1qKIyP.s:560    .data:0000000000000007 MoveControl_onEnterCellHandler
-     /tmp/cc1qKIyP.s:106    .text:0000000000000038 MoveControl_onLeaveCell
-     /tmp/cc1qKIyP.s:556    .data:0000000000000005 MoveControl_onLeaveCellHandler
-     /tmp/cc1qKIyP.s:124    .text:0000000000000042 moveForward
-     /tmp/cc1qKIyP.s:527    .data:0000000000000000 cellDist
-     /tmp/cc1qKIyP.s:532    .data:0000000000000002 cruiseSpeed
-     /tmp/cc1qKIyP.s:537    .data:0000000000000003 dirErrorFactor
-     /tmp/cc1qKIyP.s:542    .data:0000000000000004 distErrorFactor
+     /tmp/cclF3rQR.s:40     .text:0000000000000014 updateMoveControl
+     /tmp/cclF3rQR.s:54     .text:0000000000000016 moveForward
+     /tmp/cclF3rQR.s:459    .data:0000000000000000 cellDist
+     /tmp/cclF3rQR.s:464    .data:0000000000000002 cruiseSpeed
+                            *COM*:0000000000000002 higherAvgWallBoundary
+     /tmp/cclF3rQR.s:469    .data:0000000000000003 dirErrorFactor
+     /tmp/cclF3rQR.s:474    .data:0000000000000004 distErrorFactor
                             *COM*:0000000000000001 drive_status
-     /tmp/cc1qKIyP.s:463    .text:0000000000000240 turnLeft
+     /tmp/cclF3rQR.s:362    .text:0000000000000206 turnLeft
                             *COM*:0000000000000002 dist360
-     /tmp/cc1qKIyP.s:494    .text:000000000000026c turnRight
+     /tmp/cclF3rQR.s:393    .text:0000000000000232 turnRight
+     /tmp/cclF3rQR.s:424    .text:000000000000025e turn180
                             *COM*:0000000000000002 timer
                             *COM*:0000000000000001 interrupt_status
                             *COM*:0000000000000001 status
-                            *COM*:0000000000000320 cells
+                            *COM*:0000000000000384 cells
+                            *COM*:0000000000000001 dir
+                            *COM*:0000000000000002 cellCounter
+                            *COM*:0000000000000002 lowerAvgWallBoundary
 
 UNDEFINED SYMBOLS
 move
-readADC
-__udivmodhi4
+mSleep
+readAvgADC
+__divmodhi4
 moveAtSpeed
 task_checkINT0
 task_I2CTWI
-__divmodhi4
+stop
 rotate
 __do_copy_data
 __do_clear_bss
