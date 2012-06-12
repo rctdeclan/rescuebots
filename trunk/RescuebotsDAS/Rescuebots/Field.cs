@@ -39,6 +39,19 @@ namespace Rescuebots
                     this.Controls.Add(invRoutePBs[i, j]);
                 }
             }
+
+            startPB = new TransparentPictureBox();
+            startPB.Image = Rescuebots.Properties.Resources.STARTPOSITION;
+            startPB.Size = new System.Drawing.Size(70, 70);
+
+            victimPB = new TransparentPictureBox();
+            victimPB.Image = Rescuebots.Properties.Resources.VICTIM;
+            victimPB.Size = new System.Drawing.Size(70, 70);
+
+            abductedPB = new TransparentPictureBox();
+            abductedPB.Image = Rescuebots.Properties.Resources.NO_STARTPOSITION_OR_VICTIM;
+            abductedPB.Size = new System.Drawing.Size(70, 70);
+
             ResetField();
         }
 
@@ -96,99 +109,69 @@ namespace Rescuebots
         TransparentPictureBox[,] routePBs = new TransparentPictureBox[FIELD_SIZE, FIELD_SIZE];
         TransparentPictureBox[,] invRoutePBs = new TransparentPictureBox[FIELD_SIZE, FIELD_SIZE];
 
-       // int[,] borderIndexes = new int[10, 10] 
-       // { 
-       //{ 1, 0, 3, 4, 5, 0, 0, 0, 0, 0 },
-       //{ 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       // };
+        TransparentPictureBox startPB;
+        TransparentPictureBox victimPB;
+        TransparentPictureBox abductedPB;
 
-       // int[,] routeIndexes = new int[10, 10] 
-       // { 
-       //{ 1, 0, 3, 4, 5, 0, 0, 0, 0, 0 },
-       //{ 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 11,2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       //{ 1, 2, 3, 4, 5, 6, 5, 4, 3, 0 },
-       // };
+        int[,] borderIndexes = new int[FIELD_SIZE, FIELD_SIZE]; 
 
-       // int[,] invRouteIndexes = new int[10, 10] 
-       // { 
-       // { 1, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, 
-       // { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 10,2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 8, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 
-       // { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
-       // };
+        int[,] routeIndexes = new int[FIELD_SIZE,FIELD_SIZE];
+        int[,] invRouteIndexes = new int[FIELD_SIZE, FIELD_SIZE];
 
         public void FillBorders(List<cell> cells)
         {
             for (int i = 0; i< cells.Count; i++)
             {
-                TransparentPictureBox pb = borderPBs[cells[i].x, cells[i].y];
-                int index = ((cells[i].north ? 0x1 : 0) + (cells[i].east ? 0x2 : 0) + (cells[i].south ? 0x4 : 0) + (cells[i].west ? 0x8 : 0));
+                int x = cells[i].x;
+                int y = cells[i].y;
+                TransparentPictureBox pb = borderPBs[x,y];
+                int index = borderIndexes[x,y] | ((cells[i].north ? 0x1 : 0) + (cells[i].east ? 0x2 : 0) + (cells[i].south ? 0x4 : 0) + (cells[i].west ? 0x8 : 0));
+                borderIndexes[x, y] = index;
                 switch (index)
                 {
-                    case 0x0:
+                    case 0:
                         pb.Image = ALL_OPEN;
                         break;
-                    case 0x1:
+                    case 1:
                         pb.Image = NORTH_CLOSED;
                         break;
-                    case 0x2:
+                    case 2:
                         pb.Image = EAST_CLOSED;
                         break;
-                    case 0x3:
+                    case 3:
                         pb.Image = NORTH_EAST_CLOSED;
                         break;
-                    case 0x4:
+                    case 4:
                         pb.Image = SOUTH_CLOSED;
                         break;
-                    case 0x5:
+                    case 5:
                         pb.Image = NORTH_SOUTH_CLOSED;
                         break;
-                    case 0x6:
+                    case 6:
                         pb.Image = EAST_SOUTH_CLOSED;
                         break;
-                    case 0x7:
+                    case 7:
                         pb.Image = NORTH_EAST_SOUTH_CLOSED;
                         break;
-                    case 0x8:
+                    case 8:
                         pb.Image = WEST_CLOSED;
                         break;
-                    case 0x9:
+                    case 9:
                         pb.Image = WEST_NORTH_CLOSED;
                         break;
-                    case 0x10:
+                    case 10:
                         pb.Image = EAST_WEST_CLOSED;
                         break;
-                    case 0x11:
+                    case 11:
                         pb.Image = WEST_NORTH_EAST_CLOSED;
                         break;
-                    case 0x12:
+                    case 12:
                         pb.Image = SOUTH_WEST_CLOSED;
                         break;
-                    case 0x13:
+                    case 13:
                         pb.Image = SOUTH_WEST_NORTH_CLOSED;
                         break;
-                    case 0x14:
+                    case 14:
                         pb.Image = EAST_SOUTH_WEST_CLOSED;
                         break;
                     default:
@@ -199,167 +182,195 @@ namespace Rescuebots
             }
         }
 
-        public void FillRoute()
+        public void FillRoute(List<cell> cells)
         {
+
+            for (int i = 0; i < cells.Count; i++)
+            {
+                int x = cells[i].x;
+                int y = cells[i].y;
+                TransparentPictureBox pb = invRoutePBs[x, y];
+                int index = invRouteIndexes[x,y];
+                if (i > 0) 
+                {
+                    if (cells[i - 1].x - x == -1) index |= 0x8;
+                    if (cells[i - 1].x - x == 1) index |= 0x2;
+                    if (cells[i - 1].y - y == -1) index |= 0x1;
+                    if (cells[i - 1].y - y == 1) index |= 0x4;
+                }
+                if (i < cells.Count) 
+                {
+                    if (cells[i + 1].x - x == -1) index |= 0x8;
+                    if (cells[i + 1].x - x == 1) index |= 0x2;
+                    if (cells[i + 1].y - y == -1) index |= 0x1;
+                    if (cells[i + 1].y - y == 1) index |= 0x4;
+                }
+                switch (index)
+                {
+                    case 0:
+                        pb.Image = NOT_ENTERED_ZONE_IN;
+                        break;
+                    case 1: //single
+                        pb.Image = NORTH_TO_SOUTH_IN;
+                        break;
+                    case 2: //single
+                        pb.Image = EAST_TO_WEST_IN;
+                        break;
+                    case 3:
+                        pb.Image = NORTH_TO_EAST_IN;
+                        break;
+                    case 4: //single
+                        pb.Image = NORTH_TO_SOUTH_IN;
+                        break;
+                    case 5:
+                        pb.Image = NORTH_TO_SOUTH_IN;
+                        break;
+                    case 6:
+                        pb.Image = EAST_TO_SOUTH_IN;
+                        break;
+                    case 7:
+                        pb.Image = NORTH_EAST_SOUTH_IN;
+                        break;
+                    case 8://single
+                        pb.Image = EAST_TO_WEST_IN;
+                        break;
+                    case 9:
+                        pb.Image = WEST_TO_NORTH_IN;
+                        break;
+                    case 10:
+                        pb.Image = EAST_TO_WEST_IN;
+                        break;
+                    case 11:
+                        pb.Image = NORTH_EAST_WEST_IN;
+                        break;
+                    case 12:
+                        pb.Image = SOUTH_TO_WEST_IN;
+                        break;
+                    case 13:
+                        pb.Image = NORTH_SOUTH_WEST_IN;
+                        break;
+                    case 14:
+                        pb.Image = EAST_SOUTH_WEST_IN;
+                        break;
+                    case 15:
+                        pb.Image = NORTH_SOUTH_WEST_IN;
+                        break;
+                    case 16:
+                        pb.Image = NORTH_EAST_SOUTH_WEST_IN;
+                        break;
+                    default:
+                        pb.Image = NOT_ENTERED_ZONE_IN;
+                        break;
+                }
+            }
+
+            //mark startposition
+            startPB.Location = new System.Drawing.Point(cells[0].x * 70, cells[0].y * 70);
+            this.Controls.Add(startPB);
+
+            //mark abduction point
+            if (!softEndRoute)
+            {
+                abductedPB.Location = new System.Drawing.Point(cells[cells.Count - 1].x * 70, cells[cells.Count - 1].y * 70);
+                this.Controls.Add(abductedPB);
+            }
+            else
+            {
+                victimPB.Location = new System.Drawing.Point(cells[cells.Count - 1].x * 70, cells[cells.Count - 1].y * 70);
+                this.Controls.Add(victimPB);
+            }
+
         }
 
-        public void FillInvRoute()
+        public void FillInvRoute(List<cell> invCells)
         {
+            for (int i = 0; i < invCells.Count; i++)
+            {
+                int x = invCells[i].x;
+                int y = invCells[i].y;
+                TransparentPictureBox pb = routePBs[x, y];
+                int index = routeIndexes[x, y];
+                if (i > 0)
+                {
+                    if (invCells[i - 1].x - x == -1) index |= 0x8;
+                    if (invCells[i - 1].x - x == 1) index |= 0x2;
+                    if (invCells[i - 1].y - y == -1) index |= 0x1;
+                    if (invCells[i - 1].y - y == 1) index |= 0x4;
+                }
+                if (i < invCells.Count)
+                {
+                    if (invCells[i + 1].x - x == -1) index |= 0x8;
+                    if (invCells[i + 1].x - x == 1) index |= 0x2;
+                    if (invCells[i + 1].y - y == -1) index |= 0x1;
+                    if (invCells[i + 1].y - y == 1) index |= 0x4;
+                }
+                switch (index)
+                {
+                    case 0:
+                        pb.Image = NOT_ENTERED_ZONE_OUT;
+                        break;
+                    case 1: //single
+                        pb.Image = NORTH_TO_SOUTH_OUT;
+                        break;
+                    case 2: //single
+                        pb.Image = EAST_TO_WEST_OUT;
+                        break;
+                    case 3:
+                        pb.Image = NORTH_TO_EAST_OUT;
+                        break;
+                    case 4: //single
+                        pb.Image = NORTH_TO_SOUTH_OUT;
+                        break;
+                    case 5:
+                        pb.Image = NORTH_TO_SOUTH_OUT;
+                        break;
+                    case 6:
+                        pb.Image = EAST_TO_SOUTH_OUT;
+                        break;
+                    case 7:
+                        pb.Image = NORTH_EAST_SOUTH_OUT;
+                        break;
+                    case 8://single
+                        pb.Image = EAST_TO_WEST_OUT;
+                        break;
+                    case 9:
+                        pb.Image = WEST_TO_NORTH_OUT;
+                        break;
+                    case 10:
+                        pb.Image = EAST_TO_WEST_OUT;
+                        break;
+                    case 11:
+                        pb.Image = NORTH_EAST_WEST_OUT;
+                        break;
+                    case 12:
+                        pb.Image = SOUTH_TO_WEST_OUT;
+                        break;
+                    case 13:
+                        pb.Image = NORTH_SOUTH_WEST_OUT;
+                        break;
+                    case 14:
+                        pb.Image = EAST_SOUTH_WEST_OUT;
+                        break;
+                    case 15:
+                        pb.Image = NORTH_SOUTH_WEST_OUT;
+                        break;
+                    case 16:
+                        pb.Image = NORTH_EAST_SOUTH_WEST_OUT;
+                        break;
+                    default:
+                        pb.Image = NOT_ENTERED_ZONE_OUT;
+                        break;
+                }
+            }
+
+            //mark abduction point
+            if (!softEndInvRoute)
+            {
+                abductedPB.Location = new System.Drawing.Point(invCells[invCells.Count - 1].x * 70, invCells[invCells.Count - 1].y * 70);
+                this.Controls.Add(abductedPB);
+            }
         }
 
-        //public void FillWithValues()
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        for (int j = 0; j < 10; j++)
-        //        {
-        //            byte caseSwitch = borderIndexes[i, j];
-        //            TransparentPictureBox pb = borderPBs[i, j];
-        //            switch (caseSwitch)
-        //            {
-        //                case 0x0:
-        //                    pb.Image = ALL_OPEN;
-        //                    break;
-        //                case 1:
-        //                    pb.Image = EAST_CLOSED;
-        //                    break;
-        //                case 2:
-        //                    pb.Image = EAST_SOUTH_CLOSED;
-        //                    break;
-        //                case 3:
-        //                    pb.Image = EAST_SOUTH_WEST_CLOSED;
-        //                    break;
-        //                case 4:
-        //                    pb.Image = EAST_WEST_CLOSED;
-        //                    break;
-        //                case 5:
-        //                    pb.Image = NORTH_CLOSED;
-        //                    break;
-        //                case 6:
-        //                    pb.Image = NORTH_EAST_CLOSED;
-        //                    break;
-        //                case 7:
-        //                    pb.Image = NORTH_EAST_SOUTH_CLOSED;
-        //                    break;
-        //                case 8:
-        //                    pb.Image = NORTH_SOUTH_CLOSED;
-        //                    break;
-        //                case 9:
-        //                    pb.Image = SOUTH_CLOSED;
-        //                    break;
-        //                case 10:
-        //                    pb.Image = SOUTH_WEST_CLOSED;
-        //                    break;
-        //                case 11:
-        //                    pb.Image = SOUTH_WEST_NORTH_CLOSED;
-        //                    break;
-        //                case 12:
-        //                    pb.Image = WEST_CLOSED;
-        //                    break;
-        //                case 13:
-        //                    pb.Image = WEST_NORTH_CLOSED;
-        //                    break;
-        //                case 14:
-        //                    pb.Image = WEST_NORTH_EAST_CLOSED;
-        //                    break;
-        //                default:
-        //                    pb.Image = ALL_OPEN;
-
-        //                    break;
-        //            }
-        //            caseSwitch = routeIndexes[i, j];
-        //            pb = routePBs[i, j];
-        //            switch (caseSwitch)
-        //            {
-        //                case 0:
-        //                    pb.Image = NOT_ENTERED_ZONE_IN;
-        //                    break;
-        //                case 1:
-        //                    pb.Image = EAST_TO_SOUTH_IN;
-        //                    break;
-        //                case 2:
-        //                    pb.Image = EAST_TO_WEST_IN;
-        //                    break;
-        //                case 3:
-        //                    pb.Image = NORTH_TO_EAST_IN;
-        //                    break;
-        //                case 4:
-        //                    pb.Image = NORTH_TO_SOUTH_IN;
-        //                    break;
-        //                case 5:
-        //                    pb.Image = SOUTH_TO_WEST_IN;
-        //                    break;
-        //                case 6:
-        //                    pb.Image = WEST_TO_NORTH_IN;
-        //                    break;
-        //                case 7:
-        //                    pb.Image = NORTH_EAST_WEST_IN;
-        //                    break;
-        //                case 8:
-        //                    pb.Image = EAST_SOUTH_WEST_IN;
-        //                    break;
-        //                case 9:
-        //                    pb.Image = NORTH_SOUTH_WEST_IN;
-        //                    break;
-        //                case 10:
-        //                    pb.Image = NORTH_EAST_WEST_IN;
-        //                    break;
-        //                case 11:
-        //                    pb.Image = NORTH_EAST_SOUTH_WEST_IN;
-        //                    break;
-        //                default:
-        //                    pb.Image = NOT_ENTERED_ZONE_IN;
-
-        //                    break;
-        //            }
-        //            caseSwitch = invRouteIndexes[i, j];
-        //            pb = invRoutePBs[i, j];
-        //            switch (caseSwitch)
-        //            {
-        //                case 0:
-        //                    pb.Image = NOT_ENTERED_ZONE_OUT;
-        //                    break;
-        //                case 1:
-        //                    pb.Image = EAST_TO_SOUTH_OUT;
-        //                    break;
-        //                case 2:
-        //                    pb.Image = EAST_TO_WEST_OUT;
-        //                    break;
-        //                case 3:
-        //                    pb.Image = NORTH_TO_EAST_OUT;
-        //                    break;
-        //                case 4:
-        //                    pb.Image = NORTH_TO_SOUTH_OUT;
-        //                    break;
-        //                case 5:
-        //                    pb.Image = SOUTH_TO_WEST_OUT;
-        //                    break;
-        //                case 6:
-        //                    pb.Image = WEST_TO_NORTH_OUT;
-        //                    break;
-        //                case 7:
-        //                    pb.Image = NORTH_EAST_WEST_OUT;
-        //                    break;
-        //                case 8:
-        //                    pb.Image = EAST_SOUTH_WEST_OUT;
-        //                    break;
-        //                case 9:
-        //                    pb.Image = NORTH_SOUTH_WEST_OUT;
-        //                    break;
-        //                case 10:
-        //                    pb.Image = NORTH_EAST_WEST_OUT;
-        //                    break;
-        //                case 11:
-        //                    pb.Image = NORTH_EAST_SOUTH_WEST_OUT;
-        //                    break;
-        //                default:
-        //                    pb.Image = NOT_ENTERED_ZONE_OUT;
-
-        //                    break;
-        //            }
-        //        }
-        //    }
-        //}
         public void ResetField()
         {
             for (int i = 0; i < 10; i++)
@@ -371,6 +382,10 @@ namespace Rescuebots
                     invRoutePBs[i, j].Image = NOT_ENTERED_ZONE_OUT;
                 }
             }
+            if (Controls.Contains(startPB)) Controls.Remove(startPB);
+            if (Controls.Contains(victimPB)) Controls.Remove(victimPB);
+            if (Controls.Contains(abductedPB)) Controls.Remove(abductedPB);
+
         }
     }
 }

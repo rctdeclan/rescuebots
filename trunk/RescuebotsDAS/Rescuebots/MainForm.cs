@@ -79,6 +79,7 @@ namespace Rescuebots
 
         private void receiveBtn_Click(object sender, EventArgs e)
         {
+            field.ResetField();
 
             byte[] buffer = new byte[1];
             buffer[0] = 0x24;
@@ -86,29 +87,38 @@ namespace Rescuebots
 
             while (serialPort.BytesToRead==0) { }
             int i = 0;
-            while (serialPort.BytesToRead >= 7)
+            while (serialPort.BytesToRead >= 24) //2 chars and one newline * 8 = 24 chars.
             {
                 cell c = new cell();
-                c.north = (serialPort.ReadByte() == 0x1);
-                c.east = (serialPort.ReadByte() == 0x1);
-                c.south = (serialPort.ReadByte() == 0x1);
-                c.west = (serialPort.ReadByte() == 0x1);
-                c.x = serialPort.ReadByte();
-                c.y = serialPort.ReadByte();
-                c.a = (Rescuebots.Action) serialPort.ReadByte();
+                c.north = (serialPort.ReadLine() == "NY");
+                c.east = (serialPort.ReadLine() == "EY");
+                c.south = (serialPort.ReadLine() == "SY");
+                c.west = (serialPort.ReadLine() == "WY");
+                try
+                {
+                    c.x = Convert.ToInt16(serialPort.ReadLine());
+                    c.y = Convert.ToInt16(serialPort.ReadLine());
+                }
+                catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
+                try
+                {
+                    c.a = (Rescuebots.Action)Convert.ToInt16(serialPort.ReadLine());
+                }
+                catch (FormatException) { MessageBox.Show("Unknown action"); return; }
+                try
+                {
+                    c.dir = (Orientation)Convert.ToInt16(serialPort.ReadLine());
+                }
+                catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
                 cells.Add(c);
                 i++;
             }
 
-            //send values to field.
-            field.FillBorders(cells);
-            field.FillRoute();
 
-            if (serialPort.BytesToRead == 1)
+            if (serialPort.BytesToRead != 0 && serialPort.ReadLine() == "F")
             {
-                serialPort.DiscardInBuffer();
+                serialPort.D   iscardInBuffer();
                 field.softEndRoute = false;
-                
             }
             else
             {
@@ -119,29 +129,45 @@ namespace Rescuebots
                 while (serialPort.BytesToRead == 0) { }
 
                 int j = 0;
-                while (serialPort.BytesToRead >= 7)
+                while (serialPort.BytesToRead >= 24)
                 {
                     cell c = new cell();
-                    c.north = (serialPort.ReadByte() == 0x1);
-                    c.east = (serialPort.ReadByte() == 0x1);
-                    c.south = (serialPort.ReadByte() == 0x1);
-                    c.west = (serialPort.ReadByte() == 0x1);
-                    c.x = serialPort.ReadByte();
-                    c.y = serialPort.ReadByte();
-                    c.a = (Rescuebots.Action)serialPort.ReadByte();
+                    c.north = (serialPort.ReadLine() == "NY");
+                    c.east = (serialPort.ReadLine() == "EY");
+                    c.south = (serialPort.ReadLine() == "SY");
+                    c.west = (serialPort.ReadLine() == "WY");
+                    try
+                    {
+                        c.x = Convert.ToInt16(serialPort.ReadLine());
+                        c.y = Convert.ToInt16(serialPort.ReadLine());
+                    }
+                    catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
+                    try
+                    {
+                        c.a = (Rescuebots.Action)Convert.ToInt16(serialPort.ReadLine());
+                    }
+                    catch (FormatException) { MessageBox.Show("Unknown action"); return; }
+                    try
+                    {
+                        c.dir = (Orientation)Convert.ToInt16(serialPort.ReadLine());
+                    }
+                    catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
                     invCells.Add(c);
                     j++;
                 }
 
-                //send values to field
-                field.FillInvRoute();
 
-                if (serialPort.BytesToRead == 1)
+                if (serialPort.BytesToRead != 0 && serialPort.ReadLine() == "F")
                 {
                     serialPort.DiscardInBuffer();
                     field.softEndInvRoute = false;
                 }
             }
+
+            //send values to field.
+            field.FillBorders(cells);
+            field.FillRoute(cells);
+            field.FillInvRoute(invCells);
 
 
         }
@@ -186,6 +212,7 @@ namespace Rescuebots
         public int x;
         public int y;
         public Rescuebots.Action a;
+        public Orientation dir;
     }
 
     public enum Action
