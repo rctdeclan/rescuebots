@@ -41,25 +41,23 @@
             this.sendMessagesListBox = new System.Windows.Forms.ListBox();
             this.readMessageTimer = new System.Windows.Forms.Timer(this.components);
             this.FillMapBtn = new System.Windows.Forms.Button();
-            this.XCOORDINATEnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.YCOORDINATEnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.field = new Rescuebots.Field();
             this.SendCoordinatesBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.field = new Rescuebots.Field();
             this.receivedRawDataGroupBox.SuspendLayout();
             this.connectionGroupBox.SuspendLayout();
             this.receivedMessagesGroupBox.SuspendLayout();
             this.sendMessagesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.XCOORDINATEnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YCOORDINATEnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // receivedRawDataGroupBox
             // 
             this.receivedRawDataGroupBox.Controls.Add(this.receivedRawDataTextBox);
-            this.receivedRawDataGroupBox.Location = new System.Drawing.Point(716, 408);
+            this.receivedRawDataGroupBox.Location = new System.Drawing.Point(955, 502);
+            this.receivedRawDataGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.receivedRawDataGroupBox.Name = "receivedRawDataGroupBox";
-            this.receivedRawDataGroupBox.Size = new System.Drawing.Size(296, 128);
+            this.receivedRawDataGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.receivedRawDataGroupBox.Size = new System.Drawing.Size(395, 158);
             this.receivedRawDataGroupBox.TabIndex = 8;
             this.receivedRawDataGroupBox.TabStop = false;
             this.receivedRawDataGroupBox.Text = "Received raw data";
@@ -67,12 +65,13 @@
             // receivedRawDataTextBox
             // 
             this.receivedRawDataTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.receivedRawDataTextBox.Location = new System.Drawing.Point(7, 20);
+            this.receivedRawDataTextBox.Location = new System.Drawing.Point(9, 25);
+            this.receivedRawDataTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.receivedRawDataTextBox.Multiline = true;
             this.receivedRawDataTextBox.Name = "receivedRawDataTextBox";
             this.receivedRawDataTextBox.ReadOnly = true;
             this.receivedRawDataTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.receivedRawDataTextBox.Size = new System.Drawing.Size(283, 102);
+            this.receivedRawDataTextBox.Size = new System.Drawing.Size(376, 125);
             this.receivedRawDataTextBox.TabIndex = 0;
             // 
             // connectionGroupBox
@@ -80,9 +79,11 @@
             this.connectionGroupBox.Controls.Add(this.serialPortSelectionBox);
             this.connectionGroupBox.Controls.Add(this.refreshSerialPortsButton);
             this.connectionGroupBox.Controls.Add(this.connectButton);
-            this.connectionGroupBox.Location = new System.Drawing.Point(717, 12);
+            this.connectionGroupBox.Location = new System.Drawing.Point(956, 15);
+            this.connectionGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.connectionGroupBox.Name = "connectionGroupBox";
-            this.connectionGroupBox.Size = new System.Drawing.Size(296, 55);
+            this.connectionGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.connectionGroupBox.Size = new System.Drawing.Size(395, 68);
             this.connectionGroupBox.TabIndex = 9;
             this.connectionGroupBox.TabStop = false;
             this.connectionGroupBox.Text = "Connection";
@@ -90,16 +91,18 @@
             // serialPortSelectionBox
             // 
             this.serialPortSelectionBox.FormattingEnabled = true;
-            this.serialPortSelectionBox.Location = new System.Drawing.Point(112, 21);
+            this.serialPortSelectionBox.Location = new System.Drawing.Point(149, 26);
+            this.serialPortSelectionBox.Margin = new System.Windows.Forms.Padding(4);
             this.serialPortSelectionBox.Name = "serialPortSelectionBox";
-            this.serialPortSelectionBox.Size = new System.Drawing.Size(77, 21);
+            this.serialPortSelectionBox.Size = new System.Drawing.Size(101, 24);
             this.serialPortSelectionBox.TabIndex = 1;
             // 
             // refreshSerialPortsButton
             // 
-            this.refreshSerialPortsButton.Location = new System.Drawing.Point(27, 19);
+            this.refreshSerialPortsButton.Location = new System.Drawing.Point(36, 23);
+            this.refreshSerialPortsButton.Margin = new System.Windows.Forms.Padding(4);
             this.refreshSerialPortsButton.Name = "refreshSerialPortsButton";
-            this.refreshSerialPortsButton.Size = new System.Drawing.Size(79, 23);
+            this.refreshSerialPortsButton.Size = new System.Drawing.Size(105, 28);
             this.refreshSerialPortsButton.TabIndex = 0;
             this.refreshSerialPortsButton.Text = "Rescan ports";
             this.refreshSerialPortsButton.UseVisualStyleBackColor = true;
@@ -107,19 +110,23 @@
             // 
             // connectButton
             // 
-            this.connectButton.Location = new System.Drawing.Point(195, 19);
+            this.connectButton.Location = new System.Drawing.Point(260, 23);
+            this.connectButton.Margin = new System.Windows.Forms.Padding(4);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(75, 23);
+            this.connectButton.Size = new System.Drawing.Size(100, 28);
             this.connectButton.TabIndex = 0;
             this.connectButton.Text = "Connect";
             this.connectButton.UseVisualStyleBackColor = true;
+            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
             // receivedMessagesGroupBox
             // 
             this.receivedMessagesGroupBox.Controls.Add(this.receivedMessagesListBox);
-            this.receivedMessagesGroupBox.Location = new System.Drawing.Point(716, 241);
+            this.receivedMessagesGroupBox.Location = new System.Drawing.Point(955, 297);
+            this.receivedMessagesGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.receivedMessagesGroupBox.Name = "receivedMessagesGroupBox";
-            this.receivedMessagesGroupBox.Size = new System.Drawing.Size(296, 162);
+            this.receivedMessagesGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.receivedMessagesGroupBox.Size = new System.Drawing.Size(395, 199);
             this.receivedMessagesGroupBox.TabIndex = 7;
             this.receivedMessagesGroupBox.TabStop = false;
             this.receivedMessagesGroupBox.Text = "Received Messages";
@@ -127,17 +134,21 @@
             // receivedMessagesListBox
             // 
             this.receivedMessagesListBox.FormattingEnabled = true;
-            this.receivedMessagesListBox.Location = new System.Drawing.Point(7, 20);
+            this.receivedMessagesListBox.ItemHeight = 16;
+            this.receivedMessagesListBox.Location = new System.Drawing.Point(9, 25);
+            this.receivedMessagesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.receivedMessagesListBox.Name = "receivedMessagesListBox";
-            this.receivedMessagesListBox.Size = new System.Drawing.Size(284, 134);
+            this.receivedMessagesListBox.Size = new System.Drawing.Size(377, 164);
             this.receivedMessagesListBox.TabIndex = 0;
             // 
             // sendMessagesGroupBox
             // 
             this.sendMessagesGroupBox.Controls.Add(this.sendMessagesListBox);
-            this.sendMessagesGroupBox.Location = new System.Drawing.Point(716, 73);
+            this.sendMessagesGroupBox.Location = new System.Drawing.Point(955, 90);
+            this.sendMessagesGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.sendMessagesGroupBox.Name = "sendMessagesGroupBox";
-            this.sendMessagesGroupBox.Size = new System.Drawing.Size(297, 162);
+            this.sendMessagesGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.sendMessagesGroupBox.Size = new System.Drawing.Size(396, 199);
             this.sendMessagesGroupBox.TabIndex = 6;
             this.sendMessagesGroupBox.TabStop = false;
             this.sendMessagesGroupBox.Text = "Send messages";
@@ -145,77 +156,70 @@
             // sendMessagesListBox
             // 
             this.sendMessagesListBox.FormattingEnabled = true;
-            this.sendMessagesListBox.Location = new System.Drawing.Point(7, 20);
+            this.sendMessagesListBox.ItemHeight = 16;
+            this.sendMessagesListBox.Location = new System.Drawing.Point(9, 25);
+            this.sendMessagesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.sendMessagesListBox.Name = "sendMessagesListBox";
-            this.sendMessagesListBox.Size = new System.Drawing.Size(284, 134);
+            this.sendMessagesListBox.Size = new System.Drawing.Size(377, 164);
             this.sendMessagesListBox.TabIndex = 0;
             // 
             // readMessageTimer
             // 
             this.readMessageTimer.Interval = 15;
+            this.readMessageTimer.Tick += new System.EventHandler(this.messageReceiveTimer_Tick);
             // 
             // FillMapBtn
             // 
-            this.FillMapBtn.Location = new System.Drawing.Point(884, 542);
+            this.FillMapBtn.Location = new System.Drawing.Point(1179, 667);
+            this.FillMapBtn.Margin = new System.Windows.Forms.Padding(4);
             this.FillMapBtn.Name = "FillMapBtn";
-            this.FillMapBtn.Size = new System.Drawing.Size(122, 23);
+            this.FillMapBtn.Size = new System.Drawing.Size(163, 28);
             this.FillMapBtn.TabIndex = 111;
             this.FillMapBtn.Text = "Fill Map";
             this.FillMapBtn.UseVisualStyleBackColor = true;
             this.FillMapBtn.Click += new System.EventHandler(this.FillMapBtn_Click);
             // 
-            // XCOORDINATEnumericUpDown
-            // 
-            this.XCOORDINATEnumericUpDown.Location = new System.Drawing.Point(765, 583);
-            this.XCOORDINATEnumericUpDown.Name = "XCOORDINATEnumericUpDown";
-            this.XCOORDINATEnumericUpDown.Size = new System.Drawing.Size(66, 20);
-            this.XCOORDINATEnumericUpDown.TabIndex = 113;
-            this.XCOORDINATEnumericUpDown.ValueChanged += new System.EventHandler(this.XCOORDINATEnumericUpDown_ValueChanged);
-            // 
-            // YCOORDINATEnumericUpDown
-            // 
-            this.YCOORDINATEnumericUpDown.Location = new System.Drawing.Point(765, 635);
-            this.YCOORDINATEnumericUpDown.Name = "YCOORDINATEnumericUpDown";
-            this.YCOORDINATEnumericUpDown.Size = new System.Drawing.Size(66, 20);
-            this.YCOORDINATEnumericUpDown.TabIndex = 114;
-            this.YCOORDINATEnumericUpDown.ValueChanged += new System.EventHandler(this.YCOORDINATEnumericUpDown_ValueChanged);
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.WriteBufferSize = 5000;
-            // 
-            // field
-            // 
-            this.field.Location = new System.Drawing.Point(0, 0);
-            this.field.Name = "field";
-            this.field.Size = new System.Drawing.Size(700, 700);
-            this.field.TabIndex = 112;
-            // 
             // SendCoordinatesBtn
             // 
-            this.SendCoordinatesBtn.Location = new System.Drawing.Point(884, 605);
+            this.SendCoordinatesBtn.Location = new System.Drawing.Point(1179, 745);
+            this.SendCoordinatesBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SendCoordinatesBtn.Name = "SendCoordinatesBtn";
-            this.SendCoordinatesBtn.Size = new System.Drawing.Size(122, 23);
+            this.SendCoordinatesBtn.Size = new System.Drawing.Size(163, 28);
             this.SendCoordinatesBtn.TabIndex = 115;
             this.SendCoordinatesBtn.Text = "Send Coördinates";
             this.SendCoordinatesBtn.UseVisualStyleBackColor = true;
             this.SendCoordinatesBtn.Click += new System.EventHandler(this.SendCoordinatesBtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1043, 748);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 116;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // field
+            // 
+            this.field.Location = new System.Drawing.Point(0, 0);
+            this.field.Margin = new System.Windows.Forms.Padding(4);
+            this.field.Name = "field";
+            this.field.Size = new System.Drawing.Size(933, 862);
+            this.field.TabIndex = 112;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 702);
+            this.ClientSize = new System.Drawing.Size(1369, 864);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.SendCoordinatesBtn);
-            this.Controls.Add(this.YCOORDINATEnumericUpDown);
-            this.Controls.Add(this.XCOORDINATEnumericUpDown);
             this.Controls.Add(this.field);
             this.Controls.Add(this.FillMapBtn);
             this.Controls.Add(this.receivedRawDataGroupBox);
             this.Controls.Add(this.connectionGroupBox);
             this.Controls.Add(this.receivedMessagesGroupBox);
             this.Controls.Add(this.sendMessagesGroupBox);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Rescue Bots";
             this.receivedRawDataGroupBox.ResumeLayout(false);
@@ -223,9 +227,8 @@
             this.connectionGroupBox.ResumeLayout(false);
             this.receivedMessagesGroupBox.ResumeLayout(false);
             this.sendMessagesGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.XCOORDINATEnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YCOORDINATEnumericUpDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -244,10 +247,8 @@
         private System.Windows.Forms.Timer readMessageTimer;
         private System.Windows.Forms.Button FillMapBtn;
         private Field field;
-        private System.Windows.Forms.NumericUpDown XCOORDINATEnumericUpDown;
-        private System.Windows.Forms.NumericUpDown YCOORDINATEnumericUpDown;
-        private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button SendCoordinatesBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -13,7 +13,7 @@ namespace Rescuebots
 {
     public partial class MainForm : Form
     {
-        private CommControl COM;
+
         private const int connectionSpeed = 9600;
         private const String messageBeginMarker = "#";
         private const String messageEndMarker = "%";
@@ -24,43 +24,64 @@ namespace Rescuebots
         public MainForm()
         {
             InitializeComponent();
-            COM = new CommControl();
-            COM.scann();
-            serialPortSelectionBoxUpdate();
+            FillSerialPortSelectionBoxWithAvailablePorts();
+
+            serialPort = new SerialPort();
+            serialPort.BaudRate = connectionSpeed;
+            // Choose: 9600, 19200 or 38400. Getting errors? Choose lower speed.
+            // Also be sure that you set the speed on the arduino to the same value!
+
+            messageBuilder = new MessageBuilder(messageBeginMarker, messageEndMarker);
         }
 
-        private void serialPortSelectionBoxUpdate()
-        {
-            serialPortSelectionBox.Items.Clear();
-            serialPortSelectionBox.Items.Add(COM.GetComPortList());
-        }
+
 
         private void refreshSerialPortsButton_Click(object sender, EventArgs e)
         {
-            COM.scann();
-            serialPortSelectionBox.Items.Clear();
-            serialPortSelectionBox.Items.Add(COM.GetComPortList());
+            FillSerialPortSelectionBoxWithAvailablePorts();
         }
         private void connectButton_Click(object sender, EventArgs e)
         {
-            try
+            if (serialPort.IsOpen)
             {
-                COM.connect(serialPortSelectionBox.SelectedText);
-                receivedMessagesListBox.Items.Add("connected: " + serialPortSelectionBox.SelectedText);
+                readMessageTimer.Enabled = false;
+                serialPort.Close();
             }
-            catch (Exception) { receivedMessagesListBox.Items.Add("sorry niet gelukt"); }
+            else
+            {
+                String port = serialPortSelectionBox.Text;
+                try
+                {
+                    serialPort.PortName = port;
+                    serialPort.Open();
+                    if (serialPort.IsOpen)
+                    {
+                        ClearAllMessageData();
+                        serialPort.DiscardInBuffer();
+                        serialPort.DiscardOutBuffer();
+                    }
+                    readMessageTimer.Enabled = true;
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Could not connect to the given serial port: " + exception.Message);
+                }
+            }
 
+            UpdateUserInterface();
         }
         private void DisplayReceivedMessage(String message)
         {
             receivedMessagesListBox.Items.Insert(0, message);
         }
-
         private void DisplaySendMessage(String message)
         {
             sendMessagesListBox.Items.Insert(0, message);
         }
-
+        private void serialPortSelectionBox_Leave(object sender, EventArgs e)
+        {
+            serialPortSelectionBox.Text = serialPortSelectionBox.Text.ToUpper();
+        }
         private void DisplayReceivedRawData(String data)
         {
             receivedRawDataTextBox.AppendText(data);
@@ -75,7 +96,7 @@ namespace Rescuebots
                     String dataFromSocket = serialPort.ReadExisting();
                     DisplayReceivedRawData(dataFromSocket);
                     messageBuilder.Append(dataFromSocket);
-                    //ProcessMessages();
+                    ProcessMessages();
                 }
                 catch (Exception exception) // Not very nice to catch Exception...but for now it's good enough.
                 {
@@ -83,52 +104,52 @@ namespace Rescuebots
                 }
             }
         }
-
-        //private void ProcessMessages()
-        //{
-        //    String message = messageBuilder.FindAndRemoveNextMessage();
-        //    while (message != null)
-        //    {
-        //        DisplayReceivedMessage(message);
-        //        MessageReceived(message);
-        //        message = messageBuilder.FindAndRemoveNextMessage();
-        //    }
-        //}
-
+        private void ClearAllMessageData()
+        {
+            sendMessagesListBox.Items.Clear();
+            receivedMessagesListBox.Items.Clear();
+            receivedRawDataTextBox.Clear();
+            messageBuilder.Clear();
+        }
+        private void ProcessMessages()
+        {
+            String message = messageBuilder.FindAndRemoveNextMessage();
+            while (message != null)
+            {
+                DisplayReceivedMessage(message);
+                MessageReceived(message);
+                message = messageBuilder.FindAndRemoveNextMessage();
+            }
+        }
+        private void UpdateUserInterface()
+        {
+            bool isConnected = serialPort.IsOpen;
+            if (isConnected)
+            {
+                connectButton.Text = "Disconnect";
+            }
+            else
+            {
+                connectButton.Text = "Connect";
+            }
+            refreshSerialPortsButton.Enabled = !isConnected;
+            serialPortSelectionBox.Enabled = !isConnected;
+            receivedMessagesGroupBox.Enabled = isConnected;
+            sendMessagesGroupBox.Enabled = isConnected;
+            receivedRawDataGroupBox.Enabled = isConnected;
+        }
         private void MessageReceived(String message)
         {
-            if (message.Contains("#C_VALUE:"))
+            if (message.Contains("#%"))
             {
-                //string Inbox = message;
-                //int StartValue = Inbox.IndexOf(":") + 1;
-                //int EndValue = Inbox.IndexOf("%");
-                //string Value = Inbox.Substring(StartValue, EndValue - StartValue);
-                //int Value2 = Convert.ToInt32(Value);
-                //sliderC.Value = Value2;
+                string Inbox = message;
+                int StartValue = Inbox.IndexOf(":") + 1;
+                int EndValue = Inbox.IndexOf("%");
+                string Value = Inbox.Substring(StartValue, EndValue - StartValue);
+                int Value2 = Convert.ToInt32(Value);
+
             }
-
-            // TODO: Put code here to handle the received message.
-            //       The received message is contained in the message parameter.
-            //
-            // Watch it! received messages can be with or without parameters.
-            //   Like E.g. "#SHOW_BUTTON_1_CLICKED%" (no parameters)
-            //        or   "#SET_SLIDER_B_VALUE:7%"  (has an number parameter at the end,
-            //                                        that notes the new value for slider B)
-            // Hints: 
-            //  - You can use the String methods to parse the message and (if present) its parameters.
-            //    See: http://msdn.microsoft.com/en-us/library/system.string.aspx
-            //     for help on available String methods like
-            //     - String.StartsWith(...)
-            //     - String.Substring(...)
-            //     - String.IndexOf(...)
-            //     - etc
-            //  - Convert.ToInt32(...) can be used to convert strings to an integer.
-            //  - Sliders have a 'Value' property which can be used to get/set the position of the slider.
-
-
         }
-
-
         private bool SendMessage(String message)
         {
             if (serialPort.IsOpen)
@@ -146,12 +167,10 @@ namespace Rescuebots
             }
             return false;
         }
-
         private void FillMapBtn_Click(object sender, EventArgs e)
         {
             field.FillWithValues();
         }
-
         private void YCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
         {
          
@@ -160,17 +179,24 @@ namespace Rescuebots
 
 
         }
-
         private void XCOORDINATEnumericUpDown_ValueChanged(object sender, EventArgs e)
         {
 
         }
-
         private void SendCoordinatesBtn_Click(object sender, EventArgs e)
         {
-            SendMessage("#" + XCOORDINATEnumericUpDown.Value + YCOORDINATEnumericUpDown.Value + "%");
+            SendMessage("#" + textBox1.Text + "%");
         }
+        private void FillSerialPortSelectionBoxWithAvailablePorts()
+        {
+            String[] ports = SerialPort.GetPortNames();
+            Array.Sort(ports);
 
-        
+            serialPortSelectionBox.Items.Clear();
+            foreach (String port in ports)
+            {
+                serialPortSelectionBox.Items.Add(port);
+            }
+        }
     }
 }

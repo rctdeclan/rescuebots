@@ -53,11 +53,9 @@
     <Compile Include="Field.Designer.cs">
       <DependentUpon>Field.cs</DependentUpon>
     </Compile>
-    <Compile Include="SerielCom.cs" />
     <Compile Include="TransparentPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CommControl.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
