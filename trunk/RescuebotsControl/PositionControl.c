@@ -21,9 +21,16 @@ void I2C_transmissionError(uint8_t errorState)
 	writeChar('\n');
 }
 
-void bumpersStateChanged(void)
+void receiveRC5Data(RC5data_t data)
 {
-
+	if(kState = stationary)
+	{
+		beaconDetectedOnCell = cellCounter;
+	}
+	else
+	{
+		beaconDetectedOnCell = 0;
+	}
 }
 
 void acsStateChanged(void)
@@ -31,7 +38,6 @@ void acsStateChanged(void)
 	if(kState==moving && (obstacle_left && obstacle_right))
 	{
 		beep(190,100);
-		//stop();
 	}
 }
 
@@ -81,7 +87,7 @@ bool wallIsFront(void)
 void initPositionControl(void)
 {
 	ACS_setStateChangedHandler(acsStateChanged);
-	BUMPERS_setStateChangedHandler(bumpersStateChanged);
+	IRCOMM_RC5dataReady_DUMMY(receiveRC5Data);
 
 	I2CTWI_initMaster(100);
 	I2CTWI_setTransmissionErrorHandler(I2C_transmissionError);

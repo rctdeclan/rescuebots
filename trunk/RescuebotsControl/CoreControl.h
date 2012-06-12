@@ -8,7 +8,7 @@
 #ifndef CORECONTROL_H_
 #define CORECONTROL_H_
 
-#define MAX_FIELD_SIZE 10
+#define MAX_FIELD_SIZE 7
 int dist360;
 
 typedef enum
@@ -31,6 +31,14 @@ typedef enum
 	t180
 } action;
 
+typedef enum
+{
+	facingNorth,
+	facingEast,
+	facingSouth,
+	facingWest
+} direction;
+
 typedef struct
 {
 	bool north;
@@ -40,23 +48,22 @@ typedef struct
 	int x;
 	int y;
 	action a;
+	direction dir;
 } cell;
-
-typedef enum
-{
-	facingNorth,
-	facingEast,
-	facingSouth,
-	facingWest
-} direction;
 
 
 #define incEnum(e,max) if(e==max) e=0; else e++;
 #define decEnum(e,max) if(e==0) e=max; else e--;
 
 cell cells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
+cell returncells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
 direction dir;
 int cellCounter;
+int totalCellsFindCourse;
+int totalCellsReturnCourse;
+bool softEndFind;
+bool softEndReturn;
+int beaconDetectedOnCell;
 
 void initCoreControl(void);
 void updateCoreControl(void);

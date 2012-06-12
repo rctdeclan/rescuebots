@@ -9,17 +9,39 @@
 
 void show_WAITINGFORBRIEFING(void)
 {
+	clearLCD();
 	showScreenLCD("Waiting for","briefing.");
 }
 
-void show_BRIEFINGRECEIVED(uint8_t x, uint8_t y)
+void show_WAITINGFORDEBRIEFING(void)
 {
-	showScreenLCD("Briefing:","");
+	clearLCD();
+	showScreenLCD("Waiting for","debriefing.");
 }
 
-void show_PLACEMEATPOSITION(uint8_t x, uint8_t y)
+void show_BRIEFINGRECEIVED(uint8_t x, uint8_t y, uint8_t dir)
 {
-	showScreenLCD("Place me at:","");
+	clearLCD();
+	showScreenLCD("Briefing:","X:  Y:  D:  ");
+	setCursorPosLCD(1,3);
+	writeIntegerLCD(x,10);
+	setCursorPosLCD(1,7);
+	writeIntegerLCD(y,10);
+	setCursorPosLCD(1,11);
+	writeIntegerLCD(dir,10);
+
+}
+
+void show_PLACEMEATPOSITION(uint8_t x, uint8_t y, uint8_t dir)
+{
+	clearLCD();
+	showScreenLCD("Place me at:","X:  Y:  D:  ");
+	setCursorPosLCD(1,3);
+	writeIntegerLCD(x,10);
+	setCursorPosLCD(1,7);
+	writeIntegerLCD(y,10);
+	setCursorPosLCD(1,11);
+	writeIntegerLCD(dir,10);
 }
 
 
@@ -88,3 +110,20 @@ void show_WHICHWALL(bool north, bool east, bool south, bool west)
 	}
 }
 
+void show_LOOKINGFORBEACON(void)
+{
+	clearLCD();
+	showScreenLCD("Looking for","beacon");
+}
+
+void show_BEHOLDTHEBEACONOFLIGHT(void)
+{
+	clearLCD();
+	showScreenLCD("***Behold the***","BEACON of LIGHT");
+}
+
+void show_NOBEACONFOUND(void)
+{
+	clearLCD();
+	showScreenLCD("No beacon","found.");
+}
