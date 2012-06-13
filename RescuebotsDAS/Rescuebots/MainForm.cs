@@ -81,73 +81,79 @@ namespace Rescuebots
         {
             field.ResetField();
 
+            serialPort.DiscardInBuffer();
             byte[] buffer = new byte[1];
             buffer[0] = 0x24;
             serialPort.Write(buffer, 0, 1);//Send ready signal
 
-            while (serialPort.BytesToRead<=24) { }
+            while (serialPort.BytesToRead==0) { }
             int i = 0;
             System.Threading.Thread.Sleep(200);
-            while (serialPort.BytesToRead > 3) //2 chars and one newline * 8 = 24 chars.
+
+            int totalRouteCells = Convert.ToInt32(serialPort.ReadLine());
+
+            while (i<totalRouteCells) //2 chars and one newline * 8 = 24 chars.
             {
-                if (serialPort.BytesToRead > 3)
+                try
                 {
+                    System.Threading.Thread.Sleep(100);
+                    string no = serialPort.ReadLine();
+                    string ea = serialPort.ReadLine();
+                    string so = serialPort.ReadLine();
+                    string we = serialPort.ReadLine();
+                    string xx = serialPort.ReadLine();
+                    string yy = serialPort.ReadLine();
+                    string aa = serialPort.ReadLine();
+                    string dd = serialPort.ReadLine();
+                        
+                    cell c = new cell();
+                    c.north = (no == "NY");
+                    c.east = (ea == "EY");
+                    c.south = (so == "SY");
+                    c.west = (we == "WY");
                     try
                     {
-                        System.Threading.Thread.Sleep(100);
-                        string no = serialPort.ReadLine();
-                        string ea = serialPort.ReadLine();
-                        string so = serialPort.ReadLine();
-                        string we = serialPort.ReadLine();
-                        string xx = serialPort.ReadLine();
-                        string yy = serialPort.ReadLine();
-                        string aa = serialPort.ReadLine();
-                        string dd = serialPort.ReadLine();
-                        
-                        cell c = new cell();
-                        c.north = (no == "NY");
-                        c.east = (ea == "EY");
-                        c.south = (so == "SY");
-                        c.west = (we == "WY");
-                        try
-                        {
-                            c.x = Convert.ToInt16(xx);
-                            c.y = Convert.ToInt16(yy);
-                        }
-                        catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
-                        try
-                        {
-                            c.a = (Rescuebots.Action)Convert.ToInt16(aa);
-                        }
-                        catch (FormatException) { MessageBox.Show("Unknown action"); return; }
-                        try
-                        {
-                            c.dir = (Orientation)Convert.ToInt16(dd);
-                        }
-                        catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
-                        cells.Add(c);
-                        i++;
+                        c.x = Convert.ToInt16(xx);
+                        c.y = Convert.ToInt16(yy);
                     }
-                    catch (TimeoutException) { MessageBox.Show("timeout"); }
+                    catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
+                    try
+                    {
+                        c.a = (Rescuebots.Action)Convert.ToInt16(aa);
+                    }
+                    catch (FormatException) { MessageBox.Show("Unknown action"); return; }
+                    try
+                    {
+                        c.dir = (Orientation)Convert.ToInt16(dd);
+                    }
+                    catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
+                    cells.Add(c);
+                    i++;
                 }
-                else break;
+                catch (TimeoutException) { MessageBox.Show("timeout"); }
             }
 
-
-            if (serialPort.BytesToRead != 0 && serialPort.ReadLine() == "F")
+            
+            if (serialPort.BytesToRead>0)
             {
-                serialPort.DiscardInBuffer();
-                field.softEndRoute = false;
+                string f = serialPort.ReadLine();
+                if (f=="F")
+                {
+                    serialPort.DiscardInBuffer();
+                    field.softEndRoute = false;
+                }
             }
             else
             {
+                int j = 0;
                 byte[] buffer1 = new byte[1];
                 buffer1[0] = 0x24;
                 serialPort.Write(buffer1, 0, 1);//Send ready signal
 
                 while (serialPort.BytesToRead == 0) { }
 
-                if (serialPort.BytesToRead > 3)
+                int totalInvRouteCells = Convert.ToInt32(serialPort.ReadLine());
+                while (i<totalInvRouteCells)
                 {
                     try
                     {
@@ -181,19 +187,23 @@ namespace Rescuebots
                         {
                             c.dir = (Orientation)Convert.ToInt16(dd);
                         }
-                        catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
-                        cells.Add(c);
-                        i++;
+                        catch (FormatException) { MessageBox.Show("Unknown direction"); return; } 
+                        invCells.Add(c);
+                        j++;
                     }
                     catch (TimeoutException) { MessageBox.Show("timeout"); }
                 }
 
 
-                if (serialPort.BytesToRead != 0 && serialPort.ReadLine() == "F")
-                {
-                    serialPort.DiscardInBuffer();
-                    field.softEndInvRoute = false;
-                }
+                //if (serialPort.BytesToRead > 0)
+                //{
+                //    string f = serialPort.ReadLine();
+                //    if (f == "F")
+                //    {
+                //        serialPort.DiscardInBuffer();
+                //        field.softEndInvRoute = false;
+                //    }
+                //}
             }
 
             //send values to field.
