@@ -85,39 +85,58 @@ namespace Rescuebots
             buffer[0] = 0x24;
             serialPort.Write(buffer, 0, 1);//Send ready signal
 
-            while (serialPort.BytesToRead==0) { }
+            while (serialPort.BytesToRead<=24) { }
             int i = 0;
-            while (serialPort.BytesToRead >= 24) //2 chars and one newline * 8 = 24 chars.
+            System.Threading.Thread.Sleep(200);
+            while (serialPort.BytesToRead > 3) //2 chars and one newline * 8 = 24 chars.
             {
-                cell c = new cell();
-                c.north = (serialPort.ReadLine() == "NY");
-                c.east = (serialPort.ReadLine() == "EY");
-                c.south = (serialPort.ReadLine() == "SY");
-                c.west = (serialPort.ReadLine() == "WY");
-                try
+                if (serialPort.BytesToRead > 3)
                 {
-                    c.x = Convert.ToInt16(serialPort.ReadLine());
-                    c.y = Convert.ToInt16(serialPort.ReadLine());
+                    try
+                    {
+                        System.Threading.Thread.Sleep(100);
+                        string no = serialPort.ReadLine();
+                        string ea = serialPort.ReadLine();
+                        string so = serialPort.ReadLine();
+                        string we = serialPort.ReadLine();
+                        string xx = serialPort.ReadLine();
+                        string yy = serialPort.ReadLine();
+                        string aa = serialPort.ReadLine();
+                        string dd = serialPort.ReadLine();
+                        
+                        cell c = new cell();
+                        c.north = (no == "NY");
+                        c.east = (ea == "EY");
+                        c.south = (so == "SY");
+                        c.west = (we == "WY");
+                        try
+                        {
+                            c.x = Convert.ToInt16(xx);
+                            c.y = Convert.ToInt16(yy);
+                        }
+                        catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
+                        try
+                        {
+                            c.a = (Rescuebots.Action)Convert.ToInt16(aa);
+                        }
+                        catch (FormatException) { MessageBox.Show("Unknown action"); return; }
+                        try
+                        {
+                            c.dir = (Orientation)Convert.ToInt16(dd);
+                        }
+                        catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
+                        cells.Add(c);
+                        i++;
+                    }
+                    catch (TimeoutException) { MessageBox.Show("timeout"); }
                 }
-                catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
-                try
-                {
-                    c.a = (Rescuebots.Action)Convert.ToInt16(serialPort.ReadLine());
-                }
-                catch (FormatException) { MessageBox.Show("Unknown action"); return; }
-                try
-                {
-                    c.dir = (Orientation)Convert.ToInt16(serialPort.ReadLine());
-                }
-                catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
-                cells.Add(c);
-                i++;
+                else break;
             }
 
 
             if (serialPort.BytesToRead != 0 && serialPort.ReadLine() == "F")
             {
-                serialPort.D   iscardInBuffer();
+                serialPort.DiscardInBuffer();
                 field.softEndRoute = false;
             }
             else
@@ -128,32 +147,45 @@ namespace Rescuebots
 
                 while (serialPort.BytesToRead == 0) { }
 
-                int j = 0;
-                while (serialPort.BytesToRead >= 24)
+                if (serialPort.BytesToRead > 3)
                 {
-                    cell c = new cell();
-                    c.north = (serialPort.ReadLine() == "NY");
-                    c.east = (serialPort.ReadLine() == "EY");
-                    c.south = (serialPort.ReadLine() == "SY");
-                    c.west = (serialPort.ReadLine() == "WY");
                     try
                     {
-                        c.x = Convert.ToInt16(serialPort.ReadLine());
-                        c.y = Convert.ToInt16(serialPort.ReadLine());
+                        System.Threading.Thread.Sleep(100);
+                        string no = serialPort.ReadLine();
+                        string ea = serialPort.ReadLine();
+                        string so = serialPort.ReadLine();
+                        string we = serialPort.ReadLine();
+                        string xx = serialPort.ReadLine();
+                        string yy = serialPort.ReadLine();
+                        string aa = serialPort.ReadLine();
+                        string dd = serialPort.ReadLine();
+
+                        cell c = new cell();
+                        c.north = (no == "NY");
+                        c.east = (ea == "EY");
+                        c.south = (so == "SY");
+                        c.west = (we == "WY");
+                        try
+                        {
+                            c.x = Convert.ToInt16(xx);
+                            c.y = Convert.ToInt16(yy);
+                        }
+                        catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
+                        try
+                        {
+                            c.a = (Rescuebots.Action)Convert.ToInt16(aa);
+                        }
+                        catch (FormatException) { MessageBox.Show("Unknown action"); return; }
+                        try
+                        {
+                            c.dir = (Orientation)Convert.ToInt16(dd);
+                        }
+                        catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
+                        cells.Add(c);
+                        i++;
                     }
-                    catch (FormatException) { MessageBox.Show("Invalid coordinates."); return; }
-                    try
-                    {
-                        c.a = (Rescuebots.Action)Convert.ToInt16(serialPort.ReadLine());
-                    }
-                    catch (FormatException) { MessageBox.Show("Unknown action"); return; }
-                    try
-                    {
-                        c.dir = (Orientation)Convert.ToInt16(serialPort.ReadLine());
-                    }
-                    catch (FormatException) { MessageBox.Show("Unknown direction"); return; }
-                    invCells.Add(c);
-                    j++;
+                    catch (TimeoutException) { MessageBox.Show("timeout"); }
                 }
 
 

@@ -198,7 +198,7 @@ namespace Rescuebots
                     if (cells[i - 1].y - y == -1) index |= 0x1;
                     if (cells[i - 1].y - y == 1) index |= 0x4;
                 }
-                if (i < cells.Count) 
+                if (i < cells.Count - 1) 
                 {
                     if (cells[i + 1].x - x == -1) index |= 0x8;
                     if (cells[i + 1].x - x == 1) index |= 0x2;
@@ -297,7 +297,7 @@ namespace Rescuebots
                     if (invCells[i - 1].y - y == -1) index |= 0x1;
                     if (invCells[i - 1].y - y == 1) index |= 0x4;
                 }
-                if (i < invCells.Count)
+                if (i < invCells.Count -1)
                 {
                     if (invCells[i + 1].x - x == -1) index |= 0x8;
                     if (invCells[i + 1].x - x == 1) index |= 0x2;
