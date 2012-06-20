@@ -23,11 +23,11 @@ void show_BRIEFINGRECEIVED(uint8_t x, uint8_t y, uint8_t dir)
 {
 	clearLCD();
 	showScreenLCD("Briefing:","X:  Y:  D:  ");
-	setCursorPosLCD(1,3);
+	setCursorPosLCD(1,2);
 	writeIntegerLCD(x,10);
-	setCursorPosLCD(1,7);
+	setCursorPosLCD(1,6);
 	writeIntegerLCD(y,10);
-	setCursorPosLCD(1,11);
+	setCursorPosLCD(1,10);
 	writeIntegerLCD(dir,10);
 
 }
@@ -36,11 +36,11 @@ void show_PLACEMEATPOSITION(uint8_t x, uint8_t y, uint8_t dir)
 {
 	clearLCD();
 	showScreenLCD("Place me at:","X:  Y:  D:  ");
-	setCursorPosLCD(1,3);
+	setCursorPosLCD(1,2);
 	writeIntegerLCD(x,10);
-	setCursorPosLCD(1,7);
+	setCursorPosLCD(1,6);
 	writeIntegerLCD(y,10);
-	setCursorPosLCD(1,11);
+	setCursorPosLCD(1,10);
 	writeIntegerLCD(dir,10);
 }
 

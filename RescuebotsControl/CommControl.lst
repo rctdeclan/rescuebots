@@ -1,0 +1,486 @@
+   1               		.file	"CommControl.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	readCharBlock
+  18               	readCharBlock:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	/* stack size = 0 */
+  24               	.L__stack_usage = 0
+  25               	.L2:
+  26               	.LM2:
+  27 0000 0E94 0000 		call getBufferLength
+  28 0004 8823      		tst r24
+  29 0006 01F0      		breq .L2
+  30               	.LM3:
+  31 0008 0E94 0000 		call readChar
+  32               	/* epilogue start */
+  33               	.LM4:
+  34 000c 0895      		ret
+  35               	.LFE6:
+  37               	.global	initCommControl
+  39               	initCommControl:
+  40               	.LFB7:
+  41               	.LM5:
+  42 000e 1F93      		push r17
+  43 0010 DF93      		push r29
+  44 0012 CF93      		push r28
+  45 0014 0F92      		push __tmp_reg__
+  46 0016 CDB7      		in r28,__SP_L__
+  47 0018 DEB7      		in r29,__SP_H__
+  48               	/* prologue: function */
+  49               	/* frame size = 1 */
+  50               	/* stack size = 4 */
+  51               	.L__stack_usage = 4
+  52               	.LM6:
+  53 001a 0E94 0000 		call clearReceptionBuffer
+  54               	.LM7:
+  55 001e 0E94 0000 		call show_WAITINGFORBRIEFING
+  56               	.LM8:
+  57 0022 81E0      		ldi r24,lo8(1)
+  58 0024 8093 0000 		sts cState,r24
+  59               	.LM9:
+  60 0028 0E94 0000 		call readCharBlock
+  61 002c 182F      		mov r17,r24
+  62               	.LVL0:
+  63               	.LM10:
+  64 002e 0E94 0000 		call readCharBlock
+  65               	.LVL1:
+  66               	.LM11:
+  67 0032 8983      		std Y+1,r24
+  68 0034 0E94 0000 		call readCharBlock
+  69               	.LVL2:
+  70 0038 482F      		mov r20,r24
+  71 003a 8093 0000 		sts dir,r24
+  72               	.LM12:
+  73 003e 1093 0000 		sts cells+4,r17
+  74 0042 1092 0000 		sts cells+5,__zero_reg__
+  75               	.LM13:
+  76 0046 6981      		ldd r22,Y+1
+  77 0048 6093 0000 		sts cells+6,r22
+  78 004c 1092 0000 		sts cells+7,__zero_reg__
+  79               	.LM14:
+  80 0050 8093 0000 		sts cells+9,r24
+  81               	.LM15:
+  82 0054 812F      		mov r24,r17
+  83 0056 90E0      		ldi r25,lo8(0)
+  84 0058 70E0      		ldi r23,lo8(0)
+  85 005a 50E0      		ldi r21,lo8(0)
+  86 005c 0E94 0000 		call show_BRIEFINGRECEIVED
+  87               	.LM16:
+  88 0060 1092 0000 		sts cState,__zero_reg__
+  89               	.LM17:
+  90 0064 88EE      		ldi r24,lo8(1000)
+  91 0066 93E0      		ldi r25,hi8(1000)
+  92 0068 0E94 0000 		call mSleep
+  93               	/* epilogue start */
+  94               	.LM18:
+  95 006c 0F90      		pop __tmp_reg__
+  96 006e CF91      		pop r28
+  97 0070 DF91      		pop r29
+  98 0072 1F91      		pop r17
+  99               	.LVL3:
+ 100 0074 0895      		ret
+ 101               	.LFE7:
+ 103               		.data
+ 104               	.LC0:
+ 105 0000 4E59 00   		.string	"NY"
+ 106               	.LC1:
+ 107 0003 4E4E 00   		.string	"NN"
+ 108               	.LC2:
+ 109 0006 4559 00   		.string	"EY"
+ 110               	.LC3:
+ 111 0009 454E 00   		.string	"EN"
+ 112               	.LC4:
+ 113 000c 5359 00   		.string	"SY"
+ 114               	.LC5:
+ 115 000f 534E 00   		.string	"SN"
+ 116               	.LC6:
+ 117 0012 5759 00   		.string	"WY"
+ 118               	.LC7:
+ 119 0015 574E 00   		.string	"WN"
+ 120               		.text
+ 121               	.global	sendData
+ 123               	sendData:
+ 124               	.LFB8:
+ 125               	.LM19:
+ 126 0076 EF92      		push r14
+ 127 0078 FF92      		push r15
+ 128 007a 0F93      		push r16
+ 129 007c 1F93      		push r17
+ 130 007e CF93      		push r28
+ 131 0080 DF93      		push r29
+ 132               	/* prologue: function */
+ 133               	/* frame size = 0 */
+ 134               	/* stack size = 6 */
+ 135               	.L__stack_usage = 6
+ 136               	.LM20:
+ 137 0082 0E94 0000 		call clearReceptionBuffer
+ 138               	.LM21:
+ 139 0086 82E0      		ldi r24,lo8(2)
+ 140 0088 8093 0000 		sts cState,r24
+ 141               	.LM22:
+ 142 008c 0E94 0000 		call show_WAITINGFORDEBRIEFING
+ 143               	.LM23:
+ 144 0090 0E94 0000 		call readCharBlock
+ 145               	.LM24:
+ 146 0094 8AE0      		ldi r24,lo8(10)
+ 147 0096 90E0      		ldi r25,hi8(10)
+ 148 0098 0E94 0000 		call mSleep
+ 149               	.LM25:
+ 150 009c 8091 0000 		lds r24,totalCellsFindCourse
+ 151 00a0 9091 0000 		lds r25,totalCellsFindCourse+1
+ 152 00a4 6AE0      		ldi r22,lo8(10)
+ 153 00a6 43E0      		ldi r20,lo8(3)
+ 154 00a8 0E94 0000 		call writeIntegerLength
+ 155 00ac 8AE0      		ldi r24,lo8(10)
+ 156 00ae 0E94 0000 		call writeChar
+ 157               	.LVL4:
+ 158 00b2 00E0      		ldi r16,lo8(cells)
+ 159 00b4 10E0      		ldi r17,hi8(cells)
+ 160               	.LBB2:
+ 161               	.LM26:
+ 162 00b6 E801      		movw r28,r16
+ 163 00b8 EE24      		clr r14
+ 164 00ba FF24      		clr r15
+ 165 00bc 00C0      		rjmp .L6
+ 166               	.LVL5:
+ 167               	.L11:
+ 168               	.LM27:
+ 169 00be 8881      		ld r24,Y
+ 170 00c0 8823      		tst r24
+ 171 00c2 01F0      		breq .L20
+ 172 00c4 80E0      		ldi r24,lo8(.LC0)
+ 173 00c6 90E0      		ldi r25,hi8(.LC0)
+ 174 00c8 00C0      		rjmp .L7
+ 175               	.L20:
+ 176 00ca 80E0      		ldi r24,lo8(.LC1)
+ 177 00cc 90E0      		ldi r25,hi8(.LC1)
+ 178               	.L7:
+ 179               	.LM28:
+ 180 00ce 0E94 0000 		call writeString
+ 181 00d2 8AE0      		ldi r24,lo8(10)
+ 182 00d4 0E94 0000 		call writeChar
+ 183               	.LM29:
+ 184 00d8 8981      		ldd r24,Y+1
+ 185 00da 8823      		tst r24
+ 186 00dc 01F0      		breq .L21
+ 187               	.LM30:
+ 188 00de 80E0      		ldi r24,lo8(.LC2)
+ 189 00e0 90E0      		ldi r25,hi8(.LC2)
+ 190 00e2 00C0      		rjmp .L8
+ 191               	.L21:
+ 192 00e4 80E0      		ldi r24,lo8(.LC3)
+ 193 00e6 90E0      		ldi r25,hi8(.LC3)
+ 194               	.L8:
+ 195               	.LM31:
+ 196 00e8 0E94 0000 		call writeString
+ 197 00ec 8AE0      		ldi r24,lo8(10)
+ 198 00ee 0E94 0000 		call writeChar
+ 199               	.LM32:
+ 200 00f2 8A81      		ldd r24,Y+2
+ 201 00f4 8823      		tst r24
+ 202 00f6 01F0      		breq .L22
+ 203               	.LM33:
+ 204 00f8 80E0      		ldi r24,lo8(.LC4)
+ 205 00fa 90E0      		ldi r25,hi8(.LC4)
+ 206 00fc 00C0      		rjmp .L9
+ 207               	.L22:
+ 208 00fe 80E0      		ldi r24,lo8(.LC5)
+ 209 0100 90E0      		ldi r25,hi8(.LC5)
+ 210               	.L9:
+ 211               	.LM34:
+ 212 0102 0E94 0000 		call writeString
+ 213 0106 8AE0      		ldi r24,lo8(10)
+ 214 0108 0E94 0000 		call writeChar
+ 215               	.LM35:
+ 216 010c 8B81      		ldd r24,Y+3
+ 217 010e 8823      		tst r24
+ 218 0110 01F0      		breq .L23
+ 219               	.LM36:
+ 220 0112 80E0      		ldi r24,lo8(.LC6)
+ 221 0114 90E0      		ldi r25,hi8(.LC6)
+ 222 0116 00C0      		rjmp .L10
+ 223               	.L23:
+ 224 0118 80E0      		ldi r24,lo8(.LC7)
+ 225 011a 90E0      		ldi r25,hi8(.LC7)
+ 226               	.L10:
+ 227               	.LM37:
+ 228 011c 0E94 0000 		call writeString
+ 229 0120 8AE0      		ldi r24,lo8(10)
+ 230 0122 0E94 0000 		call writeChar
+ 231               	.LM38:
+ 232 0126 8C81      		ldd r24,Y+4
+ 233 0128 9D81      		ldd r25,Y+5
+ 234 012a 6AE0      		ldi r22,lo8(10)
+ 235 012c 42E0      		ldi r20,lo8(2)
+ 236 012e 0E94 0000 		call writeIntegerLength
+ 237 0132 8AE0      		ldi r24,lo8(10)
+ 238 0134 0E94 0000 		call writeChar
+ 239               	.LM39:
+ 240 0138 8E81      		ldd r24,Y+6
+ 241 013a 9F81      		ldd r25,Y+7
+ 242 013c 6AE0      		ldi r22,lo8(10)
+ 243 013e 42E0      		ldi r20,lo8(2)
+ 244 0140 0E94 0000 		call writeIntegerLength
+ 245 0144 8AE0      		ldi r24,lo8(10)
+ 246 0146 0E94 0000 		call writeChar
+ 247               	.LM40:
+ 248 014a 8885      		ldd r24,Y+8
+ 249 014c 90E0      		ldi r25,lo8(0)
+ 250 014e 6AE0      		ldi r22,lo8(10)
+ 251 0150 42E0      		ldi r20,lo8(2)
+ 252 0152 0E94 0000 		call writeIntegerLength
+ 253 0156 8AE0      		ldi r24,lo8(10)
+ 254 0158 0E94 0000 		call writeChar
+ 255               	.LM41:
+ 256 015c 8985      		ldd r24,Y+9
+ 257 015e 90E0      		ldi r25,lo8(0)
+ 258 0160 6AE0      		ldi r22,lo8(10)
+ 259 0162 42E0      		ldi r20,lo8(2)
+ 260 0164 0E94 0000 		call writeIntegerLength
+ 261 0168 8AE0      		ldi r24,lo8(10)
+ 262 016a 0E94 0000 		call writeChar
+ 263               	.LM42:
+ 264 016e 0894      		sec
+ 265 0170 E11C      		adc r14,__zero_reg__
+ 266 0172 F11C      		adc r15,__zero_reg__
+ 267               	.LVL6:
+ 268 0174 2A96      		adiw r28,10
+ 269               	.LVL7:
+ 270               	.L6:
+ 271               	.LM43:
+ 272 0176 8091 0000 		lds r24,totalCellsFindCourse
+ 273 017a 9091 0000 		lds r25,totalCellsFindCourse+1
+ 274 017e E816      		cp r14,r24
+ 275 0180 F906      		cpc r15,r25
+ 276 0182 04F4      		brge .+2
+ 277 0184 00C0      		rjmp .L11
+ 278               	.LBE2:
+ 279               	.LM44:
+ 280 0186 8091 0000 		lds r24,softEndFind
+ 281 018a 8823      		tst r24
+ 282 018c 01F4      		brne .+2
+ 283 018e 00C0      		rjmp .L28
+ 284               	.L12:
+ 285               	.LM45:
+ 286 0190 0E94 0000 		call readCharBlock
+ 287               	.LM46:
+ 288 0194 8AE0      		ldi r24,lo8(10)
+ 289 0196 90E0      		ldi r25,hi8(10)
+ 290 0198 0E94 0000 		call mSleep
+ 291               	.LM47:
+ 292 019c 8091 0000 		lds r24,totalCellsReturnCourse
+ 293 01a0 9091 0000 		lds r25,totalCellsReturnCourse+1
+ 294 01a4 6AE0      		ldi r22,lo8(10)
+ 295 01a6 43E0      		ldi r20,lo8(3)
+ 296 01a8 0E94 0000 		call writeIntegerLength
+ 297 01ac 8AE0      		ldi r24,lo8(10)
+ 298 01ae 0E94 0000 		call writeChar
+ 299               	.LVL8:
+ 300               	.LBB3:
+ 301               	.LM48:
+ 302 01b2 C0E0      		ldi r28,lo8(0)
+ 303 01b4 D0E0      		ldi r29,hi8(0)
+ 304 01b6 00C0      		rjmp .L14
+ 305               	.LVL9:
+ 306               	.L19:
+ 307               	.LM49:
+ 308 01b8 F801      		movw r30,r16
+ 309 01ba 8081      		ld r24,Z
+ 310 01bc 8823      		tst r24
+ 311 01be 01F0      		breq .L24
+ 312 01c0 80E0      		ldi r24,lo8(.LC0)
+ 313 01c2 90E0      		ldi r25,hi8(.LC0)
+ 314 01c4 00C0      		rjmp .L15
+ 315               	.L24:
+ 316 01c6 80E0      		ldi r24,lo8(.LC1)
+ 317 01c8 90E0      		ldi r25,hi8(.LC1)
+ 318               	.L15:
+ 319               	.LM50:
+ 320 01ca 0E94 0000 		call writeString
+ 321 01ce 8AE0      		ldi r24,lo8(10)
+ 322 01d0 0E94 0000 		call writeChar
+ 323               	.LM51:
+ 324 01d4 F801      		movw r30,r16
+ 325 01d6 8181      		ldd r24,Z+1
+ 326 01d8 8823      		tst r24
+ 327 01da 01F0      		breq .L25
+ 328               	.LM52:
+ 329 01dc 80E0      		ldi r24,lo8(.LC2)
+ 330 01de 90E0      		ldi r25,hi8(.LC2)
+ 331 01e0 00C0      		rjmp .L16
+ 332               	.L25:
+ 333 01e2 80E0      		ldi r24,lo8(.LC3)
+ 334 01e4 90E0      		ldi r25,hi8(.LC3)
+ 335               	.L16:
+ 336               	.LM53:
+ 337 01e6 0E94 0000 		call writeString
+ 338 01ea 8AE0      		ldi r24,lo8(10)
+ 339 01ec 0E94 0000 		call writeChar
+ 340               	.LM54:
+ 341 01f0 F801      		movw r30,r16
+ 342 01f2 8281      		ldd r24,Z+2
+ 343 01f4 8823      		tst r24
+ 344 01f6 01F0      		breq .L26
+ 345               	.LM55:
+ 346 01f8 80E0      		ldi r24,lo8(.LC4)
+ 347 01fa 90E0      		ldi r25,hi8(.LC4)
+ 348 01fc 00C0      		rjmp .L17
+ 349               	.L26:
+ 350 01fe 80E0      		ldi r24,lo8(.LC5)
+ 351 0200 90E0      		ldi r25,hi8(.LC5)
+ 352               	.L17:
+ 353               	.LM56:
+ 354 0202 0E94 0000 		call writeString
+ 355 0206 8AE0      		ldi r24,lo8(10)
+ 356 0208 0E94 0000 		call writeChar
+ 357               	.LM57:
+ 358 020c F801      		movw r30,r16
+ 359 020e 8381      		ldd r24,Z+3
+ 360 0210 8823      		tst r24
+ 361 0212 01F0      		breq .L27
+ 362               	.LM58:
+ 363 0214 80E0      		ldi r24,lo8(.LC6)
+ 364 0216 90E0      		ldi r25,hi8(.LC6)
+ 365 0218 00C0      		rjmp .L18
+ 366               	.L27:
+ 367 021a 80E0      		ldi r24,lo8(.LC7)
+ 368 021c 90E0      		ldi r25,hi8(.LC7)
+ 369               	.L18:
+ 370               	.LM59:
+ 371 021e 0E94 0000 		call writeString
+ 372 0222 8AE0      		ldi r24,lo8(10)
+ 373 0224 0E94 0000 		call writeChar
+ 374               	.LM60:
+ 375 0228 F801      		movw r30,r16
+ 376 022a 8481      		ldd r24,Z+4
+ 377 022c 9581      		ldd r25,Z+5
+ 378 022e 6AE0      		ldi r22,lo8(10)
+ 379 0230 42E0      		ldi r20,lo8(2)
+ 380 0232 0E94 0000 		call writeIntegerLength
+ 381 0236 8AE0      		ldi r24,lo8(10)
+ 382 0238 0E94 0000 		call writeChar
+ 383               	.LM61:
+ 384 023c F801      		movw r30,r16
+ 385 023e 8681      		ldd r24,Z+6
+ 386 0240 9781      		ldd r25,Z+7
+ 387 0242 6AE0      		ldi r22,lo8(10)
+ 388 0244 42E0      		ldi r20,lo8(2)
+ 389 0246 0E94 0000 		call writeIntegerLength
+ 390 024a 8AE0      		ldi r24,lo8(10)
+ 391 024c 0E94 0000 		call writeChar
+ 392               	.LM62:
+ 393 0250 F801      		movw r30,r16
+ 394 0252 8085      		ldd r24,Z+8
+ 395 0254 90E0      		ldi r25,lo8(0)
+ 396 0256 6AE0      		ldi r22,lo8(10)
+ 397 0258 42E0      		ldi r20,lo8(2)
+ 398 025a 0E94 0000 		call writeIntegerLength
+ 399 025e 8AE0      		ldi r24,lo8(10)
+ 400 0260 0E94 0000 		call writeChar
+ 401               	.LM63:
+ 402 0264 2196      		adiw r28,1
+ 403               	.LVL10:
+ 404 0266 065F      		subi r16,lo8(-(10))
+ 405 0268 1F4F      		sbci r17,hi8(-(10))
+ 406               	.LVL11:
+ 407               	.L14:
+ 408               	.LM64:
+ 409 026a 8091 0000 		lds r24,totalCellsReturnCourse
+ 410 026e 9091 0000 		lds r25,totalCellsReturnCourse+1
+ 411 0272 C817      		cp r28,r24
+ 412 0274 D907      		cpc r29,r25
+ 413 0276 04F4      		brge .+2
+ 414 0278 00C0      		rjmp .L19
+ 415               	.LBE3:
+ 416               	.LM65:
+ 417 027a 8091 0000 		lds r24,softEndReturn
+ 418 027e 8823      		tst r24
+ 419 0280 01F4      		brne .L5
+ 420               	.LVL12:
+ 421               	.L28:
+ 422               	.LM66:
+ 423 0282 86E4      		ldi r24,lo8(70)
+ 424 0284 0E94 0000 		call writeChar
+ 425 0288 8AE0      		ldi r24,lo8(10)
+ 426 028a 0E94 0000 		call writeChar
+ 427               	.LM67:
+ 428 028e 1092 0000 		sts cState,__zero_reg__
+ 429               	.L5:
+ 430               	/* epilogue start */
+ 431               	.LM68:
+ 432 0292 DF91      		pop r29
+ 433 0294 CF91      		pop r28
+ 434 0296 1F91      		pop r17
+ 435 0298 0F91      		pop r16
+ 436 029a FF90      		pop r15
+ 437 029c EF90      		pop r14
+ 438               	.LVL13:
+ 439 029e 0895      		ret
+ 440               	.LFE8:
+ 442               		.comm dist360,2,1
+ 443               		.comm cells,490,1
+ 444               		.comm invCells,490,1
+ 445               		.comm dir,1,1
+ 446               		.comm cellCounter,2,1
+ 447               		.comm totalCellsFindCourse,2,1
+ 448               		.comm totalCellsReturnCourse,2,1
+ 449               		.comm softEndFind,1,1
+ 450               		.comm softEndReturn,1,1
+ 451               		.comm beaconDetectedOnCell,2,1
+ 452               		.comm mState,1,1
+ 453               		.comm timer,2,1
+ 454               		.comm interrupt_status,1,1
+ 455               		.comm status,1,1
+ 456               		.comm drive_status,1,1
+ 457               		.comm cState,1,1
+ 498               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 CommControl.c
+     /tmp/ccSqbGGN.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccSqbGGN.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccSqbGGN.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccSqbGGN.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccSqbGGN.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccSqbGGN.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccSqbGGN.s:18     .text:0000000000000000 readCharBlock
+     /tmp/ccSqbGGN.s:39     .text:000000000000000e initCommControl
+                            *COM*:0000000000000001 cState
+                            *COM*:0000000000000001 dir
+                            *COM*:00000000000001ea cells
+     /tmp/ccSqbGGN.s:123    .text:0000000000000076 sendData
+                            *COM*:0000000000000002 totalCellsFindCourse
+                            *COM*:0000000000000001 softEndFind
+                            *COM*:0000000000000002 totalCellsReturnCourse
+                            *COM*:0000000000000001 softEndReturn
+                            *COM*:0000000000000002 dist360
+                            *COM*:00000000000001ea invCells
+                            *COM*:0000000000000002 cellCounter
+                            *COM*:0000000000000002 beaconDetectedOnCell
+                            *COM*:0000000000000001 mState
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 interrupt_status
+                            *COM*:0000000000000001 status
+                            *COM*:0000000000000001 drive_status
+
+UNDEFINED SYMBOLS
+getBufferLength
+readChar
+clearReceptionBuffer
+show_WAITINGFORBRIEFING
+show_BRIEFINGRECEIVED
+mSleep
+show_WAITINGFORDEBRIEFING
+writeIntegerLength
+writeChar
+writeString
+__do_copy_data
+__do_clear_bss

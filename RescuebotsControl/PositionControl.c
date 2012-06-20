@@ -9,6 +9,9 @@
 #include "MoveControl.h"
 #include "CoreControl.h"
 
+bool detected = false;
+bool detecting = false;
+
 void I2C_requestedDataReady(uint8_t dataRequestID)
 {
 	checkRP6Status(dataRequestID);
@@ -21,15 +24,11 @@ void I2C_transmissionError(uint8_t errorState)
 	writeChar('\n');
 }
 
-void receiveRC5Data(RC5data_t data)
+void receiveRC5Data(void)
 {
-	if(kState = stationary)
+	if (kState == stationary && detecting)
 	{
-		beaconDetectedOnCell = cellCounter;
-	}
-	else
-	{
-		beaconDetectedOnCell = 0;
+		detected = true;
 	}
 }
 
@@ -87,7 +86,7 @@ bool wallIsFront(void)
 void initPositionControl(void)
 {
 	ACS_setStateChangedHandler(acsStateChanged);
-	IRCOMM_RC5dataReady_DUMMY(receiveRC5Data);
+	IRCOMM_setRC5DataReadyHandler(receiveRC5Data);
 
 	I2CTWI_initMaster(100);
 	I2CTWI_setTransmissionErrorHandler(I2C_transmissionError);
@@ -118,20 +117,40 @@ void updateWallData(void)
 	bool left = wallIsLeft();
 	bool front = wallIsFront();
 	bool right = wallIsRight();
-	switch(dir)
+	if (mState == finding)
 	{
-		case facingNorth: 	cells[cellCounter].west=left;
-							cells[cellCounter].north=front;
-							cells[cellCounter].east=right; break;
-		case facingEast: 	cells[cellCounter].north=left;
-							cells[cellCounter].east=front;
-							cells[cellCounter].south=right; break;
-		case facingSouth: 	cells[cellCounter].east=left;
-							cells[cellCounter].south=front;
-							cells[cellCounter].west=right; break;
-		case facingWest: 	cells[cellCounter].south=left;
-							cells[cellCounter].west=front;
-							cells[cellCounter].north=right; break;
+		switch(dir)
+		{
+			case facingNorth: 	cells[cellCounter].west=left;
+								cells[cellCounter].north=front;
+								cells[cellCounter].east=right; break;
+			case facingEast: 	cells[cellCounter].north=left;
+								cells[cellCounter].east=front;
+								cells[cellCounter].south=right; break;
+			case facingSouth: 	cells[cellCounter].east=left;
+								cells[cellCounter].south=front;
+								cells[cellCounter].west=right; break;
+			case facingWest: 	cells[cellCounter].south=left;
+								cells[cellCounter].west=front;
+								cells[cellCounter].north=right; break;
+		}
 	}
-
+	else if (mState == returning)
+	{
+		switch(dir)
+		{
+			case facingNorth: 	invCells[cellCounter].west=left;
+								invCells[cellCounter].north=front;
+								invCells[cellCounter].east=right; break;
+			case facingEast: 	invCells[cellCounter].north=left;
+								invCells[cellCounter].east=front;
+								invCells[cellCounter].south=right; break;
+			case facingSouth: 	invCells[cellCounter].east=left;
+								invCells[cellCounter].south=front;
+								invCells[cellCounter].west=right; break;
+			case facingWest: 	invCells[cellCounter].south=left;
+								invCells[cellCounter].west=front;
+								invCells[cellCounter].north=right; break;
+		}
+	}
 }

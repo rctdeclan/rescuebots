@@ -1,0 +1,189 @@
+   1               		.file	"Main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	initMain
+  18               	initMain:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	/* stack size = 0 */
+  24               	.L__stack_usage = 0
+  25               	.LM2:
+  26 0000 0E94 0000 		call initRP6Control
+  27               	.LM3:
+  28 0004 0E94 0000 		call initCoreControl
+  29               	.LM4:
+  30 0008 80E0      		ldi r24,lo8(__c.2162)
+  31 000a 90E0      		ldi r25,hi8(__c.2162)
+  32 000c 0E94 0000 		call writeNStringP
+  33               	.LM5:
+  34 0010 8FE0      		ldi r24,lo8(15)
+  35 0012 0E94 0000 		call setLEDs
+  36               	.LM6:
+  37 0016 80E0      		ldi r24,lo8(__c.2164)
+  38 0018 90E0      		ldi r25,hi8(__c.2164)
+  39 001a 60E0      		ldi r22,lo8(__c.2166)
+  40 001c 70E0      		ldi r23,hi8(__c.2166)
+  41 001e 0E94 0000 		call _showScreenLCD_P
+  42               	.LM7:
+  43 0022 84E6      		ldi r24,lo8(100)
+  44 0024 68E2      		ldi r22,lo8(40)
+  45 0026 70E0      		ldi r23,hi8(40)
+  46 0028 0E94 0000 		call beep
+  47 002c 88E6      		ldi r24,lo8(104)
+  48 002e 90E0      		ldi r25,hi8(104)
+  49 0030 0E94 0000 		call mSleep
+  50               	.LM8:
+  51 0034 8AEA      		ldi r24,lo8(-86)
+  52 0036 68E2      		ldi r22,lo8(40)
+  53 0038 70E0      		ldi r23,hi8(40)
+  54 003a 0E94 0000 		call beep
+  55 003e 88E2      		ldi r24,lo8(40)
+  56 0040 90E0      		ldi r25,hi8(40)
+  57 0042 0E94 0000 		call mSleep
+  58               	.LM9:
+  59 0046 80E9      		ldi r24,lo8(400)
+  60 0048 91E0      		ldi r25,hi8(400)
+  61 004a 0E94 0000 		call mSleep
+  62               	.LM10:
+  63 004e 80E0      		ldi r24,lo8(0)
+  64 0050 0E94 0000 		call setLEDs
+  65               	.LM11:
+  66 0054 80E0      		ldi r24,lo8(__c.2168)
+  67 0056 90E0      		ldi r25,hi8(__c.2168)
+  68 0058 60E0      		ldi r22,lo8(__c.2170)
+  69 005a 70E0      		ldi r23,hi8(__c.2170)
+  70 005c 0E94 0000 		call _showScreenLCD_P
+  71               	.LM12:
+  72 0060 88EE      		ldi r24,lo8(1000)
+  73 0062 93E0      		ldi r25,hi8(1000)
+  74 0064 0E94 0000 		call mSleep
+  75               	/* epilogue start */
+  76               	.LM13:
+  77 0068 0895      		ret
+  78               	.LFE6:
+  80               	.global	updateMain
+  82               	updateMain:
+  83               	.LFB7:
+  84               	.LM14:
+  85               	/* prologue: function */
+  86               	/* frame size = 0 */
+  87               	/* stack size = 0 */
+  88               	.L__stack_usage = 0
+  89               	.LM15:
+  90 006a 0E94 0000 		call updateCoreControl
+  91               	/* epilogue start */
+  92               	.LM16:
+  93 006e 0895      		ret
+  94               	.LFE7:
+  96               	.global	main
+  98               	main:
+  99               	.LFB8:
+ 100               	.LM17:
+ 101               	/* prologue: function */
+ 102               	/* frame size = 0 */
+ 103               	/* stack size = 0 */
+ 104               	.L__stack_usage = 0
+ 105               	.LM18:
+ 106 0070 0E94 0000 		call initMain
+ 107               	.L4:
+ 108               	.LBB4:
+ 109               	.LBB5:
+ 110               	.LM19:
+ 111 0074 0E94 0000 		call updateCoreControl
+ 112 0078 00C0      		rjmp .L4
+ 113               	.LBE5:
+ 114               	.LBE4:
+ 115               	.LFE8:
+ 117               		.comm dist360,2,1
+ 118               		.comm cells,490,1
+ 119               		.comm invCells,490,1
+ 120               		.comm dir,1,1
+ 121               		.comm cellCounter,2,1
+ 122               		.comm totalCellsFindCourse,2,1
+ 123               		.comm totalCellsReturnCourse,2,1
+ 124               		.comm softEndFind,1,1
+ 125               		.comm softEndReturn,1,1
+ 126               		.comm beaconDetectedOnCell,2,1
+ 127               		.comm mState,1,1
+ 128               		.comm timer,2,1
+ 129               		.comm interrupt_status,1,1
+ 130               		.comm status,1,1
+ 131               		.comm drive_status,1,1
+ 132               		.section	.progmem.data,"a",@progbits
+ 135               	__c.2170:
+ 136 0000 466F 6E74 		.string	"Fontys ICT T21"
+ 136      7973 2049 
+ 136      4354 2054 
+ 136      3231 00
+ 139               	__c.2168:
+ 140 000f 5265 7363 		.string	"Rescuebots"
+ 140      7565 626F 
+ 140      7473 00
+ 143               	__c.2166:
+ 144 001a 2323 2323 		.string	"################"
+ 144      2323 2323 
+ 144      2323 2323 
+ 144      2323 2323 
+ 144      00
+ 147               	__c.2164:
+ 148 002b 2323 2323 		.string	"################"
+ 148      2323 2323 
+ 148      2323 2323 
+ 148      2323 2323 
+ 148      00
+ 151               	__c.2162:
+ 152 003c 0A0A 5265 		.string	"\n\nRescuebots T21\n"
+ 152      7363 7565 
+ 152      626F 7473 
+ 152      2054 3231 
+ 152      0A00 
+ 193               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Main.c
+     /tmp/ccCHo0Ss.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccCHo0Ss.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccCHo0Ss.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccCHo0Ss.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccCHo0Ss.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccCHo0Ss.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccCHo0Ss.s:18     .text:0000000000000000 initMain
+     /tmp/ccCHo0Ss.s:151    .progmem.data:000000000000003c __c.2162
+     /tmp/ccCHo0Ss.s:147    .progmem.data:000000000000002b __c.2164
+     /tmp/ccCHo0Ss.s:143    .progmem.data:000000000000001a __c.2166
+     /tmp/ccCHo0Ss.s:139    .progmem.data:000000000000000f __c.2168
+     /tmp/ccCHo0Ss.s:135    .progmem.data:0000000000000000 __c.2170
+     /tmp/ccCHo0Ss.s:82     .text:000000000000006a updateMain
+     /tmp/ccCHo0Ss.s:98     .text:0000000000000070 main
+                            *COM*:0000000000000002 dist360
+                            *COM*:00000000000001ea cells
+                            *COM*:00000000000001ea invCells
+                            *COM*:0000000000000001 dir
+                            *COM*:0000000000000002 cellCounter
+                            *COM*:0000000000000002 totalCellsFindCourse
+                            *COM*:0000000000000002 totalCellsReturnCourse
+                            *COM*:0000000000000001 softEndFind
+                            *COM*:0000000000000001 softEndReturn
+                            *COM*:0000000000000002 beaconDetectedOnCell
+                            *COM*:0000000000000001 mState
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 interrupt_status
+                            *COM*:0000000000000001 status
+                            *COM*:0000000000000001 drive_status
+
+UNDEFINED SYMBOLS
+initRP6Control
+initCoreControl
+writeNStringP
+setLEDs
+_showScreenLCD_P
+beep
+mSleep
+updateCoreControl
+__do_clear_bss

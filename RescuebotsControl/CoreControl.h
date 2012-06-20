@@ -28,7 +28,8 @@ typedef enum
 	tLeft,
 	tRight,
 	mForward,
-	t180
+	t180,
+	EMPTY
 } action;
 
 typedef enum
@@ -56,7 +57,7 @@ typedef struct
 #define decEnum(e,max) if(e==0) e=max; else e--;
 
 cell cells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
-cell returncells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
+cell invCells[MAX_FIELD_SIZE * MAX_FIELD_SIZE];
 direction dir;
 int cellCounter;
 int totalCellsFindCourse;
@@ -64,6 +65,7 @@ int totalCellsReturnCourse;
 bool softEndFind;
 bool softEndReturn;
 int beaconDetectedOnCell;
+modeState mState;
 
 void initCoreControl(void);
 void updateCoreControl(void);

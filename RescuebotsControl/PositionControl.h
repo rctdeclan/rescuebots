@@ -17,5 +17,6 @@ bool wallIsRight(void);
 void initPositionControl(void);
 void updatePositionControl(void);
 uint16_t readAvgADC(uint8_t channel, uint8_t samples);
-
+bool detecting;
+bool detected;
 #endif /* POSITIONCONTROL_H_ */
