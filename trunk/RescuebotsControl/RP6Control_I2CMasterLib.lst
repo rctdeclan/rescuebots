@@ -815,31 +815,31 @@
  1062               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 RP6Control_I2CMasterLib.c
-     /tmp/ccZidxLE.s:2      *ABS*:000000000000003f __SREG__
-     /tmp/ccZidxLE.s:3      *ABS*:000000000000003e __SP_H__
-     /tmp/ccZidxLE.s:4      *ABS*:000000000000003d __SP_L__
-     /tmp/ccZidxLE.s:5      *ABS*:0000000000000034 __CCP__
-     /tmp/ccZidxLE.s:6      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccZidxLE.s:7      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccZidxLE.s:18     .text:0000000000000000 BUMPERS_stateChanged_DUMMY
-     /tmp/ccZidxLE.s:32     .text:0000000000000002 MOTIONCONTROL_stateChanged_DUMMY
-     /tmp/ccZidxLE.s:46     .text:0000000000000004 IRCOMM_RC5dataReady_DUMMY
-     /tmp/ccZidxLE.s:61     .text:0000000000000006 ACS_stateChanged_DUMMY
-     /tmp/ccZidxLE.s:75     .text:0000000000000008 BATTERY_lowVoltage_DUMMY
-     /tmp/ccZidxLE.s:90     .text:000000000000000a WDT_request_DUMMY
-     /tmp/ccZidxLE.s:104    .text:000000000000000c BUMPERS_setStateChangedHandler
-     /tmp/ccZidxLE.s:860    .data:0000000000000002 BUMPERS_stateChangedHandler
-     /tmp/ccZidxLE.s:122    .text:0000000000000016 MOTIONCONTROL_setStateChangedHandler
-     /tmp/ccZidxLE.s:876    .data:000000000000000a MOTIONCONTROL_stateChangedHandler
-     /tmp/ccZidxLE.s:140    .text:0000000000000020 IRCOMM_setRC5DataReadyHandler
-     /tmp/ccZidxLE.s:864    .data:0000000000000004 IRCOMM_RC5dataReadyHandler
-     /tmp/ccZidxLE.s:158    .text:000000000000002a ACS_setStateChangedHandler
-     /tmp/ccZidxLE.s:856    .data:0000000000000000 ACS_stateChangedHandler
-     /tmp/ccZidxLE.s:176    .text:0000000000000034 BATTERY_setLowVoltageHandler
-     /tmp/ccZidxLE.s:868    .data:0000000000000006 BATTERY_lowVoltageHandler
-     /tmp/ccZidxLE.s:194    .text:000000000000003e WDT_setRequestHandler
-     /tmp/ccZidxLE.s:872    .data:0000000000000008 WDT_requestHandler
-     /tmp/ccZidxLE.s:212    .text:0000000000000048 getAllSensors
+     /tmp/ccsmWReQ.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccsmWReQ.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccsmWReQ.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccsmWReQ.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccsmWReQ.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccsmWReQ.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccsmWReQ.s:18     .text:0000000000000000 BUMPERS_stateChanged_DUMMY
+     /tmp/ccsmWReQ.s:32     .text:0000000000000002 MOTIONCONTROL_stateChanged_DUMMY
+     /tmp/ccsmWReQ.s:46     .text:0000000000000004 IRCOMM_RC5dataReady_DUMMY
+     /tmp/ccsmWReQ.s:61     .text:0000000000000006 ACS_stateChanged_DUMMY
+     /tmp/ccsmWReQ.s:75     .text:0000000000000008 BATTERY_lowVoltage_DUMMY
+     /tmp/ccsmWReQ.s:90     .text:000000000000000a WDT_request_DUMMY
+     /tmp/ccsmWReQ.s:104    .text:000000000000000c BUMPERS_setStateChangedHandler
+     /tmp/ccsmWReQ.s:860    .data:0000000000000002 BUMPERS_stateChangedHandler
+     /tmp/ccsmWReQ.s:122    .text:0000000000000016 MOTIONCONTROL_setStateChangedHandler
+     /tmp/ccsmWReQ.s:876    .data:000000000000000a MOTIONCONTROL_stateChangedHandler
+     /tmp/ccsmWReQ.s:140    .text:0000000000000020 IRCOMM_setRC5DataReadyHandler
+     /tmp/ccsmWReQ.s:864    .data:0000000000000004 IRCOMM_RC5dataReadyHandler
+     /tmp/ccsmWReQ.s:158    .text:000000000000002a ACS_setStateChangedHandler
+     /tmp/ccsmWReQ.s:856    .data:0000000000000000 ACS_stateChangedHandler
+     /tmp/ccsmWReQ.s:176    .text:0000000000000034 BATTERY_setLowVoltageHandler
+     /tmp/ccsmWReQ.s:868    .data:0000000000000006 BATTERY_lowVoltageHandler
+     /tmp/ccsmWReQ.s:194    .text:000000000000003e WDT_setRequestHandler
+     /tmp/ccsmWReQ.s:872    .data:0000000000000008 WDT_requestHandler
+     /tmp/ccsmWReQ.s:212    .text:0000000000000048 getAllSensors
                             *COM*:0000000000000018 sensorBuf
                             *COM*:0000000000000001 mleft_power
                             *COM*:0000000000000001 mright_power
@@ -856,9 +856,9 @@ DEFINED SYMBOLS
                             *COM*:0000000000000002 adcBat
                             *COM*:0000000000000002 adc0
                             *COM*:0000000000000002 adc1
-     /tmp/ccZidxLE.s:323    .text:000000000000014e task_checkINT0
-     /tmp/ccZidxLE.s:825    .bss:0000000000000000 block
-     /tmp/ccZidxLE.s:352    .text:000000000000016e checkRP6Status
+     /tmp/ccsmWReQ.s:323    .text:000000000000014e task_checkINT0
+     /tmp/ccsmWReQ.s:825    .bss:0000000000000000 block
+     /tmp/ccsmWReQ.s:352    .text:000000000000016e checkRP6Status
                             *COM*:0000000000000010 messageBuf
                             *COM*:0000000000000001 interrupt_status
                             *COM*:0000000000000001 obstacle_left
@@ -867,13 +867,13 @@ DEFINED SYMBOLS
                             *COM*:0000000000000001 bumper_right
                             *COM*:0000000000000001 status
                             *COM*:0000000000000001 drive_status
-     /tmp/ccZidxLE.s:544    .text:00000000000002b6 waitForTransmitComplete
-     /tmp/ccZidxLE.s:592    .text:00000000000002ec moveAtSpeed
-     /tmp/ccZidxLE.s:634    .text:0000000000000314 changeDirection
-     /tmp/ccZidxLE.s:671    .text:0000000000000336 stop
-     /tmp/ccZidxLE.s:692    .text:0000000000000346 rotate
+     /tmp/ccsmWReQ.s:544    .text:00000000000002b6 waitForTransmitComplete
+     /tmp/ccsmWReQ.s:592    .text:00000000000002ec moveAtSpeed
+     /tmp/ccsmWReQ.s:634    .text:0000000000000314 changeDirection
+     /tmp/ccsmWReQ.s:671    .text:0000000000000336 stop
+     /tmp/ccsmWReQ.s:692    .text:0000000000000346 rotate
                             *COM*:000000000000000a transmit_buffer
-     /tmp/ccZidxLE.s:757    .text:000000000000039c move
+     /tmp/ccsmWReQ.s:757    .text:000000000000039c move
                             *COM*:0000000000000002 timer
 
 UNDEFINED SYMBOLS

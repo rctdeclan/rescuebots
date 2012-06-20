@@ -11,7 +11,7 @@
 commState cState;
 
 
-char readCharBlock()
+char readCharBlock(void)
 {
 	while (getBufferLength()==0) {}
 	return readChar();
@@ -49,7 +49,9 @@ void sendData(void)
 	readCharBlock();
 	mSleep(10);
 
-	for(int i=0;i<=totalCellsFindCourse;i++)
+
+	writeIntegerLength(totalCellsFindCourse,10,3);writeChar('\n');
+	for(int i=0;i<totalCellsFindCourse;i++)
 	{
 		writeString(cells[i].north ? "NY" : "NN");writeChar('\n');
 		writeString(cells[i].east ? "EY" : "EN");writeChar('\n');
@@ -62,7 +64,7 @@ void sendData(void)
 	}
 	if (!softEndFind)
 	{
-		writeChar('F');
+		writeChar('F');writeChar('\n');
 		cState = idle;
 		return;
 	}
@@ -72,7 +74,8 @@ void sendData(void)
 
 		mSleep(10);
 
-		for(int i=0;i<=totalCellsReturnCourse;i++)
+		writeIntegerLength(totalCellsReturnCourse,10,3);writeChar('\n');
+		for(int i=0;i<totalCellsReturnCourse;i++)
 		{
 			writeString(cells[i].north ? "NY" : "NN");writeChar('\n');
 			writeString(cells[i].east ? "EY" : "EN");writeChar('\n');
@@ -84,7 +87,7 @@ void sendData(void)
 		}
 		if (!softEndReturn)
 		{
-			writeChar('F');
+			writeChar('F');writeChar('\n');
 			cState = idle;
 			return;
 		}

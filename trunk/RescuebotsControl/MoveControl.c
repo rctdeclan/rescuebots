@@ -14,7 +14,7 @@
 kineticState kState;
 int cellDist = 1800;
 uint8_t cruiseSpeed = 40;
-uint16_t dirErrorFactor = 5;
+uint16_t dirErrorFactor = 50;
 uint16_t distErrorFactor = 8;
 
 

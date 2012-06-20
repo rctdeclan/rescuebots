@@ -1,0 +1,245 @@
+   1               		.file	"ASI.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	setPortMode
+  18               	setPortMode:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	/* stack size = 0 */
+  25               	.L__stack_usage = 0
+  26               	.LM2:
+  27 0000 8236      		cpi r24,lo8(98)
+  28 0002 01F0      		breq .L9
+  29 0004 8336      		cpi r24,lo8(99)
+  30 0006 00F4      		brsh .L7
+  31 0008 8136      		cpi r24,lo8(97)
+  32 000a 01F4      		brne .L1
+  33 000c 00C0      		rjmp .L10
+  34               	.L7:
+  35 000e 8336      		cpi r24,lo8(99)
+  36 0010 01F0      		breq .L5
+  37 0012 8436      		cpi r24,lo8(100)
+  38 0014 01F4      		brne .L1
+  39 0016 00C0      		rjmp .L11
+  40               	.L10:
+  41               	.LM3:
+  42 0018 E0E0      		ldi r30,lo8(0)
+  43 001a F0E0      		ldi r31,hi8(0)
+  44 001c 00C0      		rjmp .L4
+  45               	.L5:
+  46               	.LVL1:
+  47               	.LM4:
+  48 001e E2E0      		ldi r30,lo8(2)
+  49 0020 F0E0      		ldi r31,hi8(2)
+  50 0022 00C0      		rjmp .L4
+  51               	.LVL2:
+  52               	.L11:
+  53               	.LM5:
+  54 0024 E3E0      		ldi r30,lo8(3)
+  55 0026 F0E0      		ldi r31,hi8(3)
+  56 0028 00C0      		rjmp .L4
+  57               	.LVL3:
+  58               	.L9:
+  59               	.LM6:
+  60 002a E1E0      		ldi r30,lo8(1)
+  61 002c F0E0      		ldi r31,hi8(1)
+  62               	.L4:
+  63               	.LVL4:
+  64 002e E050      		subi r30,lo8(-(DDR))
+  65 0030 F040      		sbci r31,hi8(-(DDR))
+  66               	.LVL5:
+  67               	.LM7:
+  68 0032 4130      		cpi r20,lo8(1)
+  69 0034 01F4      		brne .L8
+  70               	.LM8:
+  71 0036 8081      		ld r24,Z
+  72               	.LVL6:
+  73 0038 862B      		or r24,r22
+  74 003a 8083      		st Z,r24
+  75 003c 0895      		ret
+  76               	.LVL7:
+  77               	.L8:
+  78               	.LM9:
+  79 003e 6095      		com r22
+  80               	.LVL8:
+  81 0040 8081      		ld r24,Z
+  82               	.LVL9:
+  83 0042 8623      		and r24,r22
+  84 0044 8083      		st Z,r24
+  85               	.LVL10:
+  86               	.L1:
+  87 0046 0895      		ret
+  88               	.LFE6:
+  90               	.global	setPortVal
+  92               	setPortVal:
+  93               	.LFB7:
+  94               	.LM10:
+  95               	.LVL11:
+  96               	/* prologue: function */
+  97               	/* frame size = 0 */
+  98               	/* stack size = 0 */
+  99               	.L__stack_usage = 0
+ 100               	.LM11:
+ 101 0048 8236      		cpi r24,lo8(98)
+ 102 004a 01F0      		breq .L20
+ 103 004c 8336      		cpi r24,lo8(99)
+ 104 004e 00F4      		brsh .L18
+ 105 0050 8136      		cpi r24,lo8(97)
+ 106 0052 01F4      		brne .L12
+ 107 0054 00C0      		rjmp .L21
+ 108               	.L18:
+ 109 0056 8336      		cpi r24,lo8(99)
+ 110 0058 01F0      		breq .L16
+ 111 005a 8436      		cpi r24,lo8(100)
+ 112 005c 01F4      		brne .L12
+ 113 005e 00C0      		rjmp .L22
+ 114               	.L21:
+ 115               	.LM12:
+ 116 0060 E0E0      		ldi r30,lo8(0)
+ 117 0062 F0E0      		ldi r31,hi8(0)
+ 118 0064 00C0      		rjmp .L15
+ 119               	.L16:
+ 120               	.LVL12:
+ 121               	.LM13:
+ 122 0066 E2E0      		ldi r30,lo8(2)
+ 123 0068 F0E0      		ldi r31,hi8(2)
+ 124 006a 00C0      		rjmp .L15
+ 125               	.LVL13:
+ 126               	.L22:
+ 127               	.LM14:
+ 128 006c E3E0      		ldi r30,lo8(3)
+ 129 006e F0E0      		ldi r31,hi8(3)
+ 130 0070 00C0      		rjmp .L15
+ 131               	.LVL14:
+ 132               	.L20:
+ 133               	.LM15:
+ 134 0072 E1E0      		ldi r30,lo8(1)
+ 135 0074 F0E0      		ldi r31,hi8(1)
+ 136               	.L15:
+ 137               	.LVL15:
+ 138 0076 E050      		subi r30,lo8(-(PORT))
+ 139 0078 F040      		sbci r31,hi8(-(PORT))
+ 140               	.LVL16:
+ 141               	.LM16:
+ 142 007a 4130      		cpi r20,lo8(1)
+ 143 007c 01F4      		brne .L19
+ 144               	.LM17:
+ 145 007e 8081      		ld r24,Z
+ 146               	.LVL17:
+ 147 0080 862B      		or r24,r22
+ 148 0082 8083      		st Z,r24
+ 149 0084 0895      		ret
+ 150               	.LVL18:
+ 151               	.L19:
+ 152               	.LM18:
+ 153 0086 6095      		com r22
+ 154               	.LVL19:
+ 155 0088 8081      		ld r24,Z
+ 156               	.LVL20:
+ 157 008a 8623      		and r24,r22
+ 158 008c 8083      		st Z,r24
+ 159               	.LVL21:
+ 160               	.L12:
+ 161 008e 0895      		ret
+ 162               	.LFE7:
+ 164               	.global	initASI
+ 166               	initASI:
+ 167               	.LFB8:
+ 168               	.LM19:
+ 169               	/* prologue: function */
+ 170               	/* frame size = 0 */
+ 171               	/* stack size = 0 */
+ 172               	.L__stack_usage = 0
+ 173               	.LM20:
+ 174 0090 8AB3      		in r24,58-32
+ 175 0092 8093 0000 		sts DDR,r24
+ 176               	.LM21:
+ 177 0096 87B3      		in r24,55-32
+ 178 0098 8093 0000 		sts DDR+1,r24
+ 179               	.LM22:
+ 180 009c 84B3      		in r24,52-32
+ 181 009e 8093 0000 		sts DDR+2,r24
+ 182               	.LM23:
+ 183 00a2 81B3      		in r24,49-32
+ 184 00a4 8093 0000 		sts DDR+3,r24
+ 185               	.LM24:
+ 186 00a8 8BB3      		in r24,59-32
+ 187 00aa 8093 0000 		sts PORT,r24
+ 188               	.LM25:
+ 189 00ae 88B3      		in r24,56-32
+ 190 00b0 8093 0000 		sts PORT+1,r24
+ 191               	.LM26:
+ 192 00b4 85B3      		in r24,53-32
+ 193 00b6 8093 0000 		sts PORT+2,r24
+ 194               	.LM27:
+ 195 00ba 82B3      		in r24,50-32
+ 196 00bc 8093 0000 		sts PORT+3,r24
+ 197               	/* epilogue start */
+ 198               	.LM28:
+ 199 00c0 0895      		ret
+ 200               	.LFE8:
+ 202               	.global	DDR
+ 203               		.data
+ 206               	DDR:
+ 207 0000 0B        		.byte	11
+ 208 0001 0000 00   		.skip 3,0
+ 209               	.global	PORT
+ 212               	PORT:
+ 213 0004 0B        		.byte	11
+ 214 0005 0000 00   		.skip 3,0
+ 215               		.comm timer,2,1
+ 216               		.comm interrupt_status,1,1
+ 217               		.comm status,1,1
+ 218               		.comm drive_status,1,1
+ 219               		.comm dist360,2,1
+ 220               		.comm cells,490,1
+ 221               		.comm invCells,490,1
+ 222               		.comm dir,1,1
+ 223               		.comm cellCounter,2,1
+ 224               		.comm totalCellsFindCourse,2,1
+ 225               		.comm totalCellsReturnCourse,2,1
+ 226               		.comm softEndFind,1,1
+ 227               		.comm softEndReturn,1,1
+ 228               		.comm beaconDetectedOnCell,2,1
+ 229               		.comm mState,1,1
+ 270               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ASI.c
+     /tmp/ccm99in7.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/ccm99in7.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/ccm99in7.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/ccm99in7.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/ccm99in7.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccm99in7.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccm99in7.s:18     .text:0000000000000000 setPortMode
+     /tmp/ccm99in7.s:206    .data:0000000000000000 DDR
+     /tmp/ccm99in7.s:92     .text:0000000000000048 setPortVal
+     /tmp/ccm99in7.s:212    .data:0000000000000004 PORT
+     /tmp/ccm99in7.s:166    .text:0000000000000090 initASI
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 interrupt_status
+                            *COM*:0000000000000001 status
+                            *COM*:0000000000000001 drive_status
+                            *COM*:0000000000000002 dist360
+                            *COM*:00000000000001ea cells
+                            *COM*:00000000000001ea invCells
+                            *COM*:0000000000000001 dir
+                            *COM*:0000000000000002 cellCounter
+                            *COM*:0000000000000002 totalCellsFindCourse
+                            *COM*:0000000000000002 totalCellsReturnCourse
+                            *COM*:0000000000000001 softEndFind
+                            *COM*:0000000000000001 softEndReturn
+                            *COM*:0000000000000002 beaconDetectedOnCell
+                            *COM*:0000000000000001 mState
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

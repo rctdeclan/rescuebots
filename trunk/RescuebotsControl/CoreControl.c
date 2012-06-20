@@ -11,7 +11,7 @@
 #include "RP6Control_I2CMasterLib.h"
 
 modeState mState;
-int dist360 = 2480;
+int dist360 = 1900;
 int cellCounter = 0;
 direction dir;
 bool softEndFind = true;
@@ -20,6 +20,28 @@ int totalCellsFindCourse = 0;
 int totalCellsReturnCourse = 0;
 int beaconDetectedOnCell;
 bool found = false;
+
+
+void end(void)
+{
+	if (mState == finding) totalCellsFindCourse = cellCounter;
+	if (mState == returning) totalCellsReturnCourse = cellCounter;
+	stop();
+	mState = undefined;
+	kState = limbo;
+	sendData();
+}
+
+void checkProcessEndedAbruptly(void)
+{
+	if(getPressedKeyNumber())
+	{
+		softEndFind = (mState == finding);
+		softEndReturn = (mState == returning);
+		end();
+	}
+}
+
 
 void onEnterCellHandler(void)
 {
@@ -31,13 +53,28 @@ void onEnterCellHandler(void)
 	cellCounter++; //officially entered this cell.
 
 	//cellCounter will from this point always be higher than 0.
-	switch(dir)
+	mSleep(300);
+	if (mState==finding)
 	{
-		case facingNorth: cells[cellCounter].y = cells[cellCounter-1].y - 1;break;
-		case facingEast: cells[cellCounter].x = cells[cellCounter-1].x + 1;break;
-		case facingSouth: cells[cellCounter].y = cells[cellCounter-1].y + 1;break;
-		case facingWest: cells[cellCounter].x = cells[cellCounter-1].x - 1;break;
+		switch(dir)
+		{
+			case facingNorth: cells[cellCounter].y = cells[cellCounter-1].y - 1;break;
+			case facingEast: cells[cellCounter].x = cells[cellCounter-1].x + 1;break;
+			case facingSouth: cells[cellCounter].y = cells[cellCounter-1].y + 1;break;
+			case facingWest: cells[cellCounter].x = cells[cellCounter-1].x - 1;break;
+		}
 	}
+	else if (mState==returning)
+	{
+		switch(dir)
+		{
+			case facingNorth: invCells[cellCounter].y = invCells[cellCounter-1].y - 1;break;
+			case facingEast: invCells[cellCounter].x = invCells[cellCounter-1].x + 1;break;
+			case facingSouth: invCells[cellCounter].y = invCells[cellCounter-1].y + 1;break;
+			case facingWest: invCells[cellCounter].x = invCells[cellCounter-1].x - 1;break;
+		}
+	}
+
 
 	cells[cellCounter].dir = dir;
 }
@@ -48,7 +85,11 @@ void onLeaveCellHandler(void)
 	updateWallData();
 
 	mSleep(300);
-	show_WHICHWALL(cells[cellCounter].north,cells[cellCounter].east,cells[cellCounter].south,cells[cellCounter].west);
+	if (mState==finding)
+		show_WHICHWALL(cells[cellCounter].north,cells[cellCounter].east,cells[cellCounter].south,cells[cellCounter].west);
+	else if (mState==returning)
+		show_WHICHWALL(invCells[cellCounter].north,invCells[cellCounter].east,invCells[cellCounter].south,invCells[cellCounter].west);
+
 	mSleep(300);
 
 	beep(40,10);
@@ -89,7 +130,7 @@ void initCoreControl(void)
 
 	show_PLACEMEATPOSITION(cells[0].x,cells[0].y,dir);
 	//PRESS ANY KEY TO CONTINUE
-	while(!getPressedKeyNumber()) {}
+	while(getPressedKeyNumber()!=1) {}
 
 //	cells[0].north = true;
 //	cells[0].east = true;
@@ -128,10 +169,11 @@ void initCoreControl(void)
 //	cells[4].a = mForward;
 //
 //	softEndFind=false;
+//	totalCellsFindCourse = 5;
 //
 //	sendData();
-	mState = calibrating;
-	//mState = undefined;
+	//mState = calibrating;
+	mState = finding;
 
 }
 
@@ -206,8 +248,10 @@ void calibrate(void)
 void searchForBeacon(void)
 {
 	show_LOOKINGFORBEACON();
+	detecting = true;
 	mSleep(1500);
-	if (beaconDetectedOnCell==cellCounter)
+	detected = (getPressedKeyNumber() == 2);
+	if (detected)
 	{
 		found = true;
 		show_BEHOLDTHEBEACONOFLIGHT();
@@ -216,6 +260,8 @@ void searchForBeacon(void)
 	{
 		show_NOBEACONFOUND();
 	}
+	detecting = false;
+	mSleep(500);
 }
 
 
@@ -282,6 +328,25 @@ void find(void)
 	totalCellsFindCourse = cellCounter;
 }
 
+void removeEmptyElements(action *array, int * totalActions)
+{
+	int index = 0;
+	for (int j = 0; j<*totalActions;j++)
+	{
+		if (array[j] == EMPTY)
+		{
+			*totalActions = *totalActions-1;
+			index = j;
+			for (int i = index; i < sizeof(array); i++)
+			{
+				array[i] = array[i+1];
+			}
+			array[sizeof(array)-1] = EMPTY;
+		}
+		if(array[j] == EMPTY) {j--;}
+	}
+}
+
 /*
  * returnToStart
  *
@@ -289,54 +354,241 @@ void find(void)
  */
 void returnToStart(void)
 {
+//	//first move 180, to turn around fully;
+//	show_ACTION(t180);
+//	turn180();
+//	decEnum(did,3);
+//	decEnum(dir,3);
+//
+//
+	action invActions[MAX_FIELD_SIZE*MAX_FIELD_SIZE];
+	int totalActions;
+	int i = 0;
 
-	//make a seperate array of commands and extract data from the cells array into it.
-	//add a mForward after every tLeft, tRight and t180.
+	{
+		action actions[MAX_FIELD_SIZE*MAX_FIELD_SIZE];
+		//make a seperate array of commands and extract data from the cells array into it.
+		int offset = 0;
+		for(i = 0; i<totalCellsFindCourse+offset;i++)
+		{
+			actions[i] = cells[i-offset].a;
+			if (actions[i]==tLeft || actions[i]==tRight || actions[i]==t180)
+			{
+				if (actions[i]==tLeft) actions[i]=tRight;
+				if (actions[i]==tRight) actions[i]=tLeft;
+				i++;
+
+				//add a mForward after every tLeft, tRight and t180.
+				actions[i] = mForward;
+				offset++;
+			}
+		}
+		//reverse actions
+		totalActions = i+1;
+		for (int j=0;j<totalCellsFindCourse;j++)
+		{
+			invActions[j] = actions[totalActions-i-1];
+		}
+	}
+
+
 	//apply grammar rules dependent on their priority.
-	//execute
 
+	int optimizationsInLoop = 10;//make sure its not 0;
+	while (optimizationsInLoop!=0)
+	{
+		optimizationsInLoop = 0;//reset
+
+		//m <- RR | LL
+		for(int b = 0; b<totalActions-1/*do not go over the last element since it has no follower.*/;b++)
+		{
+			if (invActions[b]==tRight && invActions[b+1]==tRight)
+			{
+				optimizationsInLoop++;
+				invActions[b] = t180;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==tLeft && invActions[b+1]==tLeft)
+			{
+				optimizationsInLoop++;
+				void checkProcessEndedAbruptly(void)
+				{
+					if(getPressedKeyNumber())
+					{
+						softEndFind = (mState == finding);
+						softEndReturn = (mState == returning);
+						end();
+					}
+				}
+
+				invActions[b] = t180;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+		}
+
+		//remove empty elements
+		removeEmptyElements(invActions,&totalActions);
+
+		//m <- LmR | RmL | FmF
+		for(int b = 0; b<totalActions-2/*do not go over the last two elements since the 2nd last one has no followers.*/;b++)
+		{
+			if (invActions[b]==tLeft && invActions[b+1]==t180 && invActions[b+2]==tRight )
+			{
+				optimizationsInLoop++;
+				invActions[b] = t180;
+				invActions[b+1] = EMPTY;
+				invActions[b+2] = EMPTY;
+				b+=2;//skip next two elements since they're EMPTY.
+			}
+			else
+			if (invActions[b]==tRight && invActions[b+1]==t180 && invActions[b+2]==tLeft )
+			{
+				optimizationsInLoop++;
+				invActions[b] = t180;
+				invActions[b+1] = EMPTY;
+				invActions[b+2] = EMPTY;
+				b+=2;//skip next two elements since they're EMPTY.
+			}
+			else
+			if (invActions[b]==mForward && invActions[b+1]==t180 && invActions[b+2]==mForward )
+			{
+				optimizationsInLoop++;
+				invActions[b] = t180;
+				invActions[b+1] = EMPTY;
+				invActions[b+2] = EMPTY;
+				b+=2;//skip next two elements since they're EMPTY.
+			}
+		}
+
+		//remove empty elements
+		removeEmptyElements(invActions,&totalActions);
+
+		//R <- Lm || mL
+		//L <- Rm || mR
+		for(int b = 0; b<totalActions-1/*do not go over the last element since it has no follower.*/;b++)
+		{
+			if (invActions[b]==tLeft && invActions[b+1]==t180)
+			{
+				optimizationsInLoop++;
+				invActions[b] = tRight;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==t180 && invActions[b+1]==tLeft)
+			{
+				optimizationsInLoop++;
+				invActions[b] = tRight;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==tRight && invActions[b+1]==t180)
+			{
+				optimizationsInLoop++;
+				invActions[b] = tLeft;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==t180 && invActions[b+1]==tRight)
+			{
+				optimizationsInLoop++;
+				invActions[b] = tLeft;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+		}
+
+
+		//remove empty elements
+		removeEmptyElements(invActions,&totalActions);
+
+		//e <- RL | LR | mm
+		for(int b = 0; b<totalActions-1/*do not go over the last element since it has no follower.*/;b++)
+		{
+			if (invActions[b]==tRight && invActions[b+1]==tLeft)
+			{
+				optimizationsInLoop++;
+				invActions[b] = EMPTY;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==tLeft && invActions[b+1]==tRight)
+			{
+				optimizationsInLoop++;
+				invActions[b] = EMPTY;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+			else
+			if (invActions[b]==t180 && invActions[b+1]==t180)
+			{
+				optimizationsInLoop++;
+				invActions[b] = EMPTY;
+				invActions[b+1] = EMPTY;
+				b++;//skip next element since it's EMPTY.
+			}
+		}
+
+		//remove empty elements
+		removeEmptyElements(invActions,&totalActions);
+
+
+		//m <- LmL | RmR
+		for(int b = 0; b<totalActions-2/*do not go over the last two elements since the 2nd last one has no followers.*/;b++)
+		{
+			if (invActions[b]==tLeft && invActions[b+1]==t180 && invActions[b+2]==tLeft )
+			{
+				optimizationsInLoop++;
+				invActions[b] = EMPTY;
+				invActions[b+1] = EMPTY;
+				invActions[b+2] = EMPTY;
+				b+=2;//skip next two elements since they're EMPTY.
+			}
+			else
+			if (invActions[b]==tRight && invActions[b+1]==t180 && invActions[b+2]==tRight )
+			{
+				optimizationsInLoop++;
+				invActions[b] = EMPTY;
+				invActions[b+1] = EMPTY;
+				invActions[b+2] = EMPTY;
+				b+=2;//skip next two elements since they're EMPTY.
+			}
+		}
+
+		//remove empty elements
+		removeEmptyElements(invActions,&totalActions);
+	}
+
+	//execute
 	cellCounter = 0;
 	//set every returnscells[i] while moving through the course, dependent on the actions array.
-
-
-
-
-	//______________________
-	//first reverse the cell array.
-//	for (int i = 0;i<totalCellsFindCourse;i++)
-//	{
-//		returncells[i] = cells[totalCellsFindCourse-i-1];
-//		switch (returncells[i].a)
-//		{
-//			case tLeft: returncells[i].a = tRight;break;
-//			case tRight: returncells[i].a = tLeft;break;
-//		}
-//	}
-
-//	while(true)
-//	{
-//		checkProcessEndedAbruptly();
-//	}
-	//TODO: Make returnToStart
-}
-
-void end(void)
-{
-	stop();
-	mState = undefined;
-	kState = limbo;
-	sendData();
-}
-
-void checkProcessEndedAbruptly(void)
-{
-	if(getPressedKeyNumber())
+	int k = 0;
+	int q = 0;
+	while(k<totalActions)
 	{
-		softEndFind = (mState == finding);
-		softEndReturn = (mState == returning);
-		end();
+		checkProcessEndedAbruptly();
+		action a = invActions[k];
+		invCells[q].a = a;
+		onLeaveCellHandler();
+		switch (a)
+		{
+			case tLeft: show_ACTION(tLeft);turnLeft();decEnum(dir,3);k++;moveForward();break;
+			case tRight: show_ACTION(tRight);turnRight();incEnum(dir,3);k++;moveForward();break;
+			case mForward: show_ACTION(mForward);moveForward();break;
+		}
+
+		onEnterCellHandler();
+		k++;
+		q++;
 	}
 }
+
 
 
 void updateCoreControl(void)

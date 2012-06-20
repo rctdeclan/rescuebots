@@ -1,0 +1,1518 @@
+Archive member included because of file (symbol)
+
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                              CoreControl.o (__fixsfsi)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o) (__fixunssfsi)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                              CoreControl.o (__floatsisf)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o) (__fp_splitA)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o) (__fp_zero)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                              CoreControl.o (__mulsf3)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o) (__mulsf3x)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o) (__fp_inf)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o) (__fp_nan)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o) (__fp_pscA)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o) (__fp_pscB)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o) (__fp_round)
+/usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+                              MoveControl.o (__udivmodhi4)
+/usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+                              CoreControl.o (__divmodhi4)
+/usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o (exit)
+/usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+                              ../RP6Lib/RP6control/RP6ControlLib.o (__do_copy_data)
+/usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+                              Main.o (__do_clear_bss)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+                              ../RP6Lib/RP6control/RP6ControlLib.o (itoa)
+/usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o) (strrev)
+
+Allocating common symbols
+Common symbol       size              file
+
+bumper_left         0x1               RP6Control_I2CMasterLib.o
+sensorBuf           0x18              RP6Control_I2CMasterLib.o
+mright_des_speed    0x1               RP6Control_I2CMasterLib.o
+interrupt_status    0x1               Main.o
+timer               0x2               Main.o
+mleft_des_speed     0x1               RP6Control_I2CMasterLib.o
+uart_status         0x1               ../RP6Lib/RP6common/RP6uart.o
+transmit_buffer     0xa               RP6Control_I2CMasterLib.o
+controlStatus       0x1               ../RP6Lib/RP6control/RP6ControlLib.o
+invCells            0x1ea             Main.o
+drive_status        0x1               Main.o
+mleft_power         0x1               RP6Control_I2CMasterLib.o
+mleft_speed         0x1               RP6Control_I2CMasterLib.o
+lcd_tmp_buffer      0x11              ../RP6Lib/RP6control/RP6ControlLib.o
+lowerAvgWallBoundary
+                    0x2               CoreControl.o
+mState              0x1               Main.o
+cState              0x1               CommControl.o
+adc1                0x2               RP6Control_I2CMasterLib.o
+adcLSL              0x2               RP6Control_I2CMasterLib.o
+mright_power        0x1               RP6Control_I2CMasterLib.o
+stopwatches         0x11              ../RP6Lib/RP6control/RP6ControlLib.o
+obstacle_left       0x1               RP6Control_I2CMasterLib.o
+beaconDetectedOnCell
+                    0x2               Main.o
+externalPort        0x1               ../RP6Lib/RP6control/RP6ControlLib.o
+dir                 0x1               Main.o
+adcLSR              0x2               RP6Control_I2CMasterLib.o
+obstacle_right      0x1               RP6Control_I2CMasterLib.o
+conditionedWallDistance
+                    0x2               CoreControl.o
+kState              0x1               CoreControl.o
+mright_dist         0x2               RP6Control_I2CMasterLib.o
+adc0                0x2               RP6Control_I2CMasterLib.o
+delay_timer         0x1               ../RP6Lib/RP6control/RP6ControlLib.o
+adcMotorCurrentRight
+                    0x2               RP6Control_I2CMasterLib.o
+ms_timer            0x1               ../RP6Lib/RP6control/RP6ControlLib.o
+mleft_dist          0x2               RP6Control_I2CMasterLib.o
+mright_speed        0x1               RP6Control_I2CMasterLib.o
+bumper_right        0x1               RP6Control_I2CMasterLib.o
+cells               0x1ea             Main.o
+adcBat              0x2               RP6Control_I2CMasterLib.o
+uart_receive_buffer
+                    0x21              ../RP6Lib/RP6common/RP6uart.o
+sound_timer         0x2               ../RP6Lib/RP6control/RP6ControlLib.o
+status              0x1               Main.o
+adcMotorCurrentLeft
+                    0x2               RP6Control_I2CMasterLib.o
+messageBuf          0x10              RP6Control_I2CMasterLib.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000020000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+LOAD Main.o
+LOAD ../RP6Lib/RP6control/RP6ControlLib.o
+LOAD ../RP6Lib/RP6common/RP6uart.o
+LOAD ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+LOAD RP6Control_I2CMasterLib.o
+LOAD CoreControl.o
+LOAD MoveControl.o
+LOAD CommControl.o
+LOAD ASI.o
+LOAD PositionControl.o
+LOAD IOControl.o
+LOAD /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a
+LOAD /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000     0x35b2
+ *(.vectors)
+ .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x0000000000000054       0x4e Main.o
+ .progmem.data  0x00000000000000a2       0x22 CoreControl.o
+ .progmem.data  0x00000000000000c4       0x1b PositionControl.o
+ .progmem.data  0x00000000000000df      0x11d IOControl.o
+                0x00000000000001fc                . = ALIGN (0x2)
+                0x00000000000001fc                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000000000001fc        0x0 linker stubs
+ *(.trampolines*)
+                0x00000000000001fc                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000000000001fc                __ctors_start = .
+ *(.ctors)
+                0x00000000000001fc                __ctors_end = .
+                0x00000000000001fc                __dtors_start = .
+ *(.dtors)
+                0x00000000000001fc                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000000000001fc        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+                0x00000000000001fc                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000000000001fc        0xc /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000000000000208       0x16 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000208                __do_copy_data
+ .init4         0x000000000000021e       0x10 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000021e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000000000022e        0x8 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000000000000236        0x4 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000236                __vector_12
+                0x0000000000000236                __bad_interrupt
+                0x0000000000000236                __vector_6
+                0x0000000000000236                __vector_11
+                0x0000000000000236                __vector_17
+                0x0000000000000236                __vector_7
+                0x0000000000000236                __vector_5
+                0x0000000000000236                __vector_4
+                0x0000000000000236                __vector_9
+                0x0000000000000236                __vector_15
+                0x0000000000000236                __vector_8
+                0x0000000000000236                __vector_14
+                0x0000000000000236                __vector_16
+                0x0000000000000236                __vector_18
+                0x0000000000000236                __vector_20
+ .text          0x000000000000023a       0x7a Main.o
+                0x000000000000023a                initMain
+                0x00000000000002a4                updateMain
+                0x00000000000002aa                main
+ .text          0x00000000000002b4      0x850 ../RP6Lib/RP6control/RP6ControlLib.o
+                0x00000000000002b4                INT0_event_DUMMY
+                0x00000000000002b6                INT1_event_DUMMY
+                0x00000000000002b8                INT2_event_DUMMY
+                0x00000000000002ba                INT0_setEventHandler
+                0x00000000000002c4                __vector_1
+                0x0000000000000312                INT1_setEventHandler
+                0x000000000000031c                __vector_2
+                0x000000000000036a                INT2_setEventHandler
+                0x0000000000000374                __vector_3
+                0x00000000000003c2                readADC
+                0x00000000000003e2                writeSPI
+                0x00000000000003ea                readSPI
+                0x00000000000003f4                readWordSPI
+                0x000000000000041e                writeWordSPI
+                0x0000000000000432                writeBufferSPI
+                0x000000000000044c                readBufferSPI
+                0x000000000000046a                SPI_EEPROM_readByte
+                0x000000000000048a                SPI_EEPROM_readBytes
+                0x00000000000004cc                SPI_EEPROM_enableWrite
+                0x00000000000004d8                SPI_EEPROM_disableWrite
+                0x00000000000004e4                SPI_EEPROM_getStatus
+                0x00000000000004f4                SPI_EEPROM_writeBytes
+                0x0000000000000534                SPI_EEPROM_writeByte
+                0x0000000000000568                outputExt
+                0x000000000000057a                setLEDs
+                0x000000000000058e                getPressedKeyNumber
+                0x00000000000005f8                checkPressedKeyEvent
+                0x000000000000061c                checkReleasedKeyEvent
+                0x0000000000000646                __vector_10
+                0x0000000000000798                beep
+                0x00000000000007b4                setBeeperPitch
+                0x00000000000007d2                sleep
+                0x00000000000007e8                mSleep
+                0x0000000000000802                dischargePeakDetector
+                0x0000000000000812                getMicrophonePeak
+                0x0000000000000838                delayCycles
+                0x0000000000000844                setLCDD
+                0x0000000000000866                write4BitLCDData
+                0x0000000000000884                writeCharLCD
+                0x0000000000000894                writeStringLengthLCD
+                0x00000000000008ce                writeStringLCD
+                0x00000000000008f6                writeIntegerLCD
+                0x0000000000000914                writeIntegerLengthLCD
+                0x0000000000000996                writeNStringLCD_P
+                0x00000000000009b2                writeLCDCommand
+                0x00000000000009c2                setCursorPosLCD
+                0x00000000000009d2                clearPosLCD
+                0x00000000000009ec                clearLCD
+                0x00000000000009fc                _showScreenLCD_P
+                0x0000000000000a2a                initLCD
+                0x0000000000000aaa                initRP6Control
+ .text          0x0000000000000b04      0x268 ../RP6Lib/RP6common/RP6uart.o
+                0x0000000000000b04                writeChar
+                0x0000000000000b0c                writeString
+                0x0000000000000b34                writeNStringP
+                0x0000000000000b50                writeStringLength
+                0x0000000000000b8a                writeInteger
+                0x0000000000000bce                writeIntegerLength
+                0x0000000000000c50                __vector_13
+                0x0000000000000cbe                readChar
+                0x0000000000000cfa                readChars
+                0x0000000000000d40                getBufferLength
+                0x0000000000000d4c                clearReceptionBuffer
+ .text          0x0000000000000d6c      0x5b4 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                0x0000000000000d6c                I2CTWI_requestedDataReady_DUMMY
+                0x0000000000000d6e                I2CTWI_transmissionError_DUMMY
+                0x0000000000000d70                __I2CTWI_initMaster
+                0x0000000000000d8c                I2CTWI_setRequestedDataReadyHandler
+                0x0000000000000d96                I2CTWI_setTransmissionErrorHandler
+                0x0000000000000da0                I2CTWI_delay
+                0x0000000000000dc2                I2CTWI_getReceivedData
+                0x0000000000000dea                I2CTWI_getState
+                0x0000000000000df6                task_I2CTWI
+                0x0000000000000ebc                I2CTWI_requestRegisterFromDevice
+                0x0000000000000f14                I2CTWI_requestDataFromDevice
+                0x0000000000000f62                I2CTWI_readRegisters
+                0x0000000000000fe6                I2CTWI_readBytes
+                0x0000000000001056                I2CTWI_readByte
+                0x00000000000010b0                I2CTWI_transmitByte
+                0x00000000000010ec                I2CTWI_transmit2Bytes
+                0x0000000000001132                I2CTWI_transmit3Bytes
+                0x0000000000001182                I2CTWI_transmit4Bytes
+                0x00000000000011da                I2CTWI_transmitBytes
+                0x000000000000123c                __vector_19
+ .text          0x0000000000001320      0x3f2 RP6Control_I2CMasterLib.o
+                0x0000000000001320                BUMPERS_stateChanged_DUMMY
+                0x0000000000001322                MOTIONCONTROL_stateChanged_DUMMY
+                0x0000000000001324                IRCOMM_RC5dataReady_DUMMY
+                0x0000000000001326                ACS_stateChanged_DUMMY
+                0x0000000000001328                BATTERY_lowVoltage_DUMMY
+                0x000000000000132a                WDT_request_DUMMY
+                0x000000000000132c                BUMPERS_setStateChangedHandler
+                0x0000000000001336                MOTIONCONTROL_setStateChangedHandler
+                0x0000000000001340                IRCOMM_setRC5DataReadyHandler
+                0x000000000000134a                ACS_setStateChangedHandler
+                0x0000000000001354                BATTERY_setLowVoltageHandler
+                0x000000000000135e                WDT_setRequestHandler
+                0x0000000000001368                getAllSensors
+                0x000000000000146e                task_checkINT0
+                0x000000000000148e                checkRP6Status
+                0x00000000000015d6                waitForTransmitComplete
+                0x000000000000160c                moveAtSpeed
+                0x0000000000001634                changeDirection
+                0x0000000000001656                stop
+                0x0000000000001666                rotate
+                0x00000000000016bc                move
+ .text          0x0000000000001712      0xddc CoreControl.o
+                0x0000000000001712                end
+                0x0000000000001752                checkProcessEndedAbruptly
+                0x000000000000177c                onEnterCellHandler
+                0x0000000000001a32                onLeaveCellHandler
+                0x0000000000001b78                initCoreControl
+                0x0000000000001bac                costFunction
+                0x0000000000001be6                calibrate
+                0x0000000000001df0                searchForBeacon
+                0x0000000000001e34                find
+                0x0000000000001f98                removeEmptyElements
+                0x0000000000001ff8                returnToStart
+                0x00000000000024b4                updateCoreControl
+ .text          0x00000000000024ee      0x2dc MoveControl.o
+                0x00000000000024ee                initMoveControl
+                0x0000000000002502                updateMoveControl
+                0x0000000000002504                moveForward
+                0x0000000000002742                turnLeft
+                0x000000000000276e                turnRight
+                0x000000000000279a                turn180
+ .text          0x00000000000027ca      0x2a0 CommControl.o
+                0x00000000000027ca                readCharBlock
+                0x00000000000027d8                initCommControl
+                0x0000000000002840                sendData
+ .text          0x0000000000002a6a       0xc2 ASI.o
+                0x0000000000002a6a                setPortMode
+                0x0000000000002ab2                setPortVal
+                0x0000000000002afa                initASI
+ .text          0x0000000000002b2c      0x51a PositionControl.o
+                0x0000000000002b2c                receiveRC5Data
+                0x0000000000002b44                acsStateChanged
+                0x0000000000002b68                I2C_transmissionError
+                0x0000000000002b88                I2C_requestedDataReady
+                0x0000000000002b8e                readAvgADC
+                0x0000000000002bd8                wallIsLeft
+                0x0000000000002c0e                wallIsRight
+                0x0000000000002c44                wallIsFront
+                0x0000000000002c64                initPositionControl
+                0x0000000000002cc8                updatePositionControl
+                0x0000000000002cd2                updateWallData
+ .text          0x0000000000003046      0x274 IOControl.o
+                0x0000000000003046                show_WAITINGFORBRIEFING
+                0x0000000000003058                show_WAITINGFORDEBRIEFING
+                0x000000000000306a                show_BRIEFINGRECEIVED
+                0x00000000000030d2                show_PLACEMEATPOSITION
+                0x000000000000313a                show_SPEED
+                0x000000000000317c                show_STARTEDFINDING
+                0x000000000000318e                show_ENTERCELL
+                0x00000000000031a0                show_LEAVECELL
+                0x00000000000031b2                show_ACTION
+                0x0000000000003208                show_WHICHWALL
+                0x0000000000003284                show_LOOKINGFORBEACON
+                0x0000000000003296                show_BEHOLDTHEBEACONOFLIGHT
+                0x00000000000032a8                show_NOBEACONFOUND
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+ .text          0x00000000000032ba        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+                0x00000000000032ba                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc.fplib
+                0x00000000000032ba        0xa /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x00000000000032ba                __fixsfsi
+ .text.avr-libc.fplib
+                0x00000000000032c4       0x58 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x00000000000032c4                __fixunssfsi
+ .text.avr-libc.fplib
+                0x000000000000331c       0x7a /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x000000000000331c                __floatunsisf
+                0x0000000000003320                __floatsisf
+ .text.avr-libc.fplib
+                0x0000000000003396       0x44 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x0000000000003396                __fp_split3
+                0x00000000000033a6                __fp_splitA
+ .text.avr-libc.fplib
+                0x00000000000033da        0xe /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x00000000000033da                __fp_zero
+                0x00000000000033dc                __fp_szero
+ .text.avr-libc.fplib
+                0x00000000000033e8        0x4 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x00000000000033e8                __mulsf3
+ .text.avr-libc.fplib
+                0x00000000000033ec       0xc2 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x0000000000003400                __mulsf3x
+                0x0000000000003404                __mulsf3_pse
+ .text.avr-libc.fplib
+                0x00000000000034ae        0xc /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x00000000000034ae                __fp_inf
+ .text.avr-libc.fplib
+                0x00000000000034ba        0x6 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x00000000000034ba                __fp_nan
+ .text.avr-libc.fplib
+                0x00000000000034c0        0xe /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x00000000000034c0                __fp_pscA
+ .text.avr-libc.fplib
+                0x00000000000034ce        0xe /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x00000000000034ce                __fp_pscB
+ .text.avr-libc.fplib
+                0x00000000000034dc       0x22 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x00000000000034dc                __fp_round
+ .text.libgcc   0x00000000000034fe       0x28 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+                0x00000000000034fe                __udivmodhi4
+ .text.libgcc   0x0000000000003526       0x26 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000003526                __divmodhi4
+                0x0000000000003526                _div
+ .text.libgcc   0x000000000000354c        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x000000000000354c        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x000000000000354c        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x000000000000354c       0x42 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+                0x000000000000354c                itoa
+ .text.avr-libc
+                0x000000000000358e       0x20 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+                0x000000000000358e                strrev
+                0x00000000000035ae                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000000000035ae        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+                0x00000000000035ae                exit
+                0x00000000000035ae                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000000000035ae        0x4 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000000000035b2                _etext = .
+
+.data           0x0000000000800060       0x4e load address 0x00000000000035b2
+                0x0000000000800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+ .data          0x0000000000800060        0x0 Main.o
+ .data          0x0000000000800060        0x6 ../RP6Lib/RP6control/RP6ControlLib.o
+ .data          0x0000000000800066        0x0 ../RP6Lib/RP6common/RP6uart.o
+ .data          0x0000000000800066        0x4 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .data          0x000000000080006a        0xc RP6Control_I2CMasterLib.o
+ .data          0x0000000000800076        0x6 CoreControl.o
+                0x0000000000800078                dist360
+                0x000000000080007a                softEndFind
+                0x000000000080007b                softEndReturn
+ .data          0x000000000080007c        0x7 MoveControl.o
+                0x000000000080007c                cellDist
+                0x000000000080007e                cruiseSpeed
+                0x000000000080007f                dirErrorFactor
+                0x0000000000800081                distErrorFactor
+ .data          0x0000000000800083       0x18 CommControl.o
+ .data          0x000000000080009b        0x8 ASI.o
+                0x000000000080009b                DDR
+                0x000000000080009f                PORT
+ .data          0x00000000008000a3        0x2 PositionControl.o
+                0x00000000008000a3                higherAvgWallBoundary
+ .data          0x00000000008000a5        0x8 IOControl.o
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+ .data          0x00000000008000ad        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00000000008000ae                . = ALIGN (0x2)
+ *fill*         0x00000000008000ad        0x1 00
+                0x00000000008000ae                _edata = .
+                0x00000000008000ae                PROVIDE (__data_end, .)
+
+.bss            0x00000000008000ae      0x4d7
+                0x00000000008000ae                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00000000008000ae        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+ .bss           0x00000000008000ae        0x0 Main.o
+ .bss           0x00000000008000ae        0x2 ../RP6Lib/RP6control/RP6ControlLib.o
+ .bss           0x00000000008000b0        0x6 ../RP6Lib/RP6common/RP6uart.o
+                0x00000000008000b0                read_pos
+                0x00000000008000b1                write_pos
+                0x00000000008000b2                read_size
+                0x00000000008000b3                write_size
+ .bss           0x00000000008000b6       0x4a ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                0x00000000008000b6                TWI_statusReg
+                0x00000000008000b7                TWI_TWSR_state
+                0x00000000008000b8                I2CTWI_request_adr
+                0x00000000008000b9                I2CTWI_request_reg
+                0x00000000008000ba                I2CTWI_request_size
+                0x00000000008000bb                I2CTWI_requestID
+                0x00000000008000bd                TWI_operation
+ .bss           0x0000000000800100        0x1 RP6Control_I2CMasterLib.o
+                0x0000000000800100                block
+ .bss           0x0000000000800101        0x7 CoreControl.o
+                0x0000000000800101                cellCounter
+                0x0000000000800103                totalCellsFindCourse
+                0x0000000000800105                totalCellsReturnCourse
+                0x0000000000800107                found
+ .bss           0x0000000000800108        0x0 MoveControl.o
+ .bss           0x0000000000800108        0x0 CommControl.o
+ .bss           0x0000000000800108        0x0 ASI.o
+ .bss           0x0000000000800108        0x2 PositionControl.o
+                0x0000000000800108                detected
+                0x0000000000800109                detecting
+ .bss           0x000000000080010a        0x0 IOControl.o
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+ .bss           0x000000000080010a        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x000000000080010a      0x3dd Main.o
+                0x000000000080010a                interrupt_status
+                0x000000000080010b                timer
+                0x000000000080010d                invCells
+                0x00000000008002f7                drive_status
+                0x00000000008002f8                mState
+                0x00000000008002f9                beaconDetectedOnCell
+                0x00000000008002fb                dir
+                0x00000000008002fc                cells
+                0x00000000008004e6                status
+ COMMON         0x00000000008004e7       0x28 ../RP6Lib/RP6control/RP6ControlLib.o
+                0x00000000008004e7                controlStatus
+                0x00000000008004e8                lcd_tmp_buffer
+                0x00000000008004f9                stopwatches
+                0x000000000080050a                externalPort
+                0x000000000080050b                delay_timer
+                0x000000000080050c                ms_timer
+                0x000000000080050d                sound_timer
+ COMMON         0x000000000080050f       0x22 ../RP6Lib/RP6common/RP6uart.o
+                0x000000000080050f                uart_status
+                0x0000000000800510                uart_receive_buffer
+ COMMON         0x0000000000800531       0x4e RP6Control_I2CMasterLib.o
+                0x0000000000800531                bumper_left
+                0x0000000000800532                sensorBuf
+                0x000000000080054a                mright_des_speed
+                0x000000000080054b                mleft_des_speed
+                0x000000000080054c                transmit_buffer
+                0x0000000000800556                mleft_power
+                0x0000000000800557                mleft_speed
+                0x0000000000800558                adc1
+                0x000000000080055a                adcLSL
+                0x000000000080055c                mright_power
+                0x000000000080055d                obstacle_left
+                0x000000000080055e                adcLSR
+                0x0000000000800560                obstacle_right
+                0x0000000000800561                mright_dist
+                0x0000000000800563                adc0
+                0x0000000000800565                adcMotorCurrentRight
+                0x0000000000800567                mleft_dist
+                0x0000000000800569                mright_speed
+                0x000000000080056a                bumper_right
+                0x000000000080056b                adcBat
+                0x000000000080056d                adcMotorCurrentLeft
+                0x000000000080056f                messageBuf
+ COMMON         0x000000000080057f        0x5 CoreControl.o
+                0x000000000080057f                lowerAvgWallBoundary
+                0x0000000000800581                conditionedWallDistance
+                0x0000000000800583                kState
+ COMMON         0x0000000000800584        0x1 CommControl.o
+                0x0000000000800584                cState
+                0x0000000000800585                PROVIDE (__bss_end, .)
+                0x00000000000035b2                __data_load_start = LOADADDR (.data)
+                0x0000000000003600                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000800585        0x0
+                0x0000000000800585                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0000000000800585                PROVIDE (__noinit_end, .)
+                0x0000000000800585                _end = .
+                0x0000000000800585                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x0000000000000000     0x1968
+ *(.stab)
+ .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+ .stab          0x00000000000006cc       0x6c /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                                         0x78 (size before relaxing)
+ .stab          0x0000000000000738      0x240 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                                        0x24c (size before relaxing)
+ .stab          0x0000000000000978      0x318 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                                        0x324 (size before relaxing)
+ .stab          0x0000000000000c90      0x1d4 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                                        0x1e0 (size before relaxing)
+ .stab          0x0000000000000e64       0x90 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                                         0x9c (size before relaxing)
+ .stab          0x0000000000000ef4       0x48 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                                         0x54 (size before relaxing)
+ .stab          0x0000000000000f3c      0x4d4 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                                        0x4e0 (size before relaxing)
+ .stab          0x0000000000001410       0x78 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                                         0x84 (size before relaxing)
+ .stab          0x0000000000001488       0x54 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                                         0x60 (size before relaxing)
+ .stab          0x00000000000014dc       0x84 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                                         0x90 (size before relaxing)
+ .stab          0x0000000000001560       0x84 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                                         0x90 (size before relaxing)
+ .stab          0x00000000000015e4       0xfc /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+                                        0x108 (size before relaxing)
+ .stab          0x00000000000016e0      0x1b0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+                                        0x1bc (size before relaxing)
+ .stab          0x0000000000001890       0xd8 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+                                         0xe4 (size before relaxing)
+
+.stabstr        0x0000000000000000      0x2e1
+ *(.stabstr)
+ .stabstr       0x0000000000000000      0x2e1 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x160
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 Main.o
+ .debug_aranges
+                0x0000000000000020       0x20 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_aranges
+                0x0000000000000040       0x20 ../RP6Lib/RP6common/RP6uart.o
+ .debug_aranges
+                0x0000000000000060       0x20 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_aranges
+                0x0000000000000080       0x20 RP6Control_I2CMasterLib.o
+ .debug_aranges
+                0x00000000000000a0       0x20 CoreControl.o
+ .debug_aranges
+                0x00000000000000c0       0x20 MoveControl.o
+ .debug_aranges
+                0x00000000000000e0       0x20 CommControl.o
+ .debug_aranges
+                0x0000000000000100       0x20 ASI.o
+ .debug_aranges
+                0x0000000000000120       0x20 PositionControl.o
+ .debug_aranges
+                0x0000000000000140       0x20 IOControl.o
+
+.debug_pubnames
+                0x0000000000000000     0x18be
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000      0x127 Main.o
+ .debug_pubnames
+                0x0000000000000127      0x466 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_pubnames
+                0x000000000000058d      0x138 ../RP6Lib/RP6common/RP6uart.o
+ .debug_pubnames
+                0x00000000000006c5      0x2b9 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_pubnames
+                0x000000000000097e      0x3c9 RP6Control_I2CMasterLib.o
+ .debug_pubnames
+                0x0000000000000d47      0x282 CoreControl.o
+ .debug_pubnames
+                0x0000000000000fc9      0x21c MoveControl.o
+ .debug_pubnames
+                0x00000000000011e5      0x140 CommControl.o
+ .debug_pubnames
+                0x0000000000001325      0x13e ASI.o
+ .debug_pubnames
+                0x0000000000001463      0x25a PositionControl.o
+ .debug_pubnames
+                0x00000000000016bd      0x201 IOControl.o
+
+.debug_info     0x0000000000000000     0x4ee3
+ *(.debug_info)
+ .debug_info    0x0000000000000000      0x4b4 Main.o
+ .debug_info    0x00000000000004b4      0xcd5 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_info    0x0000000000001189      0x40d ../RP6Lib/RP6common/RP6uart.o
+ .debug_info    0x0000000000001596      0x6f3 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_info    0x0000000000001c89      0xa48 RP6Control_I2CMasterLib.o
+ .debug_info    0x00000000000026d1      0xa17 CoreControl.o
+ .debug_info    0x00000000000030e8      0x703 MoveControl.o
+ .debug_info    0x00000000000037eb      0x596 CommControl.o
+ .debug_info    0x0000000000003d81      0x562 ASI.o
+ .debug_info    0x00000000000042e3      0x794 PositionControl.o
+ .debug_info    0x0000000000004a77      0x46c IOControl.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x0000000000000000     0x1272
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x144 Main.o
+ .debug_abbrev  0x0000000000000144      0x28c ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_abbrev  0x00000000000003d0      0x187 ../RP6Lib/RP6common/RP6uart.o
+ .debug_abbrev  0x0000000000000557      0x1cd ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_abbrev  0x0000000000000724      0x1ed RP6Control_I2CMasterLib.o
+ .debug_abbrev  0x0000000000000911      0x27b CoreControl.o
+ .debug_abbrev  0x0000000000000b8c      0x152 MoveControl.o
+ .debug_abbrev  0x0000000000000cde      0x174 CommControl.o
+ .debug_abbrev  0x0000000000000e52      0x173 ASI.o
+ .debug_abbrev  0x0000000000000fc5      0x1b0 PositionControl.o
+ .debug_abbrev  0x0000000000001175       0xfd IOControl.o
+
+.debug_line     0x0000000000000000     0x36ec
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x16e Main.o
+ .debug_line    0x000000000000016e      0xb80 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_line    0x0000000000000cee      0x2fc ../RP6Lib/RP6common/RP6uart.o
+ .debug_line    0x0000000000000fea      0x7a3 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_line    0x000000000000178d      0x58c RP6Control_I2CMasterLib.o
+ .debug_line    0x0000000000001d19      0xab7 CoreControl.o
+ .debug_line    0x00000000000027d0      0x337 MoveControl.o
+ .debug_line    0x0000000000002b07      0x30e CommControl.o
+ .debug_line    0x0000000000002e15      0x1b5 ASI.o
+ .debug_line    0x0000000000002fca      0x3cc PositionControl.o
+ .debug_line    0x0000000000003396      0x356 IOControl.o
+
+.debug_frame    0x0000000000000000      0xa50
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x40 Main.o
+ .debug_frame   0x0000000000000040      0x340 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_frame   0x0000000000000380       0xc0 ../RP6Lib/RP6common/RP6uart.o
+ .debug_frame   0x0000000000000440      0x150 ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_frame   0x0000000000000590      0x160 RP6Control_I2CMasterLib.o
+ .debug_frame   0x00000000000006f0       0xd0 CoreControl.o
+ .debug_frame   0x00000000000007c0       0x70 MoveControl.o
+ .debug_frame   0x0000000000000830       0x40 CommControl.o
+ .debug_frame   0x0000000000000870       0x40 ASI.o
+ .debug_frame   0x00000000000008b0       0xc0 PositionControl.o
+ .debug_frame   0x0000000000000970       0xe0 IOControl.o
+
+.debug_str      0x0000000000000000     0x15d7
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x2b5 Main.o
+                                        0x30f (size before relaxing)
+ .debug_str     0x00000000000002b5      0x4ea ../RP6Lib/RP6control/RP6ControlLib.o
+                                        0x5f8 (size before relaxing)
+ .debug_str     0x000000000000079f      0x114 ../RP6Lib/RP6common/RP6uart.o
+                                        0x22b (size before relaxing)
+ .debug_str     0x00000000000008b3      0x33c ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                        0x43a (size before relaxing)
+ .debug_str     0x0000000000000bef      0x46b RP6Control_I2CMasterLib.o
+                                        0x660 (size before relaxing)
+ .debug_str     0x000000000000105a      0x1f8 CoreControl.o
+                                        0x50e (size before relaxing)
+ .debug_str     0x0000000000001252      0x116 MoveControl.o
+                                        0x4ca (size before relaxing)
+ .debug_str     0x0000000000001368       0x67 CommControl.o
+                                        0x366 (size before relaxing)
+ .debug_str     0x00000000000013cf       0x40 ASI.o
+                                        0x32f (size before relaxing)
+ .debug_str     0x000000000000140f       0xda PositionControl.o
+                                        0x4d2 (size before relaxing)
+ .debug_str     0x00000000000014e9       0xee IOControl.o
+                                        0x312 (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x1d8d
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x684 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_loc     0x0000000000000684      0x23e ../RP6Lib/RP6common/RP6uart.o
+ .debug_loc     0x00000000000008c2      0x50a ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_loc     0x0000000000000dcc      0x169 RP6Control_I2CMasterLib.o
+ .debug_loc     0x0000000000000f35      0x70f CoreControl.o
+ .debug_loc     0x0000000000001644      0x265 MoveControl.o
+ .debug_loc     0x00000000000018a9       0xb9 CommControl.o
+ .debug_loc     0x0000000000001962      0x104 ASI.o
+ .debug_loc     0x0000000000001a66      0x1cd PositionControl.o
+ .debug_loc     0x0000000000001c33      0x15a IOControl.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(Main.elf elf32-avr)
+LOAD linker stubs
+
+.debug_pubtypes
+                0x0000000000000000      0x427
+ .debug_pubtypes
+                0x0000000000000000       0x64 Main.o
+ .debug_pubtypes
+                0x0000000000000064       0x67 ../RP6Lib/RP6control/RP6ControlLib.o
+ .debug_pubtypes
+                0x00000000000000cb       0x42 ../RP6Lib/RP6common/RP6uart.o
+ .debug_pubtypes
+                0x000000000000010d       0x3c ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+ .debug_pubtypes
+                0x0000000000000149       0x39 RP6Control_I2CMasterLib.o
+ .debug_pubtypes
+                0x0000000000000182       0x75 CoreControl.o
+ .debug_pubtypes
+                0x00000000000001f7       0x81 MoveControl.o
+ .debug_pubtypes
+                0x0000000000000278       0x72 CommControl.o
+ .debug_pubtypes
+                0x00000000000002ea       0x64 ASI.o
+ .debug_pubtypes
+                0x000000000000034e       0x75 PositionControl.o
+ .debug_pubtypes
+                0x00000000000003c3       0x64 IOControl.o
+
+.debug_ranges   0x0000000000000000       0xb8
+ .debug_ranges  0x0000000000000000       0x98 CoreControl.o
+ .debug_ranges  0x0000000000000098       0x20 MoveControl.o
+
+Cross Reference Table
+
+Symbol                                            File
+ACS_setStateChangedHandler                        RP6Control_I2CMasterLib.o
+                                                  PositionControl.o
+ACS_stateChanged_DUMMY                            RP6Control_I2CMasterLib.o
+BATTERY_lowVoltage_DUMMY                          RP6Control_I2CMasterLib.o
+BATTERY_setLowVoltageHandler                      RP6Control_I2CMasterLib.o
+BUMPERS_setStateChangedHandler                    RP6Control_I2CMasterLib.o
+BUMPERS_stateChanged_DUMMY                        RP6Control_I2CMasterLib.o
+DDR                                               ASI.o
+I2CTWI_delay                                      ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_getReceivedData                            ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_getState                                   ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_readByte                                   ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_readBytes                                  ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_readRegisters                              ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_requestDataFromDevice                      ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestID                                  ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestRegisterFromDevice                  ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_request_adr                                ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_request_reg                                ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_request_size                               ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_requestedDataReady_DUMMY                   ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_setRequestedDataReadyHandler               ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  PositionControl.o
+I2CTWI_setTransmissionErrorHandler                ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  PositionControl.o
+I2CTWI_transmissionError_DUMMY                    ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+I2CTWI_transmit2Bytes                             ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_transmit3Bytes                             ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  PositionControl.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_transmit4Bytes                             ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_transmitByte                               ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2CTWI_transmitBytes                              ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+I2C_requestedDataReady                            PositionControl.o
+I2C_transmissionError                             PositionControl.o
+INT0_event_DUMMY                                  ../RP6Lib/RP6control/RP6ControlLib.o
+INT0_setEventHandler                              ../RP6Lib/RP6control/RP6ControlLib.o
+INT1_event_DUMMY                                  ../RP6Lib/RP6control/RP6ControlLib.o
+INT1_setEventHandler                              ../RP6Lib/RP6control/RP6ControlLib.o
+INT2_event_DUMMY                                  ../RP6Lib/RP6control/RP6ControlLib.o
+INT2_setEventHandler                              ../RP6Lib/RP6control/RP6ControlLib.o
+IRCOMM_RC5dataReady_DUMMY                         RP6Control_I2CMasterLib.o
+IRCOMM_setRC5DataReadyHandler                     RP6Control_I2CMasterLib.o
+                                                  PositionControl.o
+MOTIONCONTROL_setStateChangedHandler              RP6Control_I2CMasterLib.o
+MOTIONCONTROL_stateChanged_DUMMY                  RP6Control_I2CMasterLib.o
+PORT                                              ASI.o
+SPI_EEPROM_disableWrite                           ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_enableWrite                            ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_getStatus                              ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_readByte                               ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_readBytes                              ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_writeByte                              ../RP6Lib/RP6control/RP6ControlLib.o
+SPI_EEPROM_writeBytes                             ../RP6Lib/RP6control/RP6ControlLib.o
+TWI_TWSR_state                                    ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+TWI_operation                                     ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  RP6Control_I2CMasterLib.o
+TWI_statusReg                                     ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+WDT_request_DUMMY                                 RP6Control_I2CMasterLib.o
+WDT_setRequestHandler                             RP6Control_I2CMasterLib.o
+__I2CTWI_initMaster                               ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  PositionControl.o
+__bad_interrupt                                   /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__bss_end                                         /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+__bss_start                                       /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+__data_end                                        /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+__data_load_start                                 /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+__data_start                                      /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+__divmodhi4                                       /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+                                                  MoveControl.o
+                                                  CoreControl.o
+__do_clear_bss                                    /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_clear_bss.o)
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  ../RP6Lib/RP6common/RP6uart.o
+                                                  ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  Main.o
+__do_copy_data                                    /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_copy_data.o)
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  ../RP6Lib/RP6control/RP6ControlLib.o
+__fixsfsi                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                                                  CoreControl.o
+__fixunssfsi                                      /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+__floatsisf                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+                                                  CoreControl.o
+__floatunsisf                                     /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(floatsisf.o)
+__fp_inf                                          /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_inf.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__fp_nan                                          /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_nan.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__fp_pscA                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__fp_pscB                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__fp_round                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_round.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+__fp_split3                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__fp_splitA                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_split3.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+__fp_szero                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixsfsi.o)
+__fp_zero                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fp_zero.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+__heap_end                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__init                                            /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__mulsf3                                          /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+                                                  CoreControl.o
+__mulsf3_pse                                      /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+__mulsf3x                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libm.a(mulsf3.o)
+__stack                                           /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__udivmodhi4                                      /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_udivmodhi4.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+                                                  /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+                                                  PositionControl.o
+                                                  MoveControl.o
+__vector_1                                        ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_10                                       ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_11                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_12                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_13                                       ../RP6Lib/RP6common/RP6uart.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_14                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_15                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_16                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_17                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_18                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_19                                       ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_2                                        ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_20                                       /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_3                                        ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_4                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_5                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_6                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_7                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_8                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_9                                        /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vector_default                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+__vectors                                         /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+_div                                              /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_divmodhi4.o)
+_exit                                             /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+_showScreenLCD_P                                  ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  IOControl.o
+                                                  Main.o
+acsStateChanged                                   PositionControl.o
+adc0                                              RP6Control_I2CMasterLib.o
+adc1                                              RP6Control_I2CMasterLib.o
+adcBat                                            RP6Control_I2CMasterLib.o
+adcLSL                                            RP6Control_I2CMasterLib.o
+adcLSR                                            RP6Control_I2CMasterLib.o
+adcMotorCurrentLeft                               RP6Control_I2CMasterLib.o
+adcMotorCurrentRight                              RP6Control_I2CMasterLib.o
+beaconDetectedOnCell                              IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  Main.o
+beep                                              ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  PositionControl.o
+                                                  CoreControl.o
+                                                  Main.o
+block                                             RP6Control_I2CMasterLib.o
+bumper_left                                       RP6Control_I2CMasterLib.o
+bumper_right                                      RP6Control_I2CMasterLib.o
+cState                                            CommControl.o
+calibrate                                         CoreControl.o
+cellCounter                                       CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+cellDist                                          MoveControl.o
+                                                  PositionControl.o
+                                                  CoreControl.o
+cells                                             IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  Main.o
+changeDirection                                   RP6Control_I2CMasterLib.o
+checkPressedKeyEvent                              ../RP6Lib/RP6control/RP6ControlLib.o
+checkProcessEndedAbruptly                         CoreControl.o
+                                                  MoveControl.o
+checkRP6Status                                    RP6Control_I2CMasterLib.o
+                                                  PositionControl.o
+checkReleasedKeyEvent                             ../RP6Lib/RP6control/RP6ControlLib.o
+clearLCD                                          ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  IOControl.o
+clearPosLCD                                       ../RP6Lib/RP6control/RP6ControlLib.o
+clearReceptionBuffer                              ../RP6Lib/RP6common/RP6uart.o
+                                                  CommControl.o
+conditionedWallDistance                           PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+controlStatus                                     ../RP6Lib/RP6control/RP6ControlLib.o
+costFunction                                      CoreControl.o
+cruiseSpeed                                       MoveControl.o
+                                                  PositionControl.o
+                                                  CoreControl.o
+delayCycles                                       ../RP6Lib/RP6control/RP6ControlLib.o
+delay_timer                                       ../RP6Lib/RP6control/RP6ControlLib.o
+detected                                          PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+detecting                                         PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+dir                                               IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  Main.o
+dirErrorFactor                                    MoveControl.o
+dischargePeakDetector                             ../RP6Lib/RP6control/RP6ControlLib.o
+dist360                                           CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+distErrorFactor                                   MoveControl.o
+drive_status                                      PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  Main.o
+end                                               CoreControl.o
+exit                                              /usr/lib/gcc/avr/4.5.3/avr5/libgcc.a(_exit.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+externalPort                                      ../RP6Lib/RP6control/RP6ControlLib.o
+find                                              CoreControl.o
+found                                             CoreControl.o
+getAllSensors                                     RP6Control_I2CMasterLib.o
+getBufferLength                                   ../RP6Lib/RP6common/RP6uart.o
+                                                  CommControl.o
+getMicrophonePeak                                 ../RP6Lib/RP6control/RP6ControlLib.o
+getPressedKeyNumber                               ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  CoreControl.o
+higherAvgWallBoundary                             PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+initASI                                           ASI.o
+                                                  CoreControl.o
+initCommControl                                   CommControl.o
+                                                  CoreControl.o
+initCoreControl                                   CoreControl.o
+                                                  Main.o
+initLCD                                           ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  CoreControl.o
+initMain                                          Main.o
+initMoveControl                                   MoveControl.o
+                                                  CoreControl.o
+initPositionControl                               PositionControl.o
+                                                  CoreControl.o
+initRP6Control                                    ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  Main.o
+interrupt_status                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  Main.o
+invCells                                          IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  Main.o
+itoa                                              /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+                                                  ../RP6Lib/RP6common/RP6uart.o
+                                                  ../RP6Lib/RP6control/RP6ControlLib.o
+kState                                            PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+lcd_tmp_buffer                                    ../RP6Lib/RP6control/RP6ControlLib.o
+lowerAvgWallBoundary                              MoveControl.o
+                                                  CoreControl.o
+mSleep                                            ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  PositionControl.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  Main.o
+mState                                            IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  Main.o
+main                                              Main.o
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/crtm32.o
+messageBuf                                        RP6Control_I2CMasterLib.o
+mleft_des_speed                                   RP6Control_I2CMasterLib.o
+mleft_dist                                        RP6Control_I2CMasterLib.o
+mleft_power                                       RP6Control_I2CMasterLib.o
+mleft_speed                                       RP6Control_I2CMasterLib.o
+move                                              RP6Control_I2CMasterLib.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+moveAtSpeed                                       RP6Control_I2CMasterLib.o
+                                                  MoveControl.o
+moveForward                                       MoveControl.o
+                                                  CoreControl.o
+mright_des_speed                                  RP6Control_I2CMasterLib.o
+mright_dist                                       RP6Control_I2CMasterLib.o
+mright_power                                      RP6Control_I2CMasterLib.o
+mright_speed                                      RP6Control_I2CMasterLib.o
+ms_timer                                          ../RP6Lib/RP6control/RP6ControlLib.o
+obstacle_left                                     PositionControl.o
+                                                  RP6Control_I2CMasterLib.o
+obstacle_right                                    PositionControl.o
+                                                  RP6Control_I2CMasterLib.o
+onEnterCellHandler                                CoreControl.o
+onLeaveCellHandler                                CoreControl.o
+outputExt                                         ../RP6Lib/RP6control/RP6ControlLib.o
+readADC                                           ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  PositionControl.o
+readAvgADC                                        PositionControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+readBufferSPI                                     ../RP6Lib/RP6control/RP6ControlLib.o
+readChar                                          ../RP6Lib/RP6common/RP6uart.o
+                                                  CommControl.o
+readCharBlock                                     CommControl.o
+readChars                                         ../RP6Lib/RP6common/RP6uart.o
+readSPI                                           ../RP6Lib/RP6control/RP6ControlLib.o
+readWordSPI                                       ../RP6Lib/RP6control/RP6ControlLib.o
+read_pos                                          ../RP6Lib/RP6common/RP6uart.o
+read_size                                         ../RP6Lib/RP6common/RP6uart.o
+receiveRC5Data                                    PositionControl.o
+removeEmptyElements                               CoreControl.o
+returnToStart                                     CoreControl.o
+rotate                                            RP6Control_I2CMasterLib.o
+                                                  MoveControl.o
+searchForBeacon                                   CoreControl.o
+sendData                                          CommControl.o
+                                                  CoreControl.o
+sensorBuf                                         RP6Control_I2CMasterLib.o
+setBeeperPitch                                    ../RP6Lib/RP6control/RP6ControlLib.o
+setCursorPosLCD                                   ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  IOControl.o
+setLCDD                                           ../RP6Lib/RP6control/RP6ControlLib.o
+setLEDs                                           ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  Main.o
+setPortMode                                       ASI.o
+                                                  PositionControl.o
+setPortVal                                        ASI.o
+show_ACTION                                       IOControl.o
+                                                  CoreControl.o
+show_BEHOLDTHEBEACONOFLIGHT                       IOControl.o
+                                                  CoreControl.o
+show_BRIEFINGRECEIVED                             IOControl.o
+                                                  CommControl.o
+show_ENTERCELL                                    IOControl.o
+                                                  CoreControl.o
+show_LEAVECELL                                    IOControl.o
+                                                  CoreControl.o
+show_LOOKINGFORBEACON                             IOControl.o
+                                                  CoreControl.o
+show_NOBEACONFOUND                                IOControl.o
+                                                  CoreControl.o
+show_PLACEMEATPOSITION                            IOControl.o
+                                                  CoreControl.o
+show_SPEED                                        IOControl.o
+show_STARTEDFINDING                               IOControl.o
+                                                  CoreControl.o
+show_WAITINGFORBRIEFING                           IOControl.o
+                                                  CommControl.o
+show_WAITINGFORDEBRIEFING                         IOControl.o
+                                                  CommControl.o
+show_WHICHWALL                                    IOControl.o
+                                                  CoreControl.o
+sleep                                             ../RP6Lib/RP6control/RP6ControlLib.o
+softEndFind                                       CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+softEndReturn                                     CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+sound_timer                                       ../RP6Lib/RP6control/RP6ControlLib.o
+status                                            PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  Main.o
+stop                                              RP6Control_I2CMasterLib.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+stopwatches                                       ../RP6Lib/RP6control/RP6ControlLib.o
+strrev                                            /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(strrev.o)
+                                                  /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr5/libc.a(itoa.o)
+task_I2CTWI                                       ../RP6Lib/RP6common/RP6I2CmasterTWI.o
+                                                  PositionControl.o
+                                                  MoveControl.o
+                                                  RP6Control_I2CMasterLib.o
+task_checkINT0                                    RP6Control_I2CMasterLib.o
+                                                  PositionControl.o
+                                                  MoveControl.o
+timer                                             IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  CoreControl.o
+                                                  RP6Control_I2CMasterLib.o
+                                                  ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  Main.o
+totalCellsFindCourse                              CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+totalCellsReturnCourse                            CoreControl.o
+                                                  IOControl.o
+                                                  PositionControl.o
+                                                  ASI.o
+                                                  CommControl.o
+                                                  MoveControl.o
+                                                  Main.o
+transmit_buffer                                   RP6Control_I2CMasterLib.o
+turn180                                           MoveControl.o
+                                                  CoreControl.o
+turnLeft                                          MoveControl.o
+                                                  CoreControl.o
+turnRight                                         MoveControl.o
+                                                  CoreControl.o
+uart_receive_buffer                               ../RP6Lib/RP6common/RP6uart.o
+uart_status                                       ../RP6Lib/RP6common/RP6uart.o
+updateCoreControl                                 CoreControl.o
+                                                  Main.o
+updateMain                                        Main.o
+updateMoveControl                                 MoveControl.o
+                                                  CoreControl.o
+updatePositionControl                             PositionControl.o
+                                                  CoreControl.o
+updateWallData                                    PositionControl.o
+                                                  CoreControl.o
+waitForTransmitComplete                           RP6Control_I2CMasterLib.o
+wallIsFront                                       PositionControl.o
+                                                  CoreControl.o
+wallIsLeft                                        PositionControl.o
+                                                  CoreControl.o
+wallIsRight                                       PositionControl.o
+                                                  CoreControl.o
+write4BitLCDData                                  ../RP6Lib/RP6control/RP6ControlLib.o
+writeBufferSPI                                    ../RP6Lib/RP6control/RP6ControlLib.o
+writeChar                                         ../RP6Lib/RP6common/RP6uart.o
+                                                  PositionControl.o
+                                                  CommControl.o
+writeCharLCD                                      ../RP6Lib/RP6control/RP6ControlLib.o
+writeInteger                                      ../RP6Lib/RP6common/RP6uart.o
+                                                  PositionControl.o
+                                                  CoreControl.o
+writeIntegerLCD                                   ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  IOControl.o
+writeIntegerLength                                ../RP6Lib/RP6common/RP6uart.o
+                                                  CommControl.o
+writeIntegerLengthLCD                             ../RP6Lib/RP6control/RP6ControlLib.o
+writeLCDCommand                                   ../RP6Lib/RP6control/RP6ControlLib.o
+writeNStringLCD_P                                 ../RP6Lib/RP6control/RP6ControlLib.o
+writeNStringP                                     ../RP6Lib/RP6common/RP6uart.o
+                                                  PositionControl.o
+                                                  CoreControl.o
+                                                  Main.o
+writeSPI                                          ../RP6Lib/RP6control/RP6ControlLib.o
+writeString                                       ../RP6Lib/RP6common/RP6uart.o
+                                                  CommControl.o
+                                                  CoreControl.o
+writeStringLCD                                    ../RP6Lib/RP6control/RP6ControlLib.o
+                                                  IOControl.o
+writeStringLength                                 ../RP6Lib/RP6common/RP6uart.o
+writeStringLengthLCD                              ../RP6Lib/RP6control/RP6ControlLib.o
+writeWordSPI                                      ../RP6Lib/RP6control/RP6ControlLib.o
+write_pos                                         ../RP6Lib/RP6common/RP6uart.o
+write_size                                        ../RP6Lib/RP6common/RP6uart.o

@@ -1,0 +1,713 @@
+   1               		.file	"IOControl.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	show_WAITINGFORBRIEFING
+  18               	show_WAITINGFORBRIEFING:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	/* stack size = 0 */
+  24               	.L__stack_usage = 0
+  25               	.LM2:
+  26 0000 0E94 0000 		call clearLCD
+  27               	.LM3:
+  28 0004 80E0      		ldi r24,lo8(__c.1987)
+  29 0006 90E0      		ldi r25,hi8(__c.1987)
+  30 0008 60E0      		ldi r22,lo8(__c.1989)
+  31 000a 70E0      		ldi r23,hi8(__c.1989)
+  32 000c 0E94 0000 		call _showScreenLCD_P
+  33               	/* epilogue start */
+  34               	.LM4:
+  35 0010 0895      		ret
+  36               	.LFE6:
+  38               	.global	show_WAITINGFORDEBRIEFING
+  40               	show_WAITINGFORDEBRIEFING:
+  41               	.LFB7:
+  42               	.LM5:
+  43               	/* prologue: function */
+  44               	/* frame size = 0 */
+  45               	/* stack size = 0 */
+  46               	.L__stack_usage = 0
+  47               	.LM6:
+  48 0012 0E94 0000 		call clearLCD
+  49               	.LM7:
+  50 0016 80E0      		ldi r24,lo8(__c.1994)
+  51 0018 90E0      		ldi r25,hi8(__c.1994)
+  52 001a 60E0      		ldi r22,lo8(__c.1996)
+  53 001c 70E0      		ldi r23,hi8(__c.1996)
+  54 001e 0E94 0000 		call _showScreenLCD_P
+  55               	/* epilogue start */
+  56               	.LM8:
+  57 0022 0895      		ret
+  58               	.LFE7:
+  60               	.global	show_BRIEFINGRECEIVED
+  62               	show_BRIEFINGRECEIVED:
+  63               	.LFB8:
+  64               	.LM9:
+  65               	.LVL0:
+  66 0024 0F93      		push r16
+  67 0026 1F93      		push r17
+  68 0028 DF93      		push r29
+  69 002a CF93      		push r28
+  70 002c 0F92      		push __tmp_reg__
+  71 002e CDB7      		in r28,__SP_L__
+  72 0030 DEB7      		in r29,__SP_H__
+  73               	/* prologue: function */
+  74               	/* frame size = 1 */
+  75               	/* stack size = 5 */
+  76               	.L__stack_usage = 5
+  77 0032 082F      		mov r16,r24
+  78 0034 162F      		mov r17,r22
+  79               	.LM10:
+  80 0036 4983      		std Y+1,r20
+  81 0038 0E94 0000 		call clearLCD
+  82               	.LVL1:
+  83               	.LM11:
+  84 003c 80E0      		ldi r24,lo8(__c.2003)
+  85 003e 90E0      		ldi r25,hi8(__c.2003)
+  86 0040 60E0      		ldi r22,lo8(__c.2005)
+  87 0042 70E0      		ldi r23,hi8(__c.2005)
+  88 0044 0E94 0000 		call _showScreenLCD_P
+  89               	.LM12:
+  90 0048 81E0      		ldi r24,lo8(1)
+  91 004a 62E0      		ldi r22,lo8(2)
+  92 004c 0E94 0000 		call setCursorPosLCD
+  93               	.LM13:
+  94 0050 802F      		mov r24,r16
+  95 0052 90E0      		ldi r25,lo8(0)
+  96 0054 6AE0      		ldi r22,lo8(10)
+  97 0056 0E94 0000 		call writeIntegerLCD
+  98               	.LM14:
+  99 005a 81E0      		ldi r24,lo8(1)
+ 100 005c 66E0      		ldi r22,lo8(6)
+ 101 005e 0E94 0000 		call setCursorPosLCD
+ 102               	.LM15:
+ 103 0062 812F      		mov r24,r17
+ 104 0064 90E0      		ldi r25,lo8(0)
+ 105 0066 6AE0      		ldi r22,lo8(10)
+ 106 0068 0E94 0000 		call writeIntegerLCD
+ 107               	.LM16:
+ 108 006c 81E0      		ldi r24,lo8(1)
+ 109 006e 6AE0      		ldi r22,lo8(10)
+ 110 0070 0E94 0000 		call setCursorPosLCD
+ 111               	.LM17:
+ 112 0074 4981      		ldd r20,Y+1
+ 113 0076 842F      		mov r24,r20
+ 114 0078 90E0      		ldi r25,lo8(0)
+ 115 007a 6AE0      		ldi r22,lo8(10)
+ 116 007c 0E94 0000 		call writeIntegerLCD
+ 117               	/* epilogue start */
+ 118               	.LM18:
+ 119 0080 0F90      		pop __tmp_reg__
+ 120 0082 CF91      		pop r28
+ 121 0084 DF91      		pop r29
+ 122 0086 1F91      		pop r17
+ 123               	.LVL2:
+ 124 0088 0F91      		pop r16
+ 125               	.LVL3:
+ 126 008a 0895      		ret
+ 127               	.LFE8:
+ 129               	.global	show_PLACEMEATPOSITION
+ 131               	show_PLACEMEATPOSITION:
+ 132               	.LFB9:
+ 133               	.LM19:
+ 134               	.LVL4:
+ 135 008c 0F93      		push r16
+ 136 008e 1F93      		push r17
+ 137 0090 DF93      		push r29
+ 138 0092 CF93      		push r28
+ 139 0094 0F92      		push __tmp_reg__
+ 140 0096 CDB7      		in r28,__SP_L__
+ 141 0098 DEB7      		in r29,__SP_H__
+ 142               	/* prologue: function */
+ 143               	/* frame size = 1 */
+ 144               	/* stack size = 5 */
+ 145               	.L__stack_usage = 5
+ 146 009a 082F      		mov r16,r24
+ 147 009c 162F      		mov r17,r22
+ 148               	.LM20:
+ 149 009e 4983      		std Y+1,r20
+ 150 00a0 0E94 0000 		call clearLCD
+ 151               	.LVL5:
+ 152               	.LM21:
+ 153 00a4 80E0      		ldi r24,lo8(__c.2012)
+ 154 00a6 90E0      		ldi r25,hi8(__c.2012)
+ 155 00a8 60E0      		ldi r22,lo8(__c.2014)
+ 156 00aa 70E0      		ldi r23,hi8(__c.2014)
+ 157 00ac 0E94 0000 		call _showScreenLCD_P
+ 158               	.LM22:
+ 159 00b0 81E0      		ldi r24,lo8(1)
+ 160 00b2 62E0      		ldi r22,lo8(2)
+ 161 00b4 0E94 0000 		call setCursorPosLCD
+ 162               	.LM23:
+ 163 00b8 802F      		mov r24,r16
+ 164 00ba 90E0      		ldi r25,lo8(0)
+ 165 00bc 6AE0      		ldi r22,lo8(10)
+ 166 00be 0E94 0000 		call writeIntegerLCD
+ 167               	.LM24:
+ 168 00c2 81E0      		ldi r24,lo8(1)
+ 169 00c4 66E0      		ldi r22,lo8(6)
+ 170 00c6 0E94 0000 		call setCursorPosLCD
+ 171               	.LM25:
+ 172 00ca 812F      		mov r24,r17
+ 173 00cc 90E0      		ldi r25,lo8(0)
+ 174 00ce 6AE0      		ldi r22,lo8(10)
+ 175 00d0 0E94 0000 		call writeIntegerLCD
+ 176               	.LM26:
+ 177 00d4 81E0      		ldi r24,lo8(1)
+ 178 00d6 6AE0      		ldi r22,lo8(10)
+ 179 00d8 0E94 0000 		call setCursorPosLCD
+ 180               	.LM27:
+ 181 00dc 4981      		ldd r20,Y+1
+ 182 00de 842F      		mov r24,r20
+ 183 00e0 90E0      		ldi r25,lo8(0)
+ 184 00e2 6AE0      		ldi r22,lo8(10)
+ 185 00e4 0E94 0000 		call writeIntegerLCD
+ 186               	/* epilogue start */
+ 187               	.LM28:
+ 188 00e8 0F90      		pop __tmp_reg__
+ 189 00ea CF91      		pop r28
+ 190 00ec DF91      		pop r29
+ 191 00ee 1F91      		pop r17
+ 192               	.LVL6:
+ 193 00f0 0F91      		pop r16
+ 194               	.LVL7:
+ 195 00f2 0895      		ret
+ 196               	.LFE9:
+ 198               	.global	show_SPEED
+ 200               	show_SPEED:
+ 201               	.LFB10:
+ 202               	.LM29:
+ 203               	.LVL8:
+ 204 00f4 0F93      		push r16
+ 205 00f6 1F93      		push r17
+ 206               	/* prologue: function */
+ 207               	/* frame size = 0 */
+ 208               	/* stack size = 2 */
+ 209               	.L__stack_usage = 2
+ 210 00f8 082F      		mov r16,r24
+ 211 00fa 162F      		mov r17,r22
+ 212               	.LM30:
+ 213 00fc 0E94 0000 		call clearLCD
+ 214               	.LVL9:
+ 215               	.LM31:
+ 216 0100 80E0      		ldi r24,lo8(__c.2020)
+ 217 0102 90E0      		ldi r25,hi8(__c.2020)
+ 218 0104 60E0      		ldi r22,lo8(__c.2022)
+ 219 0106 70E0      		ldi r23,hi8(__c.2022)
+ 220 0108 0E94 0000 		call _showScreenLCD_P
+ 221               	.LM32:
+ 222 010c 81E0      		ldi r24,lo8(1)
+ 223 010e 63E0      		ldi r22,lo8(3)
+ 224 0110 0E94 0000 		call setCursorPosLCD
+ 225               	.LM33:
+ 226 0114 802F      		mov r24,r16
+ 227 0116 90E0      		ldi r25,lo8(0)
+ 228 0118 6AE0      		ldi r22,lo8(10)
+ 229 011a 0E94 0000 		call writeIntegerLCD
+ 230               	.LM34:
+ 231 011e 81E0      		ldi r24,lo8(1)
+ 232 0120 6AE0      		ldi r22,lo8(10)
+ 233 0122 0E94 0000 		call setCursorPosLCD
+ 234               	.LM35:
+ 235 0126 812F      		mov r24,r17
+ 236 0128 90E0      		ldi r25,lo8(0)
+ 237 012a 6AE0      		ldi r22,lo8(10)
+ 238 012c 0E94 0000 		call writeIntegerLCD
+ 239               	/* epilogue start */
+ 240               	.LM36:
+ 241 0130 1F91      		pop r17
+ 242               	.LVL10:
+ 243 0132 0F91      		pop r16
+ 244               	.LVL11:
+ 245 0134 0895      		ret
+ 246               	.LFE10:
+ 248               	.global	show_STARTEDFINDING
+ 250               	show_STARTEDFINDING:
+ 251               	.LFB11:
+ 252               	.LM37:
+ 253               	/* prologue: function */
+ 254               	/* frame size = 0 */
+ 255               	/* stack size = 0 */
+ 256               	.L__stack_usage = 0
+ 257               	.LM38:
+ 258 0136 0E94 0000 		call clearLCD
+ 259               	.LM39:
+ 260 013a 80E0      		ldi r24,lo8(__c.2027)
+ 261 013c 90E0      		ldi r25,hi8(__c.2027)
+ 262 013e 60E0      		ldi r22,lo8(__c.2029)
+ 263 0140 70E0      		ldi r23,hi8(__c.2029)
+ 264 0142 0E94 0000 		call _showScreenLCD_P
+ 265               	/* epilogue start */
+ 266               	.LM40:
+ 267 0146 0895      		ret
+ 268               	.LFE11:
+ 270               	.global	show_ENTERCELL
+ 272               	show_ENTERCELL:
+ 273               	.LFB12:
+ 274               	.LM41:
+ 275               	/* prologue: function */
+ 276               	/* frame size = 0 */
+ 277               	/* stack size = 0 */
+ 278               	.L__stack_usage = 0
+ 279               	.LM42:
+ 280 0148 0E94 0000 		call clearLCD
+ 281               	.LM43:
+ 282 014c 80E0      		ldi r24,lo8(__c.2034)
+ 283 014e 90E0      		ldi r25,hi8(__c.2034)
+ 284 0150 60E0      		ldi r22,lo8(__c.2036)
+ 285 0152 70E0      		ldi r23,hi8(__c.2036)
+ 286 0154 0E94 0000 		call _showScreenLCD_P
+ 287               	/* epilogue start */
+ 288               	.LM44:
+ 289 0158 0895      		ret
+ 290               	.LFE12:
+ 292               	.global	show_LEAVECELL
+ 294               	show_LEAVECELL:
+ 295               	.LFB13:
+ 296               	.LM45:
+ 297               	/* prologue: function */
+ 298               	/* frame size = 0 */
+ 299               	/* stack size = 0 */
+ 300               	.L__stack_usage = 0
+ 301               	.LM46:
+ 302 015a 0E94 0000 		call clearLCD
+ 303               	.LM47:
+ 304 015e 80E0      		ldi r24,lo8(__c.2041)
+ 305 0160 90E0      		ldi r25,hi8(__c.2041)
+ 306 0162 60E0      		ldi r22,lo8(__c.2043)
+ 307 0164 70E0      		ldi r23,hi8(__c.2043)
+ 308 0166 0E94 0000 		call _showScreenLCD_P
+ 309               	/* epilogue start */
+ 310               	.LM48:
+ 311 016a 0895      		ret
+ 312               	.LFE13:
+ 314               	.global	show_ACTION
+ 316               	show_ACTION:
+ 317               	.LFB14:
+ 318               	.LM49:
+ 319               	.LVL12:
+ 320 016c DF93      		push r29
+ 321 016e CF93      		push r28
+ 322 0170 0F92      		push __tmp_reg__
+ 323 0172 CDB7      		in r28,__SP_L__
+ 324 0174 DEB7      		in r29,__SP_H__
+ 325               	/* prologue: function */
+ 326               	/* frame size = 1 */
+ 327               	/* stack size = 3 */
+ 328               	.L__stack_usage = 3
+ 329               	.LM50:
+ 330 0176 8983      		std Y+1,r24
+ 331 0178 0E94 0000 		call clearLCD
+ 332               	.LVL13:
+ 333               	.LM51:
+ 334 017c 8981      		ldd r24,Y+1
+ 335 017e 8130      		cpi r24,lo8(1)
+ 336 0180 01F0      		breq .L12
+ 337 0182 8130      		cpi r24,lo8(1)
+ 338 0184 00F0      		brlo .L11
+ 339 0186 8230      		cpi r24,lo8(2)
+ 340 0188 01F0      		breq .L13
+ 341 018a 8330      		cpi r24,lo8(3)
+ 342 018c 01F4      		brne .L9
+ 343 018e 00C0      		rjmp .L16
+ 344               	.L11:
+ 345               	.LM52:
+ 346 0190 80E0      		ldi r24,lo8(__c.2049)
+ 347 0192 90E0      		ldi r25,hi8(__c.2049)
+ 348 0194 60E0      		ldi r22,lo8(__c.2051)
+ 349 0196 70E0      		ldi r23,hi8(__c.2051)
+ 350 0198 00C0      		rjmp .L15
+ 351               	.L13:
+ 352               	.LM53:
+ 353 019a 80E0      		ldi r24,lo8(__c.2055)
+ 354 019c 90E0      		ldi r25,hi8(__c.2055)
+ 355 019e 60E0      		ldi r22,lo8(__c.2057)
+ 356 01a0 70E0      		ldi r23,hi8(__c.2057)
+ 357 01a2 00C0      		rjmp .L15
+ 358               	.L12:
+ 359               	.LM54:
+ 360 01a4 80E0      		ldi r24,lo8(__c.2060)
+ 361 01a6 90E0      		ldi r25,hi8(__c.2060)
+ 362 01a8 60E0      		ldi r22,lo8(__c.2062)
+ 363 01aa 70E0      		ldi r23,hi8(__c.2062)
+ 364 01ac 00C0      		rjmp .L15
+ 365               	.L16:
+ 366               	.LM55:
+ 367 01ae 80E0      		ldi r24,lo8(__c.2065)
+ 368 01b0 90E0      		ldi r25,hi8(__c.2065)
+ 369 01b2 60E0      		ldi r22,lo8(__c.2067)
+ 370 01b4 70E0      		ldi r23,hi8(__c.2067)
+ 371               	.L15:
+ 372 01b6 0E94 0000 		call _showScreenLCD_P
+ 373               	.L9:
+ 374               	/* epilogue start */
+ 375               	.LM56:
+ 376 01ba 0F90      		pop __tmp_reg__
+ 377 01bc CF91      		pop r28
+ 378 01be DF91      		pop r29
+ 379 01c0 0895      		ret
+ 380               	.LFE14:
+ 382               		.data
+ 383               	.LC0:
+ 384 0000 4E00      		.string	"N"
+ 385               	.LC1:
+ 386 0002 4500      		.string	"E"
+ 387               	.LC2:
+ 388 0004 5300      		.string	"S"
+ 389               	.LC3:
+ 390 0006 5700      		.string	"W"
+ 391               		.text
+ 392               	.global	show_WHICHWALL
+ 394               	show_WHICHWALL:
+ 395               	.LFB15:
+ 396               	.LM57:
+ 397               	.LVL14:
+ 398 01c2 FF92      		push r15
+ 399 01c4 0F93      		push r16
+ 400 01c6 1F93      		push r17
+ 401 01c8 DF93      		push r29
+ 402 01ca CF93      		push r28
+ 403 01cc 0F92      		push __tmp_reg__
+ 404 01ce CDB7      		in r28,__SP_L__
+ 405 01d0 DEB7      		in r29,__SP_H__
+ 406               	/* prologue: function */
+ 407               	/* frame size = 1 */
+ 408               	/* stack size = 6 */
+ 409               	.L__stack_usage = 6
+ 410 01d2 162F      		mov r17,r22
+ 411 01d4 042F      		mov r16,r20
+ 412 01d6 F22E      		mov r15,r18
+ 413               	.LM58:
+ 414 01d8 8983      		std Y+1,r24
+ 415 01da 0E94 0000 		call clearLCD
+ 416               	.LVL15:
+ 417               	.LM59:
+ 418 01de 8981      		ldd r24,Y+1
+ 419 01e0 8823      		tst r24
+ 420 01e2 01F0      		breq .L18
+ 421               	.LM60:
+ 422 01e4 80E0      		ldi r24,lo8(0)
+ 423 01e6 68E0      		ldi r22,lo8(8)
+ 424 01e8 0E94 0000 		call setCursorPosLCD
+ 425               	.LM61:
+ 426 01ec 80E0      		ldi r24,lo8(.LC0)
+ 427 01ee 90E0      		ldi r25,hi8(.LC0)
+ 428 01f0 0E94 0000 		call writeStringLCD
+ 429               	.L18:
+ 430               	.LM62:
+ 431 01f4 1123      		tst r17
+ 432 01f6 01F0      		breq .L19
+ 433               	.LM63:
+ 434 01f8 81E0      		ldi r24,lo8(1)
+ 435 01fa 60E0      		ldi r22,lo8(0)
+ 436 01fc 0E94 0000 		call setCursorPosLCD
+ 437               	.LM64:
+ 438 0200 80E0      		ldi r24,lo8(.LC1)
+ 439 0202 90E0      		ldi r25,hi8(.LC1)
+ 440 0204 0E94 0000 		call writeStringLCD
+ 441               	.L19:
+ 442               	.LM65:
+ 443 0208 0023      		tst r16
+ 444 020a 01F0      		breq .L20
+ 445               	.LM66:
+ 446 020c 81E0      		ldi r24,lo8(1)
+ 447 020e 68E0      		ldi r22,lo8(8)
+ 448 0210 0E94 0000 		call setCursorPosLCD
+ 449               	.LM67:
+ 450 0214 80E0      		ldi r24,lo8(.LC2)
+ 451 0216 90E0      		ldi r25,hi8(.LC2)
+ 452 0218 0E94 0000 		call writeStringLCD
+ 453               	.L20:
+ 454               	.LM68:
+ 455 021c FF20      		tst r15
+ 456 021e 01F0      		breq .L17
+ 457               	.LM69:
+ 458 0220 81E0      		ldi r24,lo8(1)
+ 459 0222 6FE0      		ldi r22,lo8(15)
+ 460 0224 0E94 0000 		call setCursorPosLCD
+ 461               	.LM70:
+ 462 0228 80E0      		ldi r24,lo8(.LC3)
+ 463 022a 90E0      		ldi r25,hi8(.LC3)
+ 464 022c 0E94 0000 		call writeStringLCD
+ 465               	.L17:
+ 466               	/* epilogue start */
+ 467               	.LM71:
+ 468 0230 0F90      		pop __tmp_reg__
+ 469 0232 CF91      		pop r28
+ 470 0234 DF91      		pop r29
+ 471 0236 1F91      		pop r17
+ 472               	.LVL16:
+ 473 0238 0F91      		pop r16
+ 474               	.LVL17:
+ 475 023a FF90      		pop r15
+ 476               	.LVL18:
+ 477 023c 0895      		ret
+ 478               	.LFE15:
+ 480               	.global	show_LOOKINGFORBEACON
+ 482               	show_LOOKINGFORBEACON:
+ 483               	.LFB16:
+ 484               	.LM72:
+ 485               	/* prologue: function */
+ 486               	/* frame size = 0 */
+ 487               	/* stack size = 0 */
+ 488               	.L__stack_usage = 0
+ 489               	.LM73:
+ 490 023e 0E94 0000 		call clearLCD
+ 491               	.LM74:
+ 492 0242 80E0      		ldi r24,lo8(__c.2078)
+ 493 0244 90E0      		ldi r25,hi8(__c.2078)
+ 494 0246 60E0      		ldi r22,lo8(__c.2080)
+ 495 0248 70E0      		ldi r23,hi8(__c.2080)
+ 496 024a 0E94 0000 		call _showScreenLCD_P
+ 497               	/* epilogue start */
+ 498               	.LM75:
+ 499 024e 0895      		ret
+ 500               	.LFE16:
+ 502               	.global	show_BEHOLDTHEBEACONOFLIGHT
+ 504               	show_BEHOLDTHEBEACONOFLIGHT:
+ 505               	.LFB17:
+ 506               	.LM76:
+ 507               	/* prologue: function */
+ 508               	/* frame size = 0 */
+ 509               	/* stack size = 0 */
+ 510               	.L__stack_usage = 0
+ 511               	.LM77:
+ 512 0250 0E94 0000 		call clearLCD
+ 513               	.LM78:
+ 514 0254 80E0      		ldi r24,lo8(__c.2085)
+ 515 0256 90E0      		ldi r25,hi8(__c.2085)
+ 516 0258 60E0      		ldi r22,lo8(__c.2087)
+ 517 025a 70E0      		ldi r23,hi8(__c.2087)
+ 518 025c 0E94 0000 		call _showScreenLCD_P
+ 519               	/* epilogue start */
+ 520               	.LM79:
+ 521 0260 0895      		ret
+ 522               	.LFE17:
+ 524               	.global	show_NOBEACONFOUND
+ 526               	show_NOBEACONFOUND:
+ 527               	.LFB18:
+ 528               	.LM80:
+ 529               	/* prologue: function */
+ 530               	/* frame size = 0 */
+ 531               	/* stack size = 0 */
+ 532               	.L__stack_usage = 0
+ 533               	.LM81:
+ 534 0262 0E94 0000 		call clearLCD
+ 535               	.LM82:
+ 536 0266 80E0      		ldi r24,lo8(__c.2092)
+ 537 0268 90E0      		ldi r25,hi8(__c.2092)
+ 538 026a 60E0      		ldi r22,lo8(__c.2094)
+ 539 026c 70E0      		ldi r23,hi8(__c.2094)
+ 540 026e 0E94 0000 		call _showScreenLCD_P
+ 541               	/* epilogue start */
+ 542               	.LM83:
+ 543 0272 0895      		ret
+ 544               	.LFE18:
+ 546               		.comm timer,2,1
+ 547               		.comm dist360,2,1
+ 548               		.comm cells,490,1
+ 549               		.comm invCells,490,1
+ 550               		.comm dir,1,1
+ 551               		.comm cellCounter,2,1
+ 552               		.comm totalCellsFindCourse,2,1
+ 553               		.comm totalCellsReturnCourse,2,1
+ 554               		.comm softEndFind,1,1
+ 555               		.comm softEndReturn,1,1
+ 556               		.comm beaconDetectedOnCell,2,1
+ 557               		.comm mState,1,1
+ 558               		.section	.progmem.data,"a",@progbits
+ 561               	__c.2094:
+ 562 0000 666F 756E 		.string	"found."
+ 562      642E 00
+ 565               	__c.2092:
+ 566 0007 4E6F 2062 		.string	"No beacon"
+ 566      6561 636F 
+ 566      6E00 
+ 569               	__c.2087:
+ 570 0011 4245 4143 		.string	"BEACON of LIGHT"
+ 570      4F4E 206F 
+ 570      6620 4C49 
+ 570      4748 5400 
+ 573               	__c.2085:
+ 574 0021 2A2A 2A42 		.string	"***Behold the***"
+ 574      6568 6F6C 
+ 574      6420 7468 
+ 574      652A 2A2A 
+ 574      00
+ 577               	__c.2080:
+ 578 0032 6265 6163 		.string	"beacon"
+ 578      6F6E 00
+ 581               	__c.2078:
+ 582 0039 4C6F 6F6B 		.string	"Looking for"
+ 582      696E 6720 
+ 582      666F 7200 
+ 585               	__c.2067:
+ 586 0045 00        		.string	""
+ 589               	__c.2065:
+ 590 0046 5475 726E 		.string	"Turning 180"
+ 590      696E 6720 
+ 590      3138 3000 
+ 593               	__c.2062:
+ 594 0052 00        		.string	""
+ 597               	__c.2060:
+ 598 0053 5475 726E 		.string	"Turning Right"
+ 598      696E 6720 
+ 598      5269 6768 
+ 598      7400 
+ 601               	__c.2057:
+ 602 0061 00        		.string	""
+ 605               	__c.2055:
+ 606 0062 4D6F 7669 		.string	"Moving Forward"
+ 606      6E67 2046 
+ 606      6F72 7761 
+ 606      7264 00
+ 609               	__c.2051:
+ 610 0071 00        		.string	""
+ 613               	__c.2049:
+ 614 0072 5475 726E 		.string	"Turning Left"
+ 614      696E 6720 
+ 614      4C65 6674 
+ 614      00
+ 617               	__c.2043:
+ 618 007f 00        		.string	""
+ 621               	__c.2041:
+ 622 0080 4C65 6176 		.string	"Leaving Cell"
+ 622      696E 6720 
+ 622      4365 6C6C 
+ 622      00
+ 625               	__c.2036:
+ 626 008d 00        		.string	""
+ 629               	__c.2034:
+ 630 008e 456E 7465 		.string	"Entering Cell"
+ 630      7269 6E67 
+ 630      2043 656C 
+ 630      6C00 
+ 633               	__c.2029:
+ 634 009c 5072 6F63 		.string	"Process"
+ 634      6573 7300 
+ 637               	__c.2027:
+ 638 00a4 5374 6172 		.string	"Started Finding"
+ 638      7465 6420 
+ 638      4669 6E64 
+ 638      696E 6700 
+ 641               	__c.2022:
+ 642 00b4 00        		.string	""
+ 645               	__c.2020:
+ 646 00b5 4C3A 2020 		.string	"L:    R:"
+ 646      2020 523A 
+ 646      00
+ 649               	__c.2014:
+ 650 00be 583A 2020 		.string	"X:  Y:  D:  "
+ 650      593A 2020 
+ 650      443A 2020 
+ 650      00
+ 653               	__c.2012:
+ 654 00cb 506C 6163 		.string	"Place me at:"
+ 654      6520 6D65 
+ 654      2061 743A 
+ 654      00
+ 657               	__c.2005:
+ 658 00d8 583A 2020 		.string	"X:  Y:  D:  "
+ 658      593A 2020 
+ 658      443A 2020 
+ 658      00
+ 661               	__c.2003:
+ 662 00e5 4272 6965 		.string	"Briefing:"
+ 662      6669 6E67 
+ 662      3A00 
+ 665               	__c.1996:
+ 666 00ef 6465 6272 		.string	"debriefing."
+ 666      6965 6669 
+ 666      6E67 2E00 
+ 669               	__c.1994:
+ 670 00fb 5761 6974 		.string	"Waiting for"
+ 670      696E 6720 
+ 670      666F 7200 
+ 673               	__c.1989:
+ 674 0107 6272 6965 		.string	"briefing."
+ 674      6669 6E67 
+ 674      2E00 
+ 677               	__c.1987:
+ 678 0111 5761 6974 		.string	"Waiting for"
+ 678      696E 6720 
+ 678      666F 7200 
+ 799               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 IOControl.c
+     /tmp/cc23TWOe.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc23TWOe.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc23TWOe.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc23TWOe.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc23TWOe.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc23TWOe.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc23TWOe.s:18     .text:0000000000000000 show_WAITINGFORBRIEFING
+     /tmp/cc23TWOe.s:677    .progmem.data:0000000000000111 __c.1987
+     /tmp/cc23TWOe.s:673    .progmem.data:0000000000000107 __c.1989
+     /tmp/cc23TWOe.s:40     .text:0000000000000012 show_WAITINGFORDEBRIEFING
+     /tmp/cc23TWOe.s:669    .progmem.data:00000000000000fb __c.1994
+     /tmp/cc23TWOe.s:665    .progmem.data:00000000000000ef __c.1996
+     /tmp/cc23TWOe.s:62     .text:0000000000000024 show_BRIEFINGRECEIVED
+     /tmp/cc23TWOe.s:661    .progmem.data:00000000000000e5 __c.2003
+     /tmp/cc23TWOe.s:657    .progmem.data:00000000000000d8 __c.2005
+     /tmp/cc23TWOe.s:131    .text:000000000000008c show_PLACEMEATPOSITION
+     /tmp/cc23TWOe.s:653    .progmem.data:00000000000000cb __c.2012
+     /tmp/cc23TWOe.s:649    .progmem.data:00000000000000be __c.2014
+     /tmp/cc23TWOe.s:200    .text:00000000000000f4 show_SPEED
+     /tmp/cc23TWOe.s:645    .progmem.data:00000000000000b5 __c.2020
+     /tmp/cc23TWOe.s:641    .progmem.data:00000000000000b4 __c.2022
+     /tmp/cc23TWOe.s:250    .text:0000000000000136 show_STARTEDFINDING
+     /tmp/cc23TWOe.s:637    .progmem.data:00000000000000a4 __c.2027
+     /tmp/cc23TWOe.s:633    .progmem.data:000000000000009c __c.2029
+     /tmp/cc23TWOe.s:272    .text:0000000000000148 show_ENTERCELL
+     /tmp/cc23TWOe.s:629    .progmem.data:000000000000008e __c.2034
+     /tmp/cc23TWOe.s:625    .progmem.data:000000000000008d __c.2036
+     /tmp/cc23TWOe.s:294    .text:000000000000015a show_LEAVECELL
+     /tmp/cc23TWOe.s:621    .progmem.data:0000000000000080 __c.2041
+     /tmp/cc23TWOe.s:617    .progmem.data:000000000000007f __c.2043
+     /tmp/cc23TWOe.s:316    .text:000000000000016c show_ACTION
+     /tmp/cc23TWOe.s:613    .progmem.data:0000000000000072 __c.2049
+     /tmp/cc23TWOe.s:609    .progmem.data:0000000000000071 __c.2051
+     /tmp/cc23TWOe.s:605    .progmem.data:0000000000000062 __c.2055
+     /tmp/cc23TWOe.s:601    .progmem.data:0000000000000061 __c.2057
+     /tmp/cc23TWOe.s:597    .progmem.data:0000000000000053 __c.2060
+     /tmp/cc23TWOe.s:593    .progmem.data:0000000000000052 __c.2062
+     /tmp/cc23TWOe.s:589    .progmem.data:0000000000000046 __c.2065
+     /tmp/cc23TWOe.s:585    .progmem.data:0000000000000045 __c.2067
+     /tmp/cc23TWOe.s:394    .text:00000000000001c2 show_WHICHWALL
+     /tmp/cc23TWOe.s:482    .text:000000000000023e show_LOOKINGFORBEACON
+     /tmp/cc23TWOe.s:581    .progmem.data:0000000000000039 __c.2078
+     /tmp/cc23TWOe.s:577    .progmem.data:0000000000000032 __c.2080
+     /tmp/cc23TWOe.s:504    .text:0000000000000250 show_BEHOLDTHEBEACONOFLIGHT
+     /tmp/cc23TWOe.s:573    .progmem.data:0000000000000021 __c.2085
+     /tmp/cc23TWOe.s:569    .progmem.data:0000000000000011 __c.2087
+     /tmp/cc23TWOe.s:526    .text:0000000000000262 show_NOBEACONFOUND
+     /tmp/cc23TWOe.s:565    .progmem.data:0000000000000007 __c.2092
+     /tmp/cc23TWOe.s:561    .progmem.data:0000000000000000 __c.2094
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000002 dist360
+                            *COM*:00000000000001ea cells
+                            *COM*:00000000000001ea invCells
+                            *COM*:0000000000000001 dir
+                            *COM*:0000000000000002 cellCounter
+                            *COM*:0000000000000002 totalCellsFindCourse
+                            *COM*:0000000000000002 totalCellsReturnCourse
+                            *COM*:0000000000000001 softEndFind
+                            *COM*:0000000000000001 softEndReturn
+                            *COM*:0000000000000002 beaconDetectedOnCell
+                            *COM*:0000000000000001 mState
+
+UNDEFINED SYMBOLS
+clearLCD
+_showScreenLCD_P
+setCursorPosLCD
+writeIntegerLCD
+writeStringLCD
+__do_copy_data
+__do_clear_bss
